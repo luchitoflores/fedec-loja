@@ -1,0 +1,315 @@
+{
+  "config": {
+    "nombre_sitio": "FEDEC Loja Digital",
+    "lema": "Unidad, identidad católica y excelencia educativa al servicio de Loja",
+    "blog_url": "ENLACE_GOOGLE_SITES_BLOG",
+    "formulario_carga_url": "ENLACE_GOOGLE_FORM_CARGA",
+    "formulario_inscripcion_url": "ENLACE_GOOGLE_FORM_INSCRIPCION",
+    "correo": "fedec.loja@gmail.com",
+    "telefono": "+593 (07) 000-0000",
+    "direccion": "Loja, provincia de Loja, Ecuador",
+    "horario": "Lunes a viernes: 08h00–13h00 / 15h00–17h00"
+  },
+
+  "documentos": [
+    {
+      "id": 1,
+      "categoria": "Normativa general",
+      "subcategoria": "Acuerdos vigentes",
+      "tipo": "pdf", "estado": "v",
+      "titulo": "LOEI Codificada — Ley Orgánica de Educación Intercultural",
+      "descripcion": "Versión codificada vigente de la LOEI con todas sus reformas.",
+      "fecha": "2023", "fuente": "Asamblea Nacional",
+      "enlace": "ENLACE_DRIVE_AQUI"
+    },
+    {
+      "id": 2,
+      "categoria": "Normativa general",
+      "subcategoria": "Acuerdos vigentes",
+      "tipo": "pdf", "estado": "v",
+      "titulo": "Reglamento General a la LOEI",
+      "descripcion": "Reglamento general de aplicación de la Ley Orgánica de Educación Intercultural.",
+      "fecha": "2023", "fuente": "Ministerio de Educación",
+      "enlace": "ENLACE_DRIVE_AQUI"
+    },
+    {
+      "id": 3,
+      "categoria": "Instituciones fiscomisionales",
+      "subcategoria": "Normativa de funcionamiento",
+      "tipo": "pdf", "estado": "n",
+      "titulo": "MINEDUC-2023-00033A — Fiscomisionales Confesionales y Laicas",
+      "descripcion": "Normativa para regulación de procesos de asignación y movimientos de docentes.",
+      "fecha": "Agosto 2023", "fuente": "Ministerio de Educación",
+      "enlace": "ENLACE_DRIVE_AQUI"
+    },
+    {
+      "id": 4,
+      "categoria": "Instituciones fiscomisionales",
+      "subcategoria": "Normativa de funcionamiento",
+      "tipo": "pdf", "estado": "v",
+      "titulo": "MINEDUC-ME-2016-00026A — Funcionamiento instituciones fiscomisionales",
+      "descripcion": "Normativa que regula el funcionamiento de las instituciones educativas fiscomisionales del Ecuador.",
+      "fecha": "Marzo 2016", "fuente": "Ministerio de Educación",
+      "enlace": "ENLACE_DRIVE_AQUI"
+    },
+    {
+      "id": 5,
+      "categoria": "Instituciones fiscomisionales",
+      "subcategoria": "Convenios",
+      "tipo": "pdf", "estado": "v",
+      "titulo": "Convenio de Cooperación MEC – CONFEDEC",
+      "descripcion": "Convenio que regula selección y designación de personal docente. Vigencia 10 años.",
+      "fecha": "26 sep 2016", "fuente": "MEC – CONFEDEC",
+      "enlace": "ENLACE_DRIVE_AQUI"
+    },
+    {
+      "id": 6,
+      "categoria": "Instituciones fiscomisionales",
+      "subcategoria": "Declaraciones y promotores",
+      "tipo": "pdf", "estado": "v",
+      "titulo": "Declaración juramentada — Promotor La Dolorosa",
+      "descripcion": "Declaración juramentada sobre representación legal y lista de instituciones de la Diócesis.",
+      "fecha": "2024", "fuente": "Diócesis de Loja",
+      "enlace": "ENLACE_DRIVE_AQUI"
+    },
+    {
+      "id": 7,
+      "categoria": "Instituciones fiscomisionales",
+      "subcategoria": "Referencia histórica",
+      "tipo": "pdf", "estado": "d",
+      "titulo": "MINEDUC-2023-00020A — Acuerdos derogados",
+      "descripcion": "Listado de acuerdos ministeriales derogados. Solo referencia histórica.",
+      "fecha": "2023", "fuente": "Ministerio de Educación",
+      "enlace": "ENLACE_DRIVE_AQUI"
+    },
+    {
+      "id": 8,
+      "categoria": "Pensiones y matrículas",
+      "subcategoria": "",
+      "tipo": "pdf", "estado": "v",
+      "titulo": "Acuerdo de regulación de pensiones y matrículas",
+      "descripcion": "Lineamientos vigentes para el cobro, deudas, mora y procedimientos de traslado.",
+      "fecha": "2025", "fuente": "Ministerio de Educación",
+      "enlace": "ENLACE_DRIVE_AQUI"
+    },
+    {
+      "id": 9,
+      "categoria": "Talento humano",
+      "subcategoria": "Plantilla y jornada",
+      "tipo": "pdf", "estado": "v",
+      "titulo": "Norma técnica de plantilla óptima 2024",
+      "descripcion": "Cálculo de docentes, directivos y DECE para instituciones fiscomisionales.",
+      "fecha": "2024", "fuente": "Ministerio de Educación",
+      "enlace": "ENLACE_DRIVE_AQUI"
+    },
+    {
+      "id": 10,
+      "categoria": "Talento humano",
+      "subcategoria": "Evaluación y nombramientos",
+      "tipo": "pdf", "estado": "v",
+      "titulo": "Distribución de carga horaria docente",
+      "descripcion": "Lineamientos para distribución de carga horaria y jornada laboral docente.",
+      "fecha": "2024", "fuente": "Ministerio de Educación",
+      "enlace": "ENLACE_DRIVE_AQUI"
+    },
+    {
+      "id": 11,
+      "categoria": "Pastoral e identidad católica",
+      "subcategoria": "Educación religiosa",
+      "tipo": "pdf", "estado": "v",
+      "titulo": "MINEDUC-ME-2015-00123A2 — Educación Religiosa Escolar (ERE)",
+      "descripcion": "Acuerdo que regula la asignatura de Educación Religiosa en las instituciones fiscomisionales.",
+      "fecha": "2015", "fuente": "Ministerio de Educación",
+      "enlace": "ENLACE_DRIVE_AQUI"
+    },
+    {
+      "id": 12,
+      "categoria": "Pastoral e identidad católica",
+      "subcategoria": "Materiales pastorales",
+      "tipo": "pdf", "estado": "v",
+      "titulo": "Guía ERE — Planificación curricular y catequesis",
+      "descripcion": "Guía para la planificación de ERE con enfoque en catequesis y formación religiosa.",
+      "fecha": "2024", "fuente": "CONFEDEC",
+      "enlace": "ENLACE_DRIVE_AQUI"
+    },
+    {
+      "id": 13,
+      "categoria": "Formatos FEDEC",
+      "subcategoria": "Modelos de oficio",
+      "tipo": "doc", "estado": "v",
+      "titulo": "Modelo de oficio a Distrito educativo",
+      "descripcion": "Formato base para comunicaciones oficiales al Distrito Educativo 11D01.",
+      "fecha": "2025", "fuente": "FEDEC Loja",
+      "enlace": "ENLACE_DRIVE_AQUI"
+    },
+    {
+      "id": 14,
+      "categoria": "Formatos FEDEC",
+      "subcategoria": "Actas y resoluciones",
+      "tipo": "doc", "estado": "v",
+      "titulo": "Estatutos de la FEDEC Loja",
+      "descripcion": "Estatutos aprobados el 31 de enero de 2004. Revisión 2025.",
+      "fecha": "2004 · Rev. 2025", "fuente": "FEDEC Loja",
+      "enlace": "ENLACE_DRIVE_AQUI"
+    },
+    {
+      "id": 15,
+      "categoria": "Capacitaciones",
+      "subcategoria": "Grabaciones",
+      "tipo": "vid", "estado": "n",
+      "titulo": "Gestión y Liderazgo Educativo para Directivos",
+      "descripcion": "Capacitación completa para preparación ante auditorías del Ministerio de Educación.",
+      "fecha": "Oct 2025", "fuente": "Canal YouTube FEDEC Loja",
+      "enlace": "ENLACE_YOUTUBE_AQUI"
+    },
+    {
+      "id": 16,
+      "categoria": "Capacitaciones",
+      "subcategoria": "Grabaciones",
+      "tipo": "vid", "estado": "n",
+      "titulo": "Taller PEI – Colmena con Estándares de Calidad",
+      "descripcion": "Taller práctico para construcción del PEI institucional. Dos sesiones completas.",
+      "fecha": "Ene 2026", "fuente": "Canal YouTube FEDEC Loja",
+      "enlace": "ENLACE_YOUTUBE_AQUI"
+    },
+    {
+      "id": 17,
+      "categoria": "Capacitaciones",
+      "subcategoria": "Grabaciones",
+      "tipo": "vid", "estado": "v",
+      "titulo": "Protocolo Educativo — Reunión con CONFEDEC",
+      "descripcion": "Reunión virtual con el Hno. Guillermo Oñate sobre protocolos y seguridad institucional.",
+      "fecha": "2025", "fuente": "Canal YouTube FEDEC Loja",
+      "enlace": "ENLACE_YOUTUBE_AQUI"
+    },
+    {
+      "id": 18,
+      "categoria": "Capacitaciones",
+      "subcategoria": "Presentaciones",
+      "tipo": "ppt", "estado": "n",
+      "titulo": "PEI Colmena — Diapositivas taller enero 2026",
+      "descripcion": "Material de apoyo visual del taller de actualización del Proyecto Educativo Institucional.",
+      "fecha": "Ene 2026", "fuente": "Google Drive FEDEC",
+      "enlace": "ENLACE_DRIVE_AQUI"
+    },
+    {
+      "id": 19,
+      "categoria": "Capacitaciones",
+      "subcategoria": "Presentaciones",
+      "tipo": "ppt", "estado": "v",
+      "titulo": "Gestión y Liderazgo — Diapositivas directivos",
+      "descripcion": "Diapositivas de la capacitación de octubre 2025 para directivos institucionales.",
+      "fecha": "Oct 2025", "fuente": "Google Drive FEDEC",
+      "enlace": "ENLACE_DRIVE_AQUI"
+    }
+  ],
+
+  "capacitaciones_proximas": [
+    {
+      "fecha": "Junio 2026",
+      "tema": "Evaluación docente — Clase demostrativa",
+      "modalidad": "Virtual",
+      "dirigido": "Rectores y directivos",
+      "inscripcion": "ENLACE_GOOGLE_FORM_INSCRIPCION"
+    },
+    {
+      "fecha": "Julio 2026",
+      "tema": "DECE y protección integral del estudiante",
+      "modalidad": "Presencial",
+      "dirigido": "Responsables DECE",
+      "inscripcion": "ENLACE_GOOGLE_FORM_INSCRIPCION"
+    },
+    {
+      "fecha": "Agosto 2026",
+      "tema": "Pensiones, matrículas y plantilla óptima",
+      "modalidad": "Virtual",
+      "dirigido": "Rectores, directivos y secretarias",
+      "inscripcion": "ENLACE_GOOGLE_FORM_INSCRIPCION"
+    }
+  ],
+
+  "capacitaciones_realizadas": [
+    {
+      "fecha": "Oct 2025",
+      "tema": "Gestión y Liderazgo Educativo para Directivos",
+      "material": "ENLACE_DRIVE_AQUI",
+      "grabacion": "ENLACE_YOUTUBE_AQUI",
+      "certificado": ""
+    },
+    {
+      "fecha": "Ene 2026",
+      "tema": "Taller PEI – Colmena con Estándares de Calidad",
+      "material": "ENLACE_DRIVE_AQUI",
+      "grabacion": "ENLACE_YOUTUBE_AQUI",
+      "certificado": ""
+    },
+    {
+      "fecha": "2025",
+      "tema": "Protocolo Educativo — Reunión con CONFEDEC",
+      "material": "",
+      "grabacion": "ENLACE_YOUTUBE_AQUI",
+      "certificado": ""
+    }
+  ],
+
+  "noticias": [
+    {
+      "id": 1, "destacada": true,
+      "categoria": "Capacitación",
+      "titulo": "Capacitación en Gestión y Liderazgo Educativo para directivos federados",
+      "resumen": "Directivos de las instituciones federadas participaron en una jornada de formación para fortalecer la gestión institucional ante las auditorías del Ministerio de Educación.",
+      "fecha": "21 de octubre, 2025", "enlace": ""
+    },
+    {
+      "id": 2, "destacada": false,
+      "categoria": "Pastoral",
+      "titulo": "Jubileo del Mundo Educativo — Obispado de Loja",
+      "resumen": "Celebración del Jubileo del Mundo Educativo organizado por el Obispado de Loja con participación de los centros federados.",
+      "fecha": "30 oct 2025", "enlace": ""
+    },
+    {
+      "id": 3, "destacada": false,
+      "categoria": "Capacitación",
+      "titulo": "Taller PEI – Colmena con Estándares de Calidad Educativa",
+      "resumen": "Taller de dos días para la construcción y actualización del Proyecto Educativo Institucional con los estándares de calidad del Ministerio.",
+      "fecha": "22-23 ene 2026", "enlace": ""
+    },
+    {
+      "id": 4, "destacada": false,
+      "categoria": "Gestión institucional",
+      "titulo": "FEDEC Loja gestiona acompañamiento jurídico ante CONFEDEC",
+      "resumen": "La presidencia de la FEDEC Loja gestionó asesoría jurídica para las instituciones federadas ante la Confederación Nacional CONFEDEC.",
+      "fecha": "2025", "enlace": ""
+    },
+    {
+      "id": 5, "destacada": false,
+      "categoria": "Normativa",
+      "titulo": "Defensa de asignación de personal DECE 2026–2027",
+      "resumen": "La FEDEC gestionó ante las autoridades zonales la defensa de la asignación de personal DECE para el ciclo 2026-2027.",
+      "fecha": "Feb 2026", "enlace": ""
+    }
+  ],
+
+  "instituciones": [
+    {"amie":"11H00489","nombre":"U.E. La Dolorosa","canton":"Loja","parroquia":"El Sagrario","tipo":"Fiscomisional","nivel":"Básica – Bachillerato","estado":"Federada"},
+    {"amie":"11H00542","nombre":"U.E. San Francisco de Asís","canton":"Loja","parroquia":"El Valle","tipo":"Fiscomisional","nivel":"Básica – Bachillerato","estado":"Federada"},
+    {"amie":"11H00566","nombre":"U.E. María Auxiliadora","canton":"Loja","parroquia":"Sucre","tipo":"Fiscomisional","nivel":"Básica – Bachillerato","estado":"Federada"},
+    {"amie":"11H01782","nombre":"U.E. José Antonio Eguiguren La Salle","canton":"Loja","parroquia":"El Sagrario","tipo":"Particular","nivel":"Básica – Bachillerato","estado":"Federada"},
+    {"amie":"11H00628","nombre":"U.E. Santa Mariana de Jesús","canton":"Macará","parroquia":"Macará","tipo":"Fiscomisional","nivel":"Básica – Bachillerato","estado":"Federada"},
+    {"amie":"11H00529","nombre":"U.E. San Juan Bautista","canton":"Catamayo","parroquia":"La Toma","tipo":"Fiscomisional","nivel":"Básica – Bachillerato","estado":"Federada"},
+    {"amie":"11H00552","nombre":"U.E. Mons. Alberto Zambrano Palacios","canton":"Calvas","parroquia":"Cariamanga","tipo":"Fiscomisional","nivel":"Básica","estado":"Federada"},
+    {"amie":"11H00564","nombre":"U.E. Mons. Luis Alfonso Crespo Chiriboga","canton":"Espíndola","parroquia":"Amaluza","tipo":"Fiscomisional","nivel":"Básica","estado":"Federada"},
+    {"amie":"11H00622","nombre":"U.E. Padre Jorge Abiatar Quevedo Figueroa","canton":"Calvas","parroquia":"Cariamanga","tipo":"Fiscomisional","nivel":"Básica","estado":"Federada"},
+    {"amie":"11H00535","nombre":"U.E. San Juan Evangelista","canton":"Calvas","parroquia":"Cariamanga","tipo":"Fiscomisional","nivel":"Básica","estado":"Federada"},
+    {"amie":"11H00566","nombre":"U.E. Centinela del Sur","canton":"Calvas","parroquia":"Cariamanga","tipo":"Fiscomisional","nivel":"Básica","estado":"Federada"},
+    {"amie":"11H00628","nombre":"U.E. Cristo Rey","canton":"Calvas","parroquia":"Cariamanga","tipo":"Fiscomisional","nivel":"Básica","estado":"Federada"},
+    {"amie":"11H00552","nombre":"U.E. Hno. Agustín Villarreal Delgado","canton":"Calvas","parroquia":"Cariamanga","tipo":"Fiscomisional","nivel":"Básica","estado":"Federada"},
+    {"amie":"11H00622","nombre":"U.E. La Cruz","canton":"Calvas","parroquia":"Cariamanga","tipo":"Fiscomisional","nivel":"Básica","estado":"Federada"},
+    {"amie":"11H00513","nombre":"U.E. San Pedro Mártir","canton":"Calvas","parroquia":"Cariamanga","tipo":"Fiscomisional","nivel":"Básica","estado":"Federada"},
+    {"amie":"11H00620","nombre":"U.E. Reina del Cisne","canton":"Calvas","parroquia":"Cariamanga","tipo":"Fiscomisional","nivel":"Básica","estado":"Federada"},
+    {"amie":"11H00520","nombre":"U.E. San Antonio","canton":"Calvas","parroquia":"Cariamanga","tipo":"Fiscomisional","nivel":"Básica","estado":"Federada"},
+    {"amie":"11H00621","nombre":"U.E. Santa Marianita de Jesús","canton":"Calvas","parroquia":"Cariamanga","tipo":"Fiscomisional","nivel":"Básica","estado":"Federada"},
+    {"amie":"11H00476","nombre":"U.E. Santiago Apóstol","canton":"Calvas","parroquia":"Cariamanga","tipo":"Fiscomisional","nivel":"Básica","estado":"Federada"},
+    {"amie":"11H00589","nombre":"U.E. San Miguel Arcángel","canton":"Calvas","parroquia":"Cariamanga","tipo":"Fiscomisional","nivel":"Básica","estado":"Federada"}
+  ]
+}

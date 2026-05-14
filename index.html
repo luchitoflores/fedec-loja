@@ -1,0 +1,4035 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>FEDEC Loja Digital</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700;800;900&family=Inter:wght@400;500;600;700;800;900&display=swap');
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  :root {
+    --azul-fedec: #071b33;
+    --azul-medio: #163d66;
+    --dorado: #b8892d;
+    --dorado-claro: #e2bd68;
+    --crema: #f6f7f9;
+    --gris-texto: #233044;
+    --gris-suave: #edf1f5;
+    --borde: #d9e0e8;
+    --blanco: #ffffff;
+    --rojo-doc: #8b2c2c;
+    --verde-doc: #2c6b3f;
+    --azul-doc: #1a4a7a;
+    --sombra-premium: 0 24px 70px rgba(7, 27, 51, 0.13);
+    --sombra-suave: 0 12px 34px rgba(7, 27, 51, 0.08);
+  }
+
+  body {
+    font-family: 'Source Sans 3', 'Segoe UI', sans-serif;
+    background:
+      linear-gradient(180deg, rgba(246,247,249,0.92), rgba(246,247,249,0.98)),
+      radial-gradient(circle at 12% 0%, rgba(226,189,104,0.2), transparent 28%),
+      linear-gradient(135deg, #071b33 0%, #163d66 42%, #f6f7f9 42%, #f6f7f9 100%);
+    color: var(--gris-texto);
+    font-size: 15px;
+    line-height: 1.7;
+    min-height: 100vh;
+  }
+
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: -1;
+    background:
+      linear-gradient(90deg, rgba(255,255,255,0.05) 1px, transparent 1px),
+      linear-gradient(180deg, rgba(255,255,255,0.04) 1px, transparent 1px);
+    background-size: 64px 64px;
+    opacity: 0.32;
+  }
+
+  /* NAV */
+  nav {
+    background: rgba(7, 27, 51, 0.92);
+    padding: 0 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid rgba(226,189,104,0.24);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    backdrop-filter: blur(18px);
+    box-shadow: 0 14px 34px rgba(7,27,51,0.18);
+  }
+
+  .nav-brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 14px 0;
+  }
+
+  .nav-escudo {
+    width: 44px;
+    height: 44px;
+    background: linear-gradient(135deg, var(--dorado), var(--dorado-claro));
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+    font-size: 13px;
+    color: var(--azul-fedec);
+    letter-spacing: 0.5px;
+    flex-shrink: 0;
+    box-shadow: 0 12px 28px rgba(184,137,45,0.28);
+  }
+
+  .nav-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 15px;
+    color: var(--blanco);
+    font-weight: 600;
+    line-height: 1.2;
+  }
+
+  .nav-sub {
+    font-family: 'Source Sans 3', sans-serif;
+    font-size: 10px;
+    color: var(--dorado-claro);
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    font-weight: 400;
+  }
+
+  .nav-links {
+    display: flex;
+    gap: 0;
+    list-style: none;
+  }
+
+  .nav-links a {
+    display: block;
+    color: rgba(255,255,255,0.85);
+    text-decoration: none;
+    font-size: 12px;
+    letter-spacing: 0.8px;
+    padding: 22px 14px;
+    transition: all 0.2s;
+    border-bottom: 3px solid transparent;
+    text-transform: uppercase;
+    font-weight: 600;
+  }
+
+  .nav-links a:hover {
+    color: var(--dorado-claro);
+    border-bottom-color: var(--dorado);
+    background: rgba(255,255,255,0.05);
+  }
+
+  /* HERO */
+  .hero {
+    background:
+      linear-gradient(90deg, rgba(7,27,51,0.93), rgba(7,27,51,0.74)),
+      radial-gradient(circle at 86% 18%, rgba(226,189,104,0.26), transparent 28%),
+      linear-gradient(135deg, #071b33 0%, #163d66 52%, #2a5a8c 100%);
+    padding: 92px 2rem 84px;
+    text-align: left;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+      linear-gradient(120deg, transparent 0%, transparent 58%, rgba(255,255,255,0.08) 58%, rgba(255,255,255,0.02) 74%, transparent 74%),
+      repeating-linear-gradient(90deg, rgba(255,255,255,0.055) 0 1px, transparent 1px 54px);
+    opacity: 0.58;
+  }
+
+  .hero::after {
+    content: '';
+    position: absolute;
+    right: 7%;
+    top: 18%;
+    width: min(38vw, 430px);
+    aspect-ratio: 4 / 3;
+    border-radius: 18px;
+    background:
+      linear-gradient(180deg, rgba(255,255,255,0.2), rgba(255,255,255,0.05)),
+      linear-gradient(90deg, rgba(226,189,104,0.42) 0 8px, transparent 8px 28px),
+      linear-gradient(180deg, rgba(255,255,255,0.18) 0 10px, transparent 10px 54px),
+      linear-gradient(135deg, rgba(255,255,255,0.18), rgba(255,255,255,0.02));
+    border: 1px solid rgba(255,255,255,0.17);
+    box-shadow: 0 35px 80px rgba(0,0,0,0.24);
+    filter: blur(0.2px);
+    opacity: 0.52;
+  }
+
+  .hero-tag {
+    display: inline-block;
+    background: rgba(226,189,104,0.12);
+    color: var(--dorado-claro);
+    border: 1px solid rgba(226,189,104,0.34);
+    font-size: 10px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    font-weight: 700;
+    padding: 5px 16px;
+    border-radius: 20px;
+    margin-bottom: 24px;
+  }
+
+  .hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(28px, 5vw, 48px);
+    color: var(--blanco);
+    font-weight: 700;
+    line-height: 1.15;
+    max-width: 700px;
+    margin: 0 0 16px;
+    position: relative;
+    z-index: 1;
+  }
+
+  .hero h1 em {
+    color: var(--dorado-claro);
+    font-style: normal;
+  }
+
+  .hero-desc {
+    color: rgba(255,255,255,0.8);
+    max-width: 560px;
+    margin: 0 0 32px;
+    font-size: 16px;
+    font-weight: 300;
+  }
+
+  .hero-btns {
+    display: flex;
+    gap: 12px;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+  }
+
+  .btn-primary {
+    background: var(--dorado);
+    color: var(--azul-fedec);
+    border: none;
+    padding: 12px 28px;
+    border-radius: 6px;
+    font-weight: 700;
+    font-size: 13px;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+    letter-spacing: 0.5px;
+    transition: all 0.2s;
+  }
+
+  .btn-primary:hover { background: var(--dorado-claro); transform: translateY(-1px); }
+
+  .btn-outline {
+    background: transparent;
+    color: var(--blanco);
+    border: 1.5px solid rgba(255,255,255,0.5);
+    padding: 12px 28px;
+    border-radius: 6px;
+    font-weight: 600;
+    font-size: 13px;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+    transition: all 0.2s;
+  }
+
+  .btn-outline:hover { border-color: var(--dorado-claro); color: var(--dorado-claro); }
+
+  /* SECCIONES */
+  section { padding: 64px 2rem; }
+  .section-inner { max-width: 960px; margin: 0 auto; }
+
+  #quienes .section-inner,
+  #federados .section-inner,
+  #documentos .section-inner,
+  #cultura .section-inner {
+    background: rgba(255,255,255,0.88);
+    border: 1px solid rgba(217,224,232,0.82);
+    border-radius: 18px;
+    padding: 34px;
+    box-shadow: var(--sombra-suave);
+    backdrop-filter: blur(12px);
+  }
+
+  .section-tag {
+    font-size: 10px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--dorado);
+    font-weight: 700;
+    margin-bottom: 8px;
+  }
+
+  .section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(22px, 3vw, 32px);
+    color: var(--azul-fedec);
+    font-weight: 600;
+    margin-bottom: 8px;
+    line-height: 1.2;
+  }
+
+  .section-line {
+    width: 48px;
+    height: 3px;
+    background: var(--dorado);
+    margin: 16px 0 32px;
+  }
+
+  /* QUIÉNES SOMOS */
+  #quienes { background: var(--blanco); }
+
+  .quienes-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 48px;
+    align-items: start;
+  }
+
+  .mision-vision {
+    display: grid;
+    gap: 20px;
+  }
+
+  .mv-card {
+    border-left: 4px solid var(--dorado);
+    padding: 20px 20px 20px 24px;
+    background: var(--crema);
+    border-radius: 0 8px 8px 0;
+  }
+
+  .mv-card h4 {
+    font-family: 'Playfair Display', serif;
+    font-size: 16px;
+    color: var(--azul-fedec);
+    font-weight: 600;
+    margin-bottom: 8px;
+  }
+
+  .mv-card p {
+    font-size: 14px;
+    color: #5a5650;
+    line-height: 1.6;
+  }
+
+  .objetivos-list {
+    list-style: none;
+    display: grid;
+    gap: 12px;
+    margin-top: 8px;
+  }
+
+  .objetivos-list li {
+    display: flex;
+    gap: 12px;
+    align-items: flex-start;
+    font-size: 14px;
+    line-height: 1.5;
+  }
+
+  .obj-icon {
+    width: 24px;
+    height: 24px;
+    background: var(--azul-fedec);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--dorado);
+    font-size: 11px;
+    font-weight: 700;
+    flex-shrink: 0;
+    margin-top: 2px;
+  }
+
+  /* ESTRUCTURA */
+  #estructura { background: var(--gris-suave); }
+  #estructura .section-inner {
+    background: linear-gradient(180deg, #fff, #f8fafc);
+    border: 1px solid rgba(217,224,232,0.9);
+    border-radius: 18px;
+    padding: 34px;
+    box-shadow: var(--sombra-premium);
+  }
+
+  .directorio-grid {
+    display: grid;
+    grid-template-columns: 1.25fr repeat(2, 1fr);
+    gap: 16px;
+    margin-top: 32px;
+  }
+
+  .dir-card {
+    background: var(--blanco);
+    border: 1px solid var(--borde);
+    border-radius: 14px;
+    padding: 22px;
+    text-align: left;
+    border-top: none;
+    box-shadow: 0 14px 34px rgba(7,27,51,0.07);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .dir-card:first-child {
+    grid-row: span 2;
+    background: linear-gradient(160deg, var(--azul-fedec), var(--azul-medio));
+    color: var(--blanco);
+  }
+
+  .dir-card:first-child .dir-nombre,
+  .dir-card:first-child .dir-detalle { color: rgba(255,255,255,0.86); }
+
+  .dir-card:first-child .dir-cargo { color: var(--dorado-claro); }
+
+  .dir-card::after {
+    content: '';
+    position: absolute;
+    right: -40px;
+    top: -40px;
+    width: 110px;
+    height: 110px;
+    border-radius: 50%;
+    background: rgba(226,189,104,0.12);
+  }
+
+  .dir-avatar {
+    width: 52px;
+    height: 52px;
+    background: linear-gradient(135deg, var(--dorado), var(--dorado-claro));
+    border-radius: 14px;
+    margin: 0 0 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Playfair Display', serif;
+    font-size: 18px;
+    color: var(--azul-fedec);
+    font-weight: 600;
+  }
+
+  .dir-cargo {
+    font-size: 10px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--dorado);
+    font-weight: 700;
+    margin-bottom: 4px;
+  }
+
+  .dir-nombre {
+    font-family: 'Playfair Display', serif;
+    font-size: 16px;
+    color: var(--azul-fedec);
+    font-weight: 600;
+    line-height: 1.3;
+  }
+
+  .dir-detalle {
+    font-size: 12px;
+    color: #888;
+    margin-top: 4px;
+  }
+
+  /* ORGANISMOS FEDERADOS */
+  #federados { background: var(--blanco); }
+
+  .search-bar {
+    display: grid;
+    grid-template-columns: minmax(240px, 1fr) 190px 170px;
+    gap: 10px;
+    margin-bottom: 28px;
+    align-items: center;
+  }
+
+  .search-input {
+    flex: 1;
+    border: 1px solid var(--borde);
+    border-radius: 6px;
+    padding: 10px 14px;
+    font-size: 14px;
+    color: var(--gris-texto);
+    background: var(--blanco);
+    font-family: 'Source Sans 3', sans-serif;
+  }
+
+  .search-input:focus { outline: 2px solid var(--azul-medio); border-color: transparent; }
+
+  .search-select {
+    border: 1px solid var(--borde);
+    border-radius: 6px;
+    padding: 10px 14px;
+    font-size: 13px;
+    color: var(--gris-texto);
+    background: var(--blanco);
+    font-family: 'Source Sans 3', sans-serif;
+    cursor: pointer;
+  }
+
+  .inst-filter-meta {
+    font-size: 12px;
+    color: #999;
+    margin: -16px 0 14px;
+  }
+
+  .inst-no-results {
+    display: none;
+    text-align: center;
+    padding: 24px;
+    margin-top: 12px;
+    border: 0.5px dashed var(--borde);
+    border-radius: 8px;
+    color: #999;
+    background: var(--crema);
+    font-style: italic;
+  }
+
+  .instituciones-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 13px;
+    background: var(--blanco);
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: var(--sombra-suave);
+  }
+
+  .instituciones-table thead th {
+    background: var(--azul-fedec);
+    color: var(--blanco);
+    padding: 12px 14px;
+    text-align: left;
+    font-size: 11px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    font-weight: 600;
+  }
+
+  .instituciones-table thead th:first-child { border-radius: 6px 0 0 0; }
+  .instituciones-table thead th:last-child { border-radius: 0 6px 0 0; }
+
+  .instituciones-table tbody tr {
+    border-bottom: 1px solid #eef2f6;
+    transition: background 0.15s;
+  }
+
+  .instituciones-table tbody tr:hover { background: var(--crema); }
+
+  .instituciones-table td {
+    padding: 13px 14px;
+    color: var(--gris-texto);
+  }
+
+  .inst-tipo {
+    display: inline-block;
+    font-size: 10px;
+    padding: 2px 8px;
+    border-radius: 10px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+  }
+
+  .tipo-fiscomisional { background: #e8f0fb; color: #1a4a7a; }
+  .tipo-particular { background: #fef3e0; color: #7a4e1a; }
+
+  /* DOCUMENTOS */
+  #documentos { background: var(--gris-suave); }
+
+  .doc-tabs {
+    display: flex;
+    gap: 4px;
+    margin-bottom: 28px;
+    border-bottom: 2px solid var(--borde);
+    overflow-x: auto;
+  }
+
+  .doc-tab {
+    padding: 10px 20px;
+    border: none;
+    background: transparent;
+    font-family: 'Source Sans 3', sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+    color: #888;
+    cursor: pointer;
+    border-bottom: 3px solid transparent;
+    margin-bottom: -2px;
+    white-space: nowrap;
+    transition: all 0.2s;
+    letter-spacing: 0.3px;
+  }
+
+  .doc-tab.active { color: var(--azul-fedec); border-bottom-color: var(--dorado); }
+  .doc-tab:hover { color: var(--azul-fedec); background: rgba(0,0,0,0.02); }
+
+  .docs-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 16px;
+  }
+
+  .doc-card {
+    background: var(--blanco);
+    border: 1px solid var(--borde);
+    border-radius: 14px;
+    padding: 22px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    transition: all 0.2s;
+    cursor: pointer;
+    box-shadow: 0 10px 26px rgba(7,27,51,0.06);
+  }
+
+  .doc-card:hover {
+    border-color: var(--azul-medio);
+    transform: translateY(-2px);
+    box-shadow: var(--sombra-premium);
+  }
+
+  .doc-header {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+  }
+
+  .doc-icono {
+    width: 40px;
+    height: 48px;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 0.5px;
+    flex-shrink: 0;
+    flex-direction: column;
+    line-height: 1;
+    padding-top: 8px;
+  }
+
+  .doc-icono.acuerdo { background: #fee2e2; color: var(--rojo-doc); border-top: 3px solid var(--rojo-doc); }
+  .doc-icono.instructivo { background: #dcfce7; color: var(--verde-doc); border-top: 3px solid var(--verde-doc); }
+  .doc-icono.normativa { background: #dbeafe; color: var(--azul-doc); border-top: 3px solid var(--azul-doc); }
+  .doc-icono.convenio { background: #fef9c3; color: #7a6a1a; border-top: 3px solid #c8a828; }
+
+  .doc-info { flex: 1; }
+
+  .doc-categoria {
+    font-size: 10px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    font-weight: 700;
+    margin-bottom: 4px;
+  }
+
+  .cat-acuerdo { color: var(--rojo-doc); }
+  .cat-instructivo { color: var(--verde-doc); }
+  .cat-normativa { color: var(--azul-doc); }
+  .cat-convenio { color: #7a6a1a; }
+
+  .doc-titulo {
+    font-family: 'Playfair Display', serif;
+    font-size: 14px;
+    color: var(--azul-fedec);
+    font-weight: 600;
+    line-height: 1.35;
+  }
+
+  .doc-meta {
+    display: flex;
+    gap: 12px;
+    font-size: 11px;
+    color: #999;
+  }
+
+  .doc-badge {
+    font-size: 10px;
+    padding: 3px 8px;
+    border-radius: 4px;
+    font-weight: 600;
+  }
+
+  .badge-vigente { background: #dcfce7; color: #166534; }
+  .badge-derogado { background: #fee2e2; color: #991b1b; }
+  .badge-nuevo { background: #fef9c3; color: #854d0e; }
+
+  .doc-descargar {
+    font-size: 12px;
+    color: var(--azul-medio);
+    font-weight: 600;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    border-top: 0.5px solid var(--borde);
+    padding-top: 10px;
+  }
+
+  /* NOTICIAS / CULTURA */
+  #cultura { background: var(--blanco); }
+
+  .noticias-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 24px;
+  }
+
+  .noticia-principal {
+    background: var(--crema);
+    border-radius: 12px;
+    overflow: hidden;
+    border: 0.5px solid var(--borde);
+  }
+
+  .noticia-img {
+    height: 180px;
+    background: linear-gradient(135deg, var(--azul-fedec), var(--azul-medio));
+    display: flex;
+    align-items: flex-end;
+    padding: 20px;
+  }
+
+  .noticia-tag-over {
+    background: var(--dorado);
+    color: var(--azul-fedec);
+    font-size: 9px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    font-weight: 700;
+    padding: 4px 10px;
+    border-radius: 3px;
+  }
+
+  .noticia-content { padding: 20px; }
+
+  .noticia-fecha { font-size: 11px; color: #999; margin-bottom: 6px; }
+
+  .noticia-titulo {
+    font-family: 'Playfair Display', serif;
+    font-size: 18px;
+    color: var(--azul-fedec);
+    font-weight: 600;
+    line-height: 1.3;
+    margin-bottom: 10px;
+  }
+
+  .noticia-desc { font-size: 13px; color: #666; line-height: 1.6; }
+
+  .noticias-lista {
+    display: grid;
+    gap: 12px;
+    align-content: start;
+  }
+
+  .noticia-mini {
+    background: var(--crema);
+    border: 0.5px solid var(--borde);
+    border-radius: 8px;
+    padding: 14px 16px;
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+
+  .noticia-mini:hover { border-color: var(--dorado); background: #fefdfb; }
+
+  .noticia-mini-cat { font-size: 10px; color: var(--dorado); font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; }
+  .noticia-mini-tit { font-size: 13px; color: var(--azul-fedec); font-weight: 600; margin-top: 2px; line-height: 1.35; }
+  .noticia-mini-fecha { font-size: 11px; color: #bbb; margin-top: 4px; }
+
+  /* FOOTER */
+  footer {
+    background: var(--azul-fedec);
+    color: rgba(255,255,255,0.8);
+    padding: 48px 2rem 28px;
+    border-top: 3px solid var(--dorado);
+  }
+
+  .footer-inner {
+    max-width: 960px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    gap: 48px;
+    margin-bottom: 36px;
+  }
+
+  .footer-brand-name {
+    font-family: 'Playfair Display', serif;
+    font-size: 18px;
+    color: var(--blanco);
+    font-weight: 600;
+    margin-bottom: 4px;
+  }
+
+  .footer-brand-sub { font-size: 11px; color: var(--dorado-claro); letter-spacing: 2px; text-transform: uppercase; margin-bottom: 12px; }
+  .footer-desc { font-size: 13px; line-height: 1.6; }
+
+  .footer-col-title {
+    font-size: 11px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--dorado-claro);
+    font-weight: 700;
+    margin-bottom: 14px;
+  }
+
+  .footer-links { list-style: none; display: grid; gap: 8px; }
+  .footer-links a { color: rgba(255,255,255,0.7); text-decoration: none; font-size: 13px; transition: color 0.2s; }
+  .footer-links a:hover { color: var(--dorado-claro); }
+
+  .footer-bottom {
+    max-width: 960px;
+    margin: 0 auto;
+    padding-top: 20px;
+    border-top: 0.5px solid rgba(255,255,255,0.15);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 11px;
+    color: rgba(255,255,255,0.45);
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  .confedec-badge {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    color: rgba(255,255,255,0.5);
+    font-size: 11px;
+  }
+
+  .confedec-badge span {
+    background: var(--dorado);
+    color: var(--azul-fedec);
+    font-size: 9px;
+    font-weight: 700;
+    padding: 2px 6px;
+    border-radius: 3px;
+  }
+
+  /* RESPONSIVE SIMPLE */
+  /* ESTILO MODERNO TIPO DASHBOARD */
+  :root {
+    --azul-fedec: #071b33;
+    --azul-medio: #163d66;
+    --dorado: #f59e0b;
+    --dorado-claro: #fbbf24;
+    --crema: #f8fafc;
+    --gris-texto: #0f172a;
+    --gris-suave: #f1f5f9;
+    --borde: #e2e8f0;
+    --sombra-premium: 0 20px 44px rgba(15, 23, 42, 0.10);
+    --sombra-suave: 0 8px 22px rgba(15, 23, 42, 0.06);
+  }
+
+  body {
+    background: #f8fafc;
+    color: #0f172a;
+  }
+
+  body::before { display: none; }
+
+  nav {
+    min-height: 80px;
+    padding: 0 1.5rem;
+    background: #071b33;
+    border-bottom: 1px solid rgba(255,255,255,0.10);
+    box-shadow: 0 18px 36px rgba(7,27,51,0.22);
+  }
+
+  .nav-brand {
+    max-width: 1280px;
+  }
+
+  .nav-escudo {
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
+    background: linear-gradient(135deg, #fbbf24, #d97706);
+    font-family: 'Source Sans 3', sans-serif;
+    font-size: 12px;
+    box-shadow: inset 0 1px 0 rgba(255,255,255,0.36), 0 10px 20px rgba(245,158,11,0.24);
+  }
+
+  .nav-title {
+    font-family: 'Source Sans 3', sans-serif;
+    font-size: 20px;
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    text-transform: uppercase;
+  }
+
+  .nav-sub {
+    color: #f59e0b;
+    font-size: 10px;
+    font-weight: 700;
+  }
+
+  .nav-links {
+    gap: 4px;
+  }
+
+  .nav-links a {
+    padding: 9px 14px;
+    border: 0;
+    border-radius: 8px;
+    color: #cbd5e1;
+    font-size: 13px;
+    letter-spacing: 0;
+    text-transform: none;
+    font-weight: 700;
+  }
+
+  .nav-links a:hover {
+    color: #fff;
+    background: rgba(255,255,255,0.10);
+    border-bottom-color: transparent;
+  }
+
+  .nav-links a.active {
+    background: #f59e0b;
+    color: #071b33;
+    box-shadow: 0 12px 26px rgba(245,158,11,0.22);
+  }
+
+  .nav-ico {
+    display: inline-flex;
+    width: 20px;
+    height: 20px;
+    justify-content: center;
+    align-items: center;
+    font-size: 18px;
+    line-height: 1;
+  }
+
+  .nav-ico svg {
+    width: 20px;
+    height: 20px;
+    stroke-width: 2;
+  }
+
+  .hero {
+    min-height: 72vh;
+    padding: 108px 2rem 96px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background:
+      linear-gradient(180deg, rgba(7,27,51,0.35), rgba(7,27,51,0.88)),
+      radial-gradient(circle at 50% 18%, rgba(251,191,36,0.34), transparent 24%),
+      linear-gradient(135deg, #071b33 0%, #0b2745 50%, #123f63 100%);
+  }
+
+  .hero::before {
+    background:
+      linear-gradient(90deg, transparent 0 22%, rgba(255,255,255,0.08) 22% 22.25%, transparent 22.25% 77%, rgba(255,255,255,0.08) 77% 77.25%, transparent 77.25%),
+      linear-gradient(180deg, transparent 0 72%, rgba(255,255,255,0.08) 72% 72.35%, transparent 72.35%),
+      radial-gradient(ellipse at 50% 72%, rgba(255,255,255,0.16), transparent 28%);
+    opacity: 1;
+  }
+
+  .hero::after {
+    display: block;
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 13%;
+    transform: translateX(-50%);
+    width: min(74vw, 980px);
+    height: min(38vw, 380px);
+    border-radius: 32px;
+    background:
+      linear-gradient(90deg, transparent 0 47.8%, rgba(251,191,36,0.95) 47.8% 52.2%, transparent 52.2%),
+      linear-gradient(180deg, transparent 0 29%, rgba(251,191,36,0.92) 29% 38%, transparent 38%),
+      linear-gradient(180deg, transparent 0 58%, rgba(255,255,255,0.12) 58% 59%, transparent 59%),
+      linear-gradient(90deg, transparent 0 18%, rgba(255,255,255,0.10) 18% 18.4%, transparent 18.4% 33%, rgba(255,255,255,0.10) 33% 33.4%, transparent 33.4% 66%, rgba(255,255,255,0.10) 66% 66.4%, transparent 66.4% 82%, rgba(255,255,255,0.10) 82% 82.4%, transparent 82.4%),
+      radial-gradient(circle at 50% 32%, rgba(251,191,36,0.5), transparent 18%),
+      linear-gradient(180deg, rgba(255,255,255,0.09), rgba(255,255,255,0.02));
+    border: 1px solid rgba(255,255,255,0.14);
+    box-shadow: 0 34px 90px rgba(0,0,0,0.28), inset 0 1px rgba(255,255,255,0.12);
+    opacity: 0.42;
+    pointer-events: none;
+  }
+
+  .hero-tag {
+    border-radius: 999px;
+    padding: 7px 16px;
+    background: rgba(245,158,11,0.12);
+    color: #f59e0b;
+    border: 1px solid rgba(245,158,11,0.24);
+    font-size: 12px;
+    letter-spacing: 0.16em;
+  }
+
+  .hero h1 {
+    margin-left: auto;
+    margin-right: auto;
+    font-family: 'Source Sans 3', sans-serif;
+    font-size: clamp(38px, 6vw, 72px);
+    line-height: 0.98;
+    font-weight: 900;
+    letter-spacing: -0.045em;
+    max-width: 860px;
+  }
+
+  .hero h1 em {
+    color: #f59e0b;
+  }
+
+  .hero-desc {
+    margin-left: auto;
+    margin-right: auto;
+    color: #cbd5e1;
+    font-size: clamp(16px, 2vw, 20px);
+    max-width: 720px;
+    line-height: 1.65;
+  }
+
+  .hero-btns {
+    justify-content: center;
+  }
+
+  .btn-primary,
+  .btn-outline {
+    border-radius: 12px;
+    padding: 14px 26px;
+    font-size: 14px;
+    font-weight: 800;
+  }
+
+  .btn-primary {
+    background: #f59e0b;
+    box-shadow: 0 12px 28px rgba(245,158,11,0.24);
+  }
+
+  .btn-primary:hover {
+    background: #fbbf24;
+    transform: translateY(-2px);
+  }
+
+  .btn-outline {
+    background: rgba(255,255,255,0.10);
+    border: 1px solid rgba(255,255,255,0.20);
+    backdrop-filter: blur(8px);
+  }
+
+  section {
+    padding: 72px 1.5rem;
+  }
+
+  .section-inner {
+    max-width: 1280px;
+  }
+
+  #quienes,
+  #estructura,
+  #federados,
+  #documentos,
+  #cultura {
+    background: #f8fafc;
+  }
+
+  #quienes .section-inner,
+  #estructura .section-inner,
+  #federados .section-inner,
+  #documentos .section-inner,
+  #cultura .section-inner {
+    background: transparent;
+    border: 0;
+    border-radius: 0;
+    box-shadow: none;
+    padding: 0;
+    backdrop-filter: none;
+  }
+
+  .section-tag {
+    color: #f59e0b;
+    font-size: 12px;
+    letter-spacing: 0.16em;
+  }
+
+  .section-title {
+    font-family: 'Source Sans 3', sans-serif;
+    font-size: clamp(34px, 4vw, 48px);
+    font-weight: 900;
+    letter-spacing: -0.035em;
+  }
+
+  .section-line {
+    display: none;
+  }
+
+  .mv-card,
+  .dir-card,
+  .doc-card,
+  .noticia-principal,
+  .noticia-mini {
+    border: 1px solid #e2e8f0;
+    border-radius: 24px;
+    background: #fff;
+    box-shadow: var(--sombra-suave);
+  }
+
+  .mv-card {
+    border-left: 0;
+    padding: 28px;
+  }
+
+  .mv-card h4,
+  .dir-nombre,
+  .doc-titulo,
+  .noticia-titulo {
+    font-family: 'Source Sans 3', sans-serif;
+  }
+
+  .objetivos-list li {
+    background: #fff;
+    border: 1px solid #e2e8f0;
+    border-radius: 16px;
+    padding: 14px 16px;
+    box-shadow: 0 6px 18px rgba(15,23,42,0.04);
+  }
+
+  .obj-icon {
+    width: 32px;
+    height: 32px;
+    border-radius: 12px;
+    background: #f8fafc;
+    color: #d97706;
+  }
+
+  .directorio-grid {
+    grid-template-columns: repeat(auto-fit, minmax(245px, 1fr));
+    gap: 24px;
+  }
+
+  .dir-card {
+    min-height: 220px;
+    padding: 26px;
+  }
+
+  .dir-card:first-child {
+    grid-row: auto;
+    background: #fff;
+    color: #0f172a;
+  }
+
+  .dir-card:first-child .dir-nombre { color: #0f172a; }
+  .dir-card:first-child .dir-detalle { color: #64748b; }
+  .dir-card:first-child .dir-cargo { color: #d97706; }
+
+  .dir-avatar {
+    width: 64px;
+    height: 64px;
+    border-radius: 999px;
+    background: #f1f5f9;
+    color: #94a3b8;
+    border: 4px solid #fff;
+    box-shadow: 0 10px 24px rgba(15,23,42,0.10);
+  }
+
+  .dir-cargo {
+    color: #d97706;
+    font-size: 12px;
+    letter-spacing: 0.08em;
+  }
+
+  .dir-nombre {
+    font-size: 20px;
+    color: #1e293b;
+    font-weight: 800;
+  }
+
+  .dir-detalle {
+    color: #64748b;
+  }
+
+  .search-bar {
+    grid-template-columns: minmax(260px, 2fr) 1fr 1fr;
+    background: #fff;
+    border: 1px solid #e2e8f0;
+    border-radius: 24px;
+    padding: 24px;
+    box-shadow: var(--sombra-suave);
+    margin-top: 24px;
+  }
+
+  .search-input,
+  .search-select {
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 14px;
+    padding: 13px 16px;
+    color: #0f172a;
+  }
+
+  .search-input:focus,
+  .search-select:focus {
+    outline: 2px solid rgba(245,158,11,0.35);
+    border-color: #f59e0b;
+  }
+
+  .inst-filter-meta {
+    margin: -10px 0 20px;
+    color: #64748b;
+    font-weight: 700;
+  }
+
+  .instituciones-table {
+    border-radius: 24px;
+    box-shadow: var(--sombra-suave);
+    border: 1px solid #e2e8f0;
+  }
+
+  .instituciones-table thead th {
+    background: #f8fafc;
+    color: #64748b;
+    padding: 16px 18px;
+  }
+
+  .instituciones-table td {
+    padding: 18px;
+  }
+
+  .instituciones-table tbody tr:hover {
+    background: #f8fafc;
+  }
+
+  .inst-tipo {
+    border-radius: 999px;
+    padding: 4px 10px;
+    font-weight: 800;
+  }
+
+  .inst-sub,
+  .inst-contact {
+    color: #64748b;
+    font-size: 13px;
+    line-height: 1.45;
+  }
+
+  .inst-contact {
+    word-break: break-word;
+  }
+
+  .tipo-fiscomisional { background: #d1fae5; color: #047857; }
+  .tipo-particular { background: #dbeafe; color: #1d4ed8; }
+
+  .doc-tabs {
+    border-bottom: 0;
+    gap: 8px;
+    flex-wrap: wrap;
+  }
+
+  .doc-tab {
+    background: #fff;
+    border: 1px solid #e2e8f0;
+    border-radius: 10px;
+    margin-bottom: 0;
+    color: #475569;
+  }
+
+  .doc-tab.active {
+    background: #071b33;
+    border-color: #071b33;
+    color: #fff;
+    box-shadow: 0 12px 26px rgba(7,27,51,0.16);
+  }
+
+  .doc-card {
+    border-radius: 24px;
+    padding: 26px;
+  }
+
+  .doc-icono {
+    width: 48px;
+    height: 48px;
+    border-radius: 14px;
+    border-top: 0 !important;
+  }
+
+  .doc-descargar {
+    justify-content: center;
+    border-top: 0;
+    margin-top: auto;
+    padding: 12px 14px;
+    border-radius: 14px;
+    background: #f8fafc;
+    color: #334155;
+    font-weight: 800;
+  }
+
+  .doc-descargar:hover {
+    background: #f59e0b;
+    color: #fff;
+  }
+
+  .noticia-img {
+    background:
+      linear-gradient(180deg, rgba(7,27,51,0.1), rgba(7,27,51,0.72)),
+      url('https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?auto=format&fit=crop&q=80&w=1200') center/cover;
+  }
+
+  footer {
+    background: #071b33;
+    border-top: 1px solid rgba(255,255,255,0.10);
+  }
+
+  /* LOOK GEMINI / APP */
+  body {
+    background: #fff;
+  }
+
+  nav,
+  .hero,
+  section,
+  footer {
+    margin-left: 24px;
+    margin-right: 24px;
+  }
+
+  nav {
+    margin-top: 24px;
+    border-radius: 24px 24px 0 0;
+    padding: 0 48px;
+  }
+
+  .nav-brand {
+    min-width: 330px;
+  }
+
+  .nav-links {
+    gap: 14px;
+    align-items: center;
+  }
+
+  .nav-links a {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    padding: 13px 22px;
+    font-size: 16px;
+    color: #cbd5e1;
+  }
+
+  .hero {
+    min-height: 540px;
+    border-radius: 0;
+    background: #071b33;
+    box-shadow: inset 0 1px rgba(255,255,255,0.08);
+  }
+
+  .hero-tag {
+    margin-top: -26px;
+    margin-bottom: 48px;
+    background: rgba(245,158,11,0.12);
+    color: #f59e0b;
+    border-color: rgba(245,158,11,0.32);
+    box-shadow: 0 8px 22px rgba(245,158,11,0.14);
+  }
+
+  .hero h1 {
+    max-width: 1040px;
+    font-size: clamp(54px, 6.7vw, 104px);
+    line-height: 1.02;
+    text-shadow: 0 10px 34px rgba(0,0,0,0.28);
+  }
+
+  .hero-desc {
+    max-width: 960px;
+    font-size: clamp(21px, 2vw, 30px);
+    line-height: 1.42;
+    color: #dbeafe;
+    text-shadow: 0 8px 28px rgba(0,0,0,0.22);
+  }
+
+  .btn-primary,
+  .btn-outline {
+    min-width: 280px;
+    padding: 20px 30px;
+    font-size: 22px;
+    border-radius: 14px;
+  }
+
+  .btn-outline {
+    background: #22364d;
+    box-shadow: inset 0 1px rgba(255,255,255,0.16);
+  }
+
+  section {
+    background: #f8fafc !important;
+    padding: 56px 36px;
+  }
+
+  footer {
+    margin-bottom: 24px;
+    border-radius: 0 0 24px 24px;
+  }
+
+  .search-bar {
+    margin-bottom: 28px;
+  }
+
+  .instituciones-table {
+    border-radius: 0;
+    box-shadow: none;
+  }
+
+  .instituciones-table thead th {
+    background: #fff;
+  }
+
+  .instituciones-table td {
+    font-size: 17px;
+  }
+
+  .instituciones-table td:nth-child(2) strong {
+    display: block;
+    color: #071b33;
+    font-size: 24px;
+    line-height: 1.2;
+    margin-bottom: 8px;
+  }
+
+  .instituciones-table tbody tr {
+    background: #fff;
+  }
+
+  .instituciones-table tbody tr:hover {
+    background: #f8fafc;
+  }
+
+  .docs-grid {
+    grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
+    gap: 36px;
+  }
+
+  .doc-card {
+    min-height: 300px;
+    padding: 36px;
+  }
+
+  .doc-titulo {
+    font-size: 26px;
+    line-height: 1.18;
+  }
+
+  .doc-descargar {
+    font-size: 22px;
+    padding: 18px;
+  }
+
+  .contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.1fr;
+    gap: 64px;
+    max-width: 1200px;
+    margin: 0 auto;
+    align-items: start;
+  }
+
+  .contact-lead {
+    font-size: 18px;
+    color: #64748b;
+    max-width: 560px;
+    margin: 22px 0 34px;
+  }
+
+  .contact-list {
+    display: grid;
+    gap: 24px;
+  }
+
+  .contact-item {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+
+  .contact-icon {
+    width: 48px;
+    height: 48px;
+    border-radius: 12px;
+    background: #fff;
+    color: #f59e0b;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 22px;
+    box-shadow: 0 10px 20px rgba(15,23,42,0.10);
+  }
+
+  .contact-label {
+    color: #94a3b8;
+    font-size: 12px;
+    font-weight: 900;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+  }
+
+  .contact-value {
+    color: #071b33;
+    font-weight: 800;
+  }
+
+  .contact-card {
+    background: #fff;
+    border: 1px solid #e2e8f0;
+    border-radius: 24px;
+    padding: 32px;
+    box-shadow: 0 24px 54px rgba(15,23,42,0.12);
+  }
+
+  .contact-card h3 {
+    color: #071b33;
+    font-size: 22px;
+    margin-bottom: 24px;
+  }
+
+  .form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+  }
+
+  .form-field {
+    display: grid;
+    gap: 8px;
+    margin-bottom: 16px;
+  }
+
+  .form-field label {
+    color: #0f172a;
+    font-weight: 900;
+    font-size: 13px;
+  }
+
+  .form-field input,
+  .form-field textarea {
+    width: 100%;
+    border: 1px solid #cbd5e1;
+    background: #f8fafc;
+    border-radius: 12px;
+    padding: 14px 16px;
+    font: inherit;
+    color: #0f172a;
+  }
+
+  .form-field textarea {
+    min-height: 130px;
+    resize: vertical;
+  }
+
+  .form-field input:focus,
+  .form-field textarea:focus {
+    outline: 2px solid rgba(245,158,11,0.32);
+    border-color: #f59e0b;
+  }
+
+  .form-submit {
+    width: 100%;
+    border: 0;
+    border-radius: 12px;
+    background: #f59e0b;
+    color: #071b33;
+    font-weight: 900;
+    padding: 16px;
+    cursor: pointer;
+    font-size: 15px;
+  }
+
+  .form-submit:hover {
+    background: #fbbf24;
+  }
+
+  /* LISTADO DE INSTITUCIONES TIPO REFERENCIA */
+  #federados .instituciones-table {
+    table-layout: fixed;
+    border-collapse: collapse;
+    background: #fff;
+    border: 1px solid #e2e8f0;
+    border-radius: 0;
+    overflow: hidden;
+    box-shadow: none;
+  }
+
+  #federados .instituciones-table thead {
+    display: none;
+  }
+
+  #federados .instituciones-table tbody tr {
+    background: #fff;
+    border-bottom: 1px solid #edf2f7;
+  }
+
+  #federados .instituciones-table tbody tr:hover {
+    background: #f8fafc;
+  }
+
+  #federados .instituciones-table td {
+    padding: 30px 22px;
+    vertical-align: middle;
+  }
+
+  #federados .instituciones-table td:first-child {
+    width: 0;
+    padding: 0;
+    overflow: hidden;
+    color: transparent;
+  }
+
+  #federados .instituciones-table td:nth-child(2) {
+    width: 55%;
+    padding-left: 36px;
+  }
+
+  #federados .instituciones-table td:nth-child(3) {
+    width: 18%;
+    color: #334155;
+    font-size: 18px;
+    font-weight: 700;
+  }
+
+  #federados .instituciones-table td:nth-child(3) .inst-sub {
+    display: none;
+  }
+
+  #federados .instituciones-table td:nth-child(4) {
+    width: 17%;
+  }
+
+  #federados .instituciones-table td:nth-child(5) {
+    width: 10%;
+    text-align: center;
+  }
+
+  #federados .instituciones-table td:nth-child(2) strong {
+    color: #071b33;
+    display: block;
+    font-size: 25px;
+    line-height: 1.18;
+    margin-bottom: 8px;
+  }
+
+  #federados .instituciones-table td:nth-child(2) .inst-sub {
+    color: #64748b;
+    font-size: 16px;
+  }
+
+  #federados .instituciones-table td:nth-child(2) .inst-sub::before {
+    content: '';
+    color: #64748b;
+  }
+
+  #federados .inst-tipo {
+    min-width: 126px;
+    text-align: center;
+    border-radius: 999px;
+    padding: 6px 14px;
+    font-size: 12px;
+    font-weight: 900;
+    text-transform: uppercase;
+  }
+
+  #federados .inst-contact {
+    display: inline-flex;
+    width: 52px;
+    height: 52px;
+    align-items: center;
+    justify-content: center;
+    border-radius: 12px;
+    background: #f1f5f9;
+    color: #071b33;
+    font-size: 0;
+    cursor: pointer;
+    transition: all 0.2s;
+    word-break: normal;
+  }
+
+  #federados .inst-contact::before {
+    content: '\203A';
+    font-size: 36px;
+    line-height: 1;
+    font-weight: 500;
+    transform: translateY(-2px);
+  }
+
+  #federados .inst-contact:hover {
+    background: #071b33;
+    color: #fff;
+  }
+
+  @media (max-width: 640px) {
+    nav,
+    .hero,
+    section,
+    footer {
+      margin-left: 12px;
+      margin-right: 12px;
+    }
+
+    nav {
+      padding: 0 18px;
+      align-items: flex-start;
+      flex-direction: column;
+      gap: 12px;
+      padding-top: 16px;
+      padding-bottom: 16px;
+    }
+
+    .nav-brand {
+      min-width: 0;
+    }
+
+    .nav-links {
+      display: flex;
+      width: 100%;
+      overflow-x: auto;
+      padding-bottom: 4px;
+    }
+
+    .nav-links a {
+      white-space: nowrap;
+      font-size: 14px;
+      padding: 10px 14px;
+    }
+
+    .quienes-grid { grid-template-columns: 1fr; }
+    .directorio-grid { grid-template-columns: 1fr; }
+    .dir-card:first-child { grid-row: auto; }
+    .search-bar { grid-template-columns: 1fr; }
+    #quienes .section-inner,
+    #estructura .section-inner,
+    #federados .section-inner,
+    #documentos .section-inner,
+    #cultura .section-inner { padding: 24px 18px; border-radius: 14px; }
+    .hero { text-align: center; }
+    .hero h1 { font-size: clamp(42px, 14vw, 58px); }
+    .hero-desc { font-size: 18px; }
+    .btn-primary,
+    .btn-outline { min-width: 0; width: 100%; font-size: 17px; }
+    .hero h1,
+    .hero-desc { margin-left: auto; margin-right: auto; }
+    .hero-btns { justify-content: center; }
+    .hero::after { display: none; }
+    .docs-grid { grid-template-columns: 1fr; }
+    .contact-grid,
+    .form-grid { grid-template-columns: 1fr; }
+    #federados .instituciones-table,
+    #federados .instituciones-table tbody,
+    #federados .instituciones-table tr,
+    #federados .instituciones-table td {
+      display: block;
+      width: 100% !important;
+    }
+    #federados .instituciones-table td:first-child {
+      display: none;
+    }
+    #federados .instituciones-table td {
+      padding: 10px 22px;
+    }
+    #federados .instituciones-table td:nth-child(2) {
+      padding-top: 24px;
+    }
+    #federados .instituciones-table td:nth-child(5) {
+      text-align: left;
+      padding-bottom: 24px;
+    }
+    .noticias-grid { grid-template-columns: 1fr; }
+    .footer-inner { grid-template-columns: 1fr; gap: 28px; }
+  }
+
+  /* GUIA DE IDENTIDAD VISUAL FEDEC LOJA */
+  :root {
+    --azul-fedec: #071b33;
+    --azul-medio: #0f2f52;
+    --dorado: #f59e0b;
+    --dorado-claro: #fbbf24;
+    --crema: #f8fafc;
+    --gris-texto: #1e293b;
+    --gris-suave: #f1f5f9;
+    --borde: #e2e8f0;
+    --blanco: #ffffff;
+    --sombra-premium: 0 18px 46px rgba(15, 23, 42, 0.12);
+    --sombra-suave: 0 8px 22px rgba(15, 23, 42, 0.07);
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Geist', 'Inter', 'Segoe UI', sans-serif;
+    background: #f8fafc;
+    color: #1e293b;
+    font-size: 16px;
+    line-height: 1.6;
+  }
+
+  nav {
+    background: rgba(7, 27, 51, 0.96);
+    backdrop-filter: blur(18px);
+    box-shadow: 0 18px 44px rgba(7, 27, 51, 0.22);
+  }
+
+  .nav-title,
+  .section-title,
+  .hero h1,
+  .mv-card h4,
+  .dir-nombre,
+  .doc-titulo,
+  .noticia-titulo,
+  .footer-brand {
+    font-family: 'Geist', 'Inter', 'Segoe UI', sans-serif;
+    letter-spacing: 0;
+  }
+
+  .nav-title { font-weight: 900; }
+
+  .nav-sub,
+  .section-tag,
+  .hero-tag,
+  .contact-label,
+  .doc-cat,
+  .noticia-mini-cat,
+  .dir-cargo {
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
+
+  .nav-links a,
+  .doc-tab,
+  .btn-primary,
+  .btn-outline,
+  .form-submit,
+  .doc-descargar {
+    min-height: 44px;
+  }
+
+  .nav-links a {
+    color: #cbd5e1;
+    border-radius: 8px;
+    font-weight: 800;
+  }
+
+  .nav-links a.active {
+    background: #f59e0b;
+    color: #071b33;
+    box-shadow: 0 12px 28px rgba(245, 158, 11, 0.26);
+  }
+
+  .hero {
+    background:
+      linear-gradient(180deg, rgba(7, 27, 51, 0.26), rgba(7, 27, 51, 0.92)),
+      radial-gradient(circle at 50% 18%, rgba(245, 158, 11, 0.34), transparent 25%),
+      linear-gradient(135deg, #071b33 0%, #0b2745 56%, #123f63 100%);
+  }
+
+  .hero h1 {
+    font-size: 72px;
+    line-height: 1;
+    font-weight: 900;
+  }
+
+  .hero h1 em,
+  .hero-tag,
+  .section-tag,
+  .nav-sub,
+  .dir-cargo {
+    color: #f59e0b;
+  }
+
+  .hero-desc {
+    color: #dbeafe;
+    font-size: 20px;
+  }
+
+  section { background: #f8fafc !important; }
+
+  .section-title {
+    color: #071b33;
+    font-size: 36px;
+    line-height: 1.12;
+    font-weight: 900;
+  }
+
+  .mv-card,
+  .dir-card,
+  .doc-card,
+  .noticia-principal,
+  .noticia-mini,
+  .contact-card,
+  .search-bar,
+  .instituciones-table {
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    background: #ffffff;
+    box-shadow: 0 8px 22px rgba(15, 23, 42, 0.07);
+  }
+
+  .mv-card:hover,
+  .dir-card:hover,
+  .doc-card:hover,
+  .noticia-mini:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 18px 46px rgba(15, 23, 42, 0.12);
+  }
+
+  .search-input,
+  .search-select,
+  .form-field input,
+  .form-field textarea {
+    min-height: 44px;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    background: #f8fafc;
+    color: #1e293b;
+    font-family: inherit;
+  }
+
+  .search-input:focus,
+  .search-select:focus,
+  .form-field input:focus,
+  .form-field textarea:focus {
+    outline: 3px solid rgba(245, 158, 11, 0.28);
+    border-color: #f59e0b;
+  }
+
+  #federados .instituciones-table {
+    border-radius: 8px;
+    border-color: #e2e8f0;
+    box-shadow: 0 8px 22px rgba(15, 23, 42, 0.07);
+  }
+
+  #federados .instituciones-table tbody tr:hover { background: #f8fafc; }
+
+  #federados .instituciones-table td:nth-child(2) strong {
+    color: #071b33;
+    font-size: 25px;
+    letter-spacing: 0;
+  }
+
+  #federados .instituciones-table td:nth-child(2) .inst-sub,
+  .inst-filter-meta { color: #64748b; }
+
+  .tag,
+  .inst-tipo,
+  .tipo-fiscomisional,
+  .tipo-particular {
+    border-radius: 999px;
+    font-size: 12px;
+    font-weight: 900;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+  }
+
+  .type-fiscomisional,
+  .tipo-fiscomisional {
+    background: #d1fae5;
+    color: #047857;
+  }
+
+  .type-particular,
+  .tipo-particular {
+    background: #dbeafe;
+    color: #1d4ed8;
+  }
+
+  #federados .inst-contact {
+    width: 52px;
+    height: 52px;
+    border-radius: 8px;
+    background: #f1f5f9;
+    color: #071b33;
+  }
+
+  #federados .inst-contact:hover {
+    background: #f59e0b;
+    color: #071b33;
+  }
+
+  .doc-tab.active {
+    background: #071b33;
+    border-color: #071b33;
+    color: #ffffff;
+  }
+
+  .doc-descargar,
+  .form-submit,
+  .btn-primary {
+    background: #f59e0b;
+    color: #071b33;
+    font-weight: 900;
+  }
+
+  .doc-descargar:hover,
+  .form-submit:hover,
+  .btn-primary:hover {
+    background: #fbbf24;
+    color: #071b33;
+  }
+
+  footer { background: #071b33; }
+
+  @media (max-width: 900px) {
+    .hero h1 { font-size: 52px; }
+    .section-title { font-size: 32px; }
+  }
+
+  @media (max-width: 640px) {
+    .hero h1 { font-size: 40px; }
+    .hero-desc { font-size: 16px; }
+    .section-title { font-size: 28px; }
+    #federados .instituciones-table td:nth-child(2) strong { font-size: 20px; }
+  }
+
+  /* AJUSTE HEADER + DIRECCION INSTITUCIONES */
+  nav,
+  .hero,
+  section,
+  footer {
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  nav {
+    margin-top: 0;
+    border-radius: 0;
+    min-height: 76px;
+    padding: 0 clamp(20px, 4vw, 56px);
+  }
+
+  .nav-brand {
+    min-width: 300px;
+  }
+
+  .nav-escudo {
+    border-radius: 8px;
+  }
+
+  .nav-links {
+    gap: 6px;
+  }
+
+  .nav-links a {
+    padding: 10px 16px;
+    border-radius: 8px;
+    font-size: 15px;
+  }
+
+  .hero {
+    min-height: 500px;
+    border-radius: 0 0 28px 28px;
+  }
+
+  .hero-tag {
+    margin-top: 0;
+    margin-bottom: 28px;
+  }
+
+  .hero h1 {
+    max-width: 980px;
+    font-size: clamp(44px, 6vw, 72px);
+  }
+
+  .hero-desc {
+    max-width: 760px;
+    font-size: clamp(17px, 1.8vw, 20px);
+  }
+
+  /* HEADER: VITRAL INSTITUCIONAL, SIN LANDSCAPE */
+  .hero {
+    isolation: isolate;
+    background:
+      linear-gradient(90deg, rgba(7, 27, 51, 0.98), rgba(7, 27, 51, 0.88) 58%, rgba(7, 27, 51, 0.78)),
+      radial-gradient(circle at 78% 34%, rgba(245, 158, 11, 0.28), transparent 25%),
+      radial-gradient(circle at 18% 82%, rgba(14, 116, 144, 0.18), transparent 30%),
+      linear-gradient(135deg, #071b33 0%, #0b2745 58%, #123f63 100%);
+  }
+
+  .hero > * {
+    position: relative;
+    z-index: 2;
+  }
+
+  .hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    background:
+      linear-gradient(90deg, transparent 0 12%, rgba(255,255,255,0.045) 12% 12.08%, transparent 12.08% 31%, rgba(255,255,255,0.04) 31% 31.08%, transparent 31.08% 69%, rgba(255,255,255,0.04) 69% 69.08%, transparent 69.08%),
+      radial-gradient(ellipse at 76% 78%, rgba(255,255,255,0.12), transparent 32%),
+      repeating-linear-gradient(135deg, rgba(255,255,255,0.032) 0 1px, transparent 1px 18px);
+    opacity: 0.9;
+  }
+
+  .hero::after {
+    content: '';
+    position: absolute;
+    z-index: 1;
+    right: clamp(28px, 8vw, 130px);
+    top: 50%;
+    transform: translateY(-45%);
+    width: min(31vw, 380px);
+    height: min(42vw, 460px);
+    border-radius: 190px 190px 28px 28px;
+    background:
+      linear-gradient(90deg, transparent 0 47.8%, rgba(245,158,11,0.9) 47.8% 52.2%, transparent 52.2%),
+      linear-gradient(180deg, transparent 0 31%, rgba(245,158,11,0.78) 31% 37%, transparent 37%),
+      radial-gradient(ellipse at 50% 24%, rgba(251,191,36,0.34), transparent 26%),
+      linear-gradient(90deg, transparent 0 23%, rgba(255,255,255,0.10) 23% 23.6%, transparent 23.6% 38%, rgba(255,255,255,0.08) 38% 38.6%, transparent 38.6% 61%, rgba(255,255,255,0.08) 61% 61.6%, transparent 61.6% 76%, rgba(255,255,255,0.10) 76% 76.6%, transparent 76.6%),
+      linear-gradient(180deg, rgba(255,255,255,0.09), rgba(255,255,255,0.015));
+    border: 1px solid rgba(255,255,255,0.16);
+    box-shadow: 0 34px 90px rgba(0,0,0,0.24), inset 0 1px rgba(255,255,255,0.18);
+    opacity: 0.5;
+    pointer-events: none;
+  }
+
+  @media (max-width: 980px) {
+    .hero::after {
+      right: -42px;
+      width: 260px;
+      height: 320px;
+      opacity: 0.22;
+    }
+  }
+
+  /* BANNER EDITORIAL CON COMPOSICION SIMBOLICA */
+  .hero {
+    min-height: 620px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: left;
+    padding: 96px clamp(22px, 6vw, 76px) 132px;
+    border-radius: 0 0 30px 30px;
+  }
+
+  .hero-content {
+    position: relative;
+    z-index: 2;
+    width: min(1180px, 100%);
+    display: grid;
+    grid-template-columns: minmax(0, 1.05fr) minmax(300px, 0.8fr);
+    gap: clamp(36px, 7vw, 92px);
+    align-items: center;
+  }
+
+  .hero-copy {
+    max-width: 680px;
+  }
+
+  .hero-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    margin: 0 0 22px;
+    backdrop-filter: blur(12px);
+  }
+
+  .hero-tag svg {
+    width: 16px;
+    height: 16px;
+    stroke-width: 2;
+  }
+
+  .hero h1 {
+    margin: 0;
+    max-width: 760px;
+    font-size: clamp(44px, 5.6vw, 72px);
+    text-align: left;
+    text-shadow: 0 16px 34px rgba(0, 0, 0, 0.26);
+  }
+
+  .hero-desc {
+    margin: 24px 0 0;
+    max-width: 650px;
+    text-align: left;
+  }
+
+  .hero::before {
+    background:
+      radial-gradient(circle at 82% 36%, rgba(245,158,11,0.22), transparent 22%),
+      radial-gradient(circle at 16% 78%, rgba(14,116,144,0.18), transparent 28%),
+      radial-gradient(rgba(255,255,255,0.08) 1px, transparent 1px);
+    background-size: auto, auto, 22px 22px;
+    opacity: 0.62;
+  }
+
+  .hero::after {
+    display: none;
+  }
+
+  .hero-visual {
+    position: relative;
+    min-height: 390px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .hero-light-field {
+    position: relative;
+    width: min(42vw, 520px);
+    height: min(34vw, 390px);
+    opacity: 0.82;
+  }
+
+  .hero-light-field::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: 42% 58% 54% 46% / 48% 42% 58% 52%;
+    background:
+      radial-gradient(circle at 38% 32%, rgba(255,255,255,0.18), transparent 16%),
+      radial-gradient(circle at 58% 44%, rgba(245,158,11,0.22), transparent 22%),
+      linear-gradient(135deg, rgba(255,255,255,0.10), rgba(255,255,255,0.02));
+    border: 1px solid rgba(255,255,255,0.12);
+    box-shadow: 0 34px 90px rgba(0,0,0,0.18), inset 0 1px rgba(255,255,255,0.16);
+    filter: blur(0.2px);
+  }
+
+  .hero-light-field::after {
+    content: '';
+    position: absolute;
+    inset: 34px 42px;
+    border-radius: 40% 60% 56% 44% / 52% 44% 56% 48%;
+    background:
+      linear-gradient(90deg, transparent 0 49%, rgba(245,158,11,0.52) 49% 51%, transparent 51%),
+      linear-gradient(180deg, transparent 0 42%, rgba(245,158,11,0.42) 42% 46%, transparent 46%),
+      radial-gradient(circle at 50% 44%, rgba(245,158,11,0.24), transparent 28%);
+    opacity: 0.55;
+  }
+
+  .hero-glass {
+    position: relative;
+    width: min(390px, 78vw);
+    height: min(390px, 78vw);
+    border-radius: 999px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background:
+      radial-gradient(circle at 35% 24%, rgba(255,255,255,0.22), transparent 24%),
+      linear-gradient(145deg, rgba(255,255,255,0.16), rgba(255,255,255,0.05));
+    border: 1px solid rgba(255,255,255,0.24);
+    box-shadow: 0 34px 90px rgba(0,0,0,0.28), inset 0 1px rgba(255,255,255,0.26);
+    backdrop-filter: blur(14px);
+  }
+
+  .hero-glass::before {
+    content: '';
+    position: absolute;
+    inset: 34px;
+    border-radius: 999px;
+    border: 1px solid rgba(245,158,11,0.28);
+  }
+
+  .hero-cross {
+    position: absolute;
+    inset: 0;
+    margin: auto;
+    width: 190px;
+    height: 190px;
+    color: rgba(255,255,255,0.07);
+  }
+
+  .hero-main-icon {
+    position: relative;
+    z-index: 2;
+    width: 92px;
+    height: 92px;
+    color: #f59e0b;
+    filter: drop-shadow(0 12px 24px rgba(245,158,11,0.26));
+  }
+
+  .hero-mini-icons {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    gap: 18px;
+    margin-top: 26px;
+    color: #dbeafe;
+  }
+
+  .hero-mini-icons span {
+    width: 32px;
+    height: 32px;
+  }
+
+  .hero-orbit {
+    position: absolute;
+    border-radius: 999px;
+    background: rgba(245,158,11,0.16);
+    border: 1px solid rgba(245,158,11,0.20);
+    box-shadow: 0 14px 34px rgba(0,0,0,0.12);
+  }
+
+  .hero-orbit-one {
+    width: 58px;
+    height: 58px;
+    top: 34px;
+    right: 18%;
+  }
+
+  .hero-orbit-two {
+    width: 36px;
+    height: 36px;
+    bottom: 62px;
+    left: 14%;
+    background: rgba(255,255,255,0.18);
+    border-color: rgba(255,255,255,0.24);
+  }
+
+  .hero-wave {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -1px;
+    height: 82px;
+    z-index: 3;
+    pointer-events: none;
+  }
+
+  .hero-wave svg {
+    display: block;
+    width: 100%;
+    height: 100%;
+  }
+
+  .hero-wave path {
+    fill: #f8fafc;
+  }
+
+  /* LIMPIEZA VISUAL DEL HERO: SIN FIGURAS PROTAGONISTAS */
+  .hero-content {
+    grid-template-columns: minmax(0, 760px) 1fr;
+  }
+
+  .hero-visual,
+  .hero-light-field,
+  .hero-glass,
+  .hero-orbit {
+    display: none;
+  }
+
+  .hero::before {
+    background:
+      radial-gradient(circle at 82% 42%, rgba(245,158,11,0.16), transparent 24%),
+      linear-gradient(115deg, transparent 0 62%, rgba(255,255,255,0.045) 62% 62.12%, transparent 62.12%),
+      radial-gradient(rgba(255,255,255,0.075) 1px, transparent 1px);
+    background-size: auto, auto, 22px 22px;
+    opacity: 0.68;
+  }
+
+  /* DESTELLOS SUTILES DEL HERO */
+  .hero-spark-field {
+    position: relative;
+    min-height: 330px;
+    display: block;
+    overflow: hidden;
+  }
+
+  .hero-spark-field::before {
+    content: '';
+    position: absolute;
+    right: 8%;
+    top: 6%;
+    width: 360px;
+    height: 260px;
+    border-radius: 999px;
+    background: radial-gradient(circle, rgba(245,158,11,0.18), transparent 62%);
+    opacity: 0.62;
+    filter: blur(2px);
+    animation: heroPulse 5.5s ease-in-out infinite;
+  }
+
+  .hero-spark-field::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(circle at 78% 30%, rgba(251,191,36,0.82) 0 2px, transparent 3px),
+      radial-gradient(circle at 91% 55%, rgba(255,255,255,0.52) 0 1.5px, transparent 2.5px),
+      radial-gradient(circle at 64% 64%, rgba(245,158,11,0.60) 0 1.8px, transparent 3px),
+      radial-gradient(circle at 84% 77%, rgba(255,255,255,0.40) 0 1.2px, transparent 2.4px),
+      radial-gradient(circle at 58% 27%, rgba(255,255,255,0.38) 0 1.2px, transparent 2.4px);
+    animation: heroTwinkle 4.8s ease-in-out infinite alternate;
+  }
+
+  @keyframes heroPulse {
+    0%, 100% { opacity: 0.38; transform: scale(0.96); }
+    50% { opacity: 0.68; transform: scale(1.03); }
+  }
+
+  @keyframes heroTwinkle {
+    0% { opacity: 0.34; transform: translateY(0); }
+    100% { opacity: 0.76; transform: translateY(-8px); }
+  }
+
+  .hero-book-mark {
+    position: absolute;
+    right: 7%;
+    top: 50%;
+    transform: translateY(-52%);
+    width: min(34vw, 430px);
+    height: min(28vw, 340px);
+    filter: drop-shadow(0 34px 70px rgba(0,0,0,0.30));
+  }
+
+  .hero-book {
+    position: absolute;
+    left: 50%;
+    top: 52%;
+    width: min(31vw, 360px);
+    height: min(22vw, 250px);
+    transform: translate(-50%, -50%);
+    animation: bookGlow 4.8s ease-in-out infinite;
+  }
+
+  .book-cover {
+    position: absolute;
+    left: 3%;
+    right: 3%;
+    bottom: 11%;
+    height: 68%;
+    border-radius: 20px 20px 30px 30px;
+    background: linear-gradient(180deg, #8b4d24, #4b2818);
+    box-shadow: inset 0 8px rgba(255,255,255,0.10), 0 18px 30px rgba(0,0,0,0.24);
+  }
+
+  .book-page {
+    position: absolute;
+    top: 4%;
+    width: 49%;
+    height: 72%;
+    background: linear-gradient(135deg, #fff8cf, #f7d879 82%);
+    border: 1px solid rgba(255,255,255,0.38);
+    box-shadow: inset 0 -10px 20px rgba(142,82,21,0.12);
+    z-index: 2;
+  }
+
+  .book-left {
+    left: 4%;
+    border-radius: 22px 8px 16px 24px;
+    transform: skewY(3deg);
+    transform-origin: right bottom;
+  }
+
+  .book-right {
+    right: 4%;
+    border-radius: 8px 22px 24px 16px;
+    transform: skewY(-3deg);
+    transform-origin: left bottom;
+  }
+
+  .book-left span,
+  .book-line {
+    position: absolute;
+    left: 17%;
+    right: 14%;
+    height: 6px;
+    border-radius: 999px;
+    background: rgba(217,141,31,0.58);
+  }
+
+  .book-left span:nth-child(1) { top: 18%; }
+  .book-left span:nth-child(2) { top: 30%; }
+  .book-left span:nth-child(3) { top: 42%; }
+  .book-left span:nth-child(4) { top: 54%; }
+  .book-left span:nth-child(5) { top: 66%; }
+  .book-left span:nth-child(6) { top: 78%; }
+
+  .book-cross {
+    position: absolute;
+    left: 50%;
+    top: 32%;
+    width: 60px;
+    height: 84px;
+    transform: translate(-50%, -50%);
+  }
+
+  .book-cross::before,
+  .book-cross::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    border-radius: 999px;
+    background: #d99022;
+    box-shadow: 0 0 22px rgba(245,158,11,0.36);
+  }
+
+  .book-cross::before {
+    width: 12px;
+    height: 82px;
+    transform: translate(-50%, -50%);
+  }
+
+  .book-cross::after {
+    width: 54px;
+    height: 11px;
+    transform: translate(-50%, -68%);
+  }
+
+  .book-line {
+    top: 66%;
+    left: 23%;
+    right: 20%;
+  }
+
+  .book-line.small {
+    top: 77%;
+    left: 28%;
+    right: 25%;
+  }
+
+  .book-spine {
+    position: absolute;
+    left: 46%;
+    right: 46%;
+    bottom: 9%;
+    height: 25%;
+    border-radius: 0 0 20px 20px;
+    background: linear-gradient(180deg, rgba(107,56,26,0.70), rgba(57,30,19,0.95));
+    z-index: 3;
+  }
+
+  .book-stand {
+    position: absolute;
+    left: 30%;
+    right: 30%;
+    bottom: -8%;
+    height: 22%;
+    background: linear-gradient(135deg, #754321, #3d2418);
+    clip-path: polygon(50% 0, 100% 100%, 0 100%);
+    opacity: 0.88;
+  }
+
+  .spark {
+    position: absolute;
+    width: 7px;
+    height: 7px;
+    border-radius: 999px;
+    background: #fbbf24;
+    box-shadow: 0 0 18px rgba(251,191,36,0.95), 0 0 34px rgba(251,191,36,0.45);
+    animation: sparkBlink 2.4s ease-in-out infinite;
+  }
+
+  .spark::before,
+  .spark::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 24px;
+    height: 2px;
+    border-radius: 999px;
+    background: rgba(251,191,36,0.75);
+    transform: translate(-50%, -50%);
+  }
+
+  .spark::after {
+    width: 2px;
+    height: 24px;
+  }
+
+  .s1 { left: 8%; top: 18%; animation-delay: 0s; }
+  .s2 { right: 6%; top: 22%; animation-delay: 0.45s; transform: scale(0.76); }
+  .s3 { left: 18%; bottom: 22%; animation-delay: 1.1s; transform: scale(0.64); }
+  .s4 { right: 18%; bottom: 18%; animation-delay: 1.55s; transform: scale(0.56); }
+  .s5 { left: 46%; top: 5%; animation-delay: 0.9s; transform: scale(0.48); }
+  .s6 { right: 33%; top: 72%; animation-delay: 2s; transform: scale(0.46); }
+
+  @keyframes sparkBlink {
+    0%, 100% { opacity: 0.18; filter: blur(0.8px); }
+    45% { opacity: 1; filter: blur(0); }
+    70% { opacity: 0.45; }
+  }
+
+  @keyframes bookGlow {
+    0%, 100% { filter: brightness(0.95); }
+    50% { filter: brightness(1.08); }
+  }
+
+  /* IDENTIDAD INSTITUCIONAL */
+  #quienes,
+  #quienes p,
+  #quienes li,
+  #quienes h3,
+  #quienes h4 {
+    font-family: 'Geist', 'Inter', 'Segoe UI', sans-serif !important;
+  }
+
+  .mision-vision {
+    gap: 16px;
+  }
+
+  .mv-card {
+    position: relative;
+    padding: 24px 24px 24px 84px;
+    border-left: 0;
+    border-radius: 8px;
+    background: #ffffff;
+  }
+
+  .mv-card::before {
+    content: '';
+    position: absolute;
+    left: 24px;
+    top: 24px;
+    width: 42px;
+    height: 42px;
+    border-radius: 12px;
+    background: #fff7ed;
+    border: 1px solid rgba(245,158,11,0.20);
+  }
+
+  .mv-card::after {
+    position: absolute;
+    left: 34px;
+    top: 34px;
+    width: 22px;
+    height: 22px;
+    color: #f59e0b;
+  }
+
+  .mv-card.mv-mision::after {
+    content: '';
+    background: currentColor;
+    -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M12 13V2l8 4-8 4'/%3E%3Cpath d='M20.55 10.23A9 9 0 1 1 8 3.53'/%3E%3C/svg%3E") center / contain no-repeat;
+    mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M12 13V2l8 4-8 4'/%3E%3Cpath d='M20.55 10.23A9 9 0 1 1 8 3.53'/%3E%3C/svg%3E") center / contain no-repeat;
+  }
+
+  .mv-card.mv-vision::after {
+    content: '';
+    background: currentColor;
+    -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M2.06 12.35a1 1 0 0 1 0-.7 10 10 0 0 1 18.88 0 1 1 0 0 1 0 .7 10 10 0 0 1-18.88 0'/%3E%3Ccircle cx='12' cy='12' r='3'/%3E%3C/svg%3E") center / contain no-repeat;
+    mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M2.06 12.35a1 1 0 0 1 0-.7 10 10 0 0 1 18.88 0 1 1 0 0 1 0 .7 10 10 0 0 1-18.88 0'/%3E%3Ccircle cx='12' cy='12' r='3'/%3E%3C/svg%3E") center / contain no-repeat;
+  }
+
+  .mv-card h4 {
+    font-size: 18px;
+    font-weight: 900;
+    color: #071b33;
+    margin-bottom: 8px;
+  }
+
+  .mv-card p {
+    font-size: 15px;
+    line-height: 1.65;
+    color: #475569;
+  }
+
+  .identidad-subtitle {
+    font-family: 'Geist', 'Inter', 'Segoe UI', sans-serif !important;
+    font-size: 20px !important;
+    color: #071b33 !important;
+    margin-bottom: 16px !important;
+    font-weight: 900 !important;
+    letter-spacing: 0 !important;
+  }
+
+  @media (max-width: 900px) {
+    .hero {
+      min-height: auto;
+      padding: 76px 22px 104px;
+      text-align: center;
+    }
+
+    .hero-content {
+      grid-template-columns: 1fr;
+      gap: 34px;
+    }
+
+    .hero-copy,
+    .hero h1,
+    .hero-desc {
+      max-width: 100%;
+      text-align: center;
+    }
+
+    .hero-tag {
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .hero-spark-field {
+      min-height: 180px;
+    }
+
+    .hero-spark-field::before {
+      right: 50%;
+      top: 8%;
+      transform: translateX(50%);
+      width: 150px;
+      height: 150px;
+      opacity: 0.38;
+    }
+
+    .hero-book-mark {
+      right: 50%;
+      top: 54%;
+      width: 280px;
+      height: 210px;
+      transform: translate(50%, -50%);
+      opacity: 0.72;
+    }
+
+    .hero-book {
+      width: 220px;
+      height: 154px;
+    }
+
+    .book-cross {
+      width: 42px;
+      height: 62px;
+    }
+
+    .book-cross::before {
+      width: 9px;
+      height: 62px;
+    }
+
+    .book-cross::after {
+      width: 40px;
+      height: 8px;
+    }
+
+    .hero-visual {
+      min-height: 250px;
+    }
+
+    .hero-light-field {
+      width: 260px;
+      height: 210px;
+      opacity: 0.34;
+    }
+
+    .hero-glass {
+      width: 240px;
+      height: 240px;
+    }
+
+    .hero-cross {
+      width: 120px;
+      height: 120px;
+    }
+
+    .hero-main-icon {
+      width: 62px;
+      height: 62px;
+    }
+
+    .hero-mini-icons span {
+      width: 24px;
+      height: 24px;
+    }
+  }
+
+  /* REFINAMIENTO: LIBRO EN TRAZO FINO, MAS PREMIUM */
+  .hero-book-mark {
+    width: min(30vw, 390px);
+    height: min(24vw, 300px);
+    opacity: 0.74;
+    filter: drop-shadow(0 0 34px rgba(245,158,11,0.18));
+  }
+
+  .hero-book {
+    width: min(28vw, 330px);
+    height: min(19vw, 230px);
+    filter: none;
+  }
+
+  .book-cover,
+  .book-spine,
+  .book-stand {
+    display: none;
+  }
+
+  .book-page {
+    top: 13%;
+    height: 62%;
+    background: transparent;
+    border: 2px solid rgba(251,191,36,0.50);
+    box-shadow: none;
+  }
+
+  .book-left {
+    left: 5%;
+    border-radius: 30px 8px 12px 30px;
+    border-right: 1px solid rgba(251,191,36,0.22);
+    transform: skewY(3deg) perspective(420px) rotateY(12deg);
+  }
+
+  .book-right {
+    right: 5%;
+    border-radius: 8px 30px 30px 12px;
+    border-left: 1px solid rgba(251,191,36,0.22);
+    transform: skewY(-3deg) perspective(420px) rotateY(-12deg);
+  }
+
+  .book-left span,
+  .book-line {
+    height: 3px;
+    background: rgba(251,191,36,0.44);
+  }
+
+  .book-left span:nth-child(n+5) {
+    display: none;
+  }
+
+  .book-cross {
+    top: 39%;
+    width: 48px;
+    height: 74px;
+  }
+
+  .book-cross::before,
+  .book-cross::after {
+    background: rgba(251,191,36,0.72);
+    box-shadow: 0 0 20px rgba(251,191,36,0.30);
+  }
+
+  .book-cross::before {
+    width: 8px;
+    height: 72px;
+  }
+
+  .book-cross::after {
+    width: 42px;
+    height: 8px;
+    transform: translate(-50%, -72%);
+  }
+
+  .spark {
+    width: 5px;
+    height: 5px;
+    background: #fbbf24;
+  }
+
+  .spark::before,
+  .spark::after {
+    width: 18px;
+    height: 1.5px;
+  }
+
+  .spark::after {
+    width: 1.5px;
+    height: 18px;
+  }
+
+  @media (max-width: 900px) {
+    .hero-book-mark {
+      width: 250px;
+      height: 190px;
+      opacity: 0.48;
+    }
+
+    .hero-book {
+      width: 220px;
+      height: 154px;
+    }
+  }
+
+  /* IMAGEN REAL DE CRUZ CON PARTICULAS DE LUZ */
+  .hero-spark-field {
+    overflow: visible;
+  }
+
+  .hero-cross-image-wrap {
+    position: absolute;
+    right: clamp(72px, 10vw, 150px);
+    top: 50%;
+    width: min(22vw, 285px);
+    aspect-ratio: 1;
+    transform: translateY(-50%);
+    display: grid;
+    place-items: center;
+    filter: drop-shadow(0 24px 60px rgba(0,0,0,0.30));
+  }
+
+  .hero-cross-image-wrap::before {
+    content: '';
+    position: absolute;
+    inset: 4%;
+    border-radius: 999px;
+    background: radial-gradient(circle, rgba(245,158,11,0.24), transparent 62%);
+    filter: blur(12px);
+    animation: crossAura 4.8s ease-in-out infinite;
+  }
+
+  .hero-cross-image {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    mix-blend-mode: normal;
+    filter: drop-shadow(0 0 24px rgba(245,158,11,0.34)) saturate(1.08) contrast(1.04);
+    animation: crossFloat 7s ease-in-out infinite;
+  }
+
+  @keyframes crossAura {
+    0%, 100% { opacity: 0.38; transform: scale(0.94); }
+    50% { opacity: 0.78; transform: scale(1.05); }
+  }
+
+  @keyframes crossFloat {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+  }
+
+  @media (max-width: 900px) {
+    .hero-cross-image-wrap {
+      position: relative;
+      right: auto;
+      top: auto;
+      width: 210px;
+      margin: 0 auto;
+      transform: none;
+      opacity: 0.78;
+    }
+  }
+
+  .inst-address {
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+    max-width: 760px;
+  }
+
+  .inst-location-icon {
+    display: inline-flex;
+    width: 18px;
+    height: 18px;
+    margin-top: 2px;
+    flex: 0 0 18px;
+    color: #f59e0b;
+  }
+
+  .inst-location-icon svg {
+    width: 18px;
+    height: 18px;
+    stroke-width: 2;
+  }
+
+  .contact-icon svg {
+    width: 22px;
+    height: 22px;
+    stroke-width: 2;
+  }
+
+  @media (max-width: 900px) {
+    nav {
+      align-items: flex-start;
+      gap: 12px;
+      padding-top: 14px;
+      padding-bottom: 14px;
+    }
+
+    .nav-brand {
+      min-width: 0;
+    }
+
+    .nav-links {
+      width: 100%;
+      overflow-x: auto;
+      padding-bottom: 4px;
+    }
+
+    .nav-links a {
+      white-space: nowrap;
+      min-width: 44px;
+    }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-brand">
+    <div class="nav-escudo">FL</div>
+    <div>
+      <div class="nav-title">FEDEC Loja</div>
+      <div class="nav-sub">Federación de Establecimientos Católicos</div>
+    </div>
+  </div>
+  <ul class="nav-links">
+    <li><a href="#inicio" class="active"><span class="nav-ico" data-lucide="globe"></span>Inicio</a></li>
+    <li><a href="#federados"><span class="nav-ico" data-lucide="users"></span>Instituciones</a></li>
+    <li><a href="#documentos"><span class="nav-ico" data-lucide="file-text"></span>Documentos</a></li>
+    <li><a href="#estructura"><span class="nav-ico" data-lucide="award"></span>Directiva</a></li>
+    <li><a href="#contacto"><span class="nav-ico" data-lucide="phone"></span>Contacto</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<div class="hero" id="inicio">
+  <div class="hero-content">
+    <div class="hero-copy">
+      <div class="hero-tag"><span data-lucide="sparkles"></span> Educación con valores cristianos</div>
+      <h1>Formando con <em>fe</em>, servicio y excelencia</h1>
+      <p class="hero-desc">FEDEC Loja articula y fortalece a las instituciones educativas católicas de la provincia, promoviendo una formación integral inspirada en el Evangelio.</p>
+    </div>
+    <div class="hero-spark-field" aria-hidden="true">
+      <div class="hero-cross-image-wrap">
+        <img class="hero-cross-image" src="assets/golden-cross-transparent.png" alt="">
+        <i class="spark s1"></i><i class="spark s2"></i><i class="spark s3"></i><i class="spark s4"></i><i class="spark s5"></i><i class="spark s6"></i>
+      </div>
+    </div>
+
+  </div>
+  <div class="hero-wave" aria-hidden="true">
+    <svg viewBox="0 0 1200 120" preserveAspectRatio="none">
+      <path d="M0 80L80 72C160 64 320 48 480 56C640 64 800 96 960 96C1120 96 1200 72 1200 72V120H0Z"></path>
+    </svg>
+  </div>
+</div>
+
+<!-- QUIÉNES SOMOS -->
+<section id="quienes">
+  <div class="section-inner">
+    <div class="section-tag">Identidad institucional</div>
+    <h2 class="section-title">Quiénes somos</h2>
+    <div class="section-line"></div>
+
+    <div class="quienes-grid">
+      <div>
+        <p style="font-size:15px;line-height:1.8;color:#555;margin-bottom:20px;">La <strong>Federación de Establecimientos de Educación Católica de Loja (FEDEC-Loja)</strong> es un organismo de integración provincial que agrupa a las instituciones educativas fiscomisionales confesionales, laicas y particulares católicas de la provincia de Loja.</p>
+        <p style="font-size:15px;line-height:1.8;color:#555;margin-bottom:20px;">Constituida de conformidad con la Ley Orgánica de Educación Intercultural y los Estatutos aprobados el 31 de enero de 2004, actuamos como representante legal y voz institucional ante el Ministerio de Educación, la CONFEDEC, el Obispado de Loja y demás organismos estatales.</p>
+
+        <div class="mision-vision">
+          <div class="mv-card mv-mision">
+            <h4>Misión</h4>
+            <p>Fortalecer la identidad católica y la excelencia educativa en las instituciones federadas, mediante programas de formación integral, mejora continua de recursos educativos y pastorales, y una gestión administrativa eficiente.</p>
+          </div>
+          <div class="mv-card mv-vision">
+            <h4>Visión</h4>
+            <p>Posicionar a la FEDEC Loja como institución referente en el ámbito educativo católico regional, promoviendo una imagen corporativa sólida y una comunicación efectiva con nuestros centros federados.</p>
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <h3 class="identidad-subtitle">Lo que hacemos</h3>
+        <ul class="objetivos-list">
+          <li>
+            <div class="obj-icon">1</div>
+            <span>Gestionar ante el Ministerio de Educación nombramientos, traslados y reconocimiento de funciones directivas de nuestras instituciones.</span>
+          </li>
+          <li>
+            <div class="obj-icon">2</div>
+            <span>Brindar asesoría jurídica, técnica y administrativa a los establecimientos afiliados en coordinación con la CONFEDEC.</span>
+          </li>
+          <li>
+            <div class="obj-icon">3</div>
+            <span>Organizar capacitaciones en gestión educativa, liderazgo, calidad (PEI-Colmena) y formación pastoral.</span>
+          </li>
+          <li>
+            <div class="obj-icon">4</div>
+            <span>Fortalecer alianzas con CONFEDEC, FEDECs, UTPL, UNL, PUCE, Diócesis de Loja y organismos no gubernamentales.</span>
+          </li>
+          <li>
+            <div class="obj-icon">5</div>
+            <span>Defender la autonomía de nuestras instituciones de derecho privado ante las autoridades educativas zonales y distritales.</span>
+          </li>
+          <li>
+            <div class="obj-icon">6</div>
+            <span>Fomentar la integración comunitaria mediante eventos culturales, deportivos y celebraciones del calendario litúrgico.</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ESTRUCTURA -->
+<section id="estructura">
+  <div class="section-inner">
+    <div class="section-tag">Gobierno institucional</div>
+    <h2 class="section-title">Cómo estamos constituidos</h2>
+    <div class="section-line"></div>
+
+    <p style="color:#666;max-width:680px;margin-bottom:8px;font-size:14px;">En Asamblea General realizada el jueves 12 de marzo de 2026 se eligió el Directorio FEDEC Loja para el periodo marzo 2026-marzo 2028. Se presentan las autoridades, coordinadores y delegados principales de representación institucional:</p>
+
+    <div class="directorio-grid">
+      <div class="dir-card">
+        <div class="dir-avatar">NJ</div>
+        <div class="dir-cargo">Presidenta</div>
+        <div class="dir-nombre">Hna. Nancy Jiménez</div>
+        <div class="dir-detalle">Directorio 2026-2028</div>
+      </div>
+      <div class="dir-card">
+        <div class="dir-avatar">LF</div>
+        <div class="dir-cargo">Vicepresidente</div>
+        <div class="dir-nombre">Mgs. Luis Flores</div>
+        <div class="dir-detalle">Directorio 2026-2028</div>
+      </div>
+      <div class="dir-card">
+        <div class="dir-avatar">EN</div>
+        <div class="dir-cargo">Coordinador Dist. 1</div>
+        <div class="dir-nombre">Fray Freddy Sucuzhañay</div>
+        <div class="dir-detalle">Coordinación distrital</div>
+      </div>
+      <div class="dir-card">
+        <div class="dir-avatar">SP</div>
+        <div class="dir-cargo">Coordinador Dist. 3</div>
+        <div class="dir-nombre">Padre Segundo Pardo Rojas</div>
+        <div class="dir-detalle">Coordinación distrital</div>
+      </div>
+      <div class="dir-card">
+        <div class="dir-avatar">EN</div>
+        <div class="dir-cargo">Delegada principal Dist. 1</div>
+        <div class="dir-nombre">Hna. Estela Nieves</div>
+        <div class="dir-detalle">Delegada principal</div>
+      </div>
+      <div class="dir-card">
+        <div class="dir-avatar">MR</div>
+        <div class="dir-cargo">Delegada principal Dist. 2</div>
+        <div class="dir-nombre">Hna. Martha Romero</div>
+        <div class="dir-detalle">Delegada principal</div>
+      </div>
+      <div class="dir-card">
+        <div class="dir-avatar">RC</div>
+        <div class="dir-cargo">Delegada principal Dist. 3</div>
+        <div class="dir-nombre">Lic. Rosa Carrillo</div>
+        <div class="dir-detalle">Delegada principal</div>
+      </div>
+    </div>
+
+    <div style="margin-top:32px;padding:16px 20px;background:var(--blanco);border-radius:8px;border:0.5px solid var(--borde);border-left:4px solid var(--azul-fedec);">
+      <p style="font-size:13px;color:#666;"><strong style="color:var(--azul-fedec);">Asamblea General:</strong> Máxima autoridad de la FEDEC. Presidida por el Presidente de la federación e integrada por todos los Miembros del Directorio y los rectores o directores de los establecimientos afiliados. Sesiona ordinariamente una vez al año.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ORGANISMOS FEDERADOS -->
+<section id="federados">
+  <div class="section-inner">
+    <div class="section-tag">Red de instituciones</div>
+    <h2 class="section-title">Organismos federados</h2>
+    <div class="section-line"></div>
+
+    <div class="search-bar">
+      <input class="search-input" id="inst-busqueda" type="text" placeholder="Buscar institución por nombre o código AMIE..." autocomplete="off">
+      <select class="search-select" id="inst-canton">
+        <option value="">Todos los cantones</option>
+      </select>
+      <select class="search-select" id="inst-tipo">
+        <option value="">Todos los tipos</option>
+        <option value="Fiscomisional">Fiscomisional</option>
+        <option value="Particular">Particular</option>
+      </select>
+    </div>
+
+    <div class="inst-filter-meta" id="inst-filter-meta">Mostrando todas las instituciones registradas.</div>
+
+    <table class="instituciones-table">
+      <thead><tr><th>AMIE / Distrito</th><th>Institución educativa</th><th>Cantón</th><th>Tipo</th><th>Contacto</th></tr></thead>
+      <tbody id="instituciones-body">
+        <tr data-canton="Loja" data-parroquia="Jipiro" data-ubicacion="LOJA- JIPIRO" data-distrito="11D01" data-tipo="Fiscomisional" data-buscar="11H00286 11D01 CEI. PADRE JULIO VILLARROEL Loja Jipiro LOJA- JIPIRO Fiscomisional 2614336 0988346542 aliarte2011@hotmail.com">
+          <td><strong>11H00286</strong><div class="inst-sub">11D01</div></td>
+          <td><strong>CEI. PADRE JULIO VILLARROEL</strong><div class="inst-sub inst-address"><span class="inst-location-icon" data-lucide="map-pin"></span><span>Ubicaci&oacute;n: LOJA- JIPIRO &middot; Parroquia: Jipiro &middot; Distrito: 11D01</span></div></td>
+          <td><strong>Loja</strong><div class="inst-sub">Jipiro</div></td>
+          <td><span class="tag type-fiscomisional">Fiscomisional</span></td>
+          <td><div class="inst-contact" title="Tel. 2614336 | Cel. 0988346542 | aliarte2011@hotmail.com">Tel. 2614336<br>Cel. 0988346542<br>aliarte2011@hotmail.com</div></td>
+        </tr>        <tr data-canton="Loja" data-parroquia="Loja" data-ubicacion="LOJA" data-distrito="11D01" data-tipo="Fiscomisional" data-buscar="11H00213 11D01 CEI. NI&#209;O JES&#218;S Loja Loja LOJA Fiscomisional 2573838 0986180436 estely.nieves@gmail.com">
+          <td><strong>11H00213</strong><div class="inst-sub">11D01</div></td>
+          <td><strong>CEI. NI&#209;O JES&#218;S</strong><div class="inst-sub inst-address"><span class="inst-location-icon" data-lucide="map-pin"></span><span>Ubicaci&oacute;n: LOJA &middot; Parroquia: Loja &middot; Distrito: 11D01</span></div></td>
+          <td><strong>Loja</strong><div class="inst-sub">Loja</div></td>
+          <td><span class="tag type-fiscomisional">Fiscomisional</span></td>
+          <td><div class="inst-contact" title="Tel. 2573838 | Cel. 0986180436 | estely.nieves@gmail.com">Tel. 2573838<br>Cel. 0986180436<br>estely.nieves@gmail.com</div></td>
+        </tr>        <tr data-canton="Loja" data-parroquia="Malacatos" data-ubicacion="MALACATOS" data-distrito="11D01" data-tipo="Fiscomisional" data-buscar="11H00374 11D01 UEFISCOM. MANUEL JOSE RODRIGUEZ Loja Malacatos MALACATOS Fiscomisional 2673177 0994978715 laremache@utpl.edu.ec">
+          <td><strong>11H00374</strong><div class="inst-sub">11D01</div></td>
+          <td><strong>UEFISCOM. MANUEL JOSE RODRIGUEZ</strong><div class="inst-sub inst-address"><span class="inst-location-icon" data-lucide="map-pin"></span><span>Ubicaci&oacute;n: MALACATOS &middot; Parroquia: Malacatos &middot; Distrito: 11D01</span></div></td>
+          <td><strong>Loja</strong><div class="inst-sub">Malacatos</div></td>
+          <td><span class="tag type-fiscomisional">Fiscomisional</span></td>
+          <td><div class="inst-contact" title="Tel. 2673177 | Cel. 0994978715 | laremache@utpl.edu.ec">Tel. 2673177<br>Cel. 0994978715<br>laremache@utpl.edu.ec</div></td>
+        </tr>        <tr data-canton="Loja" data-parroquia="Chuquiribamba" data-ubicacion="CHUQUIRIBAMBA" data-distrito="11D01" data-tipo="Fiscomisional" data-buscar="11H00310 11D01 UEFISCOM. SAN VICENTE FERRER Loja Chuquiribamba CHUQUIRIBAMBA Fiscomisional 2719026 0993904178 lidajumbo@yahoo.es">
+          <td><strong>11H00310</strong><div class="inst-sub">11D01</div></td>
+          <td><strong>UEFISCOM. SAN VICENTE FERRER</strong><div class="inst-sub inst-address"><span class="inst-location-icon" data-lucide="map-pin"></span><span>Ubicaci&oacute;n: CHUQUIRIBAMBA &middot; Parroquia: Chuquiribamba &middot; Distrito: 11D01</span></div></td>
+          <td><strong>Loja</strong><div class="inst-sub">Chuquiribamba</div></td>
+          <td><span class="tag type-fiscomisional">Fiscomisional</span></td>
+          <td><div class="inst-contact" title="Tel. 2719026 | Cel. 0993904178 | lidajumbo@yahoo.es">Tel. 2719026<br>Cel. 0993904178<br>lidajumbo@yahoo.es</div></td>
+        </tr>        <tr data-canton="Loja" data-parroquia="Loja" data-ubicacion="LOJA" data-distrito="11D01" data-tipo="Fiscomisional" data-buscar="11H01839 11D01 UEFISCOM. MERCEDES DE JESUS MOLINA Loja Loja LOJA Fiscomisional 2570517 0992705755 lidiespesol77@gmail.com">
+          <td><strong>11H01839</strong><div class="inst-sub">11D01</div></td>
+          <td><strong>UEFISCOM. MERCEDES DE JESUS MOLINA</strong><div class="inst-sub inst-address"><span class="inst-location-icon" data-lucide="map-pin"></span><span>Ubicaci&oacute;n: LOJA &middot; Parroquia: Loja &middot; Distrito: 11D01</span></div></td>
+          <td><strong>Loja</strong><div class="inst-sub">Loja</div></td>
+          <td><span class="tag type-fiscomisional">Fiscomisional</span></td>
+          <td><div class="inst-contact" title="Tel. 2570517 | Cel. 0992705755 | lidiespesol77@gmail.com">Tel. 2570517<br>Cel. 0992705755<br>lidiespesol77@gmail.com</div></td>
+        </tr>        <tr data-canton="Loja" data-parroquia="Loja" data-ubicacion="LOJA" data-distrito="11D01" data-tipo="Particular" data-buscar="11H00013 11D01 UEP. SANTA MARIANA DE JESUS Loja Loja LOJA Particular 2570517- 2572538 0991577184 caalespe2010@hotmail.com">
+          <td><strong>11H00013</strong><div class="inst-sub">11D01</div></td>
+          <td><strong>UEP. SANTA MARIANA DE JESUS</strong><div class="inst-sub inst-address"><span class="inst-location-icon" data-lucide="map-pin"></span><span>Ubicaci&oacute;n: LOJA &middot; Parroquia: Loja &middot; Distrito: 11D01</span></div></td>
+          <td><strong>Loja</strong><div class="inst-sub">Loja</div></td>
+          <td><span class="tag type-particular">Particular</span></td>
+          <td><div class="inst-contact" title="Tel. 2570517- 2572538 | Cel. 0991577184 | caalespe2010@hotmail.com">Tel. 2570517- 2572538<br>Cel. 0991577184<br>caalespe2010@hotmail.com</div></td>
+        </tr>        <tr data-canton="Loja" data-parroquia="Loja" data-ubicacion="LOJA" data-distrito="11D01" data-tipo="Particular" data-buscar="11H00005 11D01 SAN JUAN BAUTISTA LA SALLE Loja Loja LOJA Particular 2570431- 2581808 0991475637 rectorlojam@lasalle.edu.ec">
+          <td><strong>11H00005</strong><div class="inst-sub">11D01</div></td>
+          <td><strong>SAN JUAN BAUTISTA LA SALLE</strong><div class="inst-sub inst-address"><span class="inst-location-icon" data-lucide="map-pin"></span><span>Ubicaci&oacute;n: LOJA &middot; Parroquia: Loja &middot; Distrito: 11D01</span></div></td>
+          <td><strong>Loja</strong><div class="inst-sub">Loja</div></td>
+          <td><span class="tag type-particular">Particular</span></td>
+          <td><div class="inst-contact" title="Tel. 2570431- 2581808 | Cel. 0991475637 | rectorlojam@lasalle.edu.ec">Tel. 2570431- 2581808<br>Cel. 0991475637<br>rectorlojam@lasalle.edu.ec</div></td>
+        </tr>        <tr data-canton="Loja" data-parroquia="Loja" data-ubicacion="LOJA" data-distrito="11D01" data-tipo="Particular" data-buscar="11H00014 11D01 UEP. JOSE ANTONIO EGUIGUREN - LA SALLE Loja Loja LOJA Particular 2570431- 2581808 0991475637 ">
+          <td><strong>11H00014</strong><div class="inst-sub">11D01</div></td>
+          <td><strong>UEP. JOSE ANTONIO EGUIGUREN - LA SALLE</strong><div class="inst-sub inst-address"><span class="inst-location-icon" data-lucide="map-pin"></span><span>Ubicaci&oacute;n: LOJA &middot; Parroquia: Loja &middot; Distrito: 11D01</span></div></td>
+          <td><strong>Loja</strong><div class="inst-sub">Loja</div></td>
+          <td><span class="tag type-particular">Particular</span></td>
+          <td><div class="inst-contact" title="Tel. 2570431- 2581808 | Cel. 0991475637">Tel. 2570431- 2581808<br>Cel. 0991475637</div></td>
+        </tr>        <tr data-canton="Loja" data-parroquia="Loja" data-ubicacion="LOJA" data-distrito="11D01" data-tipo="Fiscomisional" data-buscar="11H00034 11D01 UEFISCOM. LA DOLOROSA Loja Loja LOJA Fiscomisional 2574870-2574415 0994896523 alci2667@hotmail.com">
+          <td><strong>11H00034</strong><div class="inst-sub">11D01</div></td>
+          <td><strong>UEFISCOM. LA DOLOROSA</strong><div class="inst-sub inst-address"><span class="inst-location-icon" data-lucide="map-pin"></span><span>Ubicaci&oacute;n: LOJA &middot; Parroquia: Loja &middot; Distrito: 11D01</span></div></td>
+          <td><strong>Loja</strong><div class="inst-sub">Loja</div></td>
+          <td><span class="tag type-fiscomisional">Fiscomisional</span></td>
+          <td><div class="inst-contact" title="Tel. 2574870-2574415 | Cel. 0994896523 | alci2667@hotmail.com">Tel. 2574870-2574415<br>Cel. 0994896523<br>alci2667@hotmail.com</div></td>
+        </tr>        <tr data-canton="Loja" data-parroquia="Loja" data-ubicacion="LOJA" data-distrito="11D01" data-tipo="Fiscomisional" data-buscar="11H00015 11D01 UEFISCOM. SAN FRANCISCO DE ASIS Loja Loja LOJA Fiscomisional 2571854- 2563252- 0969970817 rectorado@uefsfaloja.edu.ec">
+          <td><strong>11H00015</strong><div class="inst-sub">11D01</div></td>
+          <td><strong>UEFISCOM. SAN FRANCISCO DE ASIS</strong><div class="inst-sub inst-address"><span class="inst-location-icon" data-lucide="map-pin"></span><span>Ubicaci&oacute;n: LOJA &middot; Parroquia: Loja &middot; Distrito: 11D01</span></div></td>
+          <td><strong>Loja</strong><div class="inst-sub">Loja</div></td>
+          <td><span class="tag type-fiscomisional">Fiscomisional</span></td>
+          <td><div class="inst-contact" title="Tel. 2571854- 2563252- | Cel. 0969970817 | rectorado@uefsfaloja.edu.ec">Tel. 2571854- 2563252-<br>Cel. 0969970817<br>rectorado@uefsfaloja.edu.ec</div></td>
+        </tr>        <tr data-canton="Loja" data-parroquia="Loja" data-ubicacion="LOJA" data-distrito="11D01" data-tipo="Particular" data-buscar="11H00016 11D01 UEP. LA PORCI&#218;NCULA Loja Loja LOJA Particular 2570511 0989593189 rectorado@laporciuncula.edu.ec">
+          <td><strong>11H00016</strong><div class="inst-sub">11D01</div></td>
+          <td><strong>UEP. LA PORCI&#218;NCULA</strong><div class="inst-sub inst-address"><span class="inst-location-icon" data-lucide="map-pin"></span><span>Ubicaci&oacute;n: LOJA &middot; Parroquia: Loja &middot; Distrito: 11D01</span></div></td>
+          <td><strong>Loja</strong><div class="inst-sub">Loja</div></td>
+          <td><span class="tag type-particular">Particular</span></td>
+          <td><div class="inst-contact" title="Tel. 2570511 | Cel. 0989593189 | rectorado@laporciuncula.edu.ec">Tel. 2570511<br>Cel. 0989593189<br>rectorado@laporciuncula.edu.ec</div></td>
+        </tr>        <tr data-canton="Loja" data-parroquia="Loja" data-ubicacion="LOJA" data-distrito="11D01" data-tipo="Fiscomisional" data-buscar="11H00287 11D01 UEFISCOM. DANIEL ALVAREZ BURNEO Loja Loja LOJA Fiscomisional 2570530-2570034 0999400290 fer8886@hotmail.com">
+          <td><strong>11H00287</strong><div class="inst-sub">11D01</div></td>
+          <td><strong>UEFISCOM. DANIEL ALVAREZ BURNEO</strong><div class="inst-sub inst-address"><span class="inst-location-icon" data-lucide="map-pin"></span><span>Ubicaci&oacute;n: LOJA &middot; Parroquia: Loja &middot; Distrito: 11D01</span></div></td>
+          <td><strong>Loja</strong><div class="inst-sub">Loja</div></td>
+          <td><span class="tag type-fiscomisional">Fiscomisional</span></td>
+          <td><div class="inst-contact" title="Tel. 2570530-2570034 | Cel. 0999400290 | fer8886@hotmail.com">Tel. 2570530-2570034<br>Cel. 0999400290<br>fer8886@hotmail.com</div></td>
+        </tr>        <tr data-canton="Loja" data-parroquia="Loja" data-ubicacion="LOJA" data-distrito="11D01" data-tipo="Fiscomisional" data-buscar="11H00041 11D01 UEFPCEI. HNO. ANGEL PASTRANA Loja Loja LOJA Fiscomisional 2575503-2589591 0991844759 sa.ray@hotmail.com">
+          <td><strong>11H00041</strong><div class="inst-sub">11D01</div></td>
+          <td><strong>UEFPCEI. HNO. ANGEL PASTRANA</strong><div class="inst-sub inst-address"><span class="inst-location-icon" data-lucide="map-pin"></span><span>Ubicaci&oacute;n: LOJA &middot; Parroquia: Loja &middot; Distrito: 11D01</span></div></td>
+          <td><strong>Loja</strong><div class="inst-sub">Loja</div></td>
+          <td><span class="tag type-fiscomisional">Fiscomisional</span></td>
+          <td><div class="inst-contact" title="Tel. 2575503-2589591 | Cel. 0991844759 | sa.ray@hotmail.com">Tel. 2575503-2589591<br>Cel. 0991844759<br>sa.ray@hotmail.com</div></td>
+        </tr>        <tr data-canton="Loja" data-parroquia="Loja" data-ubicacion="LOJA" data-distrito="11D01" data-tipo="Fiscomisional" data-buscar="11H00280 11D01 UEFISCOM. CALASANZ Loja Loja LOJA Fiscomisional 2613750-2613714 0998779003 asdrubalmunoz@calasanzloja.edu.ec">
+          <td><strong>11H00280</strong><div class="inst-sub">11D01</div></td>
+          <td><strong>UEFISCOM. CALASANZ</strong><div class="inst-sub inst-address"><span class="inst-location-icon" data-lucide="map-pin"></span><span>Ubicaci&oacute;n: LOJA &middot; Parroquia: Loja &middot; Distrito: 11D01</span></div></td>
+          <td><strong>Loja</strong><div class="inst-sub">Loja</div></td>
+          <td><span class="tag type-fiscomisional">Fiscomisional</span></td>
+          <td><div class="inst-contact" title="Tel. 2613750-2613714 | Cel. 0998779003 | asdrubalmunoz@calasanzloja.edu.ec">Tel. 2613750-2613714<br>Cel. 0998779003<br>asdrubalmunoz@calasanzloja.edu.ec</div></td>
+        </tr>        <tr data-canton="Loja" data-parroquia="Loja" data-ubicacion="LOJA" data-distrito="11D01" data-tipo="Fiscomisional" data-buscar="11H00011 11D01 UEFISCOM.LA INMACULADA Loja Loja LOJA Fiscomisional 2570461- 2572617 0939754907 rcescobar6@gmail.com">
+          <td><strong>11H00011</strong><div class="inst-sub">11D01</div></td>
+          <td><strong>UEFISCOM.LA INMACULADA</strong><div class="inst-sub inst-address"><span class="inst-location-icon" data-lucide="map-pin"></span><span>Ubicaci&oacute;n: LOJA &middot; Parroquia: Loja &middot; Distrito: 11D01</span></div></td>
+          <td><strong>Loja</strong><div class="inst-sub">Loja</div></td>
+          <td><span class="tag type-fiscomisional">Fiscomisional</span></td>
+          <td><div class="inst-contact" title="Tel. 2570461- 2572617 | Cel. 0939754907 | rcescobar6@gmail.com">Tel. 2570461- 2572617<br>Cel. 0939754907<br>rcescobar6@gmail.com</div></td>
+        </tr>        <tr data-canton="Loja" data-parroquia="Loja" data-ubicacion="LOJA" data-distrito="11D01" data-tipo="Fiscomisional" data-buscar="11H00220 11D01 UEFISCOM. EDUCARE Loja Loja LOJA Fiscomisional 2614626- 368189 09944512062 educare11h00220@gmail.com">
+          <td><strong>11H00220</strong><div class="inst-sub">11D01</div></td>
+          <td><strong>UEFISCOM. EDUCARE</strong><div class="inst-sub inst-address"><span class="inst-location-icon" data-lucide="map-pin"></span><span>Ubicaci&oacute;n: LOJA &middot; Parroquia: Loja &middot; Distrito: 11D01</span></div></td>
+          <td><strong>Loja</strong><div class="inst-sub">Loja</div></td>
+          <td><span class="tag type-fiscomisional">Fiscomisional</span></td>
+          <td><div class="inst-contact" title="Tel. 2614626- 368189 | Cel. 09944512062 | educare11h00220@gmail.com">Tel. 2614626- 368189<br>Cel. 09944512062<br>educare11h00220@gmail.com</div></td>
+        </tr>        <tr data-canton="Loja" data-parroquia="El Cisne" data-ubicacion="EL CISNE" data-distrito="11D01" data-tipo="Fiscomisional" data-buscar="11H00322 11D01 UEFISCOM.CORAZ&#211;N DE MAR&#205;A Loja El Cisne EL CISNE Fiscomisional 2106137 0981041605 galapagos1955@yahoo.es">
+          <td><strong>11H00322</strong><div class="inst-sub">11D01</div></td>
+          <td><strong>UEFISCOM.CORAZ&#211;N DE MAR&#205;A</strong><div class="inst-sub inst-address"><span class="inst-location-icon" data-lucide="map-pin"></span><span>Ubicaci&oacute;n: EL CISNE &middot; Parroquia: El Cisne &middot; Distrito: 11D01</span></div></td>
+          <td><strong>Loja</strong><div class="inst-sub">El Cisne</div></td>
+          <td><span class="tag type-fiscomisional">Fiscomisional</span></td>
+          <td><div class="inst-contact" title="Tel. 2106137 | Cel. 0981041605 | galapagos1955@yahoo.es">Tel. 2106137<br>Cel. 0981041605<br>galapagos1955@yahoo.es</div></td>
+        </tr>        <tr data-canton="Loja" data-parroquia="Loja" data-ubicacion="LOJA" data-distrito="11D01" data-tipo="Fiscomisional" data-buscar="11H00076 11D01 E.E.B. FISCOM. EDUVIGES PORTALET Loja Loja LOJA Fiscomisional 2571695 0999399723 escuela2eduviges@hotmail.com">
+          <td><strong>11H00076</strong><div class="inst-sub">11D01</div></td>
+          <td><strong>E.E.B. FISCOM. EDUVIGES PORTALET</strong><div class="inst-sub inst-address"><span class="inst-location-icon" data-lucide="map-pin"></span><span>Ubicaci&oacute;n: LOJA &middot; Parroquia: Loja &middot; Distrito: 11D01</span></div></td>
+          <td><strong>Loja</strong><div class="inst-sub">Loja</div></td>
+          <td><span class="tag type-fiscomisional">Fiscomisional</span></td>
+          <td><div class="inst-contact" title="Tel. 2571695 | Cel. 0999399723 | escuela2eduviges@hotmail.com">Tel. 2571695<br>Cel. 0999399723<br>escuela2eduviges@hotmail.com</div></td>
+        </tr>        <tr data-canton="Loja" data-parroquia="Loja" data-ubicacion="LOJA" data-distrito="11D01" data-tipo="Fiscomisional" data-buscar="11H00079 11D01 UEFISCOM. MATER DEI Loja Loja LOJA Fiscomisional 2110237-2110220 0919411124 escalantec@operamaterdei.org">
+          <td><strong>11H00079</strong><div class="inst-sub">11D01</div></td>
+          <td><strong>UEFISCOM. MATER DEI</strong><div class="inst-sub inst-address"><span class="inst-location-icon" data-lucide="map-pin"></span><span>Ubicaci&oacute;n: LOJA &middot; Parroquia: Loja &middot; Distrito: 11D01</span></div></td>
+          <td><strong>Loja</strong><div class="inst-sub">Loja</div></td>
+          <td><span class="tag type-fiscomisional">Fiscomisional</span></td>
+          <td><div class="inst-contact" title="Tel. 2110237-2110220 | Cel. 0919411124 | escalantec@operamaterdei.org">Tel. 2110237-2110220<br>Cel. 0919411124<br>escalantec@operamaterdei.org</div></td>
+        </tr>        <tr data-canton="Loja" data-parroquia="Loja" data-ubicacion="LOJA" data-distrito="11D01" data-tipo="Fiscomisional" data-buscar="11H00017 11D01 U.E.P.MIGUEL &#193;NGEL SU&#193;REZ Loja Loja LOJA Fiscomisional 2579305- 2572609- 0981719635 hmakucd@gmail.com">
+          <td><strong>11H00017</strong><div class="inst-sub">11D01</div></td>
+          <td><strong>U.E.P.MIGUEL &#193;NGEL SU&#193;REZ</strong><div class="inst-sub inst-address"><span class="inst-location-icon" data-lucide="map-pin"></span><span>Ubicaci&oacute;n: LOJA &middot; Parroquia: Loja &middot; Distrito: 11D01</span></div></td>
+          <td><strong>Loja</strong><div class="inst-sub">Loja</div></td>
+          <td><span class="tag type-fiscomisional">Fiscomisional</span></td>
+          <td><div class="inst-contact" title="Tel. 2579305- 2572609- | Cel. 0981719635 | hmakucd@gmail.com">Tel. 2579305- 2572609-<br>Cel. 0981719635<br>hmakucd@gmail.com</div></td>
+        </tr>        <tr data-canton="Loja" data-parroquia="Loja" data-ubicacion="LOJA" data-distrito="11D01" data-tipo="Fiscomisional" data-buscar="11h00239 11D01 COL. PART.MIGUEL &#193;NGEL SU&#193;REZ Loja Loja LOJA Fiscomisional 2711240 0981719635 hmakucd@gmail.com">
+          <td><strong>11h00239</strong><div class="inst-sub">11D01</div></td>
+          <td><strong>COL. PART.MIGUEL &#193;NGEL SU&#193;REZ</strong><div class="inst-sub inst-address"><span class="inst-location-icon" data-lucide="map-pin"></span><span>Ubicaci&oacute;n: LOJA &middot; Parroquia: Loja &middot; Distrito: 11D01</span></div></td>
+          <td><strong>Loja</strong><div class="inst-sub">Loja</div></td>
+          <td><span class="tag type-fiscomisional">Fiscomisional</span></td>
+          <td><div class="inst-contact" title="Tel. 2711240 | Cel. 0981719635 | hmakucd@gmail.com">Tel. 2711240<br>Cel. 0981719635<br>hmakucd@gmail.com</div></td>
+        </tr>        <tr data-canton="Catamayo" data-parroquia="San Pedro de la Bendita" data-ubicacion="SAN PEDRO DE LA BENDITA" data-distrito="11D02" data-tipo="Fiscomisional" data-buscar="11H00705 11D02 E.E.B. FISCOM. SAN VICENTE FERRER Catamayo San Pedro de la Bendita SAN PEDRO DE LA BENDITA Fiscomisional 2569190 0994701784 carlos.yauri@educacion.gob.ec">
+          <td><strong>11H00705</strong><div class="inst-sub">11D02</div></td>
+          <td><strong>E.E.B. FISCOM. SAN VICENTE FERRER</strong><div class="inst-sub inst-address"><span class="inst-location-icon" data-lucide="map-pin"></span><span>Ubicaci&oacute;n: SAN PEDRO DE LA BENDITA &middot; Parroquia: San Pedro de la Bendita &middot; Distrito: 11D02</span></div></td>
+          <td><strong>Catamayo</strong><div class="inst-sub">San Pedro de la Bendita</div></td>
+          <td><span class="tag type-fiscomisional">Fiscomisional</span></td>
+          <td><div class="inst-contact" title="Tel. 2569190 | Cel. 0994701784 | carlos.yauri@educacion.gob.ec">Tel. 2569190<br>Cel. 0994701784<br>carlos.yauri@educacion.gob.ec</div></td>
+        </tr>        <tr data-canton="Catamayo" data-parroquia="Trapichillo" data-ubicacion="TRAPICHILLO" data-distrito="11D02" data-tipo="Fiscomisional" data-buscar="11H00639 11D02 UEFISCOM. JULIO MAR&#205;A MATOVELLE Catamayo Trapichillo TRAPICHILLO Fiscomisional 2556290 0983962421 bertyvc@gmail.com">
+          <td><strong>11H00639</strong><div class="inst-sub">11D02</div></td>
+          <td><strong>UEFISCOM. JULIO MAR&#205;A MATOVELLE</strong><div class="inst-sub inst-address"><span class="inst-location-icon" data-lucide="map-pin"></span><span>Ubicaci&oacute;n: TRAPICHILLO &middot; Parroquia: Trapichillo &middot; Distrito: 11D02</span></div></td>
+          <td><strong>Catamayo</strong><div class="inst-sub">Trapichillo</div></td>
+          <td><span class="tag type-fiscomisional">Fiscomisional</span></td>
+          <td><div class="inst-contact" title="Tel. 2556290 | Cel. 0983962421 | bertyvc@gmail.com">Tel. 2556290<br>Cel. 0983962421<br>bertyvc@gmail.com</div></td>
+        </tr>        <tr data-canton="Loja" data-parroquia="San Lucas" data-ubicacion="SAN LUCAS" data-distrito="11D01" data-tipo="Fiscomisional" data-buscar="11B00071 11D01 UEFISCOM. SANTA CATALINA Loja San Lucas SAN LUCAS Fiscomisional 3029601 0983472460 dignaclemencia69@gmail.com">
+          <td><strong>11B00071</strong><div class="inst-sub">11D01</div></td>
+          <td><strong>UEFISCOM. SANTA CATALINA</strong><div class="inst-sub inst-address"><span class="inst-location-icon" data-lucide="map-pin"></span><span>Ubicaci&oacute;n: SAN LUCAS &middot; Parroquia: San Lucas &middot; Distrito: 11D01</span></div></td>
+          <td><strong>Loja</strong><div class="inst-sub">San Lucas</div></td>
+          <td><span class="tag type-fiscomisional">Fiscomisional</span></td>
+          <td><div class="inst-contact" title="Tel. 3029601 | Cel. 0983472460 | dignaclemencia69@gmail.com">Tel. 3029601<br>Cel. 0983472460<br>dignaclemencia69@gmail.com</div></td>
+        </tr>        <tr data-canton="Catamayo" data-parroquia="Catamayo" data-ubicacion="CATAMAYO" data-distrito="11D02" data-tipo="Fiscomisional" data-buscar="11H00660 11D02 UEFISCOM. NUESTRA SE&#209;ORA DEL ROSARIO Catamayo Catamayo CATAMAYO Fiscomisional 2677024- 2677929 0981401295 hidalgo_7512@hotmail.com">
+          <td><strong>11H00660</strong><div class="inst-sub">11D02</div></td>
+          <td><strong>UEFISCOM. NUESTRA SE&#209;ORA DEL ROSARIO</strong><div class="inst-sub inst-address"><span class="inst-location-icon" data-lucide="map-pin"></span><span>Ubicaci&oacute;n: CATAMAYO &middot; Parroquia: Catamayo &middot; Distrito: 11D02</span></div></td>
+          <td><strong>Catamayo</strong><div class="inst-sub">Catamayo</div></td>
+          <td><span class="tag type-fiscomisional">Fiscomisional</span></td>
+          <td><div class="inst-contact" title="Tel. 2677024- 2677929 | Cel. 0981401295 | hidalgo_7512@hotmail.com">Tel. 2677024- 2677929<br>Cel. 0981401295<br>hidalgo_7512@hotmail.com</div></td>
+        </tr>        <tr data-canton="Catamayo" data-parroquia="Catamayo" data-ubicacion="CATAMAYO" data-distrito="11D02" data-tipo="Fiscomisional" data-buscar="11H00649 11D02 UEFISCOM. SAN JUAN BAUTISTA Catamayo Catamayo CATAMAYO Fiscomisional 2558198- 2555221- 986577980 luis.aguilarf@educacion.gob.ec">
+          <td><strong>11H00649</strong><div class="inst-sub">11D02</div></td>
+          <td><strong>UEFISCOM. SAN JUAN BAUTISTA</strong><div class="inst-sub inst-address"><span class="inst-location-icon" data-lucide="map-pin"></span><span>Ubicaci&oacute;n: CATAMAYO &middot; Parroquia: Catamayo &middot; Distrito: 11D02</span></div></td>
+          <td><strong>Catamayo</strong><div class="inst-sub">Catamayo</div></td>
+          <td><span class="tag type-fiscomisional">Fiscomisional</span></td>
+          <td><div class="inst-contact" title="Tel. 2558198- 2555221- | Cel. 986577980 | luis.aguilarf@educacion.gob.ec">Tel. 2558198- 2555221-<br>Cel. 986577980<br>luis.aguilarf@educacion.gob.ec</div></td>
+        </tr>        <tr data-canton="Chaguarpamba" data-parroquia="Chaguarpamba" data-ubicacion="CHAGUARPAMBA" data-distrito="11D02" data-tipo="Fiscomisional" data-buscar="11H00811 11D02 UEFISCOM. LA DOLOROSA Chaguarpamba Chaguarpamba CHAGUARPAMBA Fiscomisional 2600109- 0985707937 sabiduria144@gmail.com">
+          <td><strong>11H00811</strong><div class="inst-sub">11D02</div></td>
+          <td><strong>UEFISCOM. LA DOLOROSA</strong><div class="inst-sub inst-address"><span class="inst-location-icon" data-lucide="map-pin"></span><span>Ubicaci&oacute;n: CHAGUARPAMBA &middot; Parroquia: Chaguarpamba &middot; Distrito: 11D02</span></div></td>
+          <td><strong>Chaguarpamba</strong><div class="inst-sub">Chaguarpamba</div></td>
+          <td><span class="tag type-fiscomisional">Fiscomisional</span></td>
+          <td><div class="inst-contact" title="Tel. 2600109- | Cel. 0985707937 | sabiduria144@gmail.com">Tel. 2600109-<br>Cel. 0985707937<br>sabiduria144@gmail.com</div></td>
+        </tr>        <tr data-canton="Olmedo" data-parroquia="Olmedo" data-ubicacion="OLMEDO" data-distrito="11D02" data-tipo="Fiscomisional" data-buscar="11H01723 11D02 UEFISCOM. MONS ALBERTO ZAMBRANO Olmedo Olmedo OLMEDO Fiscomisional 2650053- 2650054 0985165104 nancyjit@hotmail.com">
+          <td><strong>11H01723</strong><div class="inst-sub">11D02</div></td>
+          <td><strong>UEFISCOM. MONS ALBERTO ZAMBRANO</strong><div class="inst-sub inst-address"><span class="inst-location-icon" data-lucide="map-pin"></span><span>Ubicaci&oacute;n: OLMEDO &middot; Parroquia: Olmedo &middot; Distrito: 11D02</span></div></td>
+          <td><strong>Olmedo</strong><div class="inst-sub">Olmedo</div></td>
+          <td><span class="tag type-fiscomisional">Fiscomisional</span></td>
+          <td><div class="inst-contact" title="Tel. 2650053- 2650054 | Cel. 0985165104 | nancyjit@hotmail.com">Tel. 2650053- 2650054<br>Cel. 0985165104<br>nancyjit@hotmail.com</div></td>
+        </tr>        <tr data-canton="Paltas" data-parroquia="Catacocha" data-ubicacion="CATACOCHA" data-distrito="11D03" data-tipo="Fiscomisional" data-buscar="11H01160 11D03 UEFISCOM. DOMINGO CELI Paltas Catacocha CATACOCHA Fiscomisional 2683893-2683264 0969362809 lapoluzq@hotmail.com">
+          <td><strong>11H01160</strong><div class="inst-sub">11D03</div></td>
+          <td><strong>UEFISCOM. DOMINGO CELI</strong><div class="inst-sub inst-address"><span class="inst-location-icon" data-lucide="map-pin"></span><span>Ubicaci&oacute;n: CATACOCHA &middot; Parroquia: Catacocha &middot; Distrito: 11D03</span></div></td>
+          <td><strong>Paltas</strong><div class="inst-sub">Catacocha</div></td>
+          <td><span class="tag type-fiscomisional">Fiscomisional</span></td>
+          <td><div class="inst-contact" title="Tel. 2683893-2683264 | Cel. 0969362809 | lapoluzq@hotmail.com">Tel. 2683893-2683264<br>Cel. 0969362809<br>lapoluzq@hotmail.com</div></td>
+        </tr>        <tr data-canton="Paltas" data-parroquia="Catacocha" data-ubicacion="CATACOCHA" data-distrito="11D03" data-tipo="Fiscomisional" data-buscar="11H01144 11D03 UEFISCOM. MARISTA DE CATACOCHA Paltas Catacocha CATACOCHA Fiscomisional 2683201-2683102 0984815426 dvivancoapolo@yahoo.es">
+          <td><strong>11H01144</strong><div class="inst-sub">11D03</div></td>
+          <td><strong>UEFISCOM. MARISTA DE CATACOCHA</strong><div class="inst-sub inst-address"><span class="inst-location-icon" data-lucide="map-pin"></span><span>Ubicaci&oacute;n: CATACOCHA &middot; Parroquia: Catacocha &middot; Distrito: 11D03</span></div></td>
+          <td><strong>Paltas</strong><div class="inst-sub">Catacocha</div></td>
+          <td><span class="tag type-fiscomisional">Fiscomisional</span></td>
+          <td><div class="inst-contact" title="Tel. 2683201-2683102 | Cel. 0984815426 | dvivancoapolo@yahoo.es">Tel. 2683201-2683102<br>Cel. 0984815426<br>dvivancoapolo@yahoo.es</div></td>
+        </tr>        <tr data-canton="Celica" data-parroquia="Celica" data-ubicacion="CELICA" data-distrito="11D04" data-tipo="Fiscomisional" data-buscar="11H00740 11D04 UEFISCOM. SANTA TERESITA Celica Celica CELICA Fiscomisional 2657097- 2657535 0993469083 marobe29@yahoo.com">
+          <td><strong>11H00740</strong><div class="inst-sub">11D04</div></td>
+          <td><strong>UEFISCOM. SANTA TERESITA</strong><div class="inst-sub inst-address"><span class="inst-location-icon" data-lucide="map-pin"></span><span>Ubicaci&oacute;n: CELICA &middot; Parroquia: Celica &middot; Distrito: 11D04</span></div></td>
+          <td><strong>Celica</strong><div class="inst-sub">Celica</div></td>
+          <td><span class="tag type-fiscomisional">Fiscomisional</span></td>
+          <td><div class="inst-contact" title="Tel. 2657097- 2657535 | Cel. 0993469083 | marobe29@yahoo.com">Tel. 2657097- 2657535<br>Cel. 0993469083<br>marobe29@yahoo.com</div></td>
+        </tr>        <tr data-canton="Puyango" data-parroquia="Alamor" data-ubicacion="ALAMOR" data-distrito="11D04" data-tipo="Fiscomisional" data-buscar="11H01263 11D04 UEFISCOM. GRAN COLOMBIA Puyango Alamor ALAMOR Fiscomisional 2680116- 0967619724 e.e.b.11h01263@gmail.com">
+          <td><strong>11H01263</strong><div class="inst-sub">11D04</div></td>
+          <td><strong>UEFISCOM. GRAN COLOMBIA</strong><div class="inst-sub inst-address"><span class="inst-location-icon" data-lucide="map-pin"></span><span>Ubicaci&oacute;n: ALAMOR &middot; Parroquia: Alamor &middot; Distrito: 11D04</span></div></td>
+          <td><strong>Puyango</strong><div class="inst-sub">Alamor</div></td>
+          <td><span class="tag type-fiscomisional">Fiscomisional</span></td>
+          <td><div class="inst-contact" title="Tel. 2680116- | Cel. 0967619724 | e.e.b.11h01263@gmail.com">Tel. 2680116-<br>Cel. 0967619724<br>e.e.b.11h01263@gmail.com</div></td>
+        </tr>        <tr data-canton="Esp&#237;ndola" data-parroquia="El Ingenio" data-ubicacion="EL INGENIO" data-distrito="11D05" data-tipo="Fiscomisional" data-buscar="11H00917 11D05 COL. FISCOM. GABRIEL GARC&#205;A MORENO Esp&#237;ndola El Ingenio EL INGENIO Fiscomisional 3024362 0993201401 vcuevag2@hotmail.es">
+          <td><strong>11H00917</strong><div class="inst-sub">11D05</div></td>
+          <td><strong>COL. FISCOM. GABRIEL GARC&#205;A MORENO</strong><div class="inst-sub inst-address"><span class="inst-location-icon" data-lucide="map-pin"></span><span>Ubicaci&oacute;n: EL INGENIO &middot; Parroquia: El Ingenio &middot; Distrito: 11D05</span></div></td>
+          <td><strong>Esp&#237;ndola</strong><div class="inst-sub">El Ingenio</div></td>
+          <td><span class="tag type-fiscomisional">Fiscomisional</span></td>
+          <td><div class="inst-contact" title="Tel. 3024362 | Cel. 0993201401 | vcuevag2@hotmail.es">Tel. 3024362<br>Cel. 0993201401<br>vcuevag2@hotmail.es</div></td>
+        </tr>        <tr data-canton="Esp&#237;ndola" data-parroquia="Amaluza" data-ubicacion="AMALUZA" data-distrito="11D05" data-tipo="Fiscomisional" data-buscar="11H01835 11D05 UEFISCOM. &quot;MONS. LUIS ALFONSO CRESPO CHIRIBOGA&quot; Esp&#237;ndola Amaluza AMALUZA Fiscomisional 2653263- 2653046 0997196931 hglorima@gmail.com">
+          <td><strong>11H01835</strong><div class="inst-sub">11D05</div></td>
+          <td><strong>UEFISCOM. &quot;MONS. LUIS ALFONSO CRESPO CHIRIBOGA&quot;</strong><div class="inst-sub inst-address"><span class="inst-location-icon" data-lucide="map-pin"></span><span>Ubicaci&oacute;n: AMALUZA &middot; Parroquia: Amaluza &middot; Distrito: 11D05</span></div></td>
+          <td><strong>Esp&#237;ndola</strong><div class="inst-sub">Amaluza</div></td>
+          <td><span class="tag type-fiscomisional">Fiscomisional</span></td>
+          <td><div class="inst-contact" title="Tel. 2653263- 2653046 | Cel. 0997196931 | hglorima@gmail.com">Tel. 2653263- 2653046<br>Cel. 0997196931<br>hglorima@gmail.com</div></td>
+        </tr>        <tr data-canton="Esp&#237;ndola" data-parroquia="Jimbura" data-ubicacion="JIMBURA" data-distrito="11D05" data-tipo="Fiscomisional" data-buscar="11H01836 11D05 UEFISCOM. JULIO ERNESTO CELI ROMAN Esp&#237;ndola Jimbura JIMBURA Fiscomisional 3033100-3033106 0989628083 hmloremg@gmail.com">
+          <td><strong>11H01836</strong><div class="inst-sub">11D05</div></td>
+          <td><strong>UEFISCOM. JULIO ERNESTO CELI ROMAN</strong><div class="inst-sub inst-address"><span class="inst-location-icon" data-lucide="map-pin"></span><span>Ubicaci&oacute;n: JIMBURA &middot; Parroquia: Jimbura &middot; Distrito: 11D05</span></div></td>
+          <td><strong>Esp&#237;ndola</strong><div class="inst-sub">Jimbura</div></td>
+          <td><span class="tag type-fiscomisional">Fiscomisional</span></td>
+          <td><div class="inst-contact" title="Tel. 3033100-3033106 | Cel. 0989628083 | hmloremg@gmail.com">Tel. 3033100-3033106<br>Cel. 0989628083<br>hmloremg@gmail.com</div></td>
+        </tr>        <tr data-canton="Esp&#237;ndola" data-parroquia="Collingora" data-ubicacion="ESP&#204;NDOLA-COLLINGORA" data-distrito="11D05" data-tipo="Fiscomisional" data-buscar="11H00895 11D05 DIEZ DE AGOSTO Esp&#237;ndola Collingora ESP&#204;NDOLA-COLLINGORA Fiscomisional  0986356549 diezdeagosto1972@yahoo.com">
+          <td><strong>11H00895</strong><div class="inst-sub">11D05</div></td>
+          <td><strong>DIEZ DE AGOSTO</strong><div class="inst-sub inst-address"><span class="inst-location-icon" data-lucide="map-pin"></span><span>Ubicaci&oacute;n: ESP&#204;NDOLA-COLLINGORA &middot; Parroquia: Collingora &middot; Distrito: 11D05</span></div></td>
+          <td><strong>Esp&#237;ndola</strong><div class="inst-sub">Collingora</div></td>
+          <td><span class="tag type-fiscomisional">Fiscomisional</span></td>
+          <td><div class="inst-contact" title="Cel. 0986356549 | diezdeagosto1972@yahoo.com">Cel. 0986356549<br>diezdeagosto1972@yahoo.com</div></td>
+        </tr>        <tr data-canton="Esp&#237;ndola" data-parroquia="El Airo" data-ubicacion="ESP&#204;NDOLA-EL AIRO" data-distrito="11D05" data-tipo="Fiscomisional" data-buscar="11H00918 11D05 SANTA ROSA Esp&#237;ndola El Airo ESP&#204;NDOLA-EL AIRO Fiscomisional 3033146 0990051840 escuelasanta_rosa@hotmail.com">
+          <td><strong>11H00918</strong><div class="inst-sub">11D05</div></td>
+          <td><strong>SANTA ROSA</strong><div class="inst-sub inst-address"><span class="inst-location-icon" data-lucide="map-pin"></span><span>Ubicaci&oacute;n: ESP&#204;NDOLA-EL AIRO &middot; Parroquia: El Airo &middot; Distrito: 11D05</span></div></td>
+          <td><strong>Esp&#237;ndola</strong><div class="inst-sub">El Airo</div></td>
+          <td><span class="tag type-fiscomisional">Fiscomisional</span></td>
+          <td><div class="inst-contact" title="Tel. 3033146 | Cel. 0990051840 | escuelasanta_rosa@hotmail.com">Tel. 3033146<br>Cel. 0990051840<br>escuelasanta_rosa@hotmail.com</div></td>
+        </tr>        <tr data-canton="Gonzanam&#225;" data-parroquia="Changaimina" data-ubicacion="CHANGAIMINA -CHILE" data-distrito="11D06" data-tipo="Fiscomisional" data-buscar="11H01016 11D06 ARCADIO MENDIETA - VIRGEN DEL CISNE Gonzanam&#225; Changaimina CHANGAIMINA -CHILE Fiscomisional 2688699- 0993084040 escuela-arcadio@hotmail.com">
+          <td><strong>11H01016</strong><div class="inst-sub">11D06</div></td>
+          <td><strong>ARCADIO MENDIETA - VIRGEN DEL CISNE</strong><div class="inst-sub inst-address"><span class="inst-location-icon" data-lucide="map-pin"></span><span>Ubicaci&oacute;n: CHANGAIMINA -CHILE &middot; Parroquia: Changaimina &middot; Distrito: 11D06</span></div></td>
+          <td><strong>Gonzanam&#225;</strong><div class="inst-sub">Changaimina</div></td>
+          <td><span class="tag type-fiscomisional">Fiscomisional</span></td>
+          <td><div class="inst-contact" title="Tel. 2688699- | Cel. 0993084040 | escuela-arcadio@hotmail.com">Tel. 2688699-<br>Cel. 0993084040<br>escuela-arcadio@hotmail.com</div></td>
+        </tr>        <tr data-canton="Gonzanam&#225;" data-parroquia="El Parco" data-ubicacion="EL PARCO" data-distrito="11D06" data-tipo="Fiscomisional" data-buscar="11H00536 11D06 SAN VICENTE FERRER Gonzanam&#225; El Parco EL PARCO Fiscomisional 2688138- 0993097645 lberruc@yahoo.es">
+          <td><strong>11H00536</strong><div class="inst-sub">11D06</div></td>
+          <td><strong>SAN VICENTE FERRER</strong><div class="inst-sub inst-address"><span class="inst-location-icon" data-lucide="map-pin"></span><span>Ubicaci&oacute;n: EL PARCO &middot; Parroquia: El Parco &middot; Distrito: 11D06</span></div></td>
+          <td><strong>Gonzanam&#225;</strong><div class="inst-sub">El Parco</div></td>
+          <td><span class="tag type-fiscomisional">Fiscomisional</span></td>
+          <td><div class="inst-contact" title="Tel. 2688138- | Cel. 0993097645 | lberruc@yahoo.es">Tel. 2688138-<br>Cel. 0993097645<br>lberruc@yahoo.es</div></td>
+        </tr>        <tr data-canton="Calvas" data-parroquia="Llurarumi" data-ubicacion="CALVAS- LLURARUMI" data-distrito="11D06" data-tipo="Fiscomisional" data-buscar="11H00566 11D06 CENTINELA DEL SUR Calvas Llurarumi CALVAS- LLURARUMI Fiscomisional  0993913683 escuelacentineladelsur@live.com">
+          <td><strong>11H00566</strong><div class="inst-sub">11D06</div></td>
+          <td><strong>CENTINELA DEL SUR</strong><div class="inst-sub inst-address"><span class="inst-location-icon" data-lucide="map-pin"></span><span>Ubicaci&oacute;n: CALVAS- LLURARUMI &middot; Parroquia: Llurarumi &middot; Distrito: 11D06</span></div></td>
+          <td><strong>Calvas</strong><div class="inst-sub">Llurarumi</div></td>
+          <td><span class="tag type-fiscomisional">Fiscomisional</span></td>
+          <td><div class="inst-contact" title="Cel. 0993913683 | escuelacentineladelsur@live.com">Cel. 0993913683<br>escuelacentineladelsur@live.com</div></td>
+        </tr>        <tr data-canton="Calvas" data-parroquia="Ningomine" data-ubicacion="CALVAS - NINGOMINE" data-distrito="11D06" data-tipo="Fiscomisional" data-buscar="11H01782 11D06 EL CISNE Calvas Ningomine CALVAS - NINGOMINE Fiscomisional 2688210 985905539 maryvasquez_2704@hotmail.com">
+          <td><strong>11H01782</strong><div class="inst-sub">11D06</div></td>
+          <td><strong>EL CISNE</strong><div class="inst-sub inst-address"><span class="inst-location-icon" data-lucide="map-pin"></span><span>Ubicaci&oacute;n: CALVAS - NINGOMINE &middot; Parroquia: Ningomine &middot; Distrito: 11D06</span></div></td>
+          <td><strong>Calvas</strong><div class="inst-sub">Ningomine</div></td>
+          <td><span class="tag type-fiscomisional">Fiscomisional</span></td>
+          <td><div class="inst-contact" title="Tel. 2688210 | Cel. 985905539 | maryvasquez_2704@hotmail.com">Tel. 2688210<br>Cel. 985905539<br>maryvasquez_2704@hotmail.com</div></td>
+        </tr>        <tr data-canton="Calvas" data-parroquia="El Lucero" data-ubicacion="CALVAS -LUCERO SANTA ANA" data-distrito="11D06" data-tipo="Fiscomisional" data-buscar="11H00589 11D06 SAN MIGUEL ARCANGEL Calvas El Lucero CALVAS -LUCERO SANTA ANA Fiscomisional 2689197 0985244203 efren19681@hotmail.com">
+          <td><strong>11H00589</strong><div class="inst-sub">11D06</div></td>
+          <td><strong>SAN MIGUEL ARCANGEL</strong><div class="inst-sub inst-address"><span class="inst-location-icon" data-lucide="map-pin"></span><span>Ubicaci&oacute;n: CALVAS -LUCERO SANTA ANA &middot; Parroquia: El Lucero &middot; Distrito: 11D06</span></div></td>
+          <td><strong>Calvas</strong><div class="inst-sub">El Lucero</div></td>
+          <td><span class="tag type-fiscomisional">Fiscomisional</span></td>
+          <td><div class="inst-contact" title="Tel. 2689197 | Cel. 0985244203 | efren19681@hotmail.com">Tel. 2689197<br>Cel. 0985244203<br>efren19681@hotmail.com</div></td>
+        </tr>        <tr data-canton="Calvas" data-parroquia="Calvas" data-ubicacion="CALVAS -" data-distrito="11D06" data-tipo="Fiscomisional" data-buscar="11H00476 11D06 SANTIAGO APOSTOL Calvas Calvas CALVAS - Fiscomisional 2689156 -2687609 0981630864 rosa.perezc@educacion.gob.ec">
+          <td><strong>11H00476</strong><div class="inst-sub">11D06</div></td>
+          <td><strong>SANTIAGO APOSTOL</strong><div class="inst-sub inst-address"><span class="inst-location-icon" data-lucide="map-pin"></span><span>Ubicaci&oacute;n: CALVAS - &middot; Parroquia: Calvas &middot; Distrito: 11D06</span></div></td>
+          <td><strong>Calvas</strong><div class="inst-sub">Calvas</div></td>
+          <td><span class="tag type-fiscomisional">Fiscomisional</span></td>
+          <td><div class="inst-contact" title="Tel. 2689156 -2687609 | Cel. 0981630864 | rosa.perezc@educacion.gob.ec">Tel. 2689156 -2687609<br>Cel. 0981630864<br>rosa.perezc@educacion.gob.ec</div></td>
+        </tr>        <tr data-canton="Calvas" data-parroquia="Yambaca" data-ubicacion="CALVAS -Yambaca" data-distrito="11D06" data-tipo="Fiscomisional" data-buscar="11H00482 11D06 ENRI SALVADOR LOAIZA SOTO Calvas Yambaca CALVAS -Yambaca Fiscomisional  0986063686 luisa.ojeda@educacion.gob.ec">
+          <td><strong>11H00482</strong><div class="inst-sub">11D06</div></td>
+          <td><strong>ENRI SALVADOR LOAIZA SOTO</strong><div class="inst-sub inst-address"><span class="inst-location-icon" data-lucide="map-pin"></span><span>Ubicaci&oacute;n: CALVAS -Yambaca &middot; Parroquia: Yambaca &middot; Distrito: 11D06</span></div></td>
+          <td><strong>Calvas</strong><div class="inst-sub">Yambaca</div></td>
+          <td><span class="tag type-fiscomisional">Fiscomisional</span></td>
+          <td><div class="inst-contact" title="Cel. 0986063686 | luisa.ojeda@educacion.gob.ec">Cel. 0986063686<br>luisa.ojeda@educacion.gob.ec</div></td>
+        </tr>        <tr data-canton="Calvas" data-parroquia="Guara" data-ubicacion="CALVAS - GUARA" data-distrito="11D06" data-tipo="Fiscomisional" data-buscar="11H00469 11D06 LUIS ALFONSO CRESPO CHIRIBOGA Calvas Guara CALVAS - GUARA Fiscomisional  0997578455 luisacrespoch@gmail.com">
+          <td><strong>11H00469</strong><div class="inst-sub">11D06</div></td>
+          <td><strong>LUIS ALFONSO CRESPO CHIRIBOGA</strong><div class="inst-sub inst-address"><span class="inst-location-icon" data-lucide="map-pin"></span><span>Ubicaci&oacute;n: CALVAS - GUARA &middot; Parroquia: Guara &middot; Distrito: 11D06</span></div></td>
+          <td><strong>Calvas</strong><div class="inst-sub">Guara</div></td>
+          <td><span class="tag type-fiscomisional">Fiscomisional</span></td>
+          <td><div class="inst-contact" title="Cel. 0997578455 | luisacrespoch@gmail.com">Cel. 0997578455<br>luisacrespoch@gmail.com</div></td>
+        </tr>        <tr data-canton="Calvas" data-parroquia="Cango" data-ubicacion="CALVAS - CANGO" data-distrito="11D06" data-tipo="Fiscomisional" data-buscar="11H00506 11D06 LANTADILLA Calvas Cango CALVAS - CANGO Fiscomisional 3100322 0992444022 ivnjumbo82@yahoo.es">
+          <td><strong>11H00506</strong><div class="inst-sub">11D06</div></td>
+          <td><strong>LANTADILLA</strong><div class="inst-sub inst-address"><span class="inst-location-icon" data-lucide="map-pin"></span><span>Ubicaci&oacute;n: CALVAS - CANGO &middot; Parroquia: Cango &middot; Distrito: 11D06</span></div></td>
+          <td><strong>Calvas</strong><div class="inst-sub">Cango</div></td>
+          <td><span class="tag type-fiscomisional">Fiscomisional</span></td>
+          <td><div class="inst-contact" title="Tel. 3100322 | Cel. 0992444022 | ivnjumbo82@yahoo.es">Tel. 3100322<br>Cel. 0992444022<br>ivnjumbo82@yahoo.es</div></td>
+        </tr>        <tr data-canton="Calvas" data-parroquia="Suanamaca" data-ubicacion="CALVAS- SUANAMACA" data-distrito="11D06" data-tipo="Fiscomisional" data-buscar="11H00529 11D06 CRISTOBAL COLON Calvas Suanamaca CALVAS- SUANAMACA Fiscomisional  0989231822 escuelacristobalcol@hotmail.com">
+          <td><strong>11H00529</strong><div class="inst-sub">11D06</div></td>
+          <td><strong>CRISTOBAL COLON</strong><div class="inst-sub inst-address"><span class="inst-location-icon" data-lucide="map-pin"></span><span>Ubicaci&oacute;n: CALVAS- SUANAMACA &middot; Parroquia: Suanamaca &middot; Distrito: 11D06</span></div></td>
+          <td><strong>Calvas</strong><div class="inst-sub">Suanamaca</div></td>
+          <td><span class="tag type-fiscomisional">Fiscomisional</span></td>
+          <td><div class="inst-contact" title="Cel. 0989231822 | escuelacristobalcol@hotmail.com">Cel. 0989231822<br>escuelacristobalcol@hotmail.com</div></td>
+        </tr>        <tr data-canton="Calvas" data-parroquia="Usaime" data-ubicacion="CALVAS - USAIME" data-distrito="11D06" data-tipo="Fiscomisional" data-buscar="11H00626 11D06 JORGE ICAZA- STA. FE Calvas Usaime CALVAS - USAIME Fiscomisional  0982644931 claudiopardoo@hotmail.com">
+          <td><strong>11H00626</strong><div class="inst-sub">11D06</div></td>
+          <td><strong>JORGE ICAZA- STA. FE</strong><div class="inst-sub inst-address"><span class="inst-location-icon" data-lucide="map-pin"></span><span>Ubicaci&oacute;n: CALVAS - USAIME &middot; Parroquia: Usaime &middot; Distrito: 11D06</span></div></td>
+          <td><strong>Calvas</strong><div class="inst-sub">Usaime</div></td>
+          <td><span class="tag type-fiscomisional">Fiscomisional</span></td>
+          <td><div class="inst-contact" title="Cel. 0982644931 | claudiopardoo@hotmail.com">Cel. 0982644931<br>claudiopardoo@hotmail.com</div></td>
+        </tr>        <tr data-canton="Gonzanam&#225;" data-parroquia="Guanchilaca" data-ubicacion="GONZANAM&#193;-GUANCHILACA" data-distrito="11D06" data-tipo="Fiscomisional" data-buscar="11H00955 11D06 NTRA. SE&#209;ORA DE LA NUBE Gonzanam&#225; Guanchilaca GONZANAM&#193;-GUANCHILACA Fiscomisional  0999521372 rafaelitoal@hotmail.com">
+          <td><strong>11H00955</strong><div class="inst-sub">11D06</div></td>
+          <td><strong>NTRA. SE&#209;ORA DE LA NUBE</strong><div class="inst-sub inst-address"><span class="inst-location-icon" data-lucide="map-pin"></span><span>Ubicaci&oacute;n: GONZANAM&#193;-GUANCHILACA &middot; Parroquia: Guanchilaca &middot; Distrito: 11D06</span></div></td>
+          <td><strong>Gonzanam&#225;</strong><div class="inst-sub">Guanchilaca</div></td>
+          <td><span class="tag type-fiscomisional">Fiscomisional</span></td>
+          <td><div class="inst-contact" title="Cel. 0999521372 | rafaelitoal@hotmail.com">Cel. 0999521372<br>rafaelitoal@hotmail.com</div></td>
+        </tr>        <tr data-canton="Gonzanam&#225;" data-parroquia="Chamana" data-ubicacion="GONZANAM&#193;-Chamana" data-distrito="11D06" data-tipo="Fiscomisional" data-buscar="11H00971 11D06 SANTA TERESA Gonzanam&#225; Chamana GONZANAM&#193;-Chamana Fiscomisional  0985476974 ">
+          <td><strong>11H00971</strong><div class="inst-sub">11D06</div></td>
+          <td><strong>SANTA TERESA</strong><div class="inst-sub inst-address"><span class="inst-location-icon" data-lucide="map-pin"></span><span>Ubicaci&oacute;n: GONZANAM&#193;-Chamana &middot; Parroquia: Chamana &middot; Distrito: 11D06</span></div></td>
+          <td><strong>Gonzanam&#225;</strong><div class="inst-sub">Chamana</div></td>
+          <td><span class="tag type-fiscomisional">Fiscomisional</span></td>
+          <td><div class="inst-contact" title="Cel. 0985476974">Cel. 0985476974</div></td>
+        </tr>        <tr data-canton="Gonzanam&#225;" data-parroquia="Tierra Blanca" data-ubicacion="GONZANAM&#193;- TIERRA BLANCA" data-distrito="11D06" data-tipo="Fiscomisional" data-buscar="11H01029 11D06 REINA DEL CISNE Gonzanam&#225; Tierra Blanca GONZANAM&#193;- TIERRA BLANCA Fiscomisional 2688876- 0985741871 reinadelcisne2013@yahoo.es">
+          <td><strong>11H01029</strong><div class="inst-sub">11D06</div></td>
+          <td><strong>REINA DEL CISNE</strong><div class="inst-sub inst-address"><span class="inst-location-icon" data-lucide="map-pin"></span><span>Ubicaci&oacute;n: GONZANAM&#193;- TIERRA BLANCA &middot; Parroquia: Tierra Blanca &middot; Distrito: 11D06</span></div></td>
+          <td><strong>Gonzanam&#225;</strong><div class="inst-sub">Tierra Blanca</div></td>
+          <td><span class="tag type-fiscomisional">Fiscomisional</span></td>
+          <td><div class="inst-contact" title="Tel. 2688876- | Cel. 0985741871 | reinadelcisne2013@yahoo.es">Tel. 2688876-<br>Cel. 0985741871<br>reinadelcisne2013@yahoo.es</div></td>
+        </tr>        <tr data-canton="Calvas" data-parroquia="Tunas Chingulle" data-ubicacion="CALVAS - TUNAS CHINGULLE" data-distrito="11D06" data-tipo="Fiscomisional" data-buscar="11H00612 11D06 LA LIBERTAD Calvas Tunas Chingulle CALVAS - TUNAS CHINGULLE Fiscomisional  0993696362 miguelivan01@hotmail.com">
+          <td><strong>11H00612</strong><div class="inst-sub">11D06</div></td>
+          <td><strong>LA LIBERTAD</strong><div class="inst-sub inst-address"><span class="inst-location-icon" data-lucide="map-pin"></span><span>Ubicaci&oacute;n: CALVAS - TUNAS CHINGULLE &middot; Parroquia: Tunas Chingulle &middot; Distrito: 11D06</span></div></td>
+          <td><strong>Calvas</strong><div class="inst-sub">Tunas Chingulle</div></td>
+          <td><span class="tag type-fiscomisional">Fiscomisional</span></td>
+          <td><div class="inst-contact" title="Cel. 0993696362 | miguelivan01@hotmail.com">Cel. 0993696362<br>miguelivan01@hotmail.com</div></td>
+        </tr>        <tr data-canton="Calvas" data-parroquia="Guayaranuma" data-ubicacion="GUAYARANUMA" data-distrito="11D06" data-tipo="Fiscomisional" data-buscar="11H01968 11D06 SAGRADO CORAZ&#211;N DE JES&#218;S Calvas Guayaranuma GUAYARANUMA Fiscomisional  0993124054 acarmen1980@hotmail.com">
+          <td><strong>11H01968</strong><div class="inst-sub">11D06</div></td>
+          <td><strong>SAGRADO CORAZ&#211;N DE JES&#218;S</strong><div class="inst-sub inst-address"><span class="inst-location-icon" data-lucide="map-pin"></span><span>Ubicaci&oacute;n: GUAYARANUMA &middot; Parroquia: Guayaranuma &middot; Distrito: 11D06</span></div></td>
+          <td><strong>Calvas</strong><div class="inst-sub">Guayaranuma</div></td>
+          <td><span class="tag type-fiscomisional">Fiscomisional</span></td>
+          <td><div class="inst-contact" title="Cel. 0993124054 | acarmen1980@hotmail.com">Cel. 0993124054<br>acarmen1980@hotmail.com</div></td>
+        </tr>        <tr data-canton="Gonzanam&#225;" data-parroquia="Gonzanam&#225;" data-ubicacion="GONZANAM&#193;" data-distrito="11D06" data-tipo="Fiscomisional" data-buscar="11H00615 11D06 STA. MARIANITA Gonzanam&#225; Gonzanam&#225; GONZANAM&#193; Fiscomisional  0969952478 romulo.jimenez@educacion.gob.ec">
+          <td><strong>11H00615</strong><div class="inst-sub">11D06</div></td>
+          <td><strong>STA. MARIANITA</strong><div class="inst-sub inst-address"><span class="inst-location-icon" data-lucide="map-pin"></span><span>Ubicaci&oacute;n: GONZANAM&#193; &middot; Parroquia: Gonzanam&#225; &middot; Distrito: 11D06</span></div></td>
+          <td><strong>Gonzanam&#225;</strong><div class="inst-sub">Gonzanam&#225;</div></td>
+          <td><span class="tag type-fiscomisional">Fiscomisional</span></td>
+          <td><div class="inst-contact" title="Cel. 0969952478 | romulo.jimenez@educacion.gob.ec">Cel. 0969952478<br>romulo.jimenez@educacion.gob.ec</div></td>
+        </tr>        <tr data-canton="Calvas" data-parroquia="San Joaqu&#237;n" data-ubicacion="CALVAS - SAN JOAQU&#205;N" data-distrito="11D06" data-tipo="Fiscomisional" data-buscar="11H00621 11D06 STA. MARIANITA DE JESUS Calvas San Joaqu&#237;n CALVAS - SAN JOAQU&#205;N Fiscomisional  0993939307 dianam.reyes@educacion.gob.ec">
+          <td><strong>11H00621</strong><div class="inst-sub">11D06</div></td>
+          <td><strong>STA. MARIANITA DE JESUS</strong><div class="inst-sub inst-address"><span class="inst-location-icon" data-lucide="map-pin"></span><span>Ubicaci&oacute;n: CALVAS - SAN JOAQU&#205;N &middot; Parroquia: San Joaqu&#237;n &middot; Distrito: 11D06</span></div></td>
+          <td><strong>Calvas</strong><div class="inst-sub">San Joaqu&#237;n</div></td>
+          <td><span class="tag type-fiscomisional">Fiscomisional</span></td>
+          <td><div class="inst-contact" title="Cel. 0993939307 | dianam.reyes@educacion.gob.ec">Cel. 0993939307<br>dianam.reyes@educacion.gob.ec</div></td>
+        </tr>        <tr data-canton="Calvas" data-parroquia="Upaco" data-ubicacion="CALVAS- Upaco" data-distrito="11D06" data-tipo="Fiscomisional" data-buscar="11H00552 11D06 HNO. AGUSTIN VILLAREAL DELGADO Calvas Upaco CALVAS- Upaco Fiscomisional 2687928- 0982530917 ivang_cueva@hotmail.com">
+          <td><strong>11H00552</strong><div class="inst-sub">11D06</div></td>
+          <td><strong>HNO. AGUSTIN VILLAREAL DELGADO</strong><div class="inst-sub inst-address"><span class="inst-location-icon" data-lucide="map-pin"></span><span>Ubicaci&oacute;n: CALVAS- Upaco &middot; Parroquia: Upaco &middot; Distrito: 11D06</span></div></td>
+          <td><strong>Calvas</strong><div class="inst-sub">Upaco</div></td>
+          <td><span class="tag type-fiscomisional">Fiscomisional</span></td>
+          <td><div class="inst-contact" title="Tel. 2687928- | Cel. 0982530917 | ivang_cueva@hotmail.com">Tel. 2687928-<br>Cel. 0982530917<br>ivang_cueva@hotmail.com</div></td>
+        </tr>        <tr data-canton="Calvas" data-parroquia="Calvas" data-ubicacion="CALVAS" data-distrito="11D06" data-tipo="Fiscomisional" data-buscar="11H00468 11D06 SAN JUAN DE LA CRUZ Calvas Calvas CALVAS Fiscomisional 3024673 0988304481 miltonm.flores@yahoo.es">
+          <td><strong>11H00468</strong><div class="inst-sub">11D06</div></td>
+          <td><strong>SAN JUAN DE LA CRUZ</strong><div class="inst-sub inst-address"><span class="inst-location-icon" data-lucide="map-pin"></span><span>Ubicaci&oacute;n: CALVAS &middot; Parroquia: Calvas &middot; Distrito: 11D06</span></div></td>
+          <td><strong>Calvas</strong><div class="inst-sub">Calvas</div></td>
+          <td><span class="tag type-fiscomisional">Fiscomisional</span></td>
+          <td><div class="inst-contact" title="Tel. 3024673 | Cel. 0988304481 | miltonm.flores@yahoo.es">Tel. 3024673<br>Cel. 0988304481<br>miltonm.flores@yahoo.es</div></td>
+        </tr>        <tr data-canton="Calvas" data-parroquia="Yunga" data-ubicacion="CALVAS- YUNGA" data-distrito="11D06" data-tipo="Fiscomisional" data-buscar="11H00484 11D06 PAULO VI Calvas Yunga CALVAS- YUNGA Fiscomisional 2688181 0986800357 rositacc12@hotmail.com">
+          <td><strong>11H00484</strong><div class="inst-sub">11D06</div></td>
+          <td><strong>PAULO VI</strong><div class="inst-sub inst-address"><span class="inst-location-icon" data-lucide="map-pin"></span><span>Ubicaci&oacute;n: CALVAS- YUNGA &middot; Parroquia: Yunga &middot; Distrito: 11D06</span></div></td>
+          <td><strong>Calvas</strong><div class="inst-sub">Yunga</div></td>
+          <td><span class="tag type-fiscomisional">Fiscomisional</span></td>
+          <td><div class="inst-contact" title="Tel. 2688181 | Cel. 0986800357 | rositacc12@hotmail.com">Tel. 2688181<br>Cel. 0986800357<br>rositacc12@hotmail.com</div></td>
+        </tr>        <tr data-canton="Calvas" data-parroquia="Santa Teresa" data-ubicacion="CALVAS- SANTA TERESA" data-distrito="11D06" data-tipo="Fiscomisional" data-buscar="11H00489 11D06 AMADA JUMBO SANTA TERESA Calvas Santa Teresa CALVAS- SANTA TERESA Fiscomisional  997325250 elizamorochoa@hotmail.com">
+          <td><strong>11H00489</strong><div class="inst-sub">11D06</div></td>
+          <td><strong>AMADA JUMBO SANTA TERESA</strong><div class="inst-sub inst-address"><span class="inst-location-icon" data-lucide="map-pin"></span><span>Ubicaci&oacute;n: CALVAS- SANTA TERESA &middot; Parroquia: Santa Teresa &middot; Distrito: 11D06</span></div></td>
+          <td><strong>Calvas</strong><div class="inst-sub">Santa Teresa</div></td>
+          <td><span class="tag type-fiscomisional">Fiscomisional</span></td>
+          <td><div class="inst-contact" title="Cel. 997325250 | elizamorochoa@hotmail.com">Cel. 997325250<br>elizamorochoa@hotmail.com</div></td>
+        </tr>        <tr data-canton="Calvas" data-parroquia="Taparuca" data-ubicacion="CALVAS - TAPARUCA" data-distrito="11D06" data-tipo="Fiscomisional" data-buscar="11H00520 11D06 SAN ANTONIO Calvas Taparuca CALVAS - TAPARUCA Fiscomisional 3102965 0992777918 carlosvega@educacion.gob.ec">
+          <td><strong>11H00520</strong><div class="inst-sub">11D06</div></td>
+          <td><strong>SAN ANTONIO</strong><div class="inst-sub inst-address"><span class="inst-location-icon" data-lucide="map-pin"></span><span>Ubicaci&oacute;n: CALVAS - TAPARUCA &middot; Parroquia: Taparuca &middot; Distrito: 11D06</span></div></td>
+          <td><strong>Calvas</strong><div class="inst-sub">Taparuca</div></td>
+          <td><span class="tag type-fiscomisional">Fiscomisional</span></td>
+          <td><div class="inst-contact" title="Tel. 3102965 | Cel. 0992777918 | carlosvega@educacion.gob.ec">Tel. 3102965<br>Cel. 0992777918<br>carlosvega@educacion.gob.ec</div></td>
+        </tr>        <tr data-canton="Calvas" data-parroquia="Macaicanza" data-ubicacion="CALVAS- Macaicanza" data-distrito="11D06" data-tipo="Fiscomisional" data-buscar="11H00542 11D06 ANTONIO CASTILLO HERMANO MIGUEL Calvas Macaicanza CALVAS- Macaicanza Fiscomisional 986595058 981561483 escuelafiscal_antoniocastillo@hotmail.es">
+          <td><strong>11H00542</strong><div class="inst-sub">11D06</div></td>
+          <td><strong>ANTONIO CASTILLO HERMANO MIGUEL</strong><div class="inst-sub inst-address"><span class="inst-location-icon" data-lucide="map-pin"></span><span>Ubicaci&oacute;n: CALVAS- Macaicanza &middot; Parroquia: Macaicanza &middot; Distrito: 11D06</span></div></td>
+          <td><strong>Calvas</strong><div class="inst-sub">Macaicanza</div></td>
+          <td><span class="tag type-fiscomisional">Fiscomisional</span></td>
+          <td><div class="inst-contact" title="Tel. 986595058 | Cel. 981561483 | escuelafiscal_antoniocastillo@hotmail.es">Tel. 986595058<br>Cel. 981561483<br>escuelafiscal_antoniocastillo@hotmail.es</div></td>
+        </tr>        <tr data-canton="Calvas" data-parroquia="Chile" data-ubicacion="CALVAS -CHILE- Cascajal" data-distrito="11D06" data-tipo="Fiscomisional" data-buscar="11H00513 11D06 SAN PEDRO MARTIR Calvas Chile CALVAS -CHILE- Cascajal Fiscomisional  981091877 yesmar2604@hotmail.es">
+          <td><strong>11H00513</strong><div class="inst-sub">11D06</div></td>
+          <td><strong>SAN PEDRO MARTIR</strong><div class="inst-sub inst-address"><span class="inst-location-icon" data-lucide="map-pin"></span><span>Ubicaci&oacute;n: CALVAS -CHILE- Cascajal &middot; Parroquia: Chile &middot; Distrito: 11D06</span></div></td>
+          <td><strong>Calvas</strong><div class="inst-sub">Chile</div></td>
+          <td><span class="tag type-fiscomisional">Fiscomisional</span></td>
+          <td><div class="inst-contact" title="Cel. 981091877 | yesmar2604@hotmail.es">Cel. 981091877<br>yesmar2604@hotmail.es</div></td>
+        </tr>        <tr data-canton="Calvas" data-parroquia="San Juan" data-ubicacion="CALVAS - SAN JUAN" data-distrito="11D06" data-tipo="Fiscomisional" data-buscar="11H00535 11D06 SAN JUAN EVANGELISTA Calvas San Juan CALVAS - SAN JUAN Fiscomisional  0969187837 nataliam.aguirre@educacion.gob.ec">
+          <td><strong>11H00535</strong><div class="inst-sub">11D06</div></td>
+          <td><strong>SAN JUAN EVANGELISTA</strong><div class="inst-sub inst-address"><span class="inst-location-icon" data-lucide="map-pin"></span><span>Ubicaci&oacute;n: CALVAS - SAN JUAN &middot; Parroquia: San Juan &middot; Distrito: 11D06</span></div></td>
+          <td><strong>Calvas</strong><div class="inst-sub">San Juan</div></td>
+          <td><span class="tag type-fiscomisional">Fiscomisional</span></td>
+          <td><div class="inst-contact" title="Cel. 0969187837 | nataliam.aguirre@educacion.gob.ec">Cel. 0969187837<br>nataliam.aguirre@educacion.gob.ec</div></td>
+        </tr>        <tr data-canton="Calvas" data-parroquia="Camayos" data-ubicacion="CALVAS - CAMAYOS" data-distrito="11D06" data-tipo="Fiscomisional" data-buscar="11H00620 11D06 REINA DEL CISNE Calvas Camayos CALVAS - CAMAYOS Fiscomisional 2688706 0969586197- 0968924500 reinadelcisne@yahoo.es">
+          <td><strong>11H00620</strong><div class="inst-sub">11D06</div></td>
+          <td><strong>REINA DEL CISNE</strong><div class="inst-sub inst-address"><span class="inst-location-icon" data-lucide="map-pin"></span><span>Ubicaci&oacute;n: CALVAS - CAMAYOS &middot; Parroquia: Camayos &middot; Distrito: 11D06</span></div></td>
+          <td><strong>Calvas</strong><div class="inst-sub">Camayos</div></td>
+          <td><span class="tag type-fiscomisional">Fiscomisional</span></td>
+          <td><div class="inst-contact" title="Tel. 2688706 | Cel. 0969586197- 0968924500 | reinadelcisne@yahoo.es">Tel. 2688706<br>Cel. 0969586197- 0968924500<br>reinadelcisne@yahoo.es</div></td>
+        </tr>        <tr data-canton="Calvas" data-parroquia="Sanguill&#237;n" data-ubicacion="CALVAS - SANGUILL&#205;N" data-distrito="11D06" data-tipo="Fiscomisional" data-buscar="11H00622 11D06 LA CRUZ DE SANGUILLIN Calvas Sanguill&#237;n CALVAS - SANGUILL&#205;N Fiscomisional  969981753 angelmt166@yahoo.es">
+          <td><strong>11H00622</strong><div class="inst-sub">11D06</div></td>
+          <td><strong>LA CRUZ DE SANGUILLIN</strong><div class="inst-sub inst-address"><span class="inst-location-icon" data-lucide="map-pin"></span><span>Ubicaci&oacute;n: CALVAS - SANGUILL&#205;N &middot; Parroquia: Sanguill&#237;n &middot; Distrito: 11D06</span></div></td>
+          <td><strong>Calvas</strong><div class="inst-sub">Sanguill&#237;n</div></td>
+          <td><span class="tag type-fiscomisional">Fiscomisional</span></td>
+          <td><div class="inst-contact" title="Cel. 969981753 | angelmt166@yahoo.es">Cel. 969981753<br>angelmt166@yahoo.es</div></td>
+        </tr>        <tr data-canton="Calvas" data-parroquia="Atillo" data-ubicacion="ATILLO" data-distrito="11D06" data-tipo="Fiscomisional" data-buscar="11H00570 11D06 LA DOLOROSA Calvas Atillo ATILLO Fiscomisional  968059714 erikae.rodriguez@educacion.gob.ec">
+          <td><strong>11H00570</strong><div class="inst-sub">11D06</div></td>
+          <td><strong>LA DOLOROSA</strong><div class="inst-sub inst-address"><span class="inst-location-icon" data-lucide="map-pin"></span><span>Ubicaci&oacute;n: ATILLO &middot; Parroquia: Atillo &middot; Distrito: 11D06</span></div></td>
+          <td><strong>Calvas</strong><div class="inst-sub">Atillo</div></td>
+          <td><span class="tag type-fiscomisional">Fiscomisional</span></td>
+          <td><div class="inst-contact" title="Cel. 968059714 | erikae.rodriguez@educacion.gob.ec">Cel. 968059714<br>erikae.rodriguez@educacion.gob.ec</div></td>
+        </tr>        <tr data-canton="Calvas" data-parroquia="El Lucero" data-ubicacion="CALVAS - LUCERO- LA UNI&#211;N" data-distrito="11D06" data-tipo="Fiscomisional" data-buscar="11H00580 11D06 P. ESTEBAN NARGANEZ GARCIA Calvas El Lucero CALVAS - LUCERO- LA UNI&#211;N Fiscomisional 3024474 0979611562 sarangojonathan@yahoo.es">
+          <td><strong>11H00580</strong><div class="inst-sub">11D06</div></td>
+          <td><strong>P. ESTEBAN NARGANEZ GARCIA</strong><div class="inst-sub inst-address"><span class="inst-location-icon" data-lucide="map-pin"></span><span>Ubicaci&oacute;n: CALVAS - LUCERO- LA UNI&#211;N &middot; Parroquia: El Lucero &middot; Distrito: 11D06</span></div></td>
+          <td><strong>Calvas</strong><div class="inst-sub">El Lucero</div></td>
+          <td><span class="tag type-fiscomisional">Fiscomisional</span></td>
+          <td><div class="inst-contact" title="Tel. 3024474 | Cel. 0979611562 | sarangojonathan@yahoo.es">Tel. 3024474<br>Cel. 0979611562<br>sarangojonathan@yahoo.es</div></td>
+        </tr>        <tr data-canton="Gonzanam&#225;" data-parroquia="Pillinuma" data-ubicacion="GONZANAM&#193;- PILLINUMA" data-distrito="11D06" data-tipo="Fiscomisional" data-buscar="11H00959 11D06 STA. MARIANITA DE JESUS Gonzanam&#225; Pillinuma GONZANAM&#193;- PILLINUMA Fiscomisional  0989987896 vicente.minga@educacion.gob.ec">
+          <td><strong>11H00959</strong><div class="inst-sub">11D06</div></td>
+          <td><strong>STA. MARIANITA DE JESUS</strong><div class="inst-sub inst-address"><span class="inst-location-icon" data-lucide="map-pin"></span><span>Ubicaci&oacute;n: GONZANAM&#193;- PILLINUMA &middot; Parroquia: Pillinuma &middot; Distrito: 11D06</span></div></td>
+          <td><strong>Gonzanam&#225;</strong><div class="inst-sub">Pillinuma</div></td>
+          <td><span class="tag type-fiscomisional">Fiscomisional</span></td>
+          <td><div class="inst-contact" title="Cel. 0989987896 | vicente.minga@educacion.gob.ec">Cel. 0989987896<br>vicente.minga@educacion.gob.ec</div></td>
+        </tr>        <tr data-canton="Calvas" data-parroquia="Cariamanga" data-ubicacion="CARIAMANGA" data-distrito="11D06" data-tipo="Fiscomisional" data-buscar="11H00477 11D06 E.E.B.ESP.PADRE FRANCO AGUIRRE Calvas Cariamanga CARIAMANGA Fiscomisional 2689489- 2687058 0981041605 francojos17@hotmail.com">
+          <td><strong>11H00477</strong><div class="inst-sub">11D06</div></td>
+          <td><strong>E.E.B.ESP.PADRE FRANCO AGUIRRE</strong><div class="inst-sub inst-address"><span class="inst-location-icon" data-lucide="map-pin"></span><span>Ubicaci&oacute;n: CARIAMANGA &middot; Parroquia: Cariamanga &middot; Distrito: 11D06</span></div></td>
+          <td><strong>Calvas</strong><div class="inst-sub">Cariamanga</div></td>
+          <td><span class="tag type-fiscomisional">Fiscomisional</span></td>
+          <td><div class="inst-contact" title="Tel. 2689489- 2687058 | Cel. 0981041605 | francojos17@hotmail.com">Tel. 2689489- 2687058<br>Cel. 0981041605<br>francojos17@hotmail.com</div></td>
+        </tr>        <tr data-canton="Gonzanam&#225;" data-parroquia="Gonzanam&#225;" data-ubicacion="GONZANAM&#193;" data-distrito="11D06" data-tipo="Fiscomisional" data-buscar="11H00937 11D06 UEFISCOM. P. JORGE ABIATAR QUEVEDO FIGUEROA Gonzanam&#225; Gonzanam&#225; GONZANAM&#193; Fiscomisional 2664117-2664103- 0993835918 11h00937uef.pjorgeabiatar@gmail.com">
+          <td><strong>11H00937</strong><div class="inst-sub">11D06</div></td>
+          <td><strong>UEFISCOM. P. JORGE ABIATAR QUEVEDO FIGUEROA</strong><div class="inst-sub inst-address"><span class="inst-location-icon" data-lucide="map-pin"></span><span>Ubicaci&oacute;n: GONZANAM&#193; &middot; Parroquia: Gonzanam&#225; &middot; Distrito: 11D06</span></div></td>
+          <td><strong>Gonzanam&#225;</strong><div class="inst-sub">Gonzanam&#225;</div></td>
+          <td><span class="tag type-fiscomisional">Fiscomisional</span></td>
+          <td><div class="inst-contact" title="Tel. 2664117-2664103- | Cel. 0993835918 | 11h00937uef.pjorgeabiatar@gmail.com">Tel. 2664117-2664103-<br>Cel. 0993835918<br>11h00937uef.pjorgeabiatar@gmail.com</div></td>
+        </tr>        <tr data-canton="Gonzanam&#225;" data-parroquia="Changaimina" data-ubicacion="CHANGAIMINA" data-distrito="11D06" data-tipo="Fiscomisional" data-buscar="11H00957 11D06 UEFISCOM. SAN VICENTE DE PAUL Gonzanam&#225; Changaimina CHANGAIMINA Fiscomisional 3024194 0993250548 uesvp@hotmail.com">
+          <td><strong>11H00957</strong><div class="inst-sub">11D06</div></td>
+          <td><strong>UEFISCOM. SAN VICENTE DE PAUL</strong><div class="inst-sub inst-address"><span class="inst-location-icon" data-lucide="map-pin"></span><span>Ubicaci&oacute;n: CHANGAIMINA &middot; Parroquia: Changaimina &middot; Distrito: 11D06</span></div></td>
+          <td><strong>Gonzanam&#225;</strong><div class="inst-sub">Changaimina</div></td>
+          <td><span class="tag type-fiscomisional">Fiscomisional</span></td>
+          <td><div class="inst-contact" title="Tel. 3024194 | Cel. 0993250548 | uesvp@hotmail.com">Tel. 3024194<br>Cel. 0993250548<br>uesvp@hotmail.com</div></td>
+        </tr>        <tr data-canton="Calvas" data-parroquia="Cariamanga" data-ubicacion="CARIAMANGA" data-distrito="11D06" data-tipo="Fiscomisional" data-buscar="11H00473 11D06 UEFISCOM. MARIA AUXILIADORA Calvas Cariamanga CARIAMANGA Fiscomisional 2687106 0994839133 sor.rodito@hotmail.com">
+          <td><strong>11H00473</strong><div class="inst-sub">11D06</div></td>
+          <td><strong>UEFISCOM. MARIA AUXILIADORA</strong><div class="inst-sub inst-address"><span class="inst-location-icon" data-lucide="map-pin"></span><span>Ubicaci&oacute;n: CARIAMANGA &middot; Parroquia: Cariamanga &middot; Distrito: 11D06</span></div></td>
+          <td><strong>Calvas</strong><div class="inst-sub">Cariamanga</div></td>
+          <td><span class="tag type-fiscomisional">Fiscomisional</span></td>
+          <td><div class="inst-contact" title="Tel. 2687106 | Cel. 0994839133 | sor.rodito@hotmail.com">Tel. 2687106<br>Cel. 0994839133<br>sor.rodito@hotmail.com</div></td>
+        </tr>        <tr data-canton="Calvas" data-parroquia="Cariamanga" data-ubicacion="CARIAMANGA" data-distrito="11D06" data-tipo="Fiscomisional" data-buscar="11H00505 11D06 UEFISCOM. SANTIAGO FERNANDEZ GARC&#205;A Calvas Cariamanga CARIAMANGA Fiscomisional 2687368- 2688-230 0991550330 segundopardo2000@hotmail.com">
+          <td><strong>11H00505</strong><div class="inst-sub">11D06</div></td>
+          <td><strong>UEFISCOM. SANTIAGO FERNANDEZ GARC&#205;A</strong><div class="inst-sub inst-address"><span class="inst-location-icon" data-lucide="map-pin"></span><span>Ubicaci&oacute;n: CARIAMANGA &middot; Parroquia: Cariamanga &middot; Distrito: 11D06</span></div></td>
+          <td><strong>Calvas</strong><div class="inst-sub">Cariamanga</div></td>
+          <td><span class="tag type-fiscomisional">Fiscomisional</span></td>
+          <td><div class="inst-contact" title="Tel. 2687368- 2688-230 | Cel. 0991550330 | segundopardo2000@hotmail.com">Tel. 2687368- 2688-230<br>Cel. 0991550330<br>segundopardo2000@hotmail.com</div></td>
+        </tr>        <tr data-canton="Calvas" data-parroquia="Cariamanga" data-ubicacion="CARIAMANGA" data-distrito="11D06" data-tipo="Fiscomisional" data-buscar="11H00471 11D06 UEFISCOM. STA. JUANA DE ARCO LA SALLE Calvas Cariamanga CARIAMANGA Fiscomisional 2687131- 2688614- 0939118080 rectorcariamanga@lasalle.edu.ec brendasilvaya@gmail.com">
+          <td><strong>11H00471</strong><div class="inst-sub">11D06</div></td>
+          <td><strong>UEFISCOM. STA. JUANA DE ARCO LA SALLE</strong><div class="inst-sub inst-address"><span class="inst-location-icon" data-lucide="map-pin"></span><span>Ubicaci&oacute;n: CARIAMANGA &middot; Parroquia: Cariamanga &middot; Distrito: 11D06</span></div></td>
+          <td><strong>Calvas</strong><div class="inst-sub">Cariamanga</div></td>
+          <td><span class="tag type-fiscomisional">Fiscomisional</span></td>
+          <td><div class="inst-contact" title="Tel. 2687131- 2688614- | Cel. 0939118080 | rectorcariamanga@lasalle.edu.ec brendasilvaya@gmail.com">Tel. 2687131- 2688614-<br>Cel. 0939118080<br>rectorcariamanga@lasalle.edu.ec brendasilvaya@gmail.com</div></td>
+        </tr>        <tr data-canton="Macar&#225;" data-parroquia="Macar&#225;" data-ubicacion="MACAR&#193;" data-distrito="11D07" data-tipo="Fiscomisional" data-buscar="11H01059 11D07 UEFISCOM. SANTA MARIANA DE JES&#218;S Macar&#225; Macar&#225; MACAR&#193; Fiscomisional 2694039- 2694707 0991199202 unidadeducativamarianitas@hotmail.com">
+          <td><strong>11H01059</strong><div class="inst-sub">11D07</div></td>
+          <td><strong>UEFISCOM. SANTA MARIANA DE JES&#218;S</strong><div class="inst-sub inst-address"><span class="inst-location-icon" data-lucide="map-pin"></span><span>Ubicaci&oacute;n: MACAR&#193; &middot; Parroquia: Macar&#225; &middot; Distrito: 11D07</span></div></td>
+          <td><strong>Macar&#225;</strong><div class="inst-sub">Macar&#225;</div></td>
+          <td><span class="tag type-fiscomisional">Fiscomisional</span></td>
+          <td><div class="inst-contact" title="Tel. 2694039- 2694707 | Cel. 0991199202 | unidadeducativamarianitas@hotmail.com">Tel. 2694039- 2694707<br>Cel. 0991199202<br>unidadeducativamarianitas@hotmail.com</div></td>
+        </tr>        <tr data-canton="Macar&#225;" data-parroquia="Macar&#225;" data-ubicacion="MACAR&#193;" data-distrito="11D07" data-tipo="Fiscomisional" data-buscar="11H01076 11D07 UEFISCOM. MARISTA MACAR&#193; Macar&#225; Macar&#225; MACAR&#193; Fiscomisional 2694060- 2694026 0993872736 fannyc.hidalgo@educacion.gob.ec">
+          <td><strong>11H01076</strong><div class="inst-sub">11D07</div></td>
+          <td><strong>UEFISCOM. MARISTA MACAR&#193;</strong><div class="inst-sub inst-address"><span class="inst-location-icon" data-lucide="map-pin"></span><span>Ubicaci&oacute;n: MACAR&#193; &middot; Parroquia: Macar&#225; &middot; Distrito: 11D07</span></div></td>
+          <td><strong>Macar&#225;</strong><div class="inst-sub">Macar&#225;</div></td>
+          <td><span class="tag type-fiscomisional">Fiscomisional</span></td>
+          <td><div class="inst-contact" title="Tel. 2694060- 2694026 | Cel. 0993872736 | fannyc.hidalgo@educacion.gob.ec">Tel. 2694060- 2694026<br>Cel. 0993872736<br>fannyc.hidalgo@educacion.gob.ec</div></td>
+        </tr>        <tr data-canton="Saraguro" data-parroquia="Saraguro" data-ubicacion="SARAGURO" data-distrito="11D08" data-tipo="Fiscomisional" data-buscar="11H01384 11D08 UEFISCOM. FRAY CRISTOBAL ZAMBRANO Saraguro Saraguro SARAGURO Fiscomisional 2200560 0939559862 frsy1985@gmail.com">
+          <td><strong>11H01384</strong><div class="inst-sub">11D08</div></td>
+          <td><strong>UEFISCOM. FRAY CRISTOBAL ZAMBRANO</strong><div class="inst-sub inst-address"><span class="inst-location-icon" data-lucide="map-pin"></span><span>Ubicaci&oacute;n: SARAGURO &middot; Parroquia: Saraguro &middot; Distrito: 11D08</span></div></td>
+          <td><strong>Saraguro</strong><div class="inst-sub">Saraguro</div></td>
+          <td><span class="tag type-fiscomisional">Fiscomisional</span></td>
+          <td><div class="inst-contact" title="Tel. 2200560 | Cel. 0939559862 | frsy1985@gmail.com">Tel. 2200560<br>Cel. 0939559862<br>frsy1985@gmail.com</div></td>
+        </tr>        <tr data-canton="Saraguro" data-parroquia="Saraguro" data-ubicacion="SARAGURO" data-distrito="11D08" data-tipo="Fiscomisional" data-buscar="11H01381 11D08 UEFISCOM. SAN JOS&#201; DE CALASANZ Saraguro Saraguro SARAGURO Fiscomisional 2200256 0992082370 uefsjcalasanz@gmail.com">
+          <td><strong>11H01381</strong><div class="inst-sub">11D08</div></td>
+          <td><strong>UEFISCOM. SAN JOS&#201; DE CALASANZ</strong><div class="inst-sub inst-address"><span class="inst-location-icon" data-lucide="map-pin"></span><span>Ubicaci&oacute;n: SARAGURO &middot; Parroquia: Saraguro &middot; Distrito: 11D08</span></div></td>
+          <td><strong>Saraguro</strong><div class="inst-sub">Saraguro</div></td>
+          <td><span class="tag type-fiscomisional">Fiscomisional</span></td>
+          <td><div class="inst-contact" title="Tel. 2200256 | Cel. 0992082370 | uefsjcalasanz@gmail.com">Tel. 2200256<br>Cel. 0992082370<br>uefsjcalasanz@gmail.com</div></td>
+        </tr>        <tr data-canton="Saraguro" data-parroquia="Saraguro" data-ubicacion="SARAGURO" data-distrito="11D08" data-tipo="Fiscomisional" data-buscar="11H01382 11D08 UEFISCOM. SANTA MARIANA DE JESUS Saraguro Saraguro SARAGURO Fiscomisional 2200119 0969349705 ">
+          <td><strong>11H01382</strong><div class="inst-sub">11D08</div></td>
+          <td><strong>UEFISCOM. SANTA MARIANA DE JESUS</strong><div class="inst-sub inst-address"><span class="inst-location-icon" data-lucide="map-pin"></span><span>Ubicaci&oacute;n: SARAGURO &middot; Parroquia: Saraguro &middot; Distrito: 11D08</span></div></td>
+          <td><strong>Saraguro</strong><div class="inst-sub">Saraguro</div></td>
+          <td><span class="tag type-fiscomisional">Fiscomisional</span></td>
+          <td><div class="inst-contact" title="Tel. 2200119 | Cel. 0969349705">Tel. 2200119<br>Cel. 0969349705</div></td>
+        </tr>        <tr data-canton="Saraguro" data-parroquia="Saraguro" data-ubicacion="SARAGURO" data-distrito="11D08" data-tipo="Fiscomisional" data-buscar="11H01389 11D08 C.E.ESP.FISCOM. DIVINO NI&#209;O JESUS Saraguro Saraguro SARAGURO Fiscomisional 2200508-2200510-2200311 0990154347 jackeline_jaramillo@yahoo.com">
+          <td><strong>11H01389</strong><div class="inst-sub">11D08</div></td>
+          <td><strong>C.E.ESP.FISCOM. DIVINO NI&#209;O JESUS</strong><div class="inst-sub inst-address"><span class="inst-location-icon" data-lucide="map-pin"></span><span>Ubicaci&oacute;n: SARAGURO &middot; Parroquia: Saraguro &middot; Distrito: 11D08</span></div></td>
+          <td><strong>Saraguro</strong><div class="inst-sub">Saraguro</div></td>
+          <td><span class="tag type-fiscomisional">Fiscomisional</span></td>
+          <td><div class="inst-contact" title="Tel. 2200508-2200510-2200311 | Cel. 0990154347 | jackeline_jaramillo@yahoo.com">Tel. 2200508-2200510-2200311<br>Cel. 0990154347<br>jackeline_jaramillo@yahoo.com</div></td>
+        </tr>        <tr data-canton="Zapotillo" data-parroquia="Zapotillo" data-ubicacion="ZAPOTILLO" data-distrito="11D09" data-tipo="Fiscomisional" data-buscar="11H01555 11D09 U.E. FISCOM. REINA MATERNAL DE LA FRONTERA Zapotillo Zapotillo ZAPOTILLO Fiscomisional 2647506- 2647079 0997487103 mayina_1974@hotmail.com">
+          <td><strong>11H01555</strong><div class="inst-sub">11D09</div></td>
+          <td><strong>U.E. FISCOM. REINA MATERNAL DE LA FRONTERA</strong><div class="inst-sub inst-address"><span class="inst-location-icon" data-lucide="map-pin"></span><span>Ubicaci&oacute;n: ZAPOTILLO &middot; Parroquia: Zapotillo &middot; Distrito: 11D09</span></div></td>
+          <td><strong>Zapotillo</strong><div class="inst-sub">Zapotillo</div></td>
+          <td><span class="tag type-fiscomisional">Fiscomisional</span></td>
+          <td><div class="inst-contact" title="Tel. 2647506- 2647079 | Cel. 0997487103 | mayina_1974@hotmail.com">Tel. 2647506- 2647079<br>Cel. 0997487103<br>mayina_1974@hotmail.com</div></td>
+        </tr>      </tbody>
+    </table>
+
+
+
+    <div class="inst-no-results" id="inst-no-results">No se encontraron instituciones con esos filtros.</div>
+
+    <div style="margin-top:20px;display:flex;gap:20px;flex-wrap:wrap;">
+      <div style="padding:16px 24px;background:var(--azul-fedec);border-radius:8px;color:var(--blanco);text-align:center;min-width:140px;">
+        <div style="font-family:'Geist','Inter','Segoe UI',sans-serif;font-size:32px;color:var(--dorado-claro);font-weight:900;">81</div>
+        <div style="font-size:12px;color:rgba(255,255,255,0.7);margin-top:2px;">Instituciones federadas</div>
+      </div>
+      <div style="padding:16px 24px;background:var(--azul-fedec);border-radius:8px;color:var(--blanco);text-align:center;min-width:140px;">
+        <div style="font-family:'Geist','Inter','Segoe UI',sans-serif;font-size:32px;color:var(--dorado-claro);font-weight:900;">9</div>
+        <div style="font-size:12px;color:rgba(255,255,255,0.7);margin-top:2px;">Distritos educativos</div>
+      </div>
+      <div style="padding:16px 24px;background:var(--azul-fedec);border-radius:8px;color:var(--blanco);text-align:center;min-width:140px;">
+        <div style="font-family:'Geist','Inter','Segoe UI',sans-serif;font-size:32px;color:var(--dorado-claro);font-weight:900;">3</div>
+        <div style="font-size:12px;color:rgba(255,255,255,0.7);margin-top:2px;">Zonas de coordinación</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CENTRO DE DOCUMENTOS -->
+<section id="documentos">
+  <div class="section-inner">
+    <div class="section-tag">Repositorio normativo</div>
+    <h2 class="section-title">Centro de documentos del Ministerio de Educación</h2>
+    <div class="section-line"></div>
+    <p style="color:#666;max-width:700px;margin-bottom:28px;font-size:14px;">Acceso permanente a los acuerdos ministeriales, instructivos, normativas y convenios vigentes que regulan el funcionamiento de las instituciones educativas fiscomisionales y particulares católicas del Ecuador.</p>
+
+    <div class="doc-tabs">
+      <button class="doc-tab active" onclick="filterDocs('todos', this)">Todos</button>
+      <button class="doc-tab" onclick="filterDocs('acuerdo', this)">Acuerdos Ministeriales</button>
+      <button class="doc-tab" onclick="filterDocs('normativa', this)">Normativas</button>
+      <button class="doc-tab" onclick="filterDocs('instructivo', this)">Instructivos y ERE</button>
+      <button class="doc-tab" onclick="filterDocs('convenio', this)">Convenios</button>
+    </div>
+
+    <div class="docs-grid" id="docs-grid">
+
+      <div class="doc-card" data-cat="acuerdo">
+        <div class="doc-header">
+          <div class="doc-icono acuerdo">PDF</div>
+          <div class="doc-info">
+            <div class="doc-categoria cat-acuerdo">Acuerdo ministerial</div>
+            <div class="doc-titulo">MINEDUC-2023-00033A ” Fiscomisionales confesionales y laicas</div>
+          </div>
+        </div>
+        <div class="doc-meta">
+          <span>Agosto 2023</span>
+          <span class="doc-badge badge-vigente">Vigente</span>
+        </div>
+        <a href="#" class="doc-descargar">↓ Descargar documento</a>
+      </div>
+
+      <div class="doc-card" data-cat="normativa">
+        <div class="doc-header">
+          <div class="doc-icono normativa">PDF</div>
+          <div class="doc-info">
+            <div class="doc-categoria cat-normativa">Normativa</div>
+            <div class="doc-titulo">MINEDUC-ME-2016-00026A ” Funcionamiento de instituciones fiscomisionales</div>
+          </div>
+        </div>
+        <div class="doc-meta">
+          <span>Marzo 2016</span>
+          <span class="doc-badge badge-vigente">Vigente</span>
+        </div>
+        <a href="#" class="doc-descargar">↓ Descargar documento</a>
+      </div>
+
+      <div class="doc-card" data-cat="instructivo">
+        <div class="doc-header">
+          <div class="doc-icono instructivo">PDF</div>
+          <div class="doc-info">
+            <div class="doc-categoria cat-instructivo">Instrucción · ERE</div>
+            <div class="doc-titulo">MINEDUC-ME-2015-00123A2 ” Educación Religiosa Escolar (ERE)</div>
+          </div>
+        </div>
+        <div class="doc-meta">
+          <span>2015</span>
+          <span class="doc-badge badge-vigente">Vigente</span>
+        </div>
+        <a href="#" class="doc-descargar">↓ Descargar documento</a>
+      </div>
+
+      <div class="doc-card" data-cat="convenio">
+        <div class="doc-header">
+          <div class="doc-icono convenio">PDF</div>
+          <div class="doc-info">
+            <div class="doc-categoria cat-convenio">Convenio</div>
+            <div class="doc-titulo">Convenio de Cooperación Interinstitucional MEC — CONFEDEC 2016</div>
+          </div>
+        </div>
+        <div class="doc-meta">
+          <span>Septiembre 2016</span>
+          <span class="doc-badge badge-vigente">Vigente</span>
+        </div>
+        <a href="#" class="doc-descargar">↓ Descargar documento</a>
+      </div>
+
+      <div class="doc-card" data-cat="acuerdo">
+        <div class="doc-header">
+          <div class="doc-icono acuerdo">PDF</div>
+          <div class="doc-info">
+            <div class="doc-categoria cat-acuerdo">Acuerdo ministerial</div>
+            <div class="doc-titulo">MINEDUC-2023-00020A ” Acuerdos derogados</div>
+          </div>
+        </div>
+        <div class="doc-meta">
+          <span>2023</span>
+          <span class="doc-badge badge-derogado">Referencia</span>
+        </div>
+        <a href="#" class="doc-descargar">↓ Descargar documento</a>
+      </div>
+
+      <div class="doc-card" data-cat="normativa" style="border:2px dashed var(--borde);background:transparent;justify-content:center;align-items:center;text-align:center;min-height:140px;cursor:default;">
+        <div style="color:#bbb;font-size:24px;margin-bottom:8px;">+</div>
+        <div style="font-size:13px;color:#bbb;font-weight:500;">Subir nuevo documento</div>
+        <div style="font-size:11px;color:#ccc;margin-top:4px;">Solo administradores</div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- NOTICIAS / CULTURA -->
+<section id="cultura">
+  <div class="section-inner">
+    <div class="section-tag">Centro cultural e informativo</div>
+    <h2 class="section-title">Noticias y vida institucional</h2>
+    <div class="section-line"></div>
+
+    <div class="noticias-grid">
+      <div class="noticia-principal">
+        <div class="noticia-img">
+          <span class="noticia-tag-over">Evento destacado</span>
+        </div>
+        <div class="noticia-content">
+          <div class="noticia-fecha">Octubre 2025</div>
+          <h3 class="noticia-titulo">Capacitación en Gestión y Liderazgo Educativo para directivos de la FEDEC</h3>
+          <p class="noticia-desc">El 21 de octubre de 2025, directivos de las instituciones federadas participaron en una jornada de formación orientada a fortalecer la gestión institucional ante las auditorías educativas del Ministerio.</p>
+        </div>
+      </div>
+
+      <div class="noticias-lista">
+        <div class="noticia-mini">
+          <div class="noticia-mini-cat">Pastoral</div>
+          <div class="noticia-mini-tit">Jubileo del Mundo Educativo ” Obispado de Loja</div>
+          <div class="noticia-mini-fecha">30 de octubre, 2025</div>
+        </div>
+        <div class="noticia-mini">
+          <div class="noticia-mini-cat">Capacitación</div>
+          <div class="noticia-mini-tit">Taller PEI — Colmena con Estándares de Calidad Educativa</div>
+          <div class="noticia-mini-fecha">22-23 de enero, 2026</div>
+        </div>
+        <div class="noticia-mini">
+          <div class="noticia-mini-cat">Gestión</div>
+          <div class="noticia-mini-tit">Bodas de Diamante de la U.E. María Auxiliadora</div>
+          <div class="noticia-mini-fecha">2025</div>
+        </div>
+        <div class="noticia-mini">
+          <div class="noticia-mini-cat">Normativa</div>
+          <div class="noticia-mini-tit">Defensa de asignación de personal DECE ciclo 2026-2027</div>
+          <div class="noticia-mini-fecha">Febrero, 2026</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACTO -->
+<section id="contacto">
+  <div class="section-inner">
+    <div class="contact-grid">
+      <div>
+        <h2 class="section-title">Contacto Directo</h2>
+        <p class="contact-lead">¿Tienes dudas sobre procesos institucionales, afiliación o necesitas información oficial de FEDEC Loja? Estamos listos para apoyarte.</p>
+
+        <div class="contact-list">
+          <div class="contact-item">
+            <div class="contact-icon" data-lucide="map-pinned"></div>
+            <div>
+              <div class="contact-label">Dirección</div>
+              <div class="contact-value">Loja, provincia de Loja, Ecuador.</div>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-icon" data-lucide="phone"></div>
+            <div>
+              <div class="contact-label">Teléfonos</div>
+              <div class="contact-value">+593 (07) 000-0000</div>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-icon" data-lucide="mail"></div>
+            <div>
+              <div class="contact-label">Correo electrónico</div>
+              <div class="contact-value">fedec.loja@gmail.com</div>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-icon" data-lucide="clock"></div>
+            <div>
+              <div class="contact-label">Horario de atención</div>
+              <div class="contact-value">Lunes a viernes: 08h00-13h00 / 15h00-17h00</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <form class="contact-card">
+        <h3>Envíanos un mensaje</h3>
+        <div class="form-grid">
+          <div class="form-field">
+            <label for="contacto-nombre">Nombre Completo</label>
+            <input id="contacto-nombre" type="text" placeholder="Ej. Juan Pérez">
+          </div>
+          <div class="form-field">
+            <label for="contacto-correo">Correo Electrónico</label>
+            <input id="contacto-correo" type="email" placeholder="juan@ejemplo.com">
+          </div>
+        </div>
+        <div class="form-field">
+          <label for="contacto-asunto">Asunto</label>
+          <input id="contacto-asunto" type="text" placeholder="Motivo de su contacto">
+        </div>
+        <div class="form-field">
+          <label for="contacto-mensaje">Mensaje</label>
+          <textarea id="contacto-mensaje" placeholder="Detalla tu requerimiento aquí..."></textarea>
+        </div>
+        <button class="form-submit" type="button">Enviar Formulario</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div>
+      <div class="footer-brand-name">FEDEC Loja</div>
+      <div class="footer-brand-sub">Federación de Establecimientos de Educación Católica</div>
+      <p class="footer-desc">Organismo provincial que articula y representa a las instituciones educativas fiscomisionales y particulares católicas de la provincia de Loja ante el Ministerio de Educación y la sociedad civil.</p>
+    </div>
+    <div>
+      <div class="footer-col-title">Secciones</div>
+      <ul class="footer-links">
+        <li><a href="#">Quiénes somos</a></li>
+        <li><a href="#">Estructura</a></li>
+        <li><a href="#">Organismos federados</a></li>
+        <li><a href="#">Centro de documentos</a></li>
+        <li><a href="#">Noticias</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="footer-col-title">Alianzas</div>
+      <ul class="footer-links">
+        <li><a href="#">CONFEDEC Nacional</a></li>
+        <li><a href="#">Ministerio de Educación</a></li>
+        <li><a href="#">Diócesis de Loja</a></li>
+        <li><a href="#">Universidad de Loja (UNL)</a></li>
+        <li><a href="#">UTPL</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2025 FEDEC Loja ” Provincia de Loja, Ecuador</span>
+    <div class="confedec-badge">Afiliados a <span>CONFEDEC</span> Nacional</div>
+  </div>
+</footer>
+
+<script src="https://unpkg.com/lucide@latest"></script>
+<script>
+function prepararIconos() {
+  if (window.lucide) {
+    window.lucide.createIcons({
+      attrs: { 'stroke-width': 2 }
+    });
+  }
+}
+
+document.addEventListener('DOMContentLoaded', prepararIconos);
+
+function normalizarTexto(valor) {
+  return (valor || '')
+    .toString()
+    .normalize('NFD')
+    .replace(/[\u0300-\u036f]/g, '')
+    .toLowerCase()
+    .trim();
+}
+
+function prepararFiltrosInstituciones() {
+  const busqueda = document.getElementById('inst-busqueda');
+  const cantonSelect = document.getElementById('inst-canton');
+  const tipoSelect = document.getElementById('inst-tipo');
+  const meta = document.getElementById('inst-filter-meta');
+  const sinResultados = document.getElementById('inst-no-results');
+  const filas = Array.from(document.querySelectorAll('#instituciones-body tr:not(.inst-summary)'));
+  const resumen = document.querySelector('#instituciones-body tr.inst-summary');
+
+  if (!busqueda || !cantonSelect || !tipoSelect || !meta || !sinResultados || filas.length === 0) return;
+
+  const cantones = new Map();
+
+  filas.forEach(function(fila) {
+    const celdas = fila.querySelectorAll('td');
+    const amie = celdas[0] ? celdas[0].textContent : '';
+    const nombre = celdas[1] ? celdas[1].textContent : '';
+    const canton = fila.getAttribute('data-canton') || (celdas[2] ? celdas[2].textContent : '');
+    const parroquia = fila.getAttribute('data-parroquia') || '';
+    const ubicacion = fila.getAttribute('data-ubicacion') || '';
+    const tipo = celdas[3] ? celdas[3].textContent : '';
+    const nivel = celdas[4] ? celdas[4].textContent : '';
+    const buscarOriginal = fila.getAttribute('data-buscar') || '';
+
+    fila.dataset.buscar = normalizarTexto([buscarOriginal, amie, nombre, canton, parroquia, ubicacion, tipo, nivel].join(' '));
+    fila.dataset.tipo = normalizarTexto(tipo);
+    fila.dataset.canton = normalizarTexto(canton);
+
+    if (canton) {
+      const clave = normalizarTexto(canton);
+      if (!cantones.has(clave)) cantones.set(clave, canton);
+    }
+  });
+
+  Array.from(cantones.entries())
+    .sort(function(a, b) { return a[1].localeCompare(b[1], 'es'); })
+    .forEach(function(item) {
+      const option = document.createElement('option');
+      option.value = item[0];
+      option.textContent = item[1];
+      cantonSelect.appendChild(option);
+    });
+
+  function filtrarInstituciones() {
+    const texto = normalizarTexto(busqueda.value);
+    const canton = cantonSelect.value;
+    const tipo = normalizarTexto(tipoSelect.value);
+    const hayFiltros = Boolean(texto || canton || tipo);
+    let visibles = 0;
+
+    filas.forEach(function(fila) {
+      const coincideTexto = !texto || fila.dataset.buscar.indexOf(texto) > -1;
+      const coincideCanton = !canton || fila.dataset.canton.indexOf(canton) > -1;
+      const coincideTipo = !tipo || fila.dataset.tipo === tipo;
+      const mostrar = coincideTexto && coincideCanton && coincideTipo;
+
+      fila.style.display = mostrar ? '' : 'none';
+      if (mostrar) visibles++;
+    });
+
+    if (resumen) resumen.style.display = hayFiltros ? 'none' : '';
+    sinResultados.style.display = visibles === 0 ? 'block' : 'none';
+    meta.textContent = hayFiltros
+      ? visibles + ' resultado' + (visibles === 1 ? '' : 's') + ' encontrado' + (visibles === 1 ? '' : 's') + '.'
+      : 'Mostrando ' + filas.length + ' instituciones en la tabla.';
+  }
+
+  busqueda.addEventListener('input', filtrarInstituciones);
+  cantonSelect.addEventListener('change', filtrarInstituciones);
+  tipoSelect.addEventListener('change', filtrarInstituciones);
+  filtrarInstituciones();
+}
+
+document.addEventListener('DOMContentLoaded', prepararFiltrosInstituciones);
+
+function prepararNavegacionSecciones() {
+  const enlaces = Array.from(document.querySelectorAll('.nav-links a'));
+  enlaces.forEach(function(enlace) {
+    enlace.addEventListener('click', function(e) {
+      enlaces.forEach(function(a) { a.classList.remove('active'); });
+      enlace.classList.add('active');
+    });
+  });
+}
+
+document.addEventListener('DOMContentLoaded', prepararNavegacionSecciones);
+
+function filterDocs(cat, btn) {
+  document.querySelectorAll('.doc-tab').forEach(t => t.classList.remove('active'));
+  btn.classList.add('active');
+  document.querySelectorAll('.doc-card').forEach(card => {
+    if (cat === 'todos' || card.dataset.cat === cat) {
+      card.style.display = 'flex';
+    } else {
+      card.style.display = 'none';
+    }
+  });
+}
+</script>
+</body>
+</html>
