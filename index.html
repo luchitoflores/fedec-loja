@@ -1507,6 +1507,61 @@
     margin-bottom: 24px;
   }
 
+  .map-card {
+    overflow: hidden;
+    padding: 0;
+  }
+
+  .map-card-header {
+    padding: 26px 28px 18px;
+  }
+
+  .map-card-header p {
+    color: #64748b;
+    font-size: 14px;
+    line-height: 1.6;
+    margin-top: 8px;
+  }
+
+  .map-frame {
+    width: 100%;
+    height: 360px;
+    border: 0;
+    display: block;
+    background: #f8fafc;
+  }
+
+  .map-actions {
+    padding: 18px 28px 26px;
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+  }
+
+  .map-link,
+  .contact-link {
+    color: inherit;
+    text-decoration: none;
+  }
+
+  .map-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 44px;
+    padding: 12px 18px;
+    border-radius: 8px;
+    background: #f59e0b;
+    color: #071b33;
+    font-weight: 900;
+  }
+
+  .map-link.secondary {
+    background: #f8fafc;
+    color: #071b33;
+    border: 1px solid #e2e8f0;
+  }
+
   .form-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -1894,6 +1949,44 @@
   .noticia-mini:hover {
     transform: translateY(-2px);
     box-shadow: 0 18px 46px rgba(15, 23, 42, 0.12);
+  }
+
+  .dir-avatar.has-photo {
+    width: 92px;
+    height: 92px;
+    padding: 0;
+    overflow: hidden;
+    background: #fff;
+    border: 4px solid #fff;
+    box-shadow: 0 14px 30px rgba(15, 23, 42, 0.16);
+  }
+
+  .dir-avatar.has-photo img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+    object-position: 68% 34%;
+    transform: scale(1.08);
+  }
+
+  .dir-avatar.dir-photo {
+    width: 132px;
+    height: 132px;
+    padding: 0;
+    overflow: hidden;
+    border-radius: 999px;
+    background: #071b33;
+    border: 4px solid #fff;
+    box-shadow: 0 16px 34px rgba(15, 23, 42, 0.18);
+  }
+
+  .dir-avatar.dir-photo img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+    object-position: center;
   }
 
   .search-input,
@@ -3079,43 +3172,43 @@
 
     <div class="directorio-grid">
       <div class="dir-card">
-        <div class="dir-avatar">NJ</div>
+        <div class="dir-avatar dir-photo"><img src="assets/2.png" alt="Hna. Nancy Jiménez - Presidenta"></div>
         <div class="dir-cargo">Presidenta</div>
         <div class="dir-nombre">Hna. Nancy Jiménez</div>
         <div class="dir-detalle">Directorio 2026-2028</div>
       </div>
       <div class="dir-card">
-        <div class="dir-avatar">LF</div>
+        <div class="dir-avatar dir-photo"><img src="assets/3.png" alt="Mgtr. Luis Flores - Vicepresidente"></div>
         <div class="dir-cargo">Vicepresidente</div>
-        <div class="dir-nombre">Mgs. Luis Flores</div>
+        <div class="dir-nombre">Mgtr. Luis Flores</div>
         <div class="dir-detalle">Directorio 2026-2028</div>
       </div>
       <div class="dir-card">
-        <div class="dir-avatar">EN</div>
+        <div class="dir-avatar dir-photo"><img src="assets/4.png" alt="Fray Freddy Sucuzhañay - Coordinador Distrito 1"></div>
         <div class="dir-cargo">Coordinador Dist. 1</div>
         <div class="dir-nombre">Fray Freddy Sucuzhañay</div>
         <div class="dir-detalle">Coordinación distrital</div>
       </div>
       <div class="dir-card">
-        <div class="dir-avatar">SP</div>
+        <div class="dir-avatar dir-photo"><img src="assets/5.png" alt="P. Segundo Pardo Rojas - Coordinador Distrito 3"></div>
         <div class="dir-cargo">Coordinador Dist. 3</div>
         <div class="dir-nombre">Padre Segundo Pardo Rojas</div>
         <div class="dir-detalle">Coordinación distrital</div>
       </div>
       <div class="dir-card">
-        <div class="dir-avatar">EN</div>
+        <div class="dir-avatar dir-photo"><img src="assets/6.png" alt="Hna. Estela Nieves - Delegada Distrito 1"></div>
         <div class="dir-cargo">Delegada principal Dist. 1</div>
         <div class="dir-nombre">Hna. Estela Nieves</div>
         <div class="dir-detalle">Delegada principal</div>
       </div>
       <div class="dir-card">
-        <div class="dir-avatar">MR</div>
+        <div class="dir-avatar dir-photo"><img src="assets/7.png" alt="Hna. Martha Romero - Delegada Distrito 2"></div>
         <div class="dir-cargo">Delegada principal Dist. 2</div>
         <div class="dir-nombre">Hna. Martha Romero</div>
         <div class="dir-detalle">Delegada principal</div>
       </div>
       <div class="dir-card">
-        <div class="dir-avatar">RC</div>
+        <div class="dir-avatar dir-photo"><img src="assets/8.png" alt="Lic. Rosa Carrillo - Delegada Distrito 3"></div>
         <div class="dir-cargo">Delegada principal Dist. 3</div>
         <div class="dir-nombre">Lic. Rosa Carrillo</div>
         <div class="dir-detalle">Delegada principal</div>
@@ -3152,493 +3245,574 @@
     <table class="instituciones-table">
       <thead><tr><th>AMIE / Distrito</th><th>Institución educativa</th><th>Cantón</th><th>Tipo</th><th>Contacto</th></tr></thead>
       <tbody id="instituciones-body">
-        <tr data-canton="Loja" data-parroquia="Jipiro" data-ubicacion="LOJA- JIPIRO" data-distrito="11D01" data-tipo="Fiscomisional" data-buscar="11H00286 11D01 CEI. PADRE JULIO VILLARROEL Loja Jipiro LOJA- JIPIRO Fiscomisional 2614336 0988346542 aliarte2011@hotmail.com">
+        <tr data-canton="Loja" data-parroquia="El Sagrario (Jipiro)" data-ubicacion="Loja" data-distrito="11D01" data-tipo="Fiscomisional" data-buscar="11H00286 11D01 Loja Centro de Educación Inicial Fiscomisional Padre Julio Villarroel Fiscomisional Loja Loja El Sagrario (Jipiro) Loja 2614336 0988346542 Lic. Alicia Beatriz Artiaga Ríos aliarte2011@hotmail.com">
           <td><strong>11H00286</strong><div class="inst-sub">11D01</div></td>
-          <td><strong>CEI. PADRE JULIO VILLARROEL</strong><div class="inst-sub inst-address"><span class="inst-location-icon" data-lucide="map-pin"></span><span>Ubicaci&oacute;n: LOJA- JIPIRO &middot; Parroquia: Jipiro &middot; Distrito: 11D01</span></div></td>
-          <td><strong>Loja</strong><div class="inst-sub">Jipiro</div></td>
+          <td><strong>Centro de Educación Inicial Fiscomisional Padre Julio Villarroel</strong><div class="inst-sub inst-address"><span class="inst-location-icon" data-lucide="map-pin"></span><span>Ubicaci&oacute;n: Loja &middot; Parroquia/Sector: El Sagrario (Jipiro) &middot; Distrito: 11D01 - Loja</span></div></td>
+          <td><strong>Loja</strong><div class="inst-sub">El Sagrario (Jipiro)</div></td>
           <td><span class="tag type-fiscomisional">Fiscomisional</span></td>
-          <td><div class="inst-contact" title="Tel. 2614336 | Cel. 0988346542 | aliarte2011@hotmail.com">Tel. 2614336<br>Cel. 0988346542<br>aliarte2011@hotmail.com</div></td>
-        </tr>        <tr data-canton="Loja" data-parroquia="Loja" data-ubicacion="LOJA" data-distrito="11D01" data-tipo="Fiscomisional" data-buscar="11H00213 11D01 CEI. NI&#209;O JES&#218;S Loja Loja LOJA Fiscomisional 2573838 0986180436 estely.nieves@gmail.com">
+          <td><div class="inst-contact" title="Directivo: Lic. Alicia Beatriz Artiaga Ríos | Tel. 2614336 | Cel. 0988346542 | aliarte2011@hotmail.com"><strong>Lic. Alicia Beatriz Artiaga Ríos</strong><br>Tel. 2614336<br>Cel. 0988346542<br>aliarte2011@hotmail.com</div></td>
+        </tr>
+        <tr data-canton="Loja" data-parroquia="El Sagrario / San Sebastián" data-ubicacion="Loja" data-distrito="11D01" data-tipo="Fiscomisional" data-buscar="11H00213 11D01 Loja Centro de Educación Inicial Fiscomisional Niño Jesús Fiscomisional Loja Loja El Sagrario / San Sebastián Loja 2573838 0986180436 Hna. Estela Nieves estely.nieves@gmail.com">
           <td><strong>11H00213</strong><div class="inst-sub">11D01</div></td>
-          <td><strong>CEI. NI&#209;O JES&#218;S</strong><div class="inst-sub inst-address"><span class="inst-location-icon" data-lucide="map-pin"></span><span>Ubicaci&oacute;n: LOJA &middot; Parroquia: Loja &middot; Distrito: 11D01</span></div></td>
-          <td><strong>Loja</strong><div class="inst-sub">Loja</div></td>
+          <td><strong>Centro de Educación Inicial Fiscomisional Niño Jesús</strong><div class="inst-sub inst-address"><span class="inst-location-icon" data-lucide="map-pin"></span><span>Ubicaci&oacute;n: Loja &middot; Parroquia/Sector: El Sagrario / San Sebastián &middot; Distrito: 11D01 - Loja</span></div></td>
+          <td><strong>Loja</strong><div class="inst-sub">El Sagrario / San Sebastián</div></td>
           <td><span class="tag type-fiscomisional">Fiscomisional</span></td>
-          <td><div class="inst-contact" title="Tel. 2573838 | Cel. 0986180436 | estely.nieves@gmail.com">Tel. 2573838<br>Cel. 0986180436<br>estely.nieves@gmail.com</div></td>
-        </tr>        <tr data-canton="Loja" data-parroquia="Malacatos" data-ubicacion="MALACATOS" data-distrito="11D01" data-tipo="Fiscomisional" data-buscar="11H00374 11D01 UEFISCOM. MANUEL JOSE RODRIGUEZ Loja Malacatos MALACATOS Fiscomisional 2673177 0994978715 laremache@utpl.edu.ec">
+          <td><div class="inst-contact" title="Directivo: Hna. Estela Nieves | Tel. 2573838 | Cel. 0986180436 | estely.nieves@gmail.com"><strong>Hna. Estela Nieves</strong><br>Tel. 2573838<br>Cel. 0986180436<br>estely.nieves@gmail.com</div></td>
+        </tr>
+        <tr data-canton="Loja" data-parroquia="Malacatos (Valladolid)" data-ubicacion="Loja" data-distrito="11D01" data-tipo="Fiscomisional" data-buscar="11H00374 11D01 Loja Unidad Educativa Fiscomisional Manuel José Rodríguez Fiscomisional Loja Loja Malacatos (Valladolid) Loja 2673177 0994978715 P. Luis Alberto Remache Vásquez laremache@utpl.edu.ec">
           <td><strong>11H00374</strong><div class="inst-sub">11D01</div></td>
-          <td><strong>UEFISCOM. MANUEL JOSE RODRIGUEZ</strong><div class="inst-sub inst-address"><span class="inst-location-icon" data-lucide="map-pin"></span><span>Ubicaci&oacute;n: MALACATOS &middot; Parroquia: Malacatos &middot; Distrito: 11D01</span></div></td>
-          <td><strong>Loja</strong><div class="inst-sub">Malacatos</div></td>
+          <td><strong>Unidad Educativa Fiscomisional Manuel José Rodríguez</strong><div class="inst-sub inst-address"><span class="inst-location-icon" data-lucide="map-pin"></span><span>Ubicaci&oacute;n: Loja &middot; Parroquia/Sector: Malacatos (Valladolid) &middot; Distrito: 11D01 - Loja</span></div></td>
+          <td><strong>Loja</strong><div class="inst-sub">Malacatos (Valladolid)</div></td>
           <td><span class="tag type-fiscomisional">Fiscomisional</span></td>
-          <td><div class="inst-contact" title="Tel. 2673177 | Cel. 0994978715 | laremache@utpl.edu.ec">Tel. 2673177<br>Cel. 0994978715<br>laremache@utpl.edu.ec</div></td>
-        </tr>        <tr data-canton="Loja" data-parroquia="Chuquiribamba" data-ubicacion="CHUQUIRIBAMBA" data-distrito="11D01" data-tipo="Fiscomisional" data-buscar="11H00310 11D01 UEFISCOM. SAN VICENTE FERRER Loja Chuquiribamba CHUQUIRIBAMBA Fiscomisional 2719026 0993904178 lidajumbo@yahoo.es">
+          <td><div class="inst-contact" title="Directivo: P. Luis Alberto Remache Vásquez | Tel. 2673177 | Cel. 0994978715 | laremache@utpl.edu.ec"><strong>P. Luis Alberto Remache Vásquez</strong><br>Tel. 2673177<br>Cel. 0994978715<br>laremache@utpl.edu.ec</div></td>
+        </tr>
+        <tr data-canton="Loja" data-parroquia="Chuquiribamba" data-ubicacion="Loja" data-distrito="11D01" data-tipo="Fiscomisional" data-buscar="11H00310 11D01 Loja Colegio de Bachillerato (Fiscomisional) San Vicente Ferrer Fiscomisional Loja Loja Chuquiribamba Loja 2719026 0993904178 Hna. Lida Ivon Jumbo Cumbicos lidajumbo@yahoo.es">
           <td><strong>11H00310</strong><div class="inst-sub">11D01</div></td>
-          <td><strong>UEFISCOM. SAN VICENTE FERRER</strong><div class="inst-sub inst-address"><span class="inst-location-icon" data-lucide="map-pin"></span><span>Ubicaci&oacute;n: CHUQUIRIBAMBA &middot; Parroquia: Chuquiribamba &middot; Distrito: 11D01</span></div></td>
+          <td><strong>Colegio de Bachillerato (Fiscomisional) San Vicente Ferrer</strong><div class="inst-sub inst-address"><span class="inst-location-icon" data-lucide="map-pin"></span><span>Ubicaci&oacute;n: Loja &middot; Parroquia/Sector: Chuquiribamba &middot; Distrito: 11D01 - Loja</span></div></td>
           <td><strong>Loja</strong><div class="inst-sub">Chuquiribamba</div></td>
           <td><span class="tag type-fiscomisional">Fiscomisional</span></td>
-          <td><div class="inst-contact" title="Tel. 2719026 | Cel. 0993904178 | lidajumbo@yahoo.es">Tel. 2719026<br>Cel. 0993904178<br>lidajumbo@yahoo.es</div></td>
-        </tr>        <tr data-canton="Loja" data-parroquia="Loja" data-ubicacion="LOJA" data-distrito="11D01" data-tipo="Fiscomisional" data-buscar="11H01839 11D01 UEFISCOM. MERCEDES DE JESUS MOLINA Loja Loja LOJA Fiscomisional 2570517 0992705755 lidiespesol77@gmail.com">
+          <td><div class="inst-contact" title="Directivo: Hna. Lida Ivon Jumbo Cumbicos | Tel. 2719026 | Cel. 0993904178 | lidajumbo@yahoo.es"><strong>Hna. Lida Ivon Jumbo Cumbicos</strong><br>Tel. 2719026<br>Cel. 0993904178<br>lidajumbo@yahoo.es</div></td>
+        </tr>
+        <tr data-canton="Loja" data-parroquia="El Sagrario / San Sebastián" data-ubicacion="Loja" data-distrito="11D01" data-tipo="Fiscomisional" data-buscar="11H01839 11D01 Loja Unidad Educativa Fiscomisional Mercedes de Jesús Molina Fiscomisional Loja Loja El Sagrario / San Sebastián Loja 2570517 0992705755 Hna. Lidia  Esperanza Solano Solano lidiespesol77@gmail.com">
           <td><strong>11H01839</strong><div class="inst-sub">11D01</div></td>
-          <td><strong>UEFISCOM. MERCEDES DE JESUS MOLINA</strong><div class="inst-sub inst-address"><span class="inst-location-icon" data-lucide="map-pin"></span><span>Ubicaci&oacute;n: LOJA &middot; Parroquia: Loja &middot; Distrito: 11D01</span></div></td>
-          <td><strong>Loja</strong><div class="inst-sub">Loja</div></td>
+          <td><strong>Unidad Educativa Fiscomisional Mercedes de Jesús Molina</strong><div class="inst-sub inst-address"><span class="inst-location-icon" data-lucide="map-pin"></span><span>Ubicaci&oacute;n: Loja &middot; Parroquia/Sector: El Sagrario / San Sebastián &middot; Distrito: 11D01 - Loja</span></div></td>
+          <td><strong>Loja</strong><div class="inst-sub">El Sagrario / San Sebastián</div></td>
           <td><span class="tag type-fiscomisional">Fiscomisional</span></td>
-          <td><div class="inst-contact" title="Tel. 2570517 | Cel. 0992705755 | lidiespesol77@gmail.com">Tel. 2570517<br>Cel. 0992705755<br>lidiespesol77@gmail.com</div></td>
-        </tr>        <tr data-canton="Loja" data-parroquia="Loja" data-ubicacion="LOJA" data-distrito="11D01" data-tipo="Particular" data-buscar="11H00013 11D01 UEP. SANTA MARIANA DE JESUS Loja Loja LOJA Particular 2570517- 2572538 0991577184 caalespe2010@hotmail.com">
+          <td><div class="inst-contact" title="Directivo: Hna. Lidia  Esperanza Solano Solano | Tel. 2570517 | Cel. 0992705755 | lidiespesol77@gmail.com"><strong>Hna. Lidia  Esperanza Solano Solano</strong><br>Tel. 2570517<br>Cel. 0992705755<br>lidiespesol77@gmail.com</div></td>
+        </tr>
+        <tr data-canton="Loja" data-parroquia="El Sagrario / San Sebastián" data-ubicacion="Loja" data-distrito="11D01" data-tipo="Particular" data-buscar="11H00013 11D01 Loja Unidad Educativa Particular Santa Mariana de Jesús Particular Loja Loja El Sagrario / San Sebastián Loja 2570517- 2572538 0991577184 Camilo Alfonso Espinosa Pereira caalespe2010@hotmail.com">
           <td><strong>11H00013</strong><div class="inst-sub">11D01</div></td>
-          <td><strong>UEP. SANTA MARIANA DE JESUS</strong><div class="inst-sub inst-address"><span class="inst-location-icon" data-lucide="map-pin"></span><span>Ubicaci&oacute;n: LOJA &middot; Parroquia: Loja &middot; Distrito: 11D01</span></div></td>
-          <td><strong>Loja</strong><div class="inst-sub">Loja</div></td>
+          <td><strong>Unidad Educativa Particular Santa Mariana de Jesús</strong><div class="inst-sub inst-address"><span class="inst-location-icon" data-lucide="map-pin"></span><span>Ubicaci&oacute;n: Loja &middot; Parroquia/Sector: El Sagrario / San Sebastián &middot; Distrito: 11D01 - Loja</span></div></td>
+          <td><strong>Loja</strong><div class="inst-sub">El Sagrario / San Sebastián</div></td>
           <td><span class="tag type-particular">Particular</span></td>
-          <td><div class="inst-contact" title="Tel. 2570517- 2572538 | Cel. 0991577184 | caalespe2010@hotmail.com">Tel. 2570517- 2572538<br>Cel. 0991577184<br>caalespe2010@hotmail.com</div></td>
-        </tr>        <tr data-canton="Loja" data-parroquia="Loja" data-ubicacion="LOJA" data-distrito="11D01" data-tipo="Particular" data-buscar="11H00005 11D01 SAN JUAN BAUTISTA LA SALLE Loja Loja LOJA Particular 2570431- 2581808 0991475637 rectorlojam@lasalle.edu.ec">
+          <td><div class="inst-contact" title="Directivo: Camilo Alfonso Espinosa Pereira | Tel. 2570517- 2572538 | Cel. 0991577184 | caalespe2010@hotmail.com"><strong>Camilo Alfonso Espinosa Pereira</strong><br>Tel. 2570517- 2572538<br>Cel. 0991577184<br>caalespe2010@hotmail.com</div></td>
+        </tr>
+        <tr data-canton="Loja" data-parroquia="El Sagrario / San Sebastián" data-ubicacion="Loja" data-distrito="11D01" data-tipo="Particular" data-buscar="11H00005 11D01 Loja Unidad Educativa Particular San Juan Bautista La Salle Particular Loja Loja El Sagrario / San Sebastián Loja 2570431- 2581808 0991475637 Lic. Lady Katherine Alvarado Veintimilla rectorlojam@lasalle.edu.ec">
           <td><strong>11H00005</strong><div class="inst-sub">11D01</div></td>
-          <td><strong>SAN JUAN BAUTISTA LA SALLE</strong><div class="inst-sub inst-address"><span class="inst-location-icon" data-lucide="map-pin"></span><span>Ubicaci&oacute;n: LOJA &middot; Parroquia: Loja &middot; Distrito: 11D01</span></div></td>
-          <td><strong>Loja</strong><div class="inst-sub">Loja</div></td>
+          <td><strong>Unidad Educativa Particular San Juan Bautista La Salle</strong><div class="inst-sub inst-address"><span class="inst-location-icon" data-lucide="map-pin"></span><span>Ubicaci&oacute;n: Loja &middot; Parroquia/Sector: El Sagrario / San Sebastián &middot; Distrito: 11D01 - Loja</span></div></td>
+          <td><strong>Loja</strong><div class="inst-sub">El Sagrario / San Sebastián</div></td>
           <td><span class="tag type-particular">Particular</span></td>
-          <td><div class="inst-contact" title="Tel. 2570431- 2581808 | Cel. 0991475637 | rectorlojam@lasalle.edu.ec">Tel. 2570431- 2581808<br>Cel. 0991475637<br>rectorlojam@lasalle.edu.ec</div></td>
-        </tr>        <tr data-canton="Loja" data-parroquia="Loja" data-ubicacion="LOJA" data-distrito="11D01" data-tipo="Particular" data-buscar="11H00014 11D01 UEP. JOSE ANTONIO EGUIGUREN - LA SALLE Loja Loja LOJA Particular 2570431- 2581808 0991475637 ">
+          <td><div class="inst-contact" title="Directivo: Lic. Lady Katherine Alvarado Veintimilla | Tel. 2570431- 2581808 | Cel. 0991475637 | rectorlojam@lasalle.edu.ec"><strong>Lic. Lady Katherine Alvarado Veintimilla</strong><br>Tel. 2570431- 2581808<br>Cel. 0991475637<br>rectorlojam@lasalle.edu.ec</div></td>
+        </tr>
+        <tr data-canton="Loja" data-parroquia="El Sagrario / San Sebastián" data-ubicacion="Loja" data-distrito="11D01" data-tipo="Particular" data-buscar="11H00014 11D01 Loja Unidad Educativa (Particular) José Antonio Eguiguren-La Salle Particular Loja Loja El Sagrario / San Sebastián Loja 2570431- 2581808 0991475637 Lic. Lady Katherine Alvarado Veintimilla rectorlojam@lasalle.edu.ec">
           <td><strong>11H00014</strong><div class="inst-sub">11D01</div></td>
-          <td><strong>UEP. JOSE ANTONIO EGUIGUREN - LA SALLE</strong><div class="inst-sub inst-address"><span class="inst-location-icon" data-lucide="map-pin"></span><span>Ubicaci&oacute;n: LOJA &middot; Parroquia: Loja &middot; Distrito: 11D01</span></div></td>
-          <td><strong>Loja</strong><div class="inst-sub">Loja</div></td>
+          <td><strong>Unidad Educativa (Particular) José Antonio Eguiguren-La Salle</strong><div class="inst-sub inst-address"><span class="inst-location-icon" data-lucide="map-pin"></span><span>Ubicaci&oacute;n: Loja &middot; Parroquia/Sector: El Sagrario / San Sebastián &middot; Distrito: 11D01 - Loja</span></div></td>
+          <td><strong>Loja</strong><div class="inst-sub">El Sagrario / San Sebastián</div></td>
           <td><span class="tag type-particular">Particular</span></td>
-          <td><div class="inst-contact" title="Tel. 2570431- 2581808 | Cel. 0991475637">Tel. 2570431- 2581808<br>Cel. 0991475637</div></td>
-        </tr>        <tr data-canton="Loja" data-parroquia="Loja" data-ubicacion="LOJA" data-distrito="11D01" data-tipo="Fiscomisional" data-buscar="11H00034 11D01 UEFISCOM. LA DOLOROSA Loja Loja LOJA Fiscomisional 2574870-2574415 0994896523 alci2667@hotmail.com">
+          <td><div class="inst-contact" title="Directivo: Lic. Lady Katherine Alvarado Veintimilla | Tel. 2570431- 2581808 | Cel. 0991475637 | rectorlojam@lasalle.edu.ec"><strong>Lic. Lady Katherine Alvarado Veintimilla</strong><br>Tel. 2570431- 2581808<br>Cel. 0991475637<br>rectorlojam@lasalle.edu.ec</div></td>
+        </tr>
+        <tr data-canton="Loja" data-parroquia="El Sagrario / San Sebastián" data-ubicacion="Loja" data-distrito="11D01" data-tipo="Fiscomisional" data-buscar="11H00034 11D01 Loja Unidad Educativa Fiscomisional La Dolorosa Fiscomisional Loja Loja El Sagrario / San Sebastián Loja 2574870-2574415 0994896523 P. Néstor Alcivar Chávez Manzanillas alci2667@hotmail.com">
           <td><strong>11H00034</strong><div class="inst-sub">11D01</div></td>
-          <td><strong>UEFISCOM. LA DOLOROSA</strong><div class="inst-sub inst-address"><span class="inst-location-icon" data-lucide="map-pin"></span><span>Ubicaci&oacute;n: LOJA &middot; Parroquia: Loja &middot; Distrito: 11D01</span></div></td>
-          <td><strong>Loja</strong><div class="inst-sub">Loja</div></td>
+          <td><strong>Unidad Educativa Fiscomisional La Dolorosa</strong><div class="inst-sub inst-address"><span class="inst-location-icon" data-lucide="map-pin"></span><span>Ubicaci&oacute;n: Loja &middot; Parroquia/Sector: El Sagrario / San Sebastián &middot; Distrito: 11D01 - Loja</span></div></td>
+          <td><strong>Loja</strong><div class="inst-sub">El Sagrario / San Sebastián</div></td>
           <td><span class="tag type-fiscomisional">Fiscomisional</span></td>
-          <td><div class="inst-contact" title="Tel. 2574870-2574415 | Cel. 0994896523 | alci2667@hotmail.com">Tel. 2574870-2574415<br>Cel. 0994896523<br>alci2667@hotmail.com</div></td>
-        </tr>        <tr data-canton="Loja" data-parroquia="Loja" data-ubicacion="LOJA" data-distrito="11D01" data-tipo="Fiscomisional" data-buscar="11H00015 11D01 UEFISCOM. SAN FRANCISCO DE ASIS Loja Loja LOJA Fiscomisional 2571854- 2563252- 0969970817 rectorado@uefsfaloja.edu.ec">
+          <td><div class="inst-contact" title="Directivo: P. Néstor Alcivar Chávez Manzanillas | Tel. 2574870-2574415 | Cel. 0994896523 | alci2667@hotmail.com"><strong>P. Néstor Alcivar Chávez Manzanillas</strong><br>Tel. 2574870-2574415<br>Cel. 0994896523<br>alci2667@hotmail.com</div></td>
+        </tr>
+        <tr data-canton="Loja" data-parroquia="El Sagrario / San Sebastián" data-ubicacion="Loja" data-distrito="11D01" data-tipo="Fiscomisional" data-buscar="11H00015 11D01 Loja Unidad Educativa Fiscomisional San Francisco de Asís Fiscomisional Loja Loja El Sagrario / San Sebastián Loja 2571854- 2563252- 0969970817 Fray  Fabricio Pazmiño rectorado@uefsfaloja.edu.ec">
           <td><strong>11H00015</strong><div class="inst-sub">11D01</div></td>
-          <td><strong>UEFISCOM. SAN FRANCISCO DE ASIS</strong><div class="inst-sub inst-address"><span class="inst-location-icon" data-lucide="map-pin"></span><span>Ubicaci&oacute;n: LOJA &middot; Parroquia: Loja &middot; Distrito: 11D01</span></div></td>
-          <td><strong>Loja</strong><div class="inst-sub">Loja</div></td>
+          <td><strong>Unidad Educativa Fiscomisional San Francisco de Asís</strong><div class="inst-sub inst-address"><span class="inst-location-icon" data-lucide="map-pin"></span><span>Ubicaci&oacute;n: Loja &middot; Parroquia/Sector: El Sagrario / San Sebastián &middot; Distrito: 11D01 - Loja</span></div></td>
+          <td><strong>Loja</strong><div class="inst-sub">El Sagrario / San Sebastián</div></td>
           <td><span class="tag type-fiscomisional">Fiscomisional</span></td>
-          <td><div class="inst-contact" title="Tel. 2571854- 2563252- | Cel. 0969970817 | rectorado@uefsfaloja.edu.ec">Tel. 2571854- 2563252-<br>Cel. 0969970817<br>rectorado@uefsfaloja.edu.ec</div></td>
-        </tr>        <tr data-canton="Loja" data-parroquia="Loja" data-ubicacion="LOJA" data-distrito="11D01" data-tipo="Particular" data-buscar="11H00016 11D01 UEP. LA PORCI&#218;NCULA Loja Loja LOJA Particular 2570511 0989593189 rectorado@laporciuncula.edu.ec">
+          <td><div class="inst-contact" title="Directivo: Fray  Fabricio Pazmiño | Tel. 2571854- 2563252- | Cel. 0969970817 | rectorado@uefsfaloja.edu.ec"><strong>Fray  Fabricio Pazmiño</strong><br>Tel. 2571854- 2563252-<br>Cel. 0969970817<br>rectorado@uefsfaloja.edu.ec</div></td>
+        </tr>
+        <tr data-canton="Loja" data-parroquia="El Sagrario / San Sebastián" data-ubicacion="Loja" data-distrito="11D01" data-tipo="Particular" data-buscar="11H00016 11D01 Loja Unidad Educativa Particular La Porciúncula Particular Loja Loja El Sagrario / San Sebastián Loja 2570511 0989593189 Cecilia Angelita Torres Torres rectorado@laporciuncula.edu.ec">
           <td><strong>11H00016</strong><div class="inst-sub">11D01</div></td>
-          <td><strong>UEP. LA PORCI&#218;NCULA</strong><div class="inst-sub inst-address"><span class="inst-location-icon" data-lucide="map-pin"></span><span>Ubicaci&oacute;n: LOJA &middot; Parroquia: Loja &middot; Distrito: 11D01</span></div></td>
-          <td><strong>Loja</strong><div class="inst-sub">Loja</div></td>
+          <td><strong>Unidad Educativa Particular La Porciúncula</strong><div class="inst-sub inst-address"><span class="inst-location-icon" data-lucide="map-pin"></span><span>Ubicaci&oacute;n: Loja &middot; Parroquia/Sector: El Sagrario / San Sebastián &middot; Distrito: 11D01 - Loja</span></div></td>
+          <td><strong>Loja</strong><div class="inst-sub">El Sagrario / San Sebastián</div></td>
           <td><span class="tag type-particular">Particular</span></td>
-          <td><div class="inst-contact" title="Tel. 2570511 | Cel. 0989593189 | rectorado@laporciuncula.edu.ec">Tel. 2570511<br>Cel. 0989593189<br>rectorado@laporciuncula.edu.ec</div></td>
-        </tr>        <tr data-canton="Loja" data-parroquia="Loja" data-ubicacion="LOJA" data-distrito="11D01" data-tipo="Fiscomisional" data-buscar="11H00287 11D01 UEFISCOM. DANIEL ALVAREZ BURNEO Loja Loja LOJA Fiscomisional 2570530-2570034 0999400290 fer8886@hotmail.com">
+          <td><div class="inst-contact" title="Directivo: Cecilia Angelita Torres Torres | Tel. 2570511 | Cel. 0989593189 | rectorado@laporciuncula.edu.ec"><strong>Cecilia Angelita Torres Torres</strong><br>Tel. 2570511<br>Cel. 0989593189<br>rectorado@laporciuncula.edu.ec</div></td>
+        </tr>
+        <tr data-canton="Loja" data-parroquia="El Sagrario / San Sebastián" data-ubicacion="Loja" data-distrito="11D01" data-tipo="Fiscomisional" data-buscar="11H00287 11D01 Loja Unidad Educativa Fiscomisional Daniel Álvarez Burneo Fiscomisional Loja Loja El Sagrario / San Sebastián Loja 2570530-2570034 0999400290 Consuelo Fernanda Puchaicela Granda fer8886@hotmail.com">
           <td><strong>11H00287</strong><div class="inst-sub">11D01</div></td>
-          <td><strong>UEFISCOM. DANIEL ALVAREZ BURNEO</strong><div class="inst-sub inst-address"><span class="inst-location-icon" data-lucide="map-pin"></span><span>Ubicaci&oacute;n: LOJA &middot; Parroquia: Loja &middot; Distrito: 11D01</span></div></td>
-          <td><strong>Loja</strong><div class="inst-sub">Loja</div></td>
+          <td><strong>Unidad Educativa Fiscomisional Daniel Álvarez Burneo</strong><div class="inst-sub inst-address"><span class="inst-location-icon" data-lucide="map-pin"></span><span>Ubicaci&oacute;n: Loja &middot; Parroquia/Sector: El Sagrario / San Sebastián &middot; Distrito: 11D01 - Loja</span></div></td>
+          <td><strong>Loja</strong><div class="inst-sub">El Sagrario / San Sebastián</div></td>
           <td><span class="tag type-fiscomisional">Fiscomisional</span></td>
-          <td><div class="inst-contact" title="Tel. 2570530-2570034 | Cel. 0999400290 | fer8886@hotmail.com">Tel. 2570530-2570034<br>Cel. 0999400290<br>fer8886@hotmail.com</div></td>
-        </tr>        <tr data-canton="Loja" data-parroquia="Loja" data-ubicacion="LOJA" data-distrito="11D01" data-tipo="Fiscomisional" data-buscar="11H00041 11D01 UEFPCEI. HNO. ANGEL PASTRANA Loja Loja LOJA Fiscomisional 2575503-2589591 0991844759 sa.ray@hotmail.com">
+          <td><div class="inst-contact" title="Directivo: Consuelo Fernanda Puchaicela Granda | Tel. 2570530-2570034 | Cel. 0999400290 | fer8886@hotmail.com"><strong>Consuelo Fernanda Puchaicela Granda</strong><br>Tel. 2570530-2570034<br>Cel. 0999400290<br>fer8886@hotmail.com</div></td>
+        </tr>
+        <tr data-canton="Loja" data-parroquia="El Sagrario / San Sebastián" data-ubicacion="Loja" data-distrito="11D01" data-tipo="Fiscomisional" data-buscar="11H00041 11D01 Loja Unidad Educativa Fiscomisional para Personas con Escolaridad Inconclusa Hermano Ángel Pastrana Corral Fiscomisional Loja Loja El Sagrario / San Sebastián Loja 2575503-2589591 0986631106 Lic. Willian Iván Córdova Rogel william_cordova0210@hotmail.com">
           <td><strong>11H00041</strong><div class="inst-sub">11D01</div></td>
-          <td><strong>UEFPCEI. HNO. ANGEL PASTRANA</strong><div class="inst-sub inst-address"><span class="inst-location-icon" data-lucide="map-pin"></span><span>Ubicaci&oacute;n: LOJA &middot; Parroquia: Loja &middot; Distrito: 11D01</span></div></td>
-          <td><strong>Loja</strong><div class="inst-sub">Loja</div></td>
+          <td><strong>Unidad Educativa Fiscomisional para Personas con Escolaridad Inconclusa Hermano Ángel Pastrana Corral</strong><div class="inst-sub inst-address"><span class="inst-location-icon" data-lucide="map-pin"></span><span>Ubicaci&oacute;n: Loja &middot; Parroquia/Sector: El Sagrario / San Sebastián &middot; Distrito: 11D01 - Loja</span></div></td>
+          <td><strong>Loja</strong><div class="inst-sub">El Sagrario / San Sebastián</div></td>
           <td><span class="tag type-fiscomisional">Fiscomisional</span></td>
-          <td><div class="inst-contact" title="Tel. 2575503-2589591 | Cel. 0991844759 | sa.ray@hotmail.com">Tel. 2575503-2589591<br>Cel. 0991844759<br>sa.ray@hotmail.com</div></td>
-        </tr>        <tr data-canton="Loja" data-parroquia="Loja" data-ubicacion="LOJA" data-distrito="11D01" data-tipo="Fiscomisional" data-buscar="11H00280 11D01 UEFISCOM. CALASANZ Loja Loja LOJA Fiscomisional 2613750-2613714 0998779003 asdrubalmunoz@calasanzloja.edu.ec">
+          <td><div class="inst-contact" title="Directivo: Lic. Willian Iván Córdova Rogel | Tel. 2575503-2589591 | Cel. 0986631106 | william_cordova0210@hotmail.com"><strong>Lic. Willian Iván Córdova Rogel</strong><br>Tel. 2575503-2589591<br>Cel. 0986631106<br>william_cordova0210@hotmail.com</div></td>
+        </tr>
+        <tr data-canton="Loja" data-parroquia="El Sagrario / San Sebastián" data-ubicacion="Loja" data-distrito="11D01" data-tipo="Fiscomisional" data-buscar="11H00280 11D01 Loja Unidad Educativa (Fiscomisional) Calasanz Fiscomisional Loja Loja El Sagrario / San Sebastián Loja 2613750-2613714 0998779003 Padre Asdrúbal Muñoz asdrubalmunoz@calasanzloja.edu.ec">
           <td><strong>11H00280</strong><div class="inst-sub">11D01</div></td>
-          <td><strong>UEFISCOM. CALASANZ</strong><div class="inst-sub inst-address"><span class="inst-location-icon" data-lucide="map-pin"></span><span>Ubicaci&oacute;n: LOJA &middot; Parroquia: Loja &middot; Distrito: 11D01</span></div></td>
-          <td><strong>Loja</strong><div class="inst-sub">Loja</div></td>
+          <td><strong>Unidad Educativa (Fiscomisional) Calasanz</strong><div class="inst-sub inst-address"><span class="inst-location-icon" data-lucide="map-pin"></span><span>Ubicaci&oacute;n: Loja &middot; Parroquia/Sector: El Sagrario / San Sebastián &middot; Distrito: 11D01 - Loja</span></div></td>
+          <td><strong>Loja</strong><div class="inst-sub">El Sagrario / San Sebastián</div></td>
           <td><span class="tag type-fiscomisional">Fiscomisional</span></td>
-          <td><div class="inst-contact" title="Tel. 2613750-2613714 | Cel. 0998779003 | asdrubalmunoz@calasanzloja.edu.ec">Tel. 2613750-2613714<br>Cel. 0998779003<br>asdrubalmunoz@calasanzloja.edu.ec</div></td>
-        </tr>        <tr data-canton="Loja" data-parroquia="Loja" data-ubicacion="LOJA" data-distrito="11D01" data-tipo="Fiscomisional" data-buscar="11H00011 11D01 UEFISCOM.LA INMACULADA Loja Loja LOJA Fiscomisional 2570461- 2572617 0939754907 rcescobar6@gmail.com">
+          <td><div class="inst-contact" title="Directivo: Padre Asdrúbal Muñoz | Tel. 2613750-2613714 | Cel. 0998779003 | asdrubalmunoz@calasanzloja.edu.ec"><strong>Padre Asdrúbal Muñoz</strong><br>Tel. 2613750-2613714<br>Cel. 0998779003<br>asdrubalmunoz@calasanzloja.edu.ec</div></td>
+        </tr>
+        <tr data-canton="Loja" data-parroquia="El Sagrario / San Sebastián" data-ubicacion="Loja" data-distrito="11D01" data-tipo="Fiscomisional" data-buscar="11H00011 11D01 Loja Unidad Educativa Fiscomisional La Inmaculada Fiscomisional Loja Loja El Sagrario / San Sebastián Loja 2570461- 2572617 0939754907 Sor Germania del Rocío Escobar Arguero rcescobar6@gmail.com">
           <td><strong>11H00011</strong><div class="inst-sub">11D01</div></td>
-          <td><strong>UEFISCOM.LA INMACULADA</strong><div class="inst-sub inst-address"><span class="inst-location-icon" data-lucide="map-pin"></span><span>Ubicaci&oacute;n: LOJA &middot; Parroquia: Loja &middot; Distrito: 11D01</span></div></td>
-          <td><strong>Loja</strong><div class="inst-sub">Loja</div></td>
+          <td><strong>Unidad Educativa Fiscomisional La Inmaculada</strong><div class="inst-sub inst-address"><span class="inst-location-icon" data-lucide="map-pin"></span><span>Ubicaci&oacute;n: Loja &middot; Parroquia/Sector: El Sagrario / San Sebastián &middot; Distrito: 11D01 - Loja</span></div></td>
+          <td><strong>Loja</strong><div class="inst-sub">El Sagrario / San Sebastián</div></td>
           <td><span class="tag type-fiscomisional">Fiscomisional</span></td>
-          <td><div class="inst-contact" title="Tel. 2570461- 2572617 | Cel. 0939754907 | rcescobar6@gmail.com">Tel. 2570461- 2572617<br>Cel. 0939754907<br>rcescobar6@gmail.com</div></td>
-        </tr>        <tr data-canton="Loja" data-parroquia="Loja" data-ubicacion="LOJA" data-distrito="11D01" data-tipo="Fiscomisional" data-buscar="11H00220 11D01 UEFISCOM. EDUCARE Loja Loja LOJA Fiscomisional 2614626- 368189 09944512062 educare11h00220@gmail.com">
+          <td><div class="inst-contact" title="Directivo: Sor Germania del Rocío Escobar Arguero | Tel. 2570461- 2572617 | Cel. 0939754907 | rcescobar6@gmail.com"><strong>Sor Germania del Rocío Escobar Arguero</strong><br>Tel. 2570461- 2572617<br>Cel. 0939754907<br>rcescobar6@gmail.com</div></td>
+        </tr>
+        <tr data-canton="Loja" data-parroquia="El Sagrario / San Sebastián" data-ubicacion="Loja" data-distrito="11D01" data-tipo="Fiscomisional" data-buscar="11H00220 11D01 Loja Unidad Educativa Fiscomisional Educare Fiscomisional Loja Loja El Sagrario / San Sebastián Loja 2614626- 368189 09944512062 Mag. Mónica de los Ángeles Balbuca Castillo educare11h00220@gmail.com">
           <td><strong>11H00220</strong><div class="inst-sub">11D01</div></td>
-          <td><strong>UEFISCOM. EDUCARE</strong><div class="inst-sub inst-address"><span class="inst-location-icon" data-lucide="map-pin"></span><span>Ubicaci&oacute;n: LOJA &middot; Parroquia: Loja &middot; Distrito: 11D01</span></div></td>
-          <td><strong>Loja</strong><div class="inst-sub">Loja</div></td>
+          <td><strong>Unidad Educativa Fiscomisional Educare</strong><div class="inst-sub inst-address"><span class="inst-location-icon" data-lucide="map-pin"></span><span>Ubicaci&oacute;n: Loja &middot; Parroquia/Sector: El Sagrario / San Sebastián &middot; Distrito: 11D01 - Loja</span></div></td>
+          <td><strong>Loja</strong><div class="inst-sub">El Sagrario / San Sebastián</div></td>
           <td><span class="tag type-fiscomisional">Fiscomisional</span></td>
-          <td><div class="inst-contact" title="Tel. 2614626- 368189 | Cel. 09944512062 | educare11h00220@gmail.com">Tel. 2614626- 368189<br>Cel. 09944512062<br>educare11h00220@gmail.com</div></td>
-        </tr>        <tr data-canton="Loja" data-parroquia="El Cisne" data-ubicacion="EL CISNE" data-distrito="11D01" data-tipo="Fiscomisional" data-buscar="11H00322 11D01 UEFISCOM.CORAZ&#211;N DE MAR&#205;A Loja El Cisne EL CISNE Fiscomisional 2106137 0981041605 galapagos1955@yahoo.es">
-          <td><strong>11H00322</strong><div class="inst-sub">11D01</div></td>
-          <td><strong>UEFISCOM.CORAZ&#211;N DE MAR&#205;A</strong><div class="inst-sub inst-address"><span class="inst-location-icon" data-lucide="map-pin"></span><span>Ubicaci&oacute;n: EL CISNE &middot; Parroquia: El Cisne &middot; Distrito: 11D01</span></div></td>
-          <td><strong>Loja</strong><div class="inst-sub">El Cisne</div></td>
-          <td><span class="tag type-fiscomisional">Fiscomisional</span></td>
-          <td><div class="inst-contact" title="Tel. 2106137 | Cel. 0981041605 | galapagos1955@yahoo.es">Tel. 2106137<br>Cel. 0981041605<br>galapagos1955@yahoo.es</div></td>
-        </tr>        <tr data-canton="Loja" data-parroquia="Loja" data-ubicacion="LOJA" data-distrito="11D01" data-tipo="Fiscomisional" data-buscar="11H00076 11D01 E.E.B. FISCOM. EDUVIGES PORTALET Loja Loja LOJA Fiscomisional 2571695 0999399723 escuela2eduviges@hotmail.com">
-          <td><strong>11H00076</strong><div class="inst-sub">11D01</div></td>
-          <td><strong>E.E.B. FISCOM. EDUVIGES PORTALET</strong><div class="inst-sub inst-address"><span class="inst-location-icon" data-lucide="map-pin"></span><span>Ubicaci&oacute;n: LOJA &middot; Parroquia: Loja &middot; Distrito: 11D01</span></div></td>
-          <td><strong>Loja</strong><div class="inst-sub">Loja</div></td>
-          <td><span class="tag type-fiscomisional">Fiscomisional</span></td>
-          <td><div class="inst-contact" title="Tel. 2571695 | Cel. 0999399723 | escuela2eduviges@hotmail.com">Tel. 2571695<br>Cel. 0999399723<br>escuela2eduviges@hotmail.com</div></td>
-        </tr>        <tr data-canton="Loja" data-parroquia="Loja" data-ubicacion="LOJA" data-distrito="11D01" data-tipo="Fiscomisional" data-buscar="11H00079 11D01 UEFISCOM. MATER DEI Loja Loja LOJA Fiscomisional 2110237-2110220 0919411124 escalantec@operamaterdei.org">
-          <td><strong>11H00079</strong><div class="inst-sub">11D01</div></td>
-          <td><strong>UEFISCOM. MATER DEI</strong><div class="inst-sub inst-address"><span class="inst-location-icon" data-lucide="map-pin"></span><span>Ubicaci&oacute;n: LOJA &middot; Parroquia: Loja &middot; Distrito: 11D01</span></div></td>
-          <td><strong>Loja</strong><div class="inst-sub">Loja</div></td>
-          <td><span class="tag type-fiscomisional">Fiscomisional</span></td>
-          <td><div class="inst-contact" title="Tel. 2110237-2110220 | Cel. 0919411124 | escalantec@operamaterdei.org">Tel. 2110237-2110220<br>Cel. 0919411124<br>escalantec@operamaterdei.org</div></td>
-        </tr>        <tr data-canton="Loja" data-parroquia="Loja" data-ubicacion="LOJA" data-distrito="11D01" data-tipo="Fiscomisional" data-buscar="11H00017 11D01 U.E.P.MIGUEL &#193;NGEL SU&#193;REZ Loja Loja LOJA Fiscomisional 2579305- 2572609- 0981719635 hmakucd@gmail.com">
-          <td><strong>11H00017</strong><div class="inst-sub">11D01</div></td>
-          <td><strong>U.E.P.MIGUEL &#193;NGEL SU&#193;REZ</strong><div class="inst-sub inst-address"><span class="inst-location-icon" data-lucide="map-pin"></span><span>Ubicaci&oacute;n: LOJA &middot; Parroquia: Loja &middot; Distrito: 11D01</span></div></td>
-          <td><strong>Loja</strong><div class="inst-sub">Loja</div></td>
-          <td><span class="tag type-fiscomisional">Fiscomisional</span></td>
-          <td><div class="inst-contact" title="Tel. 2579305- 2572609- | Cel. 0981719635 | hmakucd@gmail.com">Tel. 2579305- 2572609-<br>Cel. 0981719635<br>hmakucd@gmail.com</div></td>
-        </tr>        <tr data-canton="Loja" data-parroquia="Loja" data-ubicacion="LOJA" data-distrito="11D01" data-tipo="Fiscomisional" data-buscar="11h00239 11D01 COL. PART.MIGUEL &#193;NGEL SU&#193;REZ Loja Loja LOJA Fiscomisional 2711240 0981719635 hmakucd@gmail.com">
-          <td><strong>11h00239</strong><div class="inst-sub">11D01</div></td>
-          <td><strong>COL. PART.MIGUEL &#193;NGEL SU&#193;REZ</strong><div class="inst-sub inst-address"><span class="inst-location-icon" data-lucide="map-pin"></span><span>Ubicaci&oacute;n: LOJA &middot; Parroquia: Loja &middot; Distrito: 11D01</span></div></td>
-          <td><strong>Loja</strong><div class="inst-sub">Loja</div></td>
-          <td><span class="tag type-fiscomisional">Fiscomisional</span></td>
-          <td><div class="inst-contact" title="Tel. 2711240 | Cel. 0981719635 | hmakucd@gmail.com">Tel. 2711240<br>Cel. 0981719635<br>hmakucd@gmail.com</div></td>
-        </tr>        <tr data-canton="Catamayo" data-parroquia="San Pedro de la Bendita" data-ubicacion="SAN PEDRO DE LA BENDITA" data-distrito="11D02" data-tipo="Fiscomisional" data-buscar="11H00705 11D02 E.E.B. FISCOM. SAN VICENTE FERRER Catamayo San Pedro de la Bendita SAN PEDRO DE LA BENDITA Fiscomisional 2569190 0994701784 carlos.yauri@educacion.gob.ec">
-          <td><strong>11H00705</strong><div class="inst-sub">11D02</div></td>
-          <td><strong>E.E.B. FISCOM. SAN VICENTE FERRER</strong><div class="inst-sub inst-address"><span class="inst-location-icon" data-lucide="map-pin"></span><span>Ubicaci&oacute;n: SAN PEDRO DE LA BENDITA &middot; Parroquia: San Pedro de la Bendita &middot; Distrito: 11D02</span></div></td>
-          <td><strong>Catamayo</strong><div class="inst-sub">San Pedro de la Bendita</div></td>
-          <td><span class="tag type-fiscomisional">Fiscomisional</span></td>
-          <td><div class="inst-contact" title="Tel. 2569190 | Cel. 0994701784 | carlos.yauri@educacion.gob.ec">Tel. 2569190<br>Cel. 0994701784<br>carlos.yauri@educacion.gob.ec</div></td>
-        </tr>        <tr data-canton="Catamayo" data-parroquia="Trapichillo" data-ubicacion="TRAPICHILLO" data-distrito="11D02" data-tipo="Fiscomisional" data-buscar="11H00639 11D02 UEFISCOM. JULIO MAR&#205;A MATOVELLE Catamayo Trapichillo TRAPICHILLO Fiscomisional 2556290 0983962421 bertyvc@gmail.com">
-          <td><strong>11H00639</strong><div class="inst-sub">11D02</div></td>
-          <td><strong>UEFISCOM. JULIO MAR&#205;A MATOVELLE</strong><div class="inst-sub inst-address"><span class="inst-location-icon" data-lucide="map-pin"></span><span>Ubicaci&oacute;n: TRAPICHILLO &middot; Parroquia: Trapichillo &middot; Distrito: 11D02</span></div></td>
-          <td><strong>Catamayo</strong><div class="inst-sub">Trapichillo</div></td>
-          <td><span class="tag type-fiscomisional">Fiscomisional</span></td>
-          <td><div class="inst-contact" title="Tel. 2556290 | Cel. 0983962421 | bertyvc@gmail.com">Tel. 2556290<br>Cel. 0983962421<br>bertyvc@gmail.com</div></td>
-        </tr>        <tr data-canton="Loja" data-parroquia="San Lucas" data-ubicacion="SAN LUCAS" data-distrito="11D01" data-tipo="Fiscomisional" data-buscar="11B00071 11D01 UEFISCOM. SANTA CATALINA Loja San Lucas SAN LUCAS Fiscomisional 3029601 0983472460 dignaclemencia69@gmail.com">
+          <td><div class="inst-contact" title="Directivo: Mag. Mónica de los Ángeles Balbuca Castillo | Tel. 2614626- 368189 | Cel. 09944512062 | educare11h00220@gmail.com"><strong>Mag. Mónica de los Ángeles Balbuca Castillo</strong><br>Tel. 2614626- 368189<br>Cel. 09944512062<br>educare11h00220@gmail.com</div></td>
+        </tr>
+        <tr data-canton="Loja" data-parroquia="San Lucas" data-ubicacion="Loja" data-distrito="11D01" data-tipo="Fiscomisional" data-buscar="11B00071 11D01 Loja Unidad Educativa Fiscomisional Santa Catalina Fiscomisional Loja Loja San Lucas Loja 3029601 0983472460 Hna. Mgtr. Digna Clemencia Erazo Benavides dignaclemencia69@gmail.com">
           <td><strong>11B00071</strong><div class="inst-sub">11D01</div></td>
-          <td><strong>UEFISCOM. SANTA CATALINA</strong><div class="inst-sub inst-address"><span class="inst-location-icon" data-lucide="map-pin"></span><span>Ubicaci&oacute;n: SAN LUCAS &middot; Parroquia: San Lucas &middot; Distrito: 11D01</span></div></td>
+          <td><strong>Unidad Educativa Fiscomisional Santa Catalina</strong><div class="inst-sub inst-address"><span class="inst-location-icon" data-lucide="map-pin"></span><span>Ubicaci&oacute;n: Loja &middot; Parroquia/Sector: San Lucas &middot; Distrito: 11D01 - Loja</span></div></td>
           <td><strong>Loja</strong><div class="inst-sub">San Lucas</div></td>
           <td><span class="tag type-fiscomisional">Fiscomisional</span></td>
-          <td><div class="inst-contact" title="Tel. 3029601 | Cel. 0983472460 | dignaclemencia69@gmail.com">Tel. 3029601<br>Cel. 0983472460<br>dignaclemencia69@gmail.com</div></td>
-        </tr>        <tr data-canton="Catamayo" data-parroquia="Catamayo" data-ubicacion="CATAMAYO" data-distrito="11D02" data-tipo="Fiscomisional" data-buscar="11H00660 11D02 UEFISCOM. NUESTRA SE&#209;ORA DEL ROSARIO Catamayo Catamayo CATAMAYO Fiscomisional 2677024- 2677929 0981401295 hidalgo_7512@hotmail.com">
+          <td><div class="inst-contact" title="Directivo: Hna. Mgtr. Digna Clemencia Erazo Benavides | Tel. 3029601 | Cel. 0983472460 | dignaclemencia69@gmail.com"><strong>Hna. Mgtr. Digna Clemencia Erazo Benavides</strong><br>Tel. 3029601<br>Cel. 0983472460<br>dignaclemencia69@gmail.com</div></td>
+        </tr>
+        <tr data-canton="Loja" data-parroquia="El Cisne" data-ubicacion="Loja" data-distrito="11D01" data-tipo="Fiscomisional" data-buscar="11H00322 11D01 Loja Unidad Educativa Fiscomisional Corazón de María Fiscomisional Loja Loja El Cisne Loja 2106137 0981041605 P. Luis Fidel Pauta galapagos1955@yahoo.es">
+          <td><strong>11H00322</strong><div class="inst-sub">11D01</div></td>
+          <td><strong>Unidad Educativa Fiscomisional Corazón de María</strong><div class="inst-sub inst-address"><span class="inst-location-icon" data-lucide="map-pin"></span><span>Ubicaci&oacute;n: Loja &middot; Parroquia/Sector: El Cisne &middot; Distrito: 11D01 - Loja</span></div></td>
+          <td><strong>Loja</strong><div class="inst-sub">El Cisne</div></td>
+          <td><span class="tag type-fiscomisional">Fiscomisional</span></td>
+          <td><div class="inst-contact" title="Directivo: P. Luis Fidel Pauta | Tel. 2106137 | Cel. 0981041605 | galapagos1955@yahoo.es"><strong>P. Luis Fidel Pauta</strong><br>Tel. 2106137<br>Cel. 0981041605<br>galapagos1955@yahoo.es</div></td>
+        </tr>
+        <tr data-canton="Loja" data-parroquia="El Sagrario / San Sebastián" data-ubicacion="Loja" data-distrito="11D01" data-tipo="Fiscomisional" data-buscar="11H00076 11D01 Loja Escuela de Educación Básica Fiscomisional Eduviges Portalet Fiscomisional Loja Loja El Sagrario / San Sebastián Loja 2571695 0999399723 Lic. Jenny del Carmen Ortega Ramón escuela2eduviges@hotmail.com">
+          <td><strong>11H00076</strong><div class="inst-sub">11D01</div></td>
+          <td><strong>Escuela de Educación Básica Fiscomisional Eduviges Portalet</strong><div class="inst-sub inst-address"><span class="inst-location-icon" data-lucide="map-pin"></span><span>Ubicaci&oacute;n: Loja &middot; Parroquia/Sector: El Sagrario / San Sebastián &middot; Distrito: 11D01 - Loja</span></div></td>
+          <td><strong>Loja</strong><div class="inst-sub">El Sagrario / San Sebastián</div></td>
+          <td><span class="tag type-fiscomisional">Fiscomisional</span></td>
+          <td><div class="inst-contact" title="Directivo: Lic. Jenny del Carmen Ortega Ramón | Tel. 2571695 | Cel. 0999399723 | escuela2eduviges@hotmail.com"><strong>Lic. Jenny del Carmen Ortega Ramón</strong><br>Tel. 2571695<br>Cel. 0999399723<br>escuela2eduviges@hotmail.com</div></td>
+        </tr>
+        <tr data-canton="Loja" data-parroquia="El Sagrario / San Sebastián" data-ubicacion="Loja" data-distrito="11D01" data-tipo="Fiscomisional" data-buscar="11H00079 11D01 Loja Escuela de Educación Básica Mater Dei Fiscomisional Loja Loja El Sagrario / San Sebastián Loja 2110237-2110220 0919411124 Hna. Carolina Yenni Escalante escalantec@operamaterdei.org">
+          <td><strong>11H00079</strong><div class="inst-sub">11D01</div></td>
+          <td><strong>Escuela de Educación Básica Mater Dei</strong><div class="inst-sub inst-address"><span class="inst-location-icon" data-lucide="map-pin"></span><span>Ubicaci&oacute;n: Loja &middot; Parroquia/Sector: El Sagrario / San Sebastián &middot; Distrito: 11D01 - Loja</span></div></td>
+          <td><strong>Loja</strong><div class="inst-sub">El Sagrario / San Sebastián</div></td>
+          <td><span class="tag type-fiscomisional">Fiscomisional</span></td>
+          <td><div class="inst-contact" title="Directivo: Hna. Carolina Yenni Escalante | Tel. 2110237-2110220 | Cel. 0919411124 | escalantec@operamaterdei.org"><strong>Hna. Carolina Yenni Escalante</strong><br>Tel. 2110237-2110220<br>Cel. 0919411124<br>escalantec@operamaterdei.org</div></td>
+        </tr>
+        <tr data-canton="Loja" data-parroquia="El Sagrario / San Sebastián" data-ubicacion="Loja" data-distrito="11D01" data-tipo="Particular" data-buscar="11H00017 11D01 Loja Unidad Educativa Particular Miguel Ángel Suárez Particular Loja Loja El Sagrario / San Sebastián Loja 2579305- 2572609- 0981719635 Hna. María Inmaculada Castrillo Deal hmakucd@gmail.com">
+          <td><strong>11H00017</strong><div class="inst-sub">11D01</div></td>
+          <td><strong>Unidad Educativa Particular Miguel Ángel Suárez</strong><div class="inst-sub inst-address"><span class="inst-location-icon" data-lucide="map-pin"></span><span>Ubicaci&oacute;n: Loja &middot; Parroquia/Sector: El Sagrario / San Sebastián &middot; Distrito: 11D01 - Loja</span></div></td>
+          <td><strong>Loja</strong><div class="inst-sub">El Sagrario / San Sebastián</div></td>
+          <td><span class="tag type-particular">Particular</span></td>
+          <td><div class="inst-contact" title="Directivo: Hna. María Inmaculada Castrillo Deal | Tel. 2579305- 2572609- | Cel. 0981719635 | hmakucd@gmail.com"><strong>Hna. María Inmaculada Castrillo Deal</strong><br>Tel. 2579305- 2572609-<br>Cel. 0981719635<br>hmakucd@gmail.com</div></td>
+        </tr>
+        <tr data-canton="Loja" data-parroquia="El Sagrario / San Sebastián" data-ubicacion="Loja" data-distrito="11D01" data-tipo="Particular" data-buscar="11H00239 11D01 Loja Colegio Particular Miguel Ángel Suárez Particular Loja Loja El Sagrario / San Sebastián Loja 2711240 0981719635 Hna. María Inmaculada Castrillo Deal hmakucd@gmail.com">
+          <td><strong>11H00239</strong><div class="inst-sub">11D01</div></td>
+          <td><strong>Colegio Particular Miguel Ángel Suárez</strong><div class="inst-sub inst-address"><span class="inst-location-icon" data-lucide="map-pin"></span><span>Ubicaci&oacute;n: Loja &middot; Parroquia/Sector: El Sagrario / San Sebastián &middot; Distrito: 11D01 - Loja</span></div></td>
+          <td><strong>Loja</strong><div class="inst-sub">El Sagrario / San Sebastián</div></td>
+          <td><span class="tag type-particular">Particular</span></td>
+          <td><div class="inst-contact" title="Directivo: Hna. María Inmaculada Castrillo Deal | Tel. 2711240 | Cel. 0981719635 | hmakucd@gmail.com"><strong>Hna. María Inmaculada Castrillo Deal</strong><br>Tel. 2711240<br>Cel. 0981719635<br>hmakucd@gmail.com</div></td>
+        </tr>
+        <tr data-canton="Catamayo" data-parroquia="San Pedro de la Bendita" data-ubicacion="Catamayo" data-distrito="11D02" data-tipo="Fiscomisional" data-buscar="11H00705 11D02 Catamayo - Chaguarpamba - Olmedo Escuela de Educación Básica Fiscomisional San Vicente Ferrer Fiscomisional Loja Catamayo San Pedro de la Bendita Catamayo 2569190 0994701784 Mgtr. Carlos Samuel Yauri Loján carlos.yauri@educacion.gob.ec">
+          <td><strong>11H00705</strong><div class="inst-sub">11D02</div></td>
+          <td><strong>Escuela de Educación Básica Fiscomisional San Vicente Ferrer</strong><div class="inst-sub inst-address"><span class="inst-location-icon" data-lucide="map-pin"></span><span>Ubicaci&oacute;n: Catamayo &middot; Parroquia/Sector: San Pedro de la Bendita &middot; Distrito: 11D02 - Catamayo - Chaguarpamba - Olmedo</span></div></td>
+          <td><strong>Catamayo</strong><div class="inst-sub">San Pedro de la Bendita</div></td>
+          <td><span class="tag type-fiscomisional">Fiscomisional</span></td>
+          <td><div class="inst-contact" title="Directivo: Mgtr. Carlos Samuel Yauri Loján | Tel. 2569190 | Cel. 0994701784 | carlos.yauri@educacion.gob.ec"><strong>Mgtr. Carlos Samuel Yauri Loján</strong><br>Tel. 2569190<br>Cel. 0994701784<br>carlos.yauri@educacion.gob.ec</div></td>
+        </tr>
+        <tr data-canton="Catamayo" data-parroquia="El Tablón (Trapichillo)" data-ubicacion="Catamayo" data-distrito="11D02" data-tipo="Fiscomisional" data-buscar="11H00639 11D02 Catamayo - Chaguarpamba - Olmedo Unidad Educativa Fiscomisional Julio María Matovelle Fiscomisional Loja Catamayo El Tablón (Trapichillo) Catamayo 2556290 0983962421 Hna. Bertha Yolanda Velazquez Córdova bertyvc@gmail.com">
+          <td><strong>11H00639</strong><div class="inst-sub">11D02</div></td>
+          <td><strong>Unidad Educativa Fiscomisional Julio María Matovelle</strong><div class="inst-sub inst-address"><span class="inst-location-icon" data-lucide="map-pin"></span><span>Ubicaci&oacute;n: Catamayo &middot; Parroquia/Sector: El Tablón (Trapichillo) &middot; Distrito: 11D02 - Catamayo - Chaguarpamba - Olmedo</span></div></td>
+          <td><strong>Catamayo</strong><div class="inst-sub">El Tablón (Trapichillo)</div></td>
+          <td><span class="tag type-fiscomisional">Fiscomisional</span></td>
+          <td><div class="inst-contact" title="Directivo: Hna. Bertha Yolanda Velazquez Córdova | Tel. 2556290 | Cel. 0983962421 | bertyvc@gmail.com"><strong>Hna. Bertha Yolanda Velazquez Córdova</strong><br>Tel. 2556290<br>Cel. 0983962421<br>bertyvc@gmail.com</div></td>
+        </tr>
+        <tr data-canton="Catamayo" data-parroquia="Catamayo" data-ubicacion="Catamayo" data-distrito="11D02" data-tipo="Fiscomisional" data-buscar="11H00660 11D02 Catamayo - Chaguarpamba - Olmedo Unidad Educativa Fiscomisional Nuestra Señora del Rosario Fiscomisional Loja Catamayo Catamayo Catamayo 2677024- 2677929 0981401295 P. Juan Hidalgo Santín hidalgo_7512@hotmail.com">
           <td><strong>11H00660</strong><div class="inst-sub">11D02</div></td>
-          <td><strong>UEFISCOM. NUESTRA SE&#209;ORA DEL ROSARIO</strong><div class="inst-sub inst-address"><span class="inst-location-icon" data-lucide="map-pin"></span><span>Ubicaci&oacute;n: CATAMAYO &middot; Parroquia: Catamayo &middot; Distrito: 11D02</span></div></td>
+          <td><strong>Unidad Educativa Fiscomisional Nuestra Señora del Rosario</strong><div class="inst-sub inst-address"><span class="inst-location-icon" data-lucide="map-pin"></span><span>Ubicaci&oacute;n: Catamayo &middot; Parroquia/Sector: Catamayo &middot; Distrito: 11D02 - Catamayo - Chaguarpamba - Olmedo</span></div></td>
           <td><strong>Catamayo</strong><div class="inst-sub">Catamayo</div></td>
           <td><span class="tag type-fiscomisional">Fiscomisional</span></td>
-          <td><div class="inst-contact" title="Tel. 2677024- 2677929 | Cel. 0981401295 | hidalgo_7512@hotmail.com">Tel. 2677024- 2677929<br>Cel. 0981401295<br>hidalgo_7512@hotmail.com</div></td>
-        </tr>        <tr data-canton="Catamayo" data-parroquia="Catamayo" data-ubicacion="CATAMAYO" data-distrito="11D02" data-tipo="Fiscomisional" data-buscar="11H00649 11D02 UEFISCOM. SAN JUAN BAUTISTA Catamayo Catamayo CATAMAYO Fiscomisional 2558198- 2555221- 986577980 luis.aguilarf@educacion.gob.ec">
+          <td><div class="inst-contact" title="Directivo: P. Juan Hidalgo Santín | Tel. 2677024- 2677929 | Cel. 0981401295 | hidalgo_7512@hotmail.com"><strong>P. Juan Hidalgo Santín</strong><br>Tel. 2677024- 2677929<br>Cel. 0981401295<br>hidalgo_7512@hotmail.com</div></td>
+        </tr>
+        <tr data-canton="Catamayo" data-parroquia="San José" data-ubicacion="Catamayo" data-distrito="11D02" data-tipo="Fiscomisional" data-buscar="11H00649 11D02 Catamayo - Chaguarpamba - Olmedo Unidad Educativa Fiscomisional San Juan Bautista Fiscomisional Loja Catamayo San José Catamayo 2558198- 2555221- 986577980 Mgtr. Luis Alberto Flores Aguilar luis.aguilarf@educacion.gob.ec">
           <td><strong>11H00649</strong><div class="inst-sub">11D02</div></td>
-          <td><strong>UEFISCOM. SAN JUAN BAUTISTA</strong><div class="inst-sub inst-address"><span class="inst-location-icon" data-lucide="map-pin"></span><span>Ubicaci&oacute;n: CATAMAYO &middot; Parroquia: Catamayo &middot; Distrito: 11D02</span></div></td>
-          <td><strong>Catamayo</strong><div class="inst-sub">Catamayo</div></td>
+          <td><strong>Unidad Educativa Fiscomisional San Juan Bautista</strong><div class="inst-sub inst-address"><span class="inst-location-icon" data-lucide="map-pin"></span><span>Ubicaci&oacute;n: Catamayo &middot; Parroquia/Sector: San José &middot; Distrito: 11D02 - Catamayo - Chaguarpamba - Olmedo</span></div></td>
+          <td><strong>Catamayo</strong><div class="inst-sub">San José</div></td>
           <td><span class="tag type-fiscomisional">Fiscomisional</span></td>
-          <td><div class="inst-contact" title="Tel. 2558198- 2555221- | Cel. 986577980 | luis.aguilarf@educacion.gob.ec">Tel. 2558198- 2555221-<br>Cel. 986577980<br>luis.aguilarf@educacion.gob.ec</div></td>
-        </tr>        <tr data-canton="Chaguarpamba" data-parroquia="Chaguarpamba" data-ubicacion="CHAGUARPAMBA" data-distrito="11D02" data-tipo="Fiscomisional" data-buscar="11H00811 11D02 UEFISCOM. LA DOLOROSA Chaguarpamba Chaguarpamba CHAGUARPAMBA Fiscomisional 2600109- 0985707937 sabiduria144@gmail.com">
+          <td><div class="inst-contact" title="Directivo: Mgtr. Luis Alberto Flores Aguilar | Tel. 2558198- 2555221- | Cel. 986577980 | luis.aguilarf@educacion.gob.ec"><strong>Mgtr. Luis Alberto Flores Aguilar</strong><br>Tel. 2558198- 2555221-<br>Cel. 986577980<br>luis.aguilarf@educacion.gob.ec</div></td>
+        </tr>
+        <tr data-canton="Chaguarpamba" data-parroquia="Chaguarpamba" data-ubicacion="Chaguarpamba" data-distrito="11D02" data-tipo="Fiscomisional" data-buscar="11H00811 11D02 Catamayo - Chaguarpamba - Olmedo Unidad Educativa Fiscomisional La Dolorosa Fiscomisional Loja Chaguarpamba Chaguarpamba Chaguarpamba 2600109- 0985707937 P. Manuel Herrera sabiduria144@gmail.com">
           <td><strong>11H00811</strong><div class="inst-sub">11D02</div></td>
-          <td><strong>UEFISCOM. LA DOLOROSA</strong><div class="inst-sub inst-address"><span class="inst-location-icon" data-lucide="map-pin"></span><span>Ubicaci&oacute;n: CHAGUARPAMBA &middot; Parroquia: Chaguarpamba &middot; Distrito: 11D02</span></div></td>
+          <td><strong>Unidad Educativa Fiscomisional La Dolorosa</strong><div class="inst-sub inst-address"><span class="inst-location-icon" data-lucide="map-pin"></span><span>Ubicaci&oacute;n: Chaguarpamba &middot; Parroquia/Sector: Chaguarpamba &middot; Distrito: 11D02 - Catamayo - Chaguarpamba - Olmedo</span></div></td>
           <td><strong>Chaguarpamba</strong><div class="inst-sub">Chaguarpamba</div></td>
           <td><span class="tag type-fiscomisional">Fiscomisional</span></td>
-          <td><div class="inst-contact" title="Tel. 2600109- | Cel. 0985707937 | sabiduria144@gmail.com">Tel. 2600109-<br>Cel. 0985707937<br>sabiduria144@gmail.com</div></td>
-        </tr>        <tr data-canton="Olmedo" data-parroquia="Olmedo" data-ubicacion="OLMEDO" data-distrito="11D02" data-tipo="Fiscomisional" data-buscar="11H01723 11D02 UEFISCOM. MONS ALBERTO ZAMBRANO Olmedo Olmedo OLMEDO Fiscomisional 2650053- 2650054 0985165104 nancyjit@hotmail.com">
+          <td><div class="inst-contact" title="Directivo: P. Manuel Herrera | Tel. 2600109- | Cel. 0985707937 | sabiduria144@gmail.com"><strong>P. Manuel Herrera</strong><br>Tel. 2600109-<br>Cel. 0985707937<br>sabiduria144@gmail.com</div></td>
+        </tr>
+        <tr data-canton="Olmedo" data-parroquia="Olmedo" data-ubicacion="Olmedo" data-distrito="11D02" data-tipo="Fiscomisional" data-buscar="11H01723 11D02 Catamayo - Chaguarpamba - Olmedo Unidad Educativa Fiscomisional Monseñor Alberto Zambrano Palacios Fiscomisional Loja Olmedo Olmedo Olmedo 2650053- 2650054 0985165104 Hna. Nancy Jiménez Terrazas nancyjit@hotmail.com">
           <td><strong>11H01723</strong><div class="inst-sub">11D02</div></td>
-          <td><strong>UEFISCOM. MONS ALBERTO ZAMBRANO</strong><div class="inst-sub inst-address"><span class="inst-location-icon" data-lucide="map-pin"></span><span>Ubicaci&oacute;n: OLMEDO &middot; Parroquia: Olmedo &middot; Distrito: 11D02</span></div></td>
+          <td><strong>Unidad Educativa Fiscomisional Monseñor Alberto Zambrano Palacios</strong><div class="inst-sub inst-address"><span class="inst-location-icon" data-lucide="map-pin"></span><span>Ubicaci&oacute;n: Olmedo &middot; Parroquia/Sector: Olmedo &middot; Distrito: 11D02 - Catamayo - Chaguarpamba - Olmedo</span></div></td>
           <td><strong>Olmedo</strong><div class="inst-sub">Olmedo</div></td>
           <td><span class="tag type-fiscomisional">Fiscomisional</span></td>
-          <td><div class="inst-contact" title="Tel. 2650053- 2650054 | Cel. 0985165104 | nancyjit@hotmail.com">Tel. 2650053- 2650054<br>Cel. 0985165104<br>nancyjit@hotmail.com</div></td>
-        </tr>        <tr data-canton="Paltas" data-parroquia="Catacocha" data-ubicacion="CATACOCHA" data-distrito="11D03" data-tipo="Fiscomisional" data-buscar="11H01160 11D03 UEFISCOM. DOMINGO CELI Paltas Catacocha CATACOCHA Fiscomisional 2683893-2683264 0969362809 lapoluzq@hotmail.com">
+          <td><div class="inst-contact" title="Directivo: Hna. Nancy Jiménez Terrazas | Tel. 2650053- 2650054 | Cel. 0985165104 | nancyjit@hotmail.com"><strong>Hna. Nancy Jiménez Terrazas</strong><br>Tel. 2650053- 2650054<br>Cel. 0985165104<br>nancyjit@hotmail.com</div></td>
+        </tr>
+        <tr data-canton="Paltas" data-parroquia="Catacocha" data-ubicacion="Catacocha" data-distrito="11D03" data-tipo="Fiscomisional" data-buscar="11H01160 11D03 Paltas Unidad Educativa Fiscomisional Domingo Celi Fiscomisional Loja Paltas Catacocha Catacocha 2683893-2683264 0969362809 Hna. Luz María Quevedo Lapo lapoluzq@hotmail.com">
           <td><strong>11H01160</strong><div class="inst-sub">11D03</div></td>
-          <td><strong>UEFISCOM. DOMINGO CELI</strong><div class="inst-sub inst-address"><span class="inst-location-icon" data-lucide="map-pin"></span><span>Ubicaci&oacute;n: CATACOCHA &middot; Parroquia: Catacocha &middot; Distrito: 11D03</span></div></td>
+          <td><strong>Unidad Educativa Fiscomisional Domingo Celi</strong><div class="inst-sub inst-address"><span class="inst-location-icon" data-lucide="map-pin"></span><span>Ubicaci&oacute;n: Catacocha &middot; Parroquia/Sector: Catacocha &middot; Distrito: 11D03 - Paltas</span></div></td>
           <td><strong>Paltas</strong><div class="inst-sub">Catacocha</div></td>
           <td><span class="tag type-fiscomisional">Fiscomisional</span></td>
-          <td><div class="inst-contact" title="Tel. 2683893-2683264 | Cel. 0969362809 | lapoluzq@hotmail.com">Tel. 2683893-2683264<br>Cel. 0969362809<br>lapoluzq@hotmail.com</div></td>
-        </tr>        <tr data-canton="Paltas" data-parroquia="Catacocha" data-ubicacion="CATACOCHA" data-distrito="11D03" data-tipo="Fiscomisional" data-buscar="11H01144 11D03 UEFISCOM. MARISTA DE CATACOCHA Paltas Catacocha CATACOCHA Fiscomisional 2683201-2683102 0984815426 dvivancoapolo@yahoo.es">
+          <td><div class="inst-contact" title="Directivo: Hna. Luz María Quevedo Lapo | Tel. 2683893-2683264 | Cel. 0969362809 | lapoluzq@hotmail.com"><strong>Hna. Luz María Quevedo Lapo</strong><br>Tel. 2683893-2683264<br>Cel. 0969362809<br>lapoluzq@hotmail.com</div></td>
+        </tr>
+        <tr data-canton="Paltas" data-parroquia="Catacocha" data-ubicacion="Catacocha" data-distrito="11D03" data-tipo="Fiscomisional" data-buscar="11H01144 11D03 Paltas Unidad Educativa Fiscomisional Marista de Catacocha Fiscomisional Loja Paltas Catacocha Catacocha 2683201-2683102 0984815426 Mgtr. Galo Rodrigo Lalangui Eras">
           <td><strong>11H01144</strong><div class="inst-sub">11D03</div></td>
-          <td><strong>UEFISCOM. MARISTA DE CATACOCHA</strong><div class="inst-sub inst-address"><span class="inst-location-icon" data-lucide="map-pin"></span><span>Ubicaci&oacute;n: CATACOCHA &middot; Parroquia: Catacocha &middot; Distrito: 11D03</span></div></td>
+          <td><strong>Unidad Educativa Fiscomisional Marista de Catacocha</strong><div class="inst-sub inst-address"><span class="inst-location-icon" data-lucide="map-pin"></span><span>Ubicaci&oacute;n: Catacocha &middot; Parroquia/Sector: Catacocha &middot; Distrito: 11D03 - Paltas</span></div></td>
           <td><strong>Paltas</strong><div class="inst-sub">Catacocha</div></td>
           <td><span class="tag type-fiscomisional">Fiscomisional</span></td>
-          <td><div class="inst-contact" title="Tel. 2683201-2683102 | Cel. 0984815426 | dvivancoapolo@yahoo.es">Tel. 2683201-2683102<br>Cel. 0984815426<br>dvivancoapolo@yahoo.es</div></td>
-        </tr>        <tr data-canton="Celica" data-parroquia="Celica" data-ubicacion="CELICA" data-distrito="11D04" data-tipo="Fiscomisional" data-buscar="11H00740 11D04 UEFISCOM. SANTA TERESITA Celica Celica CELICA Fiscomisional 2657097- 2657535 0993469083 marobe29@yahoo.com">
+          <td><div class="inst-contact" title="Directivo: Mgtr. Galo Rodrigo Lalangui Eras | Tel. 2683201-2683102 | Cel. 0984815426"><strong>Mgtr. Galo Rodrigo Lalangui Eras</strong><br>Tel. 2683201-2683102<br>Cel. 0984815426</div></td>
+        </tr>
+        <tr data-canton="Celica" data-parroquia="Celica" data-ubicacion="Celica" data-distrito="11D04" data-tipo="Fiscomisional" data-buscar="11H00740 11D04 Celica - Pindal - Puyango Unidad Educativa Fiscomisional Santa Teresita Fiscomisional Loja Celica Celica Celica 2657097- 2657535 0993469083 Hna. Martha Vicenta Romero Maza marobe29@yahoo.com">
           <td><strong>11H00740</strong><div class="inst-sub">11D04</div></td>
-          <td><strong>UEFISCOM. SANTA TERESITA</strong><div class="inst-sub inst-address"><span class="inst-location-icon" data-lucide="map-pin"></span><span>Ubicaci&oacute;n: CELICA &middot; Parroquia: Celica &middot; Distrito: 11D04</span></div></td>
+          <td><strong>Unidad Educativa Fiscomisional Santa Teresita</strong><div class="inst-sub inst-address"><span class="inst-location-icon" data-lucide="map-pin"></span><span>Ubicaci&oacute;n: Celica &middot; Parroquia/Sector: Celica &middot; Distrito: 11D04 - Celica - Pindal - Puyango</span></div></td>
           <td><strong>Celica</strong><div class="inst-sub">Celica</div></td>
           <td><span class="tag type-fiscomisional">Fiscomisional</span></td>
-          <td><div class="inst-contact" title="Tel. 2657097- 2657535 | Cel. 0993469083 | marobe29@yahoo.com">Tel. 2657097- 2657535<br>Cel. 0993469083<br>marobe29@yahoo.com</div></td>
-        </tr>        <tr data-canton="Puyango" data-parroquia="Alamor" data-ubicacion="ALAMOR" data-distrito="11D04" data-tipo="Fiscomisional" data-buscar="11H01263 11D04 UEFISCOM. GRAN COLOMBIA Puyango Alamor ALAMOR Fiscomisional 2680116- 0967619724 e.e.b.11h01263@gmail.com">
+          <td><div class="inst-contact" title="Directivo: Hna. Martha Vicenta Romero Maza | Tel. 2657097- 2657535 | Cel. 0993469083 | marobe29@yahoo.com"><strong>Hna. Martha Vicenta Romero Maza</strong><br>Tel. 2657097- 2657535<br>Cel. 0993469083<br>marobe29@yahoo.com</div></td>
+        </tr>
+        <tr data-canton="Puyango" data-parroquia="Alamor" data-ubicacion="Alamor" data-distrito="11D04" data-tipo="Fiscomisional" data-buscar="11H01263 11D04 Celica - Pindal - Puyango Unidad Educativa Fiscomisional Gran Colombia Fiscomisional Loja Puyango Alamor Alamor 2680116- 0967619724 Hna. Marcela Cristina Guamán Tumaillas e.e.b.11h01263@gmail.com">
           <td><strong>11H01263</strong><div class="inst-sub">11D04</div></td>
-          <td><strong>UEFISCOM. GRAN COLOMBIA</strong><div class="inst-sub inst-address"><span class="inst-location-icon" data-lucide="map-pin"></span><span>Ubicaci&oacute;n: ALAMOR &middot; Parroquia: Alamor &middot; Distrito: 11D04</span></div></td>
+          <td><strong>Unidad Educativa Fiscomisional Gran Colombia</strong><div class="inst-sub inst-address"><span class="inst-location-icon" data-lucide="map-pin"></span><span>Ubicaci&oacute;n: Alamor &middot; Parroquia/Sector: Alamor &middot; Distrito: 11D04 - Celica - Pindal - Puyango</span></div></td>
           <td><strong>Puyango</strong><div class="inst-sub">Alamor</div></td>
           <td><span class="tag type-fiscomisional">Fiscomisional</span></td>
-          <td><div class="inst-contact" title="Tel. 2680116- | Cel. 0967619724 | e.e.b.11h01263@gmail.com">Tel. 2680116-<br>Cel. 0967619724<br>e.e.b.11h01263@gmail.com</div></td>
-        </tr>        <tr data-canton="Esp&#237;ndola" data-parroquia="El Ingenio" data-ubicacion="EL INGENIO" data-distrito="11D05" data-tipo="Fiscomisional" data-buscar="11H00917 11D05 COL. FISCOM. GABRIEL GARC&#205;A MORENO Esp&#237;ndola El Ingenio EL INGENIO Fiscomisional 3024362 0993201401 vcuevag2@hotmail.es">
+          <td><div class="inst-contact" title="Directivo: Hna. Marcela Cristina Guamán Tumaillas | Tel. 2680116- | Cel. 0967619724 | e.e.b.11h01263@gmail.com"><strong>Hna. Marcela Cristina Guamán Tumaillas</strong><br>Tel. 2680116-<br>Cel. 0967619724<br>e.e.b.11h01263@gmail.com</div></td>
+        </tr>
+        <tr data-canton="Espíndola" data-parroquia="El Ingenio" data-ubicacion="El Ingenio" data-distrito="11D05" data-tipo="Fiscomisional" data-buscar="11H00917 11D05 Espíndola Colegio de Bachillerato Fiscomisional Gabriel García Moreno Fiscomisional Loja Espíndola El Ingenio El Ingenio 3024362 0991870548 Mgtr.  Juan Carlos Herrera Rojas juan.herrera@educacion.gob.ec">
           <td><strong>11H00917</strong><div class="inst-sub">11D05</div></td>
-          <td><strong>COL. FISCOM. GABRIEL GARC&#205;A MORENO</strong><div class="inst-sub inst-address"><span class="inst-location-icon" data-lucide="map-pin"></span><span>Ubicaci&oacute;n: EL INGENIO &middot; Parroquia: El Ingenio &middot; Distrito: 11D05</span></div></td>
-          <td><strong>Esp&#237;ndola</strong><div class="inst-sub">El Ingenio</div></td>
+          <td><strong>Colegio de Bachillerato Fiscomisional Gabriel García Moreno</strong><div class="inst-sub inst-address"><span class="inst-location-icon" data-lucide="map-pin"></span><span>Ubicaci&oacute;n: El Ingenio &middot; Parroquia/Sector: El Ingenio &middot; Distrito: 11D05 - Espíndola</span></div></td>
+          <td><strong>Espíndola</strong><div class="inst-sub">El Ingenio</div></td>
           <td><span class="tag type-fiscomisional">Fiscomisional</span></td>
-          <td><div class="inst-contact" title="Tel. 3024362 | Cel. 0993201401 | vcuevag2@hotmail.es">Tel. 3024362<br>Cel. 0993201401<br>vcuevag2@hotmail.es</div></td>
-        </tr>        <tr data-canton="Esp&#237;ndola" data-parroquia="Amaluza" data-ubicacion="AMALUZA" data-distrito="11D05" data-tipo="Fiscomisional" data-buscar="11H01835 11D05 UEFISCOM. &quot;MONS. LUIS ALFONSO CRESPO CHIRIBOGA&quot; Esp&#237;ndola Amaluza AMALUZA Fiscomisional 2653263- 2653046 0997196931 hglorima@gmail.com">
+          <td><div class="inst-contact" title="Directivo: Mgtr.  Juan Carlos Herrera Rojas | Tel. 3024362 | Cel. 0991870548 | juan.herrera@educacion.gob.ec"><strong>Mgtr.  Juan Carlos Herrera Rojas</strong><br>Tel. 3024362<br>Cel. 0991870548<br>juan.herrera@educacion.gob.ec</div></td>
+        </tr>
+        <tr data-canton="Espíndola" data-parroquia="Amaluza" data-ubicacion="Amaluza" data-distrito="11D05" data-tipo="Fiscomisional" data-buscar="11H01835 11D05 Espíndola Unidad Educativa Fiscomisional Monseñor Luis Alfonso Crespo Chiriboga Fiscomisional Loja Espíndola Amaluza Amaluza 2653263- 2653046 0997196931 Hna. Gloria Irma Abad Troya hglorima@gmail.com">
           <td><strong>11H01835</strong><div class="inst-sub">11D05</div></td>
-          <td><strong>UEFISCOM. &quot;MONS. LUIS ALFONSO CRESPO CHIRIBOGA&quot;</strong><div class="inst-sub inst-address"><span class="inst-location-icon" data-lucide="map-pin"></span><span>Ubicaci&oacute;n: AMALUZA &middot; Parroquia: Amaluza &middot; Distrito: 11D05</span></div></td>
-          <td><strong>Esp&#237;ndola</strong><div class="inst-sub">Amaluza</div></td>
+          <td><strong>Unidad Educativa Fiscomisional Monseñor Luis Alfonso Crespo Chiriboga</strong><div class="inst-sub inst-address"><span class="inst-location-icon" data-lucide="map-pin"></span><span>Ubicaci&oacute;n: Amaluza &middot; Parroquia/Sector: Amaluza &middot; Distrito: 11D05 - Espíndola</span></div></td>
+          <td><strong>Espíndola</strong><div class="inst-sub">Amaluza</div></td>
           <td><span class="tag type-fiscomisional">Fiscomisional</span></td>
-          <td><div class="inst-contact" title="Tel. 2653263- 2653046 | Cel. 0997196931 | hglorima@gmail.com">Tel. 2653263- 2653046<br>Cel. 0997196931<br>hglorima@gmail.com</div></td>
-        </tr>        <tr data-canton="Esp&#237;ndola" data-parroquia="Jimbura" data-ubicacion="JIMBURA" data-distrito="11D05" data-tipo="Fiscomisional" data-buscar="11H01836 11D05 UEFISCOM. JULIO ERNESTO CELI ROMAN Esp&#237;ndola Jimbura JIMBURA Fiscomisional 3033100-3033106 0989628083 hmloremg@gmail.com">
+          <td><div class="inst-contact" title="Directivo: Hna. Gloria Irma Abad Troya | Tel. 2653263- 2653046 | Cel. 0997196931 | hglorima@gmail.com"><strong>Hna. Gloria Irma Abad Troya</strong><br>Tel. 2653263- 2653046<br>Cel. 0997196931<br>hglorima@gmail.com</div></td>
+        </tr>
+        <tr data-canton="Espíndola" data-parroquia="Jimbura" data-ubicacion="Jimbura" data-distrito="11D05" data-tipo="Fiscomisional" data-buscar="11H01836 11D05 Espíndola Unidad Educativa Fiscomisional Julio Ernesto Celi Fiscomisional Loja Espíndola Jimbura Jimbura 3033100-3033106 0989628083 Hna. Miriam Maza hmloremg@gmail.com">
           <td><strong>11H01836</strong><div class="inst-sub">11D05</div></td>
-          <td><strong>UEFISCOM. JULIO ERNESTO CELI ROMAN</strong><div class="inst-sub inst-address"><span class="inst-location-icon" data-lucide="map-pin"></span><span>Ubicaci&oacute;n: JIMBURA &middot; Parroquia: Jimbura &middot; Distrito: 11D05</span></div></td>
-          <td><strong>Esp&#237;ndola</strong><div class="inst-sub">Jimbura</div></td>
+          <td><strong>Unidad Educativa Fiscomisional Julio Ernesto Celi</strong><div class="inst-sub inst-address"><span class="inst-location-icon" data-lucide="map-pin"></span><span>Ubicaci&oacute;n: Jimbura &middot; Parroquia/Sector: Jimbura &middot; Distrito: 11D05 - Espíndola</span></div></td>
+          <td><strong>Espíndola</strong><div class="inst-sub">Jimbura</div></td>
           <td><span class="tag type-fiscomisional">Fiscomisional</span></td>
-          <td><div class="inst-contact" title="Tel. 3033100-3033106 | Cel. 0989628083 | hmloremg@gmail.com">Tel. 3033100-3033106<br>Cel. 0989628083<br>hmloremg@gmail.com</div></td>
-        </tr>        <tr data-canton="Esp&#237;ndola" data-parroquia="Collingora" data-ubicacion="ESP&#204;NDOLA-COLLINGORA" data-distrito="11D05" data-tipo="Fiscomisional" data-buscar="11H00895 11D05 DIEZ DE AGOSTO Esp&#237;ndola Collingora ESP&#204;NDOLA-COLLINGORA Fiscomisional  0986356549 diezdeagosto1972@yahoo.com">
+          <td><div class="inst-contact" title="Directivo: Hna. Miriam Maza | Tel. 3033100-3033106 | Cel. 0989628083 | hmloremg@gmail.com"><strong>Hna. Miriam Maza</strong><br>Tel. 3033100-3033106<br>Cel. 0989628083<br>hmloremg@gmail.com</div></td>
+        </tr>
+        <tr data-canton="Espíndola" data-parroquia="Bellavista (Collingora)" data-ubicacion="Espíndola" data-distrito="11D05" data-tipo="Fiscomisional" data-buscar="11H00895 11D05 Espíndola Escuela de Educación Básica Fiscomisional Diez de Agosto Fiscomisional Loja Espíndola Bellavista (Collingora) Espíndola  0986356549 Jorge Anibal Torres Torres diezdeagosto1972@yahoo.com">
           <td><strong>11H00895</strong><div class="inst-sub">11D05</div></td>
-          <td><strong>DIEZ DE AGOSTO</strong><div class="inst-sub inst-address"><span class="inst-location-icon" data-lucide="map-pin"></span><span>Ubicaci&oacute;n: ESP&#204;NDOLA-COLLINGORA &middot; Parroquia: Collingora &middot; Distrito: 11D05</span></div></td>
-          <td><strong>Esp&#237;ndola</strong><div class="inst-sub">Collingora</div></td>
+          <td><strong>Escuela de Educación Básica Fiscomisional Diez de Agosto</strong><div class="inst-sub inst-address"><span class="inst-location-icon" data-lucide="map-pin"></span><span>Ubicaci&oacute;n: Espíndola &middot; Parroquia/Sector: Bellavista (Collingora) &middot; Distrito: 11D05 - Espíndola</span></div></td>
+          <td><strong>Espíndola</strong><div class="inst-sub">Bellavista (Collingora)</div></td>
           <td><span class="tag type-fiscomisional">Fiscomisional</span></td>
-          <td><div class="inst-contact" title="Cel. 0986356549 | diezdeagosto1972@yahoo.com">Cel. 0986356549<br>diezdeagosto1972@yahoo.com</div></td>
-        </tr>        <tr data-canton="Esp&#237;ndola" data-parroquia="El Airo" data-ubicacion="ESP&#204;NDOLA-EL AIRO" data-distrito="11D05" data-tipo="Fiscomisional" data-buscar="11H00918 11D05 SANTA ROSA Esp&#237;ndola El Airo ESP&#204;NDOLA-EL AIRO Fiscomisional 3033146 0990051840 escuelasanta_rosa@hotmail.com">
+          <td><div class="inst-contact" title="Directivo: Jorge Anibal Torres Torres | Cel. 0986356549 | diezdeagosto1972@yahoo.com"><strong>Jorge Anibal Torres Torres</strong><br>Cel. 0986356549<br>diezdeagosto1972@yahoo.com</div></td>
+        </tr>
+        <tr data-canton="Espíndola" data-parroquia="Jimbura (El Airo)" data-ubicacion="Espíndola" data-distrito="11D05" data-tipo="Fiscomisional" data-buscar="11H00918 11D05 Espíndola Escuela de Educación Básica Fiscomisional Santa Rosa Fiscomisional Loja Espíndola Jimbura (El Airo) Espíndola 3033146 0990051840 Ángel F. Malacatus Jiménez escuelasanta_rosa@hotmail.com">
           <td><strong>11H00918</strong><div class="inst-sub">11D05</div></td>
-          <td><strong>SANTA ROSA</strong><div class="inst-sub inst-address"><span class="inst-location-icon" data-lucide="map-pin"></span><span>Ubicaci&oacute;n: ESP&#204;NDOLA-EL AIRO &middot; Parroquia: El Airo &middot; Distrito: 11D05</span></div></td>
-          <td><strong>Esp&#237;ndola</strong><div class="inst-sub">El Airo</div></td>
+          <td><strong>Escuela de Educación Básica Fiscomisional Santa Rosa</strong><div class="inst-sub inst-address"><span class="inst-location-icon" data-lucide="map-pin"></span><span>Ubicaci&oacute;n: Espíndola &middot; Parroquia/Sector: Jimbura (El Airo) &middot; Distrito: 11D05 - Espíndola</span></div></td>
+          <td><strong>Espíndola</strong><div class="inst-sub">Jimbura (El Airo)</div></td>
           <td><span class="tag type-fiscomisional">Fiscomisional</span></td>
-          <td><div class="inst-contact" title="Tel. 3033146 | Cel. 0990051840 | escuelasanta_rosa@hotmail.com">Tel. 3033146<br>Cel. 0990051840<br>escuelasanta_rosa@hotmail.com</div></td>
-        </tr>        <tr data-canton="Gonzanam&#225;" data-parroquia="Changaimina" data-ubicacion="CHANGAIMINA -CHILE" data-distrito="11D06" data-tipo="Fiscomisional" data-buscar="11H01016 11D06 ARCADIO MENDIETA - VIRGEN DEL CISNE Gonzanam&#225; Changaimina CHANGAIMINA -CHILE Fiscomisional 2688699- 0993084040 escuela-arcadio@hotmail.com">
+          <td><div class="inst-contact" title="Directivo: Ángel F. Malacatus Jiménez | Tel. 3033146 | Cel. 0990051840 | escuelasanta_rosa@hotmail.com"><strong>Ángel F. Malacatus Jiménez</strong><br>Tel. 3033146<br>Cel. 0990051840<br>escuelasanta_rosa@hotmail.com</div></td>
+        </tr>
+        <tr data-canton="Calvas" data-parroquia="Changaimina (Chile)" data-ubicacion="Changaimina" data-distrito="11D06" data-tipo="Fiscomisional" data-buscar="11H01016 11D06 Calvas - Gonzanamá - Quilanga Escuela de Educación Básica Fiscomisional Arcadio Mendieta - Virgen del Cisne Fiscomisional Loja Calvas Changaimina (Chile) Changaimina 2688699- 0993084040 Cecilia Marlene Cueva Quichimbo escuela-arcadio@hotmail.com">
           <td><strong>11H01016</strong><div class="inst-sub">11D06</div></td>
-          <td><strong>ARCADIO MENDIETA - VIRGEN DEL CISNE</strong><div class="inst-sub inst-address"><span class="inst-location-icon" data-lucide="map-pin"></span><span>Ubicaci&oacute;n: CHANGAIMINA -CHILE &middot; Parroquia: Changaimina &middot; Distrito: 11D06</span></div></td>
-          <td><strong>Gonzanam&#225;</strong><div class="inst-sub">Changaimina</div></td>
+          <td><strong>Escuela de Educación Básica Fiscomisional Arcadio Mendieta - Virgen del Cisne</strong><div class="inst-sub inst-address"><span class="inst-location-icon" data-lucide="map-pin"></span><span>Ubicaci&oacute;n: Changaimina &middot; Parroquia/Sector: Changaimina (Chile) &middot; Distrito: 11D06 - Calvas - Gonzanamá - Quilanga</span></div></td>
+          <td><strong>Calvas</strong><div class="inst-sub">Changaimina (Chile)</div></td>
           <td><span class="tag type-fiscomisional">Fiscomisional</span></td>
-          <td><div class="inst-contact" title="Tel. 2688699- | Cel. 0993084040 | escuela-arcadio@hotmail.com">Tel. 2688699-<br>Cel. 0993084040<br>escuela-arcadio@hotmail.com</div></td>
-        </tr>        <tr data-canton="Gonzanam&#225;" data-parroquia="El Parco" data-ubicacion="EL PARCO" data-distrito="11D06" data-tipo="Fiscomisional" data-buscar="11H00536 11D06 SAN VICENTE FERRER Gonzanam&#225; El Parco EL PARCO Fiscomisional 2688138- 0993097645 lberruc@yahoo.es">
+          <td><div class="inst-contact" title="Directivo: Cecilia Marlene Cueva Quichimbo | Tel. 2688699- | Cel. 0993084040 | escuela-arcadio@hotmail.com"><strong>Cecilia Marlene Cueva Quichimbo</strong><br>Tel. 2688699-<br>Cel. 0993084040<br>escuela-arcadio@hotmail.com</div></td>
+        </tr>
+        <tr data-canton="Gonzanamá" data-parroquia="El Parco" data-ubicacion="Gonzanamá" data-distrito="11D06" data-tipo="Fiscomisional" data-buscar="11H00536 11D06 Calvas - Gonzanamá - Quilanga Escuela de Educación Básica Fiscomisional San Vicente Ferrer Fiscomisional Loja Gonzanamá El Parco Gonzanamá 2688138- 0993097645 Delia Amada Jima Pardo lberruc@yahoo.es">
           <td><strong>11H00536</strong><div class="inst-sub">11D06</div></td>
-          <td><strong>SAN VICENTE FERRER</strong><div class="inst-sub inst-address"><span class="inst-location-icon" data-lucide="map-pin"></span><span>Ubicaci&oacute;n: EL PARCO &middot; Parroquia: El Parco &middot; Distrito: 11D06</span></div></td>
-          <td><strong>Gonzanam&#225;</strong><div class="inst-sub">El Parco</div></td>
+          <td><strong>Escuela de Educación Básica Fiscomisional San Vicente Ferrer</strong><div class="inst-sub inst-address"><span class="inst-location-icon" data-lucide="map-pin"></span><span>Ubicaci&oacute;n: Gonzanamá &middot; Parroquia/Sector: El Parco &middot; Distrito: 11D06 - Calvas - Gonzanamá - Quilanga</span></div></td>
+          <td><strong>Gonzanamá</strong><div class="inst-sub">El Parco</div></td>
           <td><span class="tag type-fiscomisional">Fiscomisional</span></td>
-          <td><div class="inst-contact" title="Tel. 2688138- | Cel. 0993097645 | lberruc@yahoo.es">Tel. 2688138-<br>Cel. 0993097645<br>lberruc@yahoo.es</div></td>
-        </tr>        <tr data-canton="Calvas" data-parroquia="Llurarumi" data-ubicacion="CALVAS- LLURARUMI" data-distrito="11D06" data-tipo="Fiscomisional" data-buscar="11H00566 11D06 CENTINELA DEL SUR Calvas Llurarumi CALVAS- LLURARUMI Fiscomisional  0993913683 escuelacentineladelsur@live.com">
+          <td><div class="inst-contact" title="Directivo: Delia Amada Jima Pardo | Tel. 2688138- | Cel. 0993097645 | lberruc@yahoo.es"><strong>Delia Amada Jima Pardo</strong><br>Tel. 2688138-<br>Cel. 0993097645<br>lberruc@yahoo.es</div></td>
+        </tr>
+        <tr data-canton="Calvas" data-parroquia="Llurarumi" data-ubicacion="Calvas" data-distrito="11D06" data-tipo="Fiscomisional" data-buscar="11H00566 11D06 Calvas - Gonzanamá - Quilanga Escuela de Educación Básica Fiscomisional Centinela del Sur Fiscomisional Loja Calvas Llurarumi Calvas  0993913683 Yandry Esteban Condolo Salinas escuelacentineladelsur@live.com">
           <td><strong>11H00566</strong><div class="inst-sub">11D06</div></td>
-          <td><strong>CENTINELA DEL SUR</strong><div class="inst-sub inst-address"><span class="inst-location-icon" data-lucide="map-pin"></span><span>Ubicaci&oacute;n: CALVAS- LLURARUMI &middot; Parroquia: Llurarumi &middot; Distrito: 11D06</span></div></td>
+          <td><strong>Escuela de Educación Básica Fiscomisional Centinela del Sur</strong><div class="inst-sub inst-address"><span class="inst-location-icon" data-lucide="map-pin"></span><span>Ubicaci&oacute;n: Calvas &middot; Parroquia/Sector: Llurarumi &middot; Distrito: 11D06 - Calvas - Gonzanamá - Quilanga</span></div></td>
           <td><strong>Calvas</strong><div class="inst-sub">Llurarumi</div></td>
           <td><span class="tag type-fiscomisional">Fiscomisional</span></td>
-          <td><div class="inst-contact" title="Cel. 0993913683 | escuelacentineladelsur@live.com">Cel. 0993913683<br>escuelacentineladelsur@live.com</div></td>
-        </tr>        <tr data-canton="Calvas" data-parroquia="Ningomine" data-ubicacion="CALVAS - NINGOMINE" data-distrito="11D06" data-tipo="Fiscomisional" data-buscar="11H01782 11D06 EL CISNE Calvas Ningomine CALVAS - NINGOMINE Fiscomisional 2688210 985905539 maryvasquez_2704@hotmail.com">
+          <td><div class="inst-contact" title="Directivo: Yandry Esteban Condolo Salinas | Cel. 0993913683 | escuelacentineladelsur@live.com"><strong>Yandry Esteban Condolo Salinas</strong><br>Cel. 0993913683<br>escuelacentineladelsur@live.com</div></td>
+        </tr>
+        <tr data-canton="Calvas" data-parroquia="Ningomine" data-ubicacion="Calvas" data-distrito="11D06" data-tipo="Fiscomisional" data-buscar="11H01782 11D06 Calvas - Gonzanamá - Quilanga Escuela de Educación Básica Fiscomisional El Cisne Fiscomisional Loja Calvas Ningomine Calvas 2688210 985905539 Carmen Elva Narváez Tinizaray maryvasquez_2704@hotmail.com">
           <td><strong>11H01782</strong><div class="inst-sub">11D06</div></td>
-          <td><strong>EL CISNE</strong><div class="inst-sub inst-address"><span class="inst-location-icon" data-lucide="map-pin"></span><span>Ubicaci&oacute;n: CALVAS - NINGOMINE &middot; Parroquia: Ningomine &middot; Distrito: 11D06</span></div></td>
+          <td><strong>Escuela de Educación Básica Fiscomisional El Cisne</strong><div class="inst-sub inst-address"><span class="inst-location-icon" data-lucide="map-pin"></span><span>Ubicaci&oacute;n: Calvas &middot; Parroquia/Sector: Ningomine &middot; Distrito: 11D06 - Calvas - Gonzanamá - Quilanga</span></div></td>
           <td><strong>Calvas</strong><div class="inst-sub">Ningomine</div></td>
           <td><span class="tag type-fiscomisional">Fiscomisional</span></td>
-          <td><div class="inst-contact" title="Tel. 2688210 | Cel. 985905539 | maryvasquez_2704@hotmail.com">Tel. 2688210<br>Cel. 985905539<br>maryvasquez_2704@hotmail.com</div></td>
-        </tr>        <tr data-canton="Calvas" data-parroquia="El Lucero" data-ubicacion="CALVAS -LUCERO SANTA ANA" data-distrito="11D06" data-tipo="Fiscomisional" data-buscar="11H00589 11D06 SAN MIGUEL ARCANGEL Calvas El Lucero CALVAS -LUCERO SANTA ANA Fiscomisional 2689197 0985244203 efren19681@hotmail.com">
+          <td><div class="inst-contact" title="Directivo: Carmen Elva Narváez Tinizaray | Tel. 2688210 | Cel. 985905539 | maryvasquez_2704@hotmail.com"><strong>Carmen Elva Narváez Tinizaray</strong><br>Tel. 2688210<br>Cel. 985905539<br>maryvasquez_2704@hotmail.com</div></td>
+        </tr>
+        <tr data-canton="Calvas" data-parroquia="Santa Ana (Lucero)" data-ubicacion="Calvas" data-distrito="11D06" data-tipo="Fiscomisional" data-buscar="11H00589 11D06 Calvas - Gonzanamá - Quilanga Escuela de Educación Básica Fiscomisional San Miguel Arcángel Fiscomisional Loja Calvas Santa Ana (Lucero) Calvas 2689197 0985244203 Walter Efrén Cueva Masache efren19681@hotmail.com">
           <td><strong>11H00589</strong><div class="inst-sub">11D06</div></td>
-          <td><strong>SAN MIGUEL ARCANGEL</strong><div class="inst-sub inst-address"><span class="inst-location-icon" data-lucide="map-pin"></span><span>Ubicaci&oacute;n: CALVAS -LUCERO SANTA ANA &middot; Parroquia: El Lucero &middot; Distrito: 11D06</span></div></td>
-          <td><strong>Calvas</strong><div class="inst-sub">El Lucero</div></td>
+          <td><strong>Escuela de Educación Básica Fiscomisional San Miguel Arcángel</strong><div class="inst-sub inst-address"><span class="inst-location-icon" data-lucide="map-pin"></span><span>Ubicaci&oacute;n: Calvas &middot; Parroquia/Sector: Santa Ana (Lucero) &middot; Distrito: 11D06 - Calvas - Gonzanamá - Quilanga</span></div></td>
+          <td><strong>Calvas</strong><div class="inst-sub">Santa Ana (Lucero)</div></td>
           <td><span class="tag type-fiscomisional">Fiscomisional</span></td>
-          <td><div class="inst-contact" title="Tel. 2689197 | Cel. 0985244203 | efren19681@hotmail.com">Tel. 2689197<br>Cel. 0985244203<br>efren19681@hotmail.com</div></td>
-        </tr>        <tr data-canton="Calvas" data-parroquia="Calvas" data-ubicacion="CALVAS -" data-distrito="11D06" data-tipo="Fiscomisional" data-buscar="11H00476 11D06 SANTIAGO APOSTOL Calvas Calvas CALVAS - Fiscomisional 2689156 -2687609 0981630864 rosa.perezc@educacion.gob.ec">
+          <td><div class="inst-contact" title="Directivo: Walter Efrén Cueva Masache | Tel. 2689197 | Cel. 0985244203 | efren19681@hotmail.com"><strong>Walter Efrén Cueva Masache</strong><br>Tel. 2689197<br>Cel. 0985244203<br>efren19681@hotmail.com</div></td>
+        </tr>
+        <tr data-canton="Calvas" data-parroquia="Calvas" data-ubicacion="Calvas" data-distrito="11D06" data-tipo="Fiscomisional" data-buscar="11H00476 11D06 Calvas - Gonzanamá - Quilanga Escuela de Educación Básica Fiscomisional Santiago Apóstol Fiscomisional Loja Calvas Calvas Calvas 2689156 -2687609 0981630864 Rosa Angélica Pérez Cueva rosa.perezc@educacion.gob.ec">
           <td><strong>11H00476</strong><div class="inst-sub">11D06</div></td>
-          <td><strong>SANTIAGO APOSTOL</strong><div class="inst-sub inst-address"><span class="inst-location-icon" data-lucide="map-pin"></span><span>Ubicaci&oacute;n: CALVAS - &middot; Parroquia: Calvas &middot; Distrito: 11D06</span></div></td>
+          <td><strong>Escuela de Educación Básica Fiscomisional Santiago Apóstol</strong><div class="inst-sub inst-address"><span class="inst-location-icon" data-lucide="map-pin"></span><span>Ubicaci&oacute;n: Calvas &middot; Parroquia/Sector: Calvas &middot; Distrito: 11D06 - Calvas - Gonzanamá - Quilanga</span></div></td>
           <td><strong>Calvas</strong><div class="inst-sub">Calvas</div></td>
           <td><span class="tag type-fiscomisional">Fiscomisional</span></td>
-          <td><div class="inst-contact" title="Tel. 2689156 -2687609 | Cel. 0981630864 | rosa.perezc@educacion.gob.ec">Tel. 2689156 -2687609<br>Cel. 0981630864<br>rosa.perezc@educacion.gob.ec</div></td>
-        </tr>        <tr data-canton="Calvas" data-parroquia="Yambaca" data-ubicacion="CALVAS -Yambaca" data-distrito="11D06" data-tipo="Fiscomisional" data-buscar="11H00482 11D06 ENRI SALVADOR LOAIZA SOTO Calvas Yambaca CALVAS -Yambaca Fiscomisional  0986063686 luisa.ojeda@educacion.gob.ec">
+          <td><div class="inst-contact" title="Directivo: Rosa Angélica Pérez Cueva | Tel. 2689156 -2687609 | Cel. 0981630864 | rosa.perezc@educacion.gob.ec"><strong>Rosa Angélica Pérez Cueva</strong><br>Tel. 2689156 -2687609<br>Cel. 0981630864<br>rosa.perezc@educacion.gob.ec</div></td>
+        </tr>
+        <tr data-canton="Calvas" data-parroquia="Yambaca" data-ubicacion="Calvas" data-distrito="11D06" data-tipo="Fiscomisional" data-buscar="11H00482 11D06 Calvas - Gonzanamá - Quilanga Escuela de Educación Básica Fiscomisional Enrique Salvador Loaiza Soto Fiscomisional Loja Calvas Yambaca Calvas  0986063686 Luisa Inés Ojeda Calle luisa.ojeda@educacion.gob.ec">
           <td><strong>11H00482</strong><div class="inst-sub">11D06</div></td>
-          <td><strong>ENRI SALVADOR LOAIZA SOTO</strong><div class="inst-sub inst-address"><span class="inst-location-icon" data-lucide="map-pin"></span><span>Ubicaci&oacute;n: CALVAS -Yambaca &middot; Parroquia: Yambaca &middot; Distrito: 11D06</span></div></td>
+          <td><strong>Escuela de Educación Básica Fiscomisional Enrique Salvador Loaiza Soto</strong><div class="inst-sub inst-address"><span class="inst-location-icon" data-lucide="map-pin"></span><span>Ubicaci&oacute;n: Calvas &middot; Parroquia/Sector: Yambaca &middot; Distrito: 11D06 - Calvas - Gonzanamá - Quilanga</span></div></td>
           <td><strong>Calvas</strong><div class="inst-sub">Yambaca</div></td>
           <td><span class="tag type-fiscomisional">Fiscomisional</span></td>
-          <td><div class="inst-contact" title="Cel. 0986063686 | luisa.ojeda@educacion.gob.ec">Cel. 0986063686<br>luisa.ojeda@educacion.gob.ec</div></td>
-        </tr>        <tr data-canton="Calvas" data-parroquia="Guara" data-ubicacion="CALVAS - GUARA" data-distrito="11D06" data-tipo="Fiscomisional" data-buscar="11H00469 11D06 LUIS ALFONSO CRESPO CHIRIBOGA Calvas Guara CALVAS - GUARA Fiscomisional  0997578455 luisacrespoch@gmail.com">
+          <td><div class="inst-contact" title="Directivo: Luisa Inés Ojeda Calle | Cel. 0986063686 | luisa.ojeda@educacion.gob.ec"><strong>Luisa Inés Ojeda Calle</strong><br>Cel. 0986063686<br>luisa.ojeda@educacion.gob.ec</div></td>
+        </tr>
+        <tr data-canton="Calvas" data-parroquia="Guara" data-ubicacion="Calvas" data-distrito="11D06" data-tipo="Fiscomisional" data-buscar="11H00469 11D06 Calvas - Gonzanamá - Quilanga Escuela de Educación Básica Fiscomisional Luis Alfonso Crespo Chiriboga Fiscomisional Loja Calvas Guara Calvas  0997578455 Hortencia Leonor Escaleras Toledo luisacrespoch@gmail.com">
           <td><strong>11H00469</strong><div class="inst-sub">11D06</div></td>
-          <td><strong>LUIS ALFONSO CRESPO CHIRIBOGA</strong><div class="inst-sub inst-address"><span class="inst-location-icon" data-lucide="map-pin"></span><span>Ubicaci&oacute;n: CALVAS - GUARA &middot; Parroquia: Guara &middot; Distrito: 11D06</span></div></td>
+          <td><strong>Escuela de Educación Básica Fiscomisional Luis Alfonso Crespo Chiriboga</strong><div class="inst-sub inst-address"><span class="inst-location-icon" data-lucide="map-pin"></span><span>Ubicaci&oacute;n: Calvas &middot; Parroquia/Sector: Guara &middot; Distrito: 11D06 - Calvas - Gonzanamá - Quilanga</span></div></td>
           <td><strong>Calvas</strong><div class="inst-sub">Guara</div></td>
           <td><span class="tag type-fiscomisional">Fiscomisional</span></td>
-          <td><div class="inst-contact" title="Cel. 0997578455 | luisacrespoch@gmail.com">Cel. 0997578455<br>luisacrespoch@gmail.com</div></td>
-        </tr>        <tr data-canton="Calvas" data-parroquia="Cango" data-ubicacion="CALVAS - CANGO" data-distrito="11D06" data-tipo="Fiscomisional" data-buscar="11H00506 11D06 LANTADILLA Calvas Cango CALVAS - CANGO Fiscomisional 3100322 0992444022 ivnjumbo82@yahoo.es">
+          <td><div class="inst-contact" title="Directivo: Hortencia Leonor Escaleras Toledo | Cel. 0997578455 | luisacrespoch@gmail.com"><strong>Hortencia Leonor Escaleras Toledo</strong><br>Cel. 0997578455<br>luisacrespoch@gmail.com</div></td>
+        </tr>
+        <tr data-canton="Calvas" data-parroquia="Cango" data-ubicacion="Calvas" data-distrito="11D06" data-tipo="Fiscomisional" data-buscar="11H00506 11D06 Calvas - Gonzanamá - Quilanga Escuela de Educación Básica Fiscomisional Lantadilla Fiscomisional Loja Calvas Cango Calvas 3100322 0992444022 Iván Roberto Jumbo Castillo ivnjumbo82@yahoo.es">
           <td><strong>11H00506</strong><div class="inst-sub">11D06</div></td>
-          <td><strong>LANTADILLA</strong><div class="inst-sub inst-address"><span class="inst-location-icon" data-lucide="map-pin"></span><span>Ubicaci&oacute;n: CALVAS - CANGO &middot; Parroquia: Cango &middot; Distrito: 11D06</span></div></td>
+          <td><strong>Escuela de Educación Básica Fiscomisional Lantadilla</strong><div class="inst-sub inst-address"><span class="inst-location-icon" data-lucide="map-pin"></span><span>Ubicaci&oacute;n: Calvas &middot; Parroquia/Sector: Cango &middot; Distrito: 11D06 - Calvas - Gonzanamá - Quilanga</span></div></td>
           <td><strong>Calvas</strong><div class="inst-sub">Cango</div></td>
           <td><span class="tag type-fiscomisional">Fiscomisional</span></td>
-          <td><div class="inst-contact" title="Tel. 3100322 | Cel. 0992444022 | ivnjumbo82@yahoo.es">Tel. 3100322<br>Cel. 0992444022<br>ivnjumbo82@yahoo.es</div></td>
-        </tr>        <tr data-canton="Calvas" data-parroquia="Suanamaca" data-ubicacion="CALVAS- SUANAMACA" data-distrito="11D06" data-tipo="Fiscomisional" data-buscar="11H00529 11D06 CRISTOBAL COLON Calvas Suanamaca CALVAS- SUANAMACA Fiscomisional  0989231822 escuelacristobalcol@hotmail.com">
+          <td><div class="inst-contact" title="Directivo: Iván Roberto Jumbo Castillo | Tel. 3100322 | Cel. 0992444022 | ivnjumbo82@yahoo.es"><strong>Iván Roberto Jumbo Castillo</strong><br>Tel. 3100322<br>Cel. 0992444022<br>ivnjumbo82@yahoo.es</div></td>
+        </tr>
+        <tr data-canton="Calvas" data-parroquia="Suanamaca" data-ubicacion="Calvas" data-distrito="11D06" data-tipo="Fiscomisional" data-buscar="11H00529 11D06 Calvas - Gonzanamá - Quilanga Escuela de Educación Básica Fiscomisional Cristóbal Colón Fiscomisional Loja Calvas Suanamaca Calvas  0989231822 José Graciano Pardo escuelacristobalcol@hotmail.com">
           <td><strong>11H00529</strong><div class="inst-sub">11D06</div></td>
-          <td><strong>CRISTOBAL COLON</strong><div class="inst-sub inst-address"><span class="inst-location-icon" data-lucide="map-pin"></span><span>Ubicaci&oacute;n: CALVAS- SUANAMACA &middot; Parroquia: Suanamaca &middot; Distrito: 11D06</span></div></td>
+          <td><strong>Escuela de Educación Básica Fiscomisional Cristóbal Colón</strong><div class="inst-sub inst-address"><span class="inst-location-icon" data-lucide="map-pin"></span><span>Ubicaci&oacute;n: Calvas &middot; Parroquia/Sector: Suanamaca &middot; Distrito: 11D06 - Calvas - Gonzanamá - Quilanga</span></div></td>
           <td><strong>Calvas</strong><div class="inst-sub">Suanamaca</div></td>
           <td><span class="tag type-fiscomisional">Fiscomisional</span></td>
-          <td><div class="inst-contact" title="Cel. 0989231822 | escuelacristobalcol@hotmail.com">Cel. 0989231822<br>escuelacristobalcol@hotmail.com</div></td>
-        </tr>        <tr data-canton="Calvas" data-parroquia="Usaime" data-ubicacion="CALVAS - USAIME" data-distrito="11D06" data-tipo="Fiscomisional" data-buscar="11H00626 11D06 JORGE ICAZA- STA. FE Calvas Usaime CALVAS - USAIME Fiscomisional  0982644931 claudiopardoo@hotmail.com">
+          <td><div class="inst-contact" title="Directivo: José Graciano Pardo | Cel. 0989231822 | escuelacristobalcol@hotmail.com"><strong>José Graciano Pardo</strong><br>Cel. 0989231822<br>escuelacristobalcol@hotmail.com</div></td>
+        </tr>
+        <tr data-canton="Calvas" data-parroquia="Usaime" data-ubicacion="Calvas" data-distrito="11D06" data-tipo="Fiscomisional" data-buscar="11H00626 11D06 Calvas - Gonzanamá - Quilanga Escuela de Educación Básica Fiscomisional Jorge Icaza - Santa Fe Fiscomisional Loja Calvas Usaime Calvas  0982644931 Claudio Pardo Ortíz claudiopardoo@hotmail.com">
           <td><strong>11H00626</strong><div class="inst-sub">11D06</div></td>
-          <td><strong>JORGE ICAZA- STA. FE</strong><div class="inst-sub inst-address"><span class="inst-location-icon" data-lucide="map-pin"></span><span>Ubicaci&oacute;n: CALVAS - USAIME &middot; Parroquia: Usaime &middot; Distrito: 11D06</span></div></td>
+          <td><strong>Escuela de Educación Básica Fiscomisional Jorge Icaza - Santa Fe</strong><div class="inst-sub inst-address"><span class="inst-location-icon" data-lucide="map-pin"></span><span>Ubicaci&oacute;n: Calvas &middot; Parroquia/Sector: Usaime &middot; Distrito: 11D06 - Calvas - Gonzanamá - Quilanga</span></div></td>
           <td><strong>Calvas</strong><div class="inst-sub">Usaime</div></td>
           <td><span class="tag type-fiscomisional">Fiscomisional</span></td>
-          <td><div class="inst-contact" title="Cel. 0982644931 | claudiopardoo@hotmail.com">Cel. 0982644931<br>claudiopardoo@hotmail.com</div></td>
-        </tr>        <tr data-canton="Gonzanam&#225;" data-parroquia="Guanchilaca" data-ubicacion="GONZANAM&#193;-GUANCHILACA" data-distrito="11D06" data-tipo="Fiscomisional" data-buscar="11H00955 11D06 NTRA. SE&#209;ORA DE LA NUBE Gonzanam&#225; Guanchilaca GONZANAM&#193;-GUANCHILACA Fiscomisional  0999521372 rafaelitoal@hotmail.com">
+          <td><div class="inst-contact" title="Directivo: Claudio Pardo Ortíz | Cel. 0982644931 | claudiopardoo@hotmail.com"><strong>Claudio Pardo Ortíz</strong><br>Cel. 0982644931<br>claudiopardoo@hotmail.com</div></td>
+        </tr>
+        <tr data-canton="Gonzanamá" data-parroquia="Purunuma (Guanchilaca)" data-ubicacion="Gonzanamá" data-distrito="11D06" data-tipo="Fiscomisional" data-buscar="11H00955 11D06 Calvas - Gonzanamá - Quilanga Escuela de Educación Básica Fiscomisional Nuestra Señora de la Nube Fiscomisional Loja Gonzanamá Purunuma (Guanchilaca) Gonzanamá  0999521372 Rafael Jimémez Cueva rafaelitoal@hotmail.com">
           <td><strong>11H00955</strong><div class="inst-sub">11D06</div></td>
-          <td><strong>NTRA. SE&#209;ORA DE LA NUBE</strong><div class="inst-sub inst-address"><span class="inst-location-icon" data-lucide="map-pin"></span><span>Ubicaci&oacute;n: GONZANAM&#193;-GUANCHILACA &middot; Parroquia: Guanchilaca &middot; Distrito: 11D06</span></div></td>
-          <td><strong>Gonzanam&#225;</strong><div class="inst-sub">Guanchilaca</div></td>
+          <td><strong>Escuela de Educación Básica Fiscomisional Nuestra Señora de la Nube</strong><div class="inst-sub inst-address"><span class="inst-location-icon" data-lucide="map-pin"></span><span>Ubicaci&oacute;n: Gonzanamá &middot; Parroquia/Sector: Purunuma (Guanchilaca) &middot; Distrito: 11D06 - Calvas - Gonzanamá - Quilanga</span></div></td>
+          <td><strong>Gonzanamá</strong><div class="inst-sub">Purunuma (Guanchilaca)</div></td>
           <td><span class="tag type-fiscomisional">Fiscomisional</span></td>
-          <td><div class="inst-contact" title="Cel. 0999521372 | rafaelitoal@hotmail.com">Cel. 0999521372<br>rafaelitoal@hotmail.com</div></td>
-        </tr>        <tr data-canton="Gonzanam&#225;" data-parroquia="Chamana" data-ubicacion="GONZANAM&#193;-Chamana" data-distrito="11D06" data-tipo="Fiscomisional" data-buscar="11H00971 11D06 SANTA TERESA Gonzanam&#225; Chamana GONZANAM&#193;-Chamana Fiscomisional  0985476974 ">
+          <td><div class="inst-contact" title="Directivo: Rafael Jimémez Cueva | Cel. 0999521372 | rafaelitoal@hotmail.com"><strong>Rafael Jimémez Cueva</strong><br>Cel. 0999521372<br>rafaelitoal@hotmail.com</div></td>
+        </tr>
+        <tr data-canton="Gonzanamá" data-parroquia="Chamana" data-ubicacion="Gonzanamá" data-distrito="11D06" data-tipo="Fiscomisional" data-buscar="11H00971 11D06 Calvas - Gonzanamá - Quilanga Escuela de Educación Básica Fiscomisional Santa Teresa Fiscomisional Loja Gonzanamá Chamana Gonzanamá  0985476974 Patricia Lalangui">
           <td><strong>11H00971</strong><div class="inst-sub">11D06</div></td>
-          <td><strong>SANTA TERESA</strong><div class="inst-sub inst-address"><span class="inst-location-icon" data-lucide="map-pin"></span><span>Ubicaci&oacute;n: GONZANAM&#193;-Chamana &middot; Parroquia: Chamana &middot; Distrito: 11D06</span></div></td>
-          <td><strong>Gonzanam&#225;</strong><div class="inst-sub">Chamana</div></td>
+          <td><strong>Escuela de Educación Básica Fiscomisional Santa Teresa</strong><div class="inst-sub inst-address"><span class="inst-location-icon" data-lucide="map-pin"></span><span>Ubicaci&oacute;n: Gonzanamá &middot; Parroquia/Sector: Chamana &middot; Distrito: 11D06 - Calvas - Gonzanamá - Quilanga</span></div></td>
+          <td><strong>Gonzanamá</strong><div class="inst-sub">Chamana</div></td>
           <td><span class="tag type-fiscomisional">Fiscomisional</span></td>
-          <td><div class="inst-contact" title="Cel. 0985476974">Cel. 0985476974</div></td>
-        </tr>        <tr data-canton="Gonzanam&#225;" data-parroquia="Tierra Blanca" data-ubicacion="GONZANAM&#193;- TIERRA BLANCA" data-distrito="11D06" data-tipo="Fiscomisional" data-buscar="11H01029 11D06 REINA DEL CISNE Gonzanam&#225; Tierra Blanca GONZANAM&#193;- TIERRA BLANCA Fiscomisional 2688876- 0985741871 reinadelcisne2013@yahoo.es">
+          <td><div class="inst-contact" title="Directivo: Patricia Lalangui | Cel. 0985476974"><strong>Patricia Lalangui</strong><br>Cel. 0985476974</div></td>
+        </tr>
+        <tr data-canton="Gonzanamá" data-parroquia="Tierra Blanca" data-ubicacion="Gonzanamá" data-distrito="11D06" data-tipo="Fiscomisional" data-buscar="11H01029 11D06 Calvas - Gonzanamá - Quilanga Escuela de Educación Básica Fiscomisional Reina del Cisne Fiscomisional Loja Gonzanamá Tierra Blanca Gonzanamá 2688876- 0985741871 Ángel Polivio Cueva Cueva reinadelcisne2013@yahoo.es">
           <td><strong>11H01029</strong><div class="inst-sub">11D06</div></td>
-          <td><strong>REINA DEL CISNE</strong><div class="inst-sub inst-address"><span class="inst-location-icon" data-lucide="map-pin"></span><span>Ubicaci&oacute;n: GONZANAM&#193;- TIERRA BLANCA &middot; Parroquia: Tierra Blanca &middot; Distrito: 11D06</span></div></td>
-          <td><strong>Gonzanam&#225;</strong><div class="inst-sub">Tierra Blanca</div></td>
+          <td><strong>Escuela de Educación Básica Fiscomisional Reina del Cisne</strong><div class="inst-sub inst-address"><span class="inst-location-icon" data-lucide="map-pin"></span><span>Ubicaci&oacute;n: Gonzanamá &middot; Parroquia/Sector: Tierra Blanca &middot; Distrito: 11D06 - Calvas - Gonzanamá - Quilanga</span></div></td>
+          <td><strong>Gonzanamá</strong><div class="inst-sub">Tierra Blanca</div></td>
           <td><span class="tag type-fiscomisional">Fiscomisional</span></td>
-          <td><div class="inst-contact" title="Tel. 2688876- | Cel. 0985741871 | reinadelcisne2013@yahoo.es">Tel. 2688876-<br>Cel. 0985741871<br>reinadelcisne2013@yahoo.es</div></td>
-        </tr>        <tr data-canton="Calvas" data-parroquia="Tunas Chingulle" data-ubicacion="CALVAS - TUNAS CHINGULLE" data-distrito="11D06" data-tipo="Fiscomisional" data-buscar="11H00612 11D06 LA LIBERTAD Calvas Tunas Chingulle CALVAS - TUNAS CHINGULLE Fiscomisional  0993696362 miguelivan01@hotmail.com">
+          <td><div class="inst-contact" title="Directivo: Ángel Polivio Cueva Cueva | Tel. 2688876- | Cel. 0985741871 | reinadelcisne2013@yahoo.es"><strong>Ángel Polivio Cueva Cueva</strong><br>Tel. 2688876-<br>Cel. 0985741871<br>reinadelcisne2013@yahoo.es</div></td>
+        </tr>
+        <tr data-canton="Calvas" data-parroquia="Tunas Chingullé" data-ubicacion="Calvas" data-distrito="11D06" data-tipo="Fiscomisional" data-buscar="11H00612 11D06 Calvas - Gonzanamá - Quilanga Escuela de Educación Básica Fiscomisional La Libertad Fiscomisional Loja Calvas Tunas Chingullé Calvas  0993696362 Miguel Bravo Torres miguelivan01@hotmail.com">
           <td><strong>11H00612</strong><div class="inst-sub">11D06</div></td>
-          <td><strong>LA LIBERTAD</strong><div class="inst-sub inst-address"><span class="inst-location-icon" data-lucide="map-pin"></span><span>Ubicaci&oacute;n: CALVAS - TUNAS CHINGULLE &middot; Parroquia: Tunas Chingulle &middot; Distrito: 11D06</span></div></td>
-          <td><strong>Calvas</strong><div class="inst-sub">Tunas Chingulle</div></td>
+          <td><strong>Escuela de Educación Básica Fiscomisional La Libertad</strong><div class="inst-sub inst-address"><span class="inst-location-icon" data-lucide="map-pin"></span><span>Ubicaci&oacute;n: Calvas &middot; Parroquia/Sector: Tunas Chingullé &middot; Distrito: 11D06 - Calvas - Gonzanamá - Quilanga</span></div></td>
+          <td><strong>Calvas</strong><div class="inst-sub">Tunas Chingullé</div></td>
           <td><span class="tag type-fiscomisional">Fiscomisional</span></td>
-          <td><div class="inst-contact" title="Cel. 0993696362 | miguelivan01@hotmail.com">Cel. 0993696362<br>miguelivan01@hotmail.com</div></td>
-        </tr>        <tr data-canton="Calvas" data-parroquia="Guayaranuma" data-ubicacion="GUAYARANUMA" data-distrito="11D06" data-tipo="Fiscomisional" data-buscar="11H01968 11D06 SAGRADO CORAZ&#211;N DE JES&#218;S Calvas Guayaranuma GUAYARANUMA Fiscomisional  0993124054 acarmen1980@hotmail.com">
+          <td><div class="inst-contact" title="Directivo: Miguel Bravo Torres | Cel. 0993696362 | miguelivan01@hotmail.com"><strong>Miguel Bravo Torres</strong><br>Cel. 0993696362<br>miguelivan01@hotmail.com</div></td>
+        </tr>
+        <tr data-canton="Gonzanamá" data-parroquia="Guayaranuma" data-ubicacion="Gonzanamá" data-distrito="11D06" data-tipo="Fiscomisional" data-buscar="11H01968 11D06 Calvas - Gonzanamá - Quilanga Escuela de Educación Básica Fiscomisional Sagrado Corazón de Jesús Fiscomisional Loja Gonzanamá Guayaranuma Gonzanamá  0993124054 Nancy Mercedes Rodríguez Torres acarmen1980@hotmail.com">
           <td><strong>11H01968</strong><div class="inst-sub">11D06</div></td>
-          <td><strong>SAGRADO CORAZ&#211;N DE JES&#218;S</strong><div class="inst-sub inst-address"><span class="inst-location-icon" data-lucide="map-pin"></span><span>Ubicaci&oacute;n: GUAYARANUMA &middot; Parroquia: Guayaranuma &middot; Distrito: 11D06</span></div></td>
-          <td><strong>Calvas</strong><div class="inst-sub">Guayaranuma</div></td>
+          <td><strong>Escuela de Educación Básica Fiscomisional Sagrado Corazón de Jesús</strong><div class="inst-sub inst-address"><span class="inst-location-icon" data-lucide="map-pin"></span><span>Ubicaci&oacute;n: Gonzanamá &middot; Parroquia/Sector: Guayaranuma &middot; Distrito: 11D06 - Calvas - Gonzanamá - Quilanga</span></div></td>
+          <td><strong>Gonzanamá</strong><div class="inst-sub">Guayaranuma</div></td>
           <td><span class="tag type-fiscomisional">Fiscomisional</span></td>
-          <td><div class="inst-contact" title="Cel. 0993124054 | acarmen1980@hotmail.com">Cel. 0993124054<br>acarmen1980@hotmail.com</div></td>
-        </tr>        <tr data-canton="Gonzanam&#225;" data-parroquia="Gonzanam&#225;" data-ubicacion="GONZANAM&#193;" data-distrito="11D06" data-tipo="Fiscomisional" data-buscar="11H00615 11D06 STA. MARIANITA Gonzanam&#225; Gonzanam&#225; GONZANAM&#193; Fiscomisional  0969952478 romulo.jimenez@educacion.gob.ec">
+          <td><div class="inst-contact" title="Directivo: Nancy Mercedes Rodríguez Torres | Cel. 0993124054 | acarmen1980@hotmail.com"><strong>Nancy Mercedes Rodríguez Torres</strong><br>Cel. 0993124054<br>acarmen1980@hotmail.com</div></td>
+        </tr>
+        <tr data-canton="Gonzanamá" data-parroquia="Gonzanamá" data-ubicacion="Gonzanamá" data-distrito="11D06" data-tipo="Fiscomisional" data-buscar="11H00615 11D06 Calvas - Gonzanamá - Quilanga Escuela de Educación Básica Fiscomisional Santa Marianita Fiscomisional Loja Gonzanamá Gonzanamá Gonzanamá  0969952478 Rómulo Rafael Jiménez Torres romulo.jimenez@educacion.gob.ec">
           <td><strong>11H00615</strong><div class="inst-sub">11D06</div></td>
-          <td><strong>STA. MARIANITA</strong><div class="inst-sub inst-address"><span class="inst-location-icon" data-lucide="map-pin"></span><span>Ubicaci&oacute;n: GONZANAM&#193; &middot; Parroquia: Gonzanam&#225; &middot; Distrito: 11D06</span></div></td>
-          <td><strong>Gonzanam&#225;</strong><div class="inst-sub">Gonzanam&#225;</div></td>
+          <td><strong>Escuela de Educación Básica Fiscomisional Santa Marianita</strong><div class="inst-sub inst-address"><span class="inst-location-icon" data-lucide="map-pin"></span><span>Ubicaci&oacute;n: Gonzanamá &middot; Parroquia/Sector: Gonzanamá &middot; Distrito: 11D06 - Calvas - Gonzanamá - Quilanga</span></div></td>
+          <td><strong>Gonzanamá</strong><div class="inst-sub">Gonzanamá</div></td>
           <td><span class="tag type-fiscomisional">Fiscomisional</span></td>
-          <td><div class="inst-contact" title="Cel. 0969952478 | romulo.jimenez@educacion.gob.ec">Cel. 0969952478<br>romulo.jimenez@educacion.gob.ec</div></td>
-        </tr>        <tr data-canton="Calvas" data-parroquia="San Joaqu&#237;n" data-ubicacion="CALVAS - SAN JOAQU&#205;N" data-distrito="11D06" data-tipo="Fiscomisional" data-buscar="11H00621 11D06 STA. MARIANITA DE JESUS Calvas San Joaqu&#237;n CALVAS - SAN JOAQU&#205;N Fiscomisional  0993939307 dianam.reyes@educacion.gob.ec">
+          <td><div class="inst-contact" title="Directivo: Rómulo Rafael Jiménez Torres | Cel. 0969952478 | romulo.jimenez@educacion.gob.ec"><strong>Rómulo Rafael Jiménez Torres</strong><br>Cel. 0969952478<br>romulo.jimenez@educacion.gob.ec</div></td>
+        </tr>
+        <tr data-canton="Calvas" data-parroquia="San Joaquín" data-ubicacion="Calvas" data-distrito="11D06" data-tipo="Fiscomisional" data-buscar="11H00621 11D06 Calvas - Gonzanamá - Quilanga Escuela de Educación Básica Fiscomisional Santa Marianita de Jesús Fiscomisional Loja Calvas San Joaquín Calvas  0993939307 Diana Reyes dianam.reyes@educacion.gob.ec">
           <td><strong>11H00621</strong><div class="inst-sub">11D06</div></td>
-          <td><strong>STA. MARIANITA DE JESUS</strong><div class="inst-sub inst-address"><span class="inst-location-icon" data-lucide="map-pin"></span><span>Ubicaci&oacute;n: CALVAS - SAN JOAQU&#205;N &middot; Parroquia: San Joaqu&#237;n &middot; Distrito: 11D06</span></div></td>
-          <td><strong>Calvas</strong><div class="inst-sub">San Joaqu&#237;n</div></td>
+          <td><strong>Escuela de Educación Básica Fiscomisional Santa Marianita de Jesús</strong><div class="inst-sub inst-address"><span class="inst-location-icon" data-lucide="map-pin"></span><span>Ubicaci&oacute;n: Calvas &middot; Parroquia/Sector: San Joaquín &middot; Distrito: 11D06 - Calvas - Gonzanamá - Quilanga</span></div></td>
+          <td><strong>Calvas</strong><div class="inst-sub">San Joaquín</div></td>
           <td><span class="tag type-fiscomisional">Fiscomisional</span></td>
-          <td><div class="inst-contact" title="Cel. 0993939307 | dianam.reyes@educacion.gob.ec">Cel. 0993939307<br>dianam.reyes@educacion.gob.ec</div></td>
-        </tr>        <tr data-canton="Calvas" data-parroquia="Upaco" data-ubicacion="CALVAS- Upaco" data-distrito="11D06" data-tipo="Fiscomisional" data-buscar="11H00552 11D06 HNO. AGUSTIN VILLAREAL DELGADO Calvas Upaco CALVAS- Upaco Fiscomisional 2687928- 0982530917 ivang_cueva@hotmail.com">
+          <td><div class="inst-contact" title="Directivo: Diana Reyes | Cel. 0993939307 | dianam.reyes@educacion.gob.ec"><strong>Diana Reyes</strong><br>Cel. 0993939307<br>dianam.reyes@educacion.gob.ec</div></td>
+        </tr>
+        <tr data-canton="Calvas" data-parroquia="Upaco" data-ubicacion="Calvas" data-distrito="11D06" data-tipo="Fiscomisional" data-buscar="11H00552 11D06 Calvas - Gonzanamá - Quilanga Escuela de Educación Básica Fiscomisional Hermano Agustín Villarreal Delgado Fiscomisional Loja Calvas Upaco Calvas 2687928- 0982530917 Juan Iván Gonzaga Cueva ivang_cueva@hotmail.com">
           <td><strong>11H00552</strong><div class="inst-sub">11D06</div></td>
-          <td><strong>HNO. AGUSTIN VILLAREAL DELGADO</strong><div class="inst-sub inst-address"><span class="inst-location-icon" data-lucide="map-pin"></span><span>Ubicaci&oacute;n: CALVAS- Upaco &middot; Parroquia: Upaco &middot; Distrito: 11D06</span></div></td>
+          <td><strong>Escuela de Educación Básica Fiscomisional Hermano Agustín Villarreal Delgado</strong><div class="inst-sub inst-address"><span class="inst-location-icon" data-lucide="map-pin"></span><span>Ubicaci&oacute;n: Calvas &middot; Parroquia/Sector: Upaco &middot; Distrito: 11D06 - Calvas - Gonzanamá - Quilanga</span></div></td>
           <td><strong>Calvas</strong><div class="inst-sub">Upaco</div></td>
           <td><span class="tag type-fiscomisional">Fiscomisional</span></td>
-          <td><div class="inst-contact" title="Tel. 2687928- | Cel. 0982530917 | ivang_cueva@hotmail.com">Tel. 2687928-<br>Cel. 0982530917<br>ivang_cueva@hotmail.com</div></td>
-        </tr>        <tr data-canton="Calvas" data-parroquia="Calvas" data-ubicacion="CALVAS" data-distrito="11D06" data-tipo="Fiscomisional" data-buscar="11H00468 11D06 SAN JUAN DE LA CRUZ Calvas Calvas CALVAS Fiscomisional 3024673 0988304481 miltonm.flores@yahoo.es">
+          <td><div class="inst-contact" title="Directivo: Juan Iván Gonzaga Cueva | Tel. 2687928- | Cel. 0982530917 | ivang_cueva@hotmail.com"><strong>Juan Iván Gonzaga Cueva</strong><br>Tel. 2687928-<br>Cel. 0982530917<br>ivang_cueva@hotmail.com</div></td>
+        </tr>
+        <tr data-canton="Calvas" data-parroquia="Calvas" data-ubicacion="Calvas" data-distrito="11D06" data-tipo="Fiscomisional" data-buscar="11H00468 11D06 Calvas - Gonzanamá - Quilanga Escuela de Educación Básica Fiscomisional San Juan de la Cruz Fiscomisional Loja Calvas Calvas Calvas 3024673 0988304481 Milton Melecio Flores Sarango miltonm.flores@yahoo.es">
           <td><strong>11H00468</strong><div class="inst-sub">11D06</div></td>
-          <td><strong>SAN JUAN DE LA CRUZ</strong><div class="inst-sub inst-address"><span class="inst-location-icon" data-lucide="map-pin"></span><span>Ubicaci&oacute;n: CALVAS &middot; Parroquia: Calvas &middot; Distrito: 11D06</span></div></td>
+          <td><strong>Escuela de Educación Básica Fiscomisional San Juan de la Cruz</strong><div class="inst-sub inst-address"><span class="inst-location-icon" data-lucide="map-pin"></span><span>Ubicaci&oacute;n: Calvas &middot; Parroquia/Sector: Calvas &middot; Distrito: 11D06 - Calvas - Gonzanamá - Quilanga</span></div></td>
           <td><strong>Calvas</strong><div class="inst-sub">Calvas</div></td>
           <td><span class="tag type-fiscomisional">Fiscomisional</span></td>
-          <td><div class="inst-contact" title="Tel. 3024673 | Cel. 0988304481 | miltonm.flores@yahoo.es">Tel. 3024673<br>Cel. 0988304481<br>miltonm.flores@yahoo.es</div></td>
-        </tr>        <tr data-canton="Calvas" data-parroquia="Yunga" data-ubicacion="CALVAS- YUNGA" data-distrito="11D06" data-tipo="Fiscomisional" data-buscar="11H00484 11D06 PAULO VI Calvas Yunga CALVAS- YUNGA Fiscomisional 2688181 0986800357 rositacc12@hotmail.com">
+          <td><div class="inst-contact" title="Directivo: Milton Melecio Flores Sarango | Tel. 3024673 | Cel. 0988304481 | miltonm.flores@yahoo.es"><strong>Milton Melecio Flores Sarango</strong><br>Tel. 3024673<br>Cel. 0988304481<br>miltonm.flores@yahoo.es</div></td>
+        </tr>
+        <tr data-canton="Calvas" data-parroquia="Yunga" data-ubicacion="Calvas" data-distrito="11D06" data-tipo="Fiscomisional" data-buscar="11H00484 11D06 Calvas - Gonzanamá - Quilanga Escuela de Educación Básica Fiscomisional Paulo VI Fiscomisional Loja Calvas Yunga Calvas 2688181 0986800357 Rosa María  Carrillo Castillo rositacc12@hotmail.com">
           <td><strong>11H00484</strong><div class="inst-sub">11D06</div></td>
-          <td><strong>PAULO VI</strong><div class="inst-sub inst-address"><span class="inst-location-icon" data-lucide="map-pin"></span><span>Ubicaci&oacute;n: CALVAS- YUNGA &middot; Parroquia: Yunga &middot; Distrito: 11D06</span></div></td>
+          <td><strong>Escuela de Educación Básica Fiscomisional Paulo VI</strong><div class="inst-sub inst-address"><span class="inst-location-icon" data-lucide="map-pin"></span><span>Ubicaci&oacute;n: Calvas &middot; Parroquia/Sector: Yunga &middot; Distrito: 11D06 - Calvas - Gonzanamá - Quilanga</span></div></td>
           <td><strong>Calvas</strong><div class="inst-sub">Yunga</div></td>
           <td><span class="tag type-fiscomisional">Fiscomisional</span></td>
-          <td><div class="inst-contact" title="Tel. 2688181 | Cel. 0986800357 | rositacc12@hotmail.com">Tel. 2688181<br>Cel. 0986800357<br>rositacc12@hotmail.com</div></td>
-        </tr>        <tr data-canton="Calvas" data-parroquia="Santa Teresa" data-ubicacion="CALVAS- SANTA TERESA" data-distrito="11D06" data-tipo="Fiscomisional" data-buscar="11H00489 11D06 AMADA JUMBO SANTA TERESA Calvas Santa Teresa CALVAS- SANTA TERESA Fiscomisional  997325250 elizamorochoa@hotmail.com">
+          <td><div class="inst-contact" title="Directivo: Rosa María  Carrillo Castillo | Tel. 2688181 | Cel. 0986800357 | rositacc12@hotmail.com"><strong>Rosa María  Carrillo Castillo</strong><br>Tel. 2688181<br>Cel. 0986800357<br>rositacc12@hotmail.com</div></td>
+        </tr>
+        <tr data-canton="Calvas" data-parroquia="Santa Teresa" data-ubicacion="Calvas" data-distrito="11D06" data-tipo="Fiscomisional" data-buscar="11H00489 11D06 Calvas - Gonzanamá - Quilanga Escuela de Educación Básica Fiscomisional Amada Jumbo Santa Teresa Fiscomisional Loja Calvas Santa Teresa Calvas  997325250 Elizabeth del Carmen Morocho Araujo elizamorochoa@hotmail.com">
           <td><strong>11H00489</strong><div class="inst-sub">11D06</div></td>
-          <td><strong>AMADA JUMBO SANTA TERESA</strong><div class="inst-sub inst-address"><span class="inst-location-icon" data-lucide="map-pin"></span><span>Ubicaci&oacute;n: CALVAS- SANTA TERESA &middot; Parroquia: Santa Teresa &middot; Distrito: 11D06</span></div></td>
+          <td><strong>Escuela de Educación Básica Fiscomisional Amada Jumbo Santa Teresa</strong><div class="inst-sub inst-address"><span class="inst-location-icon" data-lucide="map-pin"></span><span>Ubicaci&oacute;n: Calvas &middot; Parroquia/Sector: Santa Teresa &middot; Distrito: 11D06 - Calvas - Gonzanamá - Quilanga</span></div></td>
           <td><strong>Calvas</strong><div class="inst-sub">Santa Teresa</div></td>
           <td><span class="tag type-fiscomisional">Fiscomisional</span></td>
-          <td><div class="inst-contact" title="Cel. 997325250 | elizamorochoa@hotmail.com">Cel. 997325250<br>elizamorochoa@hotmail.com</div></td>
-        </tr>        <tr data-canton="Calvas" data-parroquia="Taparuca" data-ubicacion="CALVAS - TAPARUCA" data-distrito="11D06" data-tipo="Fiscomisional" data-buscar="11H00520 11D06 SAN ANTONIO Calvas Taparuca CALVAS - TAPARUCA Fiscomisional 3102965 0992777918 carlosvega@educacion.gob.ec">
+          <td><div class="inst-contact" title="Directivo: Elizabeth del Carmen Morocho Araujo | Cel. 997325250 | elizamorochoa@hotmail.com"><strong>Elizabeth del Carmen Morocho Araujo</strong><br>Cel. 997325250<br>elizamorochoa@hotmail.com</div></td>
+        </tr>
+        <tr data-canton="Calvas" data-parroquia="Taparuca" data-ubicacion="Calvas" data-distrito="11D06" data-tipo="Fiscomisional" data-buscar="11H00520 11D06 Calvas - Gonzanamá - Quilanga Escuela de Educación Básica Fiscomisional San Antonio Fiscomisional Loja Calvas Taparuca Calvas 3102965 0992777918 Carlos Humberto Vega Rodríguez carlosvega@educacion.gob.ec">
           <td><strong>11H00520</strong><div class="inst-sub">11D06</div></td>
-          <td><strong>SAN ANTONIO</strong><div class="inst-sub inst-address"><span class="inst-location-icon" data-lucide="map-pin"></span><span>Ubicaci&oacute;n: CALVAS - TAPARUCA &middot; Parroquia: Taparuca &middot; Distrito: 11D06</span></div></td>
+          <td><strong>Escuela de Educación Básica Fiscomisional San Antonio</strong><div class="inst-sub inst-address"><span class="inst-location-icon" data-lucide="map-pin"></span><span>Ubicaci&oacute;n: Calvas &middot; Parroquia/Sector: Taparuca &middot; Distrito: 11D06 - Calvas - Gonzanamá - Quilanga</span></div></td>
           <td><strong>Calvas</strong><div class="inst-sub">Taparuca</div></td>
           <td><span class="tag type-fiscomisional">Fiscomisional</span></td>
-          <td><div class="inst-contact" title="Tel. 3102965 | Cel. 0992777918 | carlosvega@educacion.gob.ec">Tel. 3102965<br>Cel. 0992777918<br>carlosvega@educacion.gob.ec</div></td>
-        </tr>        <tr data-canton="Calvas" data-parroquia="Macaicanza" data-ubicacion="CALVAS- Macaicanza" data-distrito="11D06" data-tipo="Fiscomisional" data-buscar="11H00542 11D06 ANTONIO CASTILLO HERMANO MIGUEL Calvas Macaicanza CALVAS- Macaicanza Fiscomisional 986595058 981561483 escuelafiscal_antoniocastillo@hotmail.es">
+          <td><div class="inst-contact" title="Directivo: Carlos Humberto Vega Rodríguez | Tel. 3102965 | Cel. 0992777918 | carlosvega@educacion.gob.ec"><strong>Carlos Humberto Vega Rodríguez</strong><br>Tel. 3102965<br>Cel. 0992777918<br>carlosvega@educacion.gob.ec</div></td>
+        </tr>
+        <tr data-canton="Calvas" data-parroquia="Macaicanza" data-ubicacion="Calvas" data-distrito="11D06" data-tipo="Fiscomisional" data-buscar="11H00542 11D06 Calvas - Gonzanamá - Quilanga Escuela de Educación Básica Fiscomisional Antonio Castillo Hermano Miguel Fiscomisional Loja Calvas Macaicanza Calvas 986595058 981561483 Cecilia Marlene Cueva Quichimbo escuelafiscal_antoniocastillo@hotmail.es">
           <td><strong>11H00542</strong><div class="inst-sub">11D06</div></td>
-          <td><strong>ANTONIO CASTILLO HERMANO MIGUEL</strong><div class="inst-sub inst-address"><span class="inst-location-icon" data-lucide="map-pin"></span><span>Ubicaci&oacute;n: CALVAS- Macaicanza &middot; Parroquia: Macaicanza &middot; Distrito: 11D06</span></div></td>
+          <td><strong>Escuela de Educación Básica Fiscomisional Antonio Castillo Hermano Miguel</strong><div class="inst-sub inst-address"><span class="inst-location-icon" data-lucide="map-pin"></span><span>Ubicaci&oacute;n: Calvas &middot; Parroquia/Sector: Macaicanza &middot; Distrito: 11D06 - Calvas - Gonzanamá - Quilanga</span></div></td>
           <td><strong>Calvas</strong><div class="inst-sub">Macaicanza</div></td>
           <td><span class="tag type-fiscomisional">Fiscomisional</span></td>
-          <td><div class="inst-contact" title="Tel. 986595058 | Cel. 981561483 | escuelafiscal_antoniocastillo@hotmail.es">Tel. 986595058<br>Cel. 981561483<br>escuelafiscal_antoniocastillo@hotmail.es</div></td>
-        </tr>        <tr data-canton="Calvas" data-parroquia="Chile" data-ubicacion="CALVAS -CHILE- Cascajal" data-distrito="11D06" data-tipo="Fiscomisional" data-buscar="11H00513 11D06 SAN PEDRO MARTIR Calvas Chile CALVAS -CHILE- Cascajal Fiscomisional  981091877 yesmar2604@hotmail.es">
+          <td><div class="inst-contact" title="Directivo: Cecilia Marlene Cueva Quichimbo | Tel. 986595058 | Cel. 981561483 | escuelafiscal_antoniocastillo@hotmail.es"><strong>Cecilia Marlene Cueva Quichimbo</strong><br>Tel. 986595058<br>Cel. 981561483<br>escuelafiscal_antoniocastillo@hotmail.es</div></td>
+        </tr>
+        <tr data-canton="Calvas" data-parroquia="Chile (Cascajal)" data-ubicacion="Calvas" data-distrito="11D06" data-tipo="Fiscomisional" data-buscar="11H00513 11D06 Calvas - Gonzanamá - Quilanga Escuela de Educación Básica Fiscomisional San Pedro Mártir Fiscomisional Loja Calvas Chile (Cascajal) Calvas  981091877 Marcelino Cosme Torres Gualán yesmar2604@hotmail.es">
           <td><strong>11H00513</strong><div class="inst-sub">11D06</div></td>
-          <td><strong>SAN PEDRO MARTIR</strong><div class="inst-sub inst-address"><span class="inst-location-icon" data-lucide="map-pin"></span><span>Ubicaci&oacute;n: CALVAS -CHILE- Cascajal &middot; Parroquia: Chile &middot; Distrito: 11D06</span></div></td>
-          <td><strong>Calvas</strong><div class="inst-sub">Chile</div></td>
+          <td><strong>Escuela de Educación Básica Fiscomisional San Pedro Mártir</strong><div class="inst-sub inst-address"><span class="inst-location-icon" data-lucide="map-pin"></span><span>Ubicaci&oacute;n: Calvas &middot; Parroquia/Sector: Chile (Cascajal) &middot; Distrito: 11D06 - Calvas - Gonzanamá - Quilanga</span></div></td>
+          <td><strong>Calvas</strong><div class="inst-sub">Chile (Cascajal)</div></td>
           <td><span class="tag type-fiscomisional">Fiscomisional</span></td>
-          <td><div class="inst-contact" title="Cel. 981091877 | yesmar2604@hotmail.es">Cel. 981091877<br>yesmar2604@hotmail.es</div></td>
-        </tr>        <tr data-canton="Calvas" data-parroquia="San Juan" data-ubicacion="CALVAS - SAN JUAN" data-distrito="11D06" data-tipo="Fiscomisional" data-buscar="11H00535 11D06 SAN JUAN EVANGELISTA Calvas San Juan CALVAS - SAN JUAN Fiscomisional  0969187837 nataliam.aguirre@educacion.gob.ec">
+          <td><div class="inst-contact" title="Directivo: Marcelino Cosme Torres Gualán | Cel. 981091877 | yesmar2604@hotmail.es"><strong>Marcelino Cosme Torres Gualán</strong><br>Cel. 981091877<br>yesmar2604@hotmail.es</div></td>
+        </tr>
+        <tr data-canton="Calvas" data-parroquia="San Juan" data-ubicacion="Calvas" data-distrito="11D06" data-tipo="Fiscomisional" data-buscar="11H00535 11D06 Calvas - Gonzanamá - Quilanga Escuela de Educación Básica Fiscomisional San Juan Evangelista Fiscomisional Loja Calvas San Juan Calvas  0969187837 Natalia Marisol Aguirre Ordóñez nataliam.aguirre@educacion.gob.ec">
           <td><strong>11H00535</strong><div class="inst-sub">11D06</div></td>
-          <td><strong>SAN JUAN EVANGELISTA</strong><div class="inst-sub inst-address"><span class="inst-location-icon" data-lucide="map-pin"></span><span>Ubicaci&oacute;n: CALVAS - SAN JUAN &middot; Parroquia: San Juan &middot; Distrito: 11D06</span></div></td>
+          <td><strong>Escuela de Educación Básica Fiscomisional San Juan Evangelista</strong><div class="inst-sub inst-address"><span class="inst-location-icon" data-lucide="map-pin"></span><span>Ubicaci&oacute;n: Calvas &middot; Parroquia/Sector: San Juan &middot; Distrito: 11D06 - Calvas - Gonzanamá - Quilanga</span></div></td>
           <td><strong>Calvas</strong><div class="inst-sub">San Juan</div></td>
           <td><span class="tag type-fiscomisional">Fiscomisional</span></td>
-          <td><div class="inst-contact" title="Cel. 0969187837 | nataliam.aguirre@educacion.gob.ec">Cel. 0969187837<br>nataliam.aguirre@educacion.gob.ec</div></td>
-        </tr>        <tr data-canton="Calvas" data-parroquia="Camayos" data-ubicacion="CALVAS - CAMAYOS" data-distrito="11D06" data-tipo="Fiscomisional" data-buscar="11H00620 11D06 REINA DEL CISNE Calvas Camayos CALVAS - CAMAYOS Fiscomisional 2688706 0969586197- 0968924500 reinadelcisne@yahoo.es">
+          <td><div class="inst-contact" title="Directivo: Natalia Marisol Aguirre Ordóñez | Cel. 0969187837 | nataliam.aguirre@educacion.gob.ec"><strong>Natalia Marisol Aguirre Ordóñez</strong><br>Cel. 0969187837<br>nataliam.aguirre@educacion.gob.ec</div></td>
+        </tr>
+        <tr data-canton="Calvas" data-parroquia="Camayos" data-ubicacion="Calvas" data-distrito="11D06" data-tipo="Fiscomisional" data-buscar="11H00620 11D06 Calvas - Gonzanamá - Quilanga Escuela de Educación Básica Fiscomisional Reina del Cisne Fiscomisional Loja Calvas Camayos Calvas 2688706 0969586197- 0968924500 Nancy Judith Briceño Rojas reinadelcisne@yahoo.es">
           <td><strong>11H00620</strong><div class="inst-sub">11D06</div></td>
-          <td><strong>REINA DEL CISNE</strong><div class="inst-sub inst-address"><span class="inst-location-icon" data-lucide="map-pin"></span><span>Ubicaci&oacute;n: CALVAS - CAMAYOS &middot; Parroquia: Camayos &middot; Distrito: 11D06</span></div></td>
+          <td><strong>Escuela de Educación Básica Fiscomisional Reina del Cisne</strong><div class="inst-sub inst-address"><span class="inst-location-icon" data-lucide="map-pin"></span><span>Ubicaci&oacute;n: Calvas &middot; Parroquia/Sector: Camayos &middot; Distrito: 11D06 - Calvas - Gonzanamá - Quilanga</span></div></td>
           <td><strong>Calvas</strong><div class="inst-sub">Camayos</div></td>
           <td><span class="tag type-fiscomisional">Fiscomisional</span></td>
-          <td><div class="inst-contact" title="Tel. 2688706 | Cel. 0969586197- 0968924500 | reinadelcisne@yahoo.es">Tel. 2688706<br>Cel. 0969586197- 0968924500<br>reinadelcisne@yahoo.es</div></td>
-        </tr>        <tr data-canton="Calvas" data-parroquia="Sanguill&#237;n" data-ubicacion="CALVAS - SANGUILL&#205;N" data-distrito="11D06" data-tipo="Fiscomisional" data-buscar="11H00622 11D06 LA CRUZ DE SANGUILLIN Calvas Sanguill&#237;n CALVAS - SANGUILL&#205;N Fiscomisional  969981753 angelmt166@yahoo.es">
+          <td><div class="inst-contact" title="Directivo: Nancy Judith Briceño Rojas | Tel. 2688706 | Cel. 0969586197- 0968924500 | reinadelcisne@yahoo.es"><strong>Nancy Judith Briceño Rojas</strong><br>Tel. 2688706<br>Cel. 0969586197- 0968924500<br>reinadelcisne@yahoo.es</div></td>
+        </tr>
+        <tr data-canton="Calvas" data-parroquia="Sanguillín" data-ubicacion="Calvas" data-distrito="11D06" data-tipo="Fiscomisional" data-buscar="11H00622 11D06 Calvas - Gonzanamá - Quilanga Escuela de Educación Básica Fiscomisional La Cruz de Sanguillín Fiscomisional Loja Calvas Sanguillín Calvas  969981753 Ángel M. Cueva  Torres angelmt166@yahoo.es">
           <td><strong>11H00622</strong><div class="inst-sub">11D06</div></td>
-          <td><strong>LA CRUZ DE SANGUILLIN</strong><div class="inst-sub inst-address"><span class="inst-location-icon" data-lucide="map-pin"></span><span>Ubicaci&oacute;n: CALVAS - SANGUILL&#205;N &middot; Parroquia: Sanguill&#237;n &middot; Distrito: 11D06</span></div></td>
-          <td><strong>Calvas</strong><div class="inst-sub">Sanguill&#237;n</div></td>
+          <td><strong>Escuela de Educación Básica Fiscomisional La Cruz de Sanguillín</strong><div class="inst-sub inst-address"><span class="inst-location-icon" data-lucide="map-pin"></span><span>Ubicaci&oacute;n: Calvas &middot; Parroquia/Sector: Sanguillín &middot; Distrito: 11D06 - Calvas - Gonzanamá - Quilanga</span></div></td>
+          <td><strong>Calvas</strong><div class="inst-sub">Sanguillín</div></td>
           <td><span class="tag type-fiscomisional">Fiscomisional</span></td>
-          <td><div class="inst-contact" title="Cel. 969981753 | angelmt166@yahoo.es">Cel. 969981753<br>angelmt166@yahoo.es</div></td>
-        </tr>        <tr data-canton="Calvas" data-parroquia="Atillo" data-ubicacion="ATILLO" data-distrito="11D06" data-tipo="Fiscomisional" data-buscar="11H00570 11D06 LA DOLOROSA Calvas Atillo ATILLO Fiscomisional  968059714 erikae.rodriguez@educacion.gob.ec">
+          <td><div class="inst-contact" title="Directivo: Ángel M. Cueva  Torres | Cel. 969981753 | angelmt166@yahoo.es"><strong>Ángel M. Cueva  Torres</strong><br>Cel. 969981753<br>angelmt166@yahoo.es</div></td>
+        </tr>
+        <tr data-canton="Calvas" data-parroquia="Atillo" data-ubicacion="Calvas" data-distrito="11D06" data-tipo="Fiscomisional" data-buscar="11H00570 11D06 Calvas - Gonzanamá - Quilanga Escuela de Educación Básica Fiscomisional La Dolorosa Fiscomisional Loja Calvas Atillo Calvas  968059714 Erika Estefanía Rodríguez Valladares erikae.rodriguez@educacion.gob.ec">
           <td><strong>11H00570</strong><div class="inst-sub">11D06</div></td>
-          <td><strong>LA DOLOROSA</strong><div class="inst-sub inst-address"><span class="inst-location-icon" data-lucide="map-pin"></span><span>Ubicaci&oacute;n: ATILLO &middot; Parroquia: Atillo &middot; Distrito: 11D06</span></div></td>
+          <td><strong>Escuela de Educación Básica Fiscomisional La Dolorosa</strong><div class="inst-sub inst-address"><span class="inst-location-icon" data-lucide="map-pin"></span><span>Ubicaci&oacute;n: Calvas &middot; Parroquia/Sector: Atillo &middot; Distrito: 11D06 - Calvas - Gonzanamá - Quilanga</span></div></td>
           <td><strong>Calvas</strong><div class="inst-sub">Atillo</div></td>
           <td><span class="tag type-fiscomisional">Fiscomisional</span></td>
-          <td><div class="inst-contact" title="Cel. 968059714 | erikae.rodriguez@educacion.gob.ec">Cel. 968059714<br>erikae.rodriguez@educacion.gob.ec</div></td>
-        </tr>        <tr data-canton="Calvas" data-parroquia="El Lucero" data-ubicacion="CALVAS - LUCERO- LA UNI&#211;N" data-distrito="11D06" data-tipo="Fiscomisional" data-buscar="11H00580 11D06 P. ESTEBAN NARGANEZ GARCIA Calvas El Lucero CALVAS - LUCERO- LA UNI&#211;N Fiscomisional 3024474 0979611562 sarangojonathan@yahoo.es">
+          <td><div class="inst-contact" title="Directivo: Erika Estefanía Rodríguez Valladares | Cel. 968059714 | erikae.rodriguez@educacion.gob.ec"><strong>Erika Estefanía Rodríguez Valladares</strong><br>Cel. 968059714<br>erikae.rodriguez@educacion.gob.ec</div></td>
+        </tr>
+        <tr data-canton="Calvas" data-parroquia="La Unión (Lucero)" data-ubicacion="Calvas" data-distrito="11D06" data-tipo="Fiscomisional" data-buscar="11H00580 11D06 Calvas - Gonzanamá - Quilanga Escuela de Educación Básica Fiscomisional Padre Esteban Narganez García Fiscomisional Loja Calvas La Unión (Lucero) Calvas 3024474 0979611562 Edison Jonathan Sarango Abad sarangojonathan@yahoo.es">
           <td><strong>11H00580</strong><div class="inst-sub">11D06</div></td>
-          <td><strong>P. ESTEBAN NARGANEZ GARCIA</strong><div class="inst-sub inst-address"><span class="inst-location-icon" data-lucide="map-pin"></span><span>Ubicaci&oacute;n: CALVAS - LUCERO- LA UNI&#211;N &middot; Parroquia: El Lucero &middot; Distrito: 11D06</span></div></td>
-          <td><strong>Calvas</strong><div class="inst-sub">El Lucero</div></td>
+          <td><strong>Escuela de Educación Básica Fiscomisional Padre Esteban Narganez García</strong><div class="inst-sub inst-address"><span class="inst-location-icon" data-lucide="map-pin"></span><span>Ubicaci&oacute;n: Calvas &middot; Parroquia/Sector: La Unión (Lucero) &middot; Distrito: 11D06 - Calvas - Gonzanamá - Quilanga</span></div></td>
+          <td><strong>Calvas</strong><div class="inst-sub">La Unión (Lucero)</div></td>
           <td><span class="tag type-fiscomisional">Fiscomisional</span></td>
-          <td><div class="inst-contact" title="Tel. 3024474 | Cel. 0979611562 | sarangojonathan@yahoo.es">Tel. 3024474<br>Cel. 0979611562<br>sarangojonathan@yahoo.es</div></td>
-        </tr>        <tr data-canton="Gonzanam&#225;" data-parroquia="Pillinuma" data-ubicacion="GONZANAM&#193;- PILLINUMA" data-distrito="11D06" data-tipo="Fiscomisional" data-buscar="11H00959 11D06 STA. MARIANITA DE JESUS Gonzanam&#225; Pillinuma GONZANAM&#193;- PILLINUMA Fiscomisional  0989987896 vicente.minga@educacion.gob.ec">
+          <td><div class="inst-contact" title="Directivo: Edison Jonathan Sarango Abad | Tel. 3024474 | Cel. 0979611562 | sarangojonathan@yahoo.es"><strong>Edison Jonathan Sarango Abad</strong><br>Tel. 3024474<br>Cel. 0979611562<br>sarangojonathan@yahoo.es</div></td>
+        </tr>
+        <tr data-canton="Gonzanamá" data-parroquia="Pillinuma" data-ubicacion="Gonzanamá" data-distrito="11D06" data-tipo="Fiscomisional" data-buscar="11H00959 11D06 Calvas - Gonzanamá - Quilanga Escuela de Educación Básica Fiscomisional Santa Marianita de Jesús Fiscomisional Loja Gonzanamá Pillinuma Gonzanamá  0989987896 Vicente Vinicio Minga Vivanco vicente.minga@educacion.gob.ec">
           <td><strong>11H00959</strong><div class="inst-sub">11D06</div></td>
-          <td><strong>STA. MARIANITA DE JESUS</strong><div class="inst-sub inst-address"><span class="inst-location-icon" data-lucide="map-pin"></span><span>Ubicaci&oacute;n: GONZANAM&#193;- PILLINUMA &middot; Parroquia: Pillinuma &middot; Distrito: 11D06</span></div></td>
-          <td><strong>Gonzanam&#225;</strong><div class="inst-sub">Pillinuma</div></td>
+          <td><strong>Escuela de Educación Básica Fiscomisional Santa Marianita de Jesús</strong><div class="inst-sub inst-address"><span class="inst-location-icon" data-lucide="map-pin"></span><span>Ubicaci&oacute;n: Gonzanamá &middot; Parroquia/Sector: Pillinuma &middot; Distrito: 11D06 - Calvas - Gonzanamá - Quilanga</span></div></td>
+          <td><strong>Gonzanamá</strong><div class="inst-sub">Pillinuma</div></td>
           <td><span class="tag type-fiscomisional">Fiscomisional</span></td>
-          <td><div class="inst-contact" title="Cel. 0989987896 | vicente.minga@educacion.gob.ec">Cel. 0989987896<br>vicente.minga@educacion.gob.ec</div></td>
-        </tr>        <tr data-canton="Calvas" data-parroquia="Cariamanga" data-ubicacion="CARIAMANGA" data-distrito="11D06" data-tipo="Fiscomisional" data-buscar="11H00477 11D06 E.E.B.ESP.PADRE FRANCO AGUIRRE Calvas Cariamanga CARIAMANGA Fiscomisional 2689489- 2687058 0981041605 francojos17@hotmail.com">
+          <td><div class="inst-contact" title="Directivo: Vicente Vinicio Minga Vivanco | Cel. 0989987896 | vicente.minga@educacion.gob.ec"><strong>Vicente Vinicio Minga Vivanco</strong><br>Cel. 0989987896<br>vicente.minga@educacion.gob.ec</div></td>
+        </tr>
+        <tr data-canton="Calvas" data-parroquia="Cariamanga" data-ubicacion="Cariamanga" data-distrito="11D06" data-tipo="Fiscomisional" data-buscar="11H00477 11D06 Calvas - Gonzanamá - Quilanga Escuela de Educación Básica Especial Fiscomisional Padre Franco Aguirre Fiscomisional Loja Calvas Cariamanga Cariamanga 2689489- 2687058 0981041605 Lic. Liliana Pinzón francojos17@hotmail.com">
           <td><strong>11H00477</strong><div class="inst-sub">11D06</div></td>
-          <td><strong>E.E.B.ESP.PADRE FRANCO AGUIRRE</strong><div class="inst-sub inst-address"><span class="inst-location-icon" data-lucide="map-pin"></span><span>Ubicaci&oacute;n: CARIAMANGA &middot; Parroquia: Cariamanga &middot; Distrito: 11D06</span></div></td>
+          <td><strong>Escuela de Educación Básica Especial Fiscomisional Padre Franco Aguirre</strong><div class="inst-sub inst-address"><span class="inst-location-icon" data-lucide="map-pin"></span><span>Ubicaci&oacute;n: Cariamanga &middot; Parroquia/Sector: Cariamanga &middot; Distrito: 11D06 - Calvas - Gonzanamá - Quilanga</span></div></td>
           <td><strong>Calvas</strong><div class="inst-sub">Cariamanga</div></td>
           <td><span class="tag type-fiscomisional">Fiscomisional</span></td>
-          <td><div class="inst-contact" title="Tel. 2689489- 2687058 | Cel. 0981041605 | francojos17@hotmail.com">Tel. 2689489- 2687058<br>Cel. 0981041605<br>francojos17@hotmail.com</div></td>
-        </tr>        <tr data-canton="Gonzanam&#225;" data-parroquia="Gonzanam&#225;" data-ubicacion="GONZANAM&#193;" data-distrito="11D06" data-tipo="Fiscomisional" data-buscar="11H00937 11D06 UEFISCOM. P. JORGE ABIATAR QUEVEDO FIGUEROA Gonzanam&#225; Gonzanam&#225; GONZANAM&#193; Fiscomisional 2664117-2664103- 0993835918 11h00937uef.pjorgeabiatar@gmail.com">
+          <td><div class="inst-contact" title="Directivo: Lic. Liliana Pinzón | Tel. 2689489- 2687058 | Cel. 0981041605 | francojos17@hotmail.com"><strong>Lic. Liliana Pinzón</strong><br>Tel. 2689489- 2687058<br>Cel. 0981041605<br>francojos17@hotmail.com</div></td>
+        </tr>
+        <tr data-canton="Gonzanamá" data-parroquia="Gonzanamá" data-ubicacion="Gonzanamá" data-distrito="11D06" data-tipo="Fiscomisional" data-buscar="11H00937 11D06 Calvas - Gonzanamá - Quilanga Unidad Educativa Fiscomisional Padre Jorge Abiatar Quevedo Figueroa Fiscomisional Loja Gonzanamá Gonzanamá Gonzanamá 2664117-2664103- 0993835918 Hna. Ercia Yanina Castillo 11h00937uef.pjorgeabiatar@gmail.com">
           <td><strong>11H00937</strong><div class="inst-sub">11D06</div></td>
-          <td><strong>UEFISCOM. P. JORGE ABIATAR QUEVEDO FIGUEROA</strong><div class="inst-sub inst-address"><span class="inst-location-icon" data-lucide="map-pin"></span><span>Ubicaci&oacute;n: GONZANAM&#193; &middot; Parroquia: Gonzanam&#225; &middot; Distrito: 11D06</span></div></td>
-          <td><strong>Gonzanam&#225;</strong><div class="inst-sub">Gonzanam&#225;</div></td>
+          <td><strong>Unidad Educativa Fiscomisional Padre Jorge Abiatar Quevedo Figueroa</strong><div class="inst-sub inst-address"><span class="inst-location-icon" data-lucide="map-pin"></span><span>Ubicaci&oacute;n: Gonzanamá &middot; Parroquia/Sector: Gonzanamá &middot; Distrito: 11D06 - Calvas - Gonzanamá - Quilanga</span></div></td>
+          <td><strong>Gonzanamá</strong><div class="inst-sub">Gonzanamá</div></td>
           <td><span class="tag type-fiscomisional">Fiscomisional</span></td>
-          <td><div class="inst-contact" title="Tel. 2664117-2664103- | Cel. 0993835918 | 11h00937uef.pjorgeabiatar@gmail.com">Tel. 2664117-2664103-<br>Cel. 0993835918<br>11h00937uef.pjorgeabiatar@gmail.com</div></td>
-        </tr>        <tr data-canton="Gonzanam&#225;" data-parroquia="Changaimina" data-ubicacion="CHANGAIMINA" data-distrito="11D06" data-tipo="Fiscomisional" data-buscar="11H00957 11D06 UEFISCOM. SAN VICENTE DE PAUL Gonzanam&#225; Changaimina CHANGAIMINA Fiscomisional 3024194 0993250548 uesvp@hotmail.com">
+          <td><div class="inst-contact" title="Directivo: Hna. Ercia Yanina Castillo | Tel. 2664117-2664103- | Cel. 0993835918 | 11h00937uef.pjorgeabiatar@gmail.com"><strong>Hna. Ercia Yanina Castillo</strong><br>Tel. 2664117-2664103-<br>Cel. 0993835918<br>11h00937uef.pjorgeabiatar@gmail.com</div></td>
+        </tr>
+        <tr data-canton="CHANGAIMINA" data-parroquia="CHANGAIMINA" data-ubicacion="CHANGAIMINA" data-distrito="11D06" data-tipo="Fiscomisional" data-buscar="11H00957 11D06 Calvas - Gonzanamá - Quilanga Unidad Educativa Fiscomisional San Vicente de Paúl Fiscomisional Loja CHANGAIMINA CHANGAIMINA CHANGAIMINA 3024194 0993250548 Lic. Juan Mesías Cevallos Santín uesvp@hotmail.com">
           <td><strong>11H00957</strong><div class="inst-sub">11D06</div></td>
-          <td><strong>UEFISCOM. SAN VICENTE DE PAUL</strong><div class="inst-sub inst-address"><span class="inst-location-icon" data-lucide="map-pin"></span><span>Ubicaci&oacute;n: CHANGAIMINA &middot; Parroquia: Changaimina &middot; Distrito: 11D06</span></div></td>
-          <td><strong>Gonzanam&#225;</strong><div class="inst-sub">Changaimina</div></td>
+          <td><strong>Unidad Educativa Fiscomisional San Vicente de Paúl</strong><div class="inst-sub inst-address"><span class="inst-location-icon" data-lucide="map-pin"></span><span>Ubicaci&oacute;n: CHANGAIMINA &middot; Parroquia/Sector: CHANGAIMINA &middot; Distrito: 11D06 - Calvas - Gonzanamá - Quilanga</span></div></td>
+          <td><strong>CHANGAIMINA</strong><div class="inst-sub">CHANGAIMINA</div></td>
           <td><span class="tag type-fiscomisional">Fiscomisional</span></td>
-          <td><div class="inst-contact" title="Tel. 3024194 | Cel. 0993250548 | uesvp@hotmail.com">Tel. 3024194<br>Cel. 0993250548<br>uesvp@hotmail.com</div></td>
-        </tr>        <tr data-canton="Calvas" data-parroquia="Cariamanga" data-ubicacion="CARIAMANGA" data-distrito="11D06" data-tipo="Fiscomisional" data-buscar="11H00473 11D06 UEFISCOM. MARIA AUXILIADORA Calvas Cariamanga CARIAMANGA Fiscomisional 2687106 0994839133 sor.rodito@hotmail.com">
+          <td><div class="inst-contact" title="Directivo: Lic. Juan Mesías Cevallos Santín | Tel. 3024194 | Cel. 0993250548 | uesvp@hotmail.com"><strong>Lic. Juan Mesías Cevallos Santín</strong><br>Tel. 3024194<br>Cel. 0993250548<br>uesvp@hotmail.com</div></td>
+        </tr>
+        <tr data-canton="Calvas" data-parroquia="Cariamanga" data-ubicacion="Cariamanga" data-distrito="11D06" data-tipo="Fiscomisional" data-buscar="11H00473 11D06 Calvas - Gonzanamá - Quilanga Unidad Educativa Fiscomisional María Auxiliadora Fiscomisional Loja Calvas Cariamanga Cariamanga 2687106 0994839133 Sor Rodolfina  Ávila sor.rodito@hotmail.com">
           <td><strong>11H00473</strong><div class="inst-sub">11D06</div></td>
-          <td><strong>UEFISCOM. MARIA AUXILIADORA</strong><div class="inst-sub inst-address"><span class="inst-location-icon" data-lucide="map-pin"></span><span>Ubicaci&oacute;n: CARIAMANGA &middot; Parroquia: Cariamanga &middot; Distrito: 11D06</span></div></td>
+          <td><strong>Unidad Educativa Fiscomisional María Auxiliadora</strong><div class="inst-sub inst-address"><span class="inst-location-icon" data-lucide="map-pin"></span><span>Ubicaci&oacute;n: Cariamanga &middot; Parroquia/Sector: Cariamanga &middot; Distrito: 11D06 - Calvas - Gonzanamá - Quilanga</span></div></td>
           <td><strong>Calvas</strong><div class="inst-sub">Cariamanga</div></td>
           <td><span class="tag type-fiscomisional">Fiscomisional</span></td>
-          <td><div class="inst-contact" title="Tel. 2687106 | Cel. 0994839133 | sor.rodito@hotmail.com">Tel. 2687106<br>Cel. 0994839133<br>sor.rodito@hotmail.com</div></td>
-        </tr>        <tr data-canton="Calvas" data-parroquia="Cariamanga" data-ubicacion="CARIAMANGA" data-distrito="11D06" data-tipo="Fiscomisional" data-buscar="11H00505 11D06 UEFISCOM. SANTIAGO FERNANDEZ GARC&#205;A Calvas Cariamanga CARIAMANGA Fiscomisional 2687368- 2688-230 0991550330 segundopardo2000@hotmail.com">
+          <td><div class="inst-contact" title="Directivo: Sor Rodolfina  Ávila | Tel. 2687106 | Cel. 0994839133 | sor.rodito@hotmail.com"><strong>Sor Rodolfina  Ávila</strong><br>Tel. 2687106<br>Cel. 0994839133<br>sor.rodito@hotmail.com</div></td>
+        </tr>
+        <tr data-canton="Calvas" data-parroquia="Cariamanga" data-ubicacion="Cariamanga" data-distrito="11D06" data-tipo="Fiscomisional" data-buscar="11H00505 11D06 Calvas - Gonzanamá - Quilanga Unidad Educativa Monseñor Santiago Fernández García Fiscomisional Loja Calvas Cariamanga Cariamanga 2687368- 2688-230 0991550330 P. Segundo Pardo Rojas segundopardo2000@hotmail.com">
           <td><strong>11H00505</strong><div class="inst-sub">11D06</div></td>
-          <td><strong>UEFISCOM. SANTIAGO FERNANDEZ GARC&#205;A</strong><div class="inst-sub inst-address"><span class="inst-location-icon" data-lucide="map-pin"></span><span>Ubicaci&oacute;n: CARIAMANGA &middot; Parroquia: Cariamanga &middot; Distrito: 11D06</span></div></td>
+          <td><strong>Unidad Educativa Monseñor Santiago Fernández García</strong><div class="inst-sub inst-address"><span class="inst-location-icon" data-lucide="map-pin"></span><span>Ubicaci&oacute;n: Cariamanga &middot; Parroquia/Sector: Cariamanga &middot; Distrito: 11D06 - Calvas - Gonzanamá - Quilanga</span></div></td>
           <td><strong>Calvas</strong><div class="inst-sub">Cariamanga</div></td>
           <td><span class="tag type-fiscomisional">Fiscomisional</span></td>
-          <td><div class="inst-contact" title="Tel. 2687368- 2688-230 | Cel. 0991550330 | segundopardo2000@hotmail.com">Tel. 2687368- 2688-230<br>Cel. 0991550330<br>segundopardo2000@hotmail.com</div></td>
-        </tr>        <tr data-canton="Calvas" data-parroquia="Cariamanga" data-ubicacion="CARIAMANGA" data-distrito="11D06" data-tipo="Fiscomisional" data-buscar="11H00471 11D06 UEFISCOM. STA. JUANA DE ARCO LA SALLE Calvas Cariamanga CARIAMANGA Fiscomisional 2687131- 2688614- 0939118080 rectorcariamanga@lasalle.edu.ec brendasilvaya@gmail.com">
+          <td><div class="inst-contact" title="Directivo: P. Segundo Pardo Rojas | Tel. 2687368- 2688-230 | Cel. 0991550330 | segundopardo2000@hotmail.com"><strong>P. Segundo Pardo Rojas</strong><br>Tel. 2687368- 2688-230<br>Cel. 0991550330<br>segundopardo2000@hotmail.com</div></td>
+        </tr>
+        <tr data-canton="Calvas" data-parroquia="Cariamanga" data-ubicacion="Cariamanga" data-distrito="11D06" data-tipo="Fiscomisional" data-buscar="11H00471 11D06 Calvas - Gonzanamá - Quilanga Unidad Educativa Fiscomisional Santa Juana de Arco La Salle Fiscomisional Loja Calvas Cariamanga Cariamanga 2687131- 2688614- 0939118080 Mgtr. Brenda Carolina Silva Yaguachi rectorcariamanga@lasalle.edu.ec brendasilvaya@gmail.com">
           <td><strong>11H00471</strong><div class="inst-sub">11D06</div></td>
-          <td><strong>UEFISCOM. STA. JUANA DE ARCO LA SALLE</strong><div class="inst-sub inst-address"><span class="inst-location-icon" data-lucide="map-pin"></span><span>Ubicaci&oacute;n: CARIAMANGA &middot; Parroquia: Cariamanga &middot; Distrito: 11D06</span></div></td>
+          <td><strong>Unidad Educativa Fiscomisional Santa Juana de Arco La Salle</strong><div class="inst-sub inst-address"><span class="inst-location-icon" data-lucide="map-pin"></span><span>Ubicaci&oacute;n: Cariamanga &middot; Parroquia/Sector: Cariamanga &middot; Distrito: 11D06 - Calvas - Gonzanamá - Quilanga</span></div></td>
           <td><strong>Calvas</strong><div class="inst-sub">Cariamanga</div></td>
           <td><span class="tag type-fiscomisional">Fiscomisional</span></td>
-          <td><div class="inst-contact" title="Tel. 2687131- 2688614- | Cel. 0939118080 | rectorcariamanga@lasalle.edu.ec brendasilvaya@gmail.com">Tel. 2687131- 2688614-<br>Cel. 0939118080<br>rectorcariamanga@lasalle.edu.ec brendasilvaya@gmail.com</div></td>
-        </tr>        <tr data-canton="Macar&#225;" data-parroquia="Macar&#225;" data-ubicacion="MACAR&#193;" data-distrito="11D07" data-tipo="Fiscomisional" data-buscar="11H01059 11D07 UEFISCOM. SANTA MARIANA DE JES&#218;S Macar&#225; Macar&#225; MACAR&#193; Fiscomisional 2694039- 2694707 0991199202 unidadeducativamarianitas@hotmail.com">
+          <td><div class="inst-contact" title="Directivo: Mgtr. Brenda Carolina Silva Yaguachi | Tel. 2687131- 2688614- | Cel. 0939118080 | rectorcariamanga@lasalle.edu.ec brendasilvaya@gmail.com"><strong>Mgtr. Brenda Carolina Silva Yaguachi</strong><br>Tel. 2687131- 2688614-<br>Cel. 0939118080<br>rectorcariamanga@lasalle.edu.ec brendasilvaya@gmail.com</div></td>
+        </tr>
+        <tr data-canton="Macará" data-parroquia="Macará (M.E. Rengel Suquilanda)" data-ubicacion="Macará" data-distrito="11D07" data-tipo="Fiscomisional" data-buscar="11H01059 11D07 Macará - Sozoranga Unidad Educativa Fiscomisional Santa Mariana de Jesús Fiscomisional Loja Macará Macará (M.E. Rengel Suquilanda) Macará 2694039-  2694707 0991199202 Hna. Blanca  Rosario Torres Vásquez unidadeducativamarianitas@hotmail.com">
           <td><strong>11H01059</strong><div class="inst-sub">11D07</div></td>
-          <td><strong>UEFISCOM. SANTA MARIANA DE JES&#218;S</strong><div class="inst-sub inst-address"><span class="inst-location-icon" data-lucide="map-pin"></span><span>Ubicaci&oacute;n: MACAR&#193; &middot; Parroquia: Macar&#225; &middot; Distrito: 11D07</span></div></td>
-          <td><strong>Macar&#225;</strong><div class="inst-sub">Macar&#225;</div></td>
+          <td><strong>Unidad Educativa Fiscomisional Santa Mariana de Jesús</strong><div class="inst-sub inst-address"><span class="inst-location-icon" data-lucide="map-pin"></span><span>Ubicaci&oacute;n: Macará &middot; Parroquia/Sector: Macará (M.E. Rengel Suquilanda) &middot; Distrito: 11D07 - Macará - Sozoranga</span></div></td>
+          <td><strong>Macará</strong><div class="inst-sub">Macará (M.E. Rengel Suquilanda)</div></td>
           <td><span class="tag type-fiscomisional">Fiscomisional</span></td>
-          <td><div class="inst-contact" title="Tel. 2694039- 2694707 | Cel. 0991199202 | unidadeducativamarianitas@hotmail.com">Tel. 2694039- 2694707<br>Cel. 0991199202<br>unidadeducativamarianitas@hotmail.com</div></td>
-        </tr>        <tr data-canton="Macar&#225;" data-parroquia="Macar&#225;" data-ubicacion="MACAR&#193;" data-distrito="11D07" data-tipo="Fiscomisional" data-buscar="11H01076 11D07 UEFISCOM. MARISTA MACAR&#193; Macar&#225; Macar&#225; MACAR&#193; Fiscomisional 2694060- 2694026 0993872736 fannyc.hidalgo@educacion.gob.ec">
+          <td><div class="inst-contact" title="Directivo: Hna. Blanca  Rosario Torres Vásquez | Tel. 2694039-  2694707 | Cel. 0991199202 | unidadeducativamarianitas@hotmail.com"><strong>Hna. Blanca  Rosario Torres Vásquez</strong><br>Tel. 2694039-  2694707<br>Cel. 0991199202<br>unidadeducativamarianitas@hotmail.com</div></td>
+        </tr>
+        <tr data-canton="Macará" data-parroquia="Macará (M.E. Rengel Suquilanda)" data-ubicacion="Macará" data-distrito="11D07" data-tipo="Fiscomisional" data-buscar="11H01076 11D07 Macará - Sozoranga Unidad Educativa Fiscomisional Marista Fiscomisional Loja Macará Macará (M.E. Rengel Suquilanda) Macará 2694060- 2694026 0993255010 Albertina de Jesús Suquilanda Castillo maristasmacara@hotmail.com">
           <td><strong>11H01076</strong><div class="inst-sub">11D07</div></td>
-          <td><strong>UEFISCOM. MARISTA MACAR&#193;</strong><div class="inst-sub inst-address"><span class="inst-location-icon" data-lucide="map-pin"></span><span>Ubicaci&oacute;n: MACAR&#193; &middot; Parroquia: Macar&#225; &middot; Distrito: 11D07</span></div></td>
-          <td><strong>Macar&#225;</strong><div class="inst-sub">Macar&#225;</div></td>
+          <td><strong>Unidad Educativa Fiscomisional Marista</strong><div class="inst-sub inst-address"><span class="inst-location-icon" data-lucide="map-pin"></span><span>Ubicaci&oacute;n: Macará &middot; Parroquia/Sector: Macará (M.E. Rengel Suquilanda) &middot; Distrito: 11D07 - Macará - Sozoranga</span></div></td>
+          <td><strong>Macará</strong><div class="inst-sub">Macará (M.E. Rengel Suquilanda)</div></td>
           <td><span class="tag type-fiscomisional">Fiscomisional</span></td>
-          <td><div class="inst-contact" title="Tel. 2694060- 2694026 | Cel. 0993872736 | fannyc.hidalgo@educacion.gob.ec">Tel. 2694060- 2694026<br>Cel. 0993872736<br>fannyc.hidalgo@educacion.gob.ec</div></td>
-        </tr>        <tr data-canton="Saraguro" data-parroquia="Saraguro" data-ubicacion="SARAGURO" data-distrito="11D08" data-tipo="Fiscomisional" data-buscar="11H01384 11D08 UEFISCOM. FRAY CRISTOBAL ZAMBRANO Saraguro Saraguro SARAGURO Fiscomisional 2200560 0939559862 frsy1985@gmail.com">
+          <td><div class="inst-contact" title="Directivo: Albertina de Jesús Suquilanda Castillo | Tel. 2694060- 2694026 | Cel. 0993255010 | maristasmacara@hotmail.com"><strong>Albertina de Jesús Suquilanda Castillo</strong><br>Tel. 2694060- 2694026<br>Cel. 0993255010<br>maristasmacara@hotmail.com</div></td>
+        </tr>
+        <tr data-canton="Saraguro" data-parroquia="Saraguro" data-ubicacion="Saraguro" data-distrito="11D08" data-tipo="Fiscomisional" data-buscar="11H01384 11D08 Saraguro Unidad Educativa Fiscomisional Fray Cristóbal Zambrano Fiscomisional Loja Saraguro Saraguro Saraguro 2200560 0939559862 Fray  Freddy  Rafael Sucuzhañay Yumbla frsy1985@gmail.com">
           <td><strong>11H01384</strong><div class="inst-sub">11D08</div></td>
-          <td><strong>UEFISCOM. FRAY CRISTOBAL ZAMBRANO</strong><div class="inst-sub inst-address"><span class="inst-location-icon" data-lucide="map-pin"></span><span>Ubicaci&oacute;n: SARAGURO &middot; Parroquia: Saraguro &middot; Distrito: 11D08</span></div></td>
+          <td><strong>Unidad Educativa Fiscomisional Fray Cristóbal Zambrano</strong><div class="inst-sub inst-address"><span class="inst-location-icon" data-lucide="map-pin"></span><span>Ubicaci&oacute;n: Saraguro &middot; Parroquia/Sector: Saraguro &middot; Distrito: 11D08 - Saraguro</span></div></td>
           <td><strong>Saraguro</strong><div class="inst-sub">Saraguro</div></td>
           <td><span class="tag type-fiscomisional">Fiscomisional</span></td>
-          <td><div class="inst-contact" title="Tel. 2200560 | Cel. 0939559862 | frsy1985@gmail.com">Tel. 2200560<br>Cel. 0939559862<br>frsy1985@gmail.com</div></td>
-        </tr>        <tr data-canton="Saraguro" data-parroquia="Saraguro" data-ubicacion="SARAGURO" data-distrito="11D08" data-tipo="Fiscomisional" data-buscar="11H01381 11D08 UEFISCOM. SAN JOS&#201; DE CALASANZ Saraguro Saraguro SARAGURO Fiscomisional 2200256 0992082370 uefsjcalasanz@gmail.com">
+          <td><div class="inst-contact" title="Directivo: Fray  Freddy  Rafael Sucuzhañay Yumbla | Tel. 2200560 | Cel. 0939559862 | frsy1985@gmail.com"><strong>Fray  Freddy  Rafael Sucuzhañay Yumbla</strong><br>Tel. 2200560<br>Cel. 0939559862<br>frsy1985@gmail.com</div></td>
+        </tr>
+        <tr data-canton="Saraguro" data-parroquia="Saraguro" data-ubicacion="Saraguro" data-distrito="11D08" data-tipo="Fiscomisional" data-buscar="11H01381 11D08 Saraguro Colegio de Bachillerato Celina Vivar Espinosa Fiscomisional Loja Saraguro Saraguro Saraguro 2200256 0992082370 Padre Marco Antonio Abad uefsjcalasanz@gmail.com">
           <td><strong>11H01381</strong><div class="inst-sub">11D08</div></td>
-          <td><strong>UEFISCOM. SAN JOS&#201; DE CALASANZ</strong><div class="inst-sub inst-address"><span class="inst-location-icon" data-lucide="map-pin"></span><span>Ubicaci&oacute;n: SARAGURO &middot; Parroquia: Saraguro &middot; Distrito: 11D08</span></div></td>
+          <td><strong>Colegio de Bachillerato Celina Vivar Espinosa</strong><div class="inst-sub inst-address"><span class="inst-location-icon" data-lucide="map-pin"></span><span>Ubicaci&oacute;n: Saraguro &middot; Parroquia/Sector: Saraguro &middot; Distrito: 11D08 - Saraguro</span></div></td>
           <td><strong>Saraguro</strong><div class="inst-sub">Saraguro</div></td>
           <td><span class="tag type-fiscomisional">Fiscomisional</span></td>
-          <td><div class="inst-contact" title="Tel. 2200256 | Cel. 0992082370 | uefsjcalasanz@gmail.com">Tel. 2200256<br>Cel. 0992082370<br>uefsjcalasanz@gmail.com</div></td>
-        </tr>        <tr data-canton="Saraguro" data-parroquia="Saraguro" data-ubicacion="SARAGURO" data-distrito="11D08" data-tipo="Fiscomisional" data-buscar="11H01382 11D08 UEFISCOM. SANTA MARIANA DE JESUS Saraguro Saraguro SARAGURO Fiscomisional 2200119 0969349705 ">
+          <td><div class="inst-contact" title="Directivo: Padre Marco Antonio Abad | Tel. 2200256 | Cel. 0992082370 | uefsjcalasanz@gmail.com"><strong>Padre Marco Antonio Abad</strong><br>Tel. 2200256<br>Cel. 0992082370<br>uefsjcalasanz@gmail.com</div></td>
+        </tr>
+        <tr data-canton="Saraguro" data-parroquia="Saraguro" data-ubicacion="Saraguro" data-distrito="11D08" data-tipo="Fiscomisional" data-buscar="11H01382 11D08 Saraguro Unidad Educativa Fiscomisional Santa Mariana de Jesús Fiscomisional Loja Saraguro Saraguro Saraguro 2200119 0969349705 Rosa Horfelinda Gaona Troya rositagat25@gmail.com">
           <td><strong>11H01382</strong><div class="inst-sub">11D08</div></td>
-          <td><strong>UEFISCOM. SANTA MARIANA DE JESUS</strong><div class="inst-sub inst-address"><span class="inst-location-icon" data-lucide="map-pin"></span><span>Ubicaci&oacute;n: SARAGURO &middot; Parroquia: Saraguro &middot; Distrito: 11D08</span></div></td>
+          <td><strong>Unidad Educativa Fiscomisional Santa Mariana de Jesús</strong><div class="inst-sub inst-address"><span class="inst-location-icon" data-lucide="map-pin"></span><span>Ubicaci&oacute;n: Saraguro &middot; Parroquia/Sector: Saraguro &middot; Distrito: 11D08 - Saraguro</span></div></td>
           <td><strong>Saraguro</strong><div class="inst-sub">Saraguro</div></td>
           <td><span class="tag type-fiscomisional">Fiscomisional</span></td>
-          <td><div class="inst-contact" title="Tel. 2200119 | Cel. 0969349705">Tel. 2200119<br>Cel. 0969349705</div></td>
-        </tr>        <tr data-canton="Saraguro" data-parroquia="Saraguro" data-ubicacion="SARAGURO" data-distrito="11D08" data-tipo="Fiscomisional" data-buscar="11H01389 11D08 C.E.ESP.FISCOM. DIVINO NI&#209;O JESUS Saraguro Saraguro SARAGURO Fiscomisional 2200508-2200510-2200311 0990154347 jackeline_jaramillo@yahoo.com">
+          <td><div class="inst-contact" title="Directivo: Rosa Horfelinda Gaona Troya | Tel. 2200119 | Cel. 0969349705 | rositagat25@gmail.com"><strong>Rosa Horfelinda Gaona Troya</strong><br>Tel. 2200119<br>Cel. 0969349705<br>rositagat25@gmail.com</div></td>
+        </tr>
+        <tr data-canton="Saraguro" data-parroquia="Saraguro" data-ubicacion="Saraguro" data-distrito="11D08" data-tipo="Fiscomisional" data-buscar="11H01389 11D08 Saraguro Centro de Educación Especial Fiscomisional Divino Niño Jesús Fiscomisional Loja Saraguro Saraguro Saraguro 2200508-2200510-2200311 0990154347 Lic. Victoria  Jackeline Jaramillo Cañart jackeline_jaramillo@yahoo.com">
           <td><strong>11H01389</strong><div class="inst-sub">11D08</div></td>
-          <td><strong>C.E.ESP.FISCOM. DIVINO NI&#209;O JESUS</strong><div class="inst-sub inst-address"><span class="inst-location-icon" data-lucide="map-pin"></span><span>Ubicaci&oacute;n: SARAGURO &middot; Parroquia: Saraguro &middot; Distrito: 11D08</span></div></td>
+          <td><strong>Centro de Educación Especial Fiscomisional Divino Niño Jesús</strong><div class="inst-sub inst-address"><span class="inst-location-icon" data-lucide="map-pin"></span><span>Ubicaci&oacute;n: Saraguro &middot; Parroquia/Sector: Saraguro &middot; Distrito: 11D08 - Saraguro</span></div></td>
           <td><strong>Saraguro</strong><div class="inst-sub">Saraguro</div></td>
           <td><span class="tag type-fiscomisional">Fiscomisional</span></td>
-          <td><div class="inst-contact" title="Tel. 2200508-2200510-2200311 | Cel. 0990154347 | jackeline_jaramillo@yahoo.com">Tel. 2200508-2200510-2200311<br>Cel. 0990154347<br>jackeline_jaramillo@yahoo.com</div></td>
-        </tr>        <tr data-canton="Zapotillo" data-parroquia="Zapotillo" data-ubicacion="ZAPOTILLO" data-distrito="11D09" data-tipo="Fiscomisional" data-buscar="11H01555 11D09 U.E. FISCOM. REINA MATERNAL DE LA FRONTERA Zapotillo Zapotillo ZAPOTILLO Fiscomisional 2647506- 2647079 0997487103 mayina_1974@hotmail.com">
+          <td><div class="inst-contact" title="Directivo: Lic. Victoria  Jackeline Jaramillo Cañart | Tel. 2200508-2200510-2200311 | Cel. 0990154347 | jackeline_jaramillo@yahoo.com"><strong>Lic. Victoria  Jackeline Jaramillo Cañart</strong><br>Tel. 2200508-2200510-2200311<br>Cel. 0990154347<br>jackeline_jaramillo@yahoo.com</div></td>
+        </tr>
+        <tr data-canton="Zapotillo" data-parroquia="Zapotillo" data-ubicacion="Zapotillo" data-distrito="11D09" data-tipo="Fiscomisional" data-buscar="11H01555 11D09 Zapotillo Unidad Educativa Fiscomisional Reina Maternal de la Frontera Fiscomisional Loja Zapotillo Zapotillo Zapotillo 2647506- 2647079 0997487103 Hna. Marlene Guerrero mayina_1974@hotmail.com">
           <td><strong>11H01555</strong><div class="inst-sub">11D09</div></td>
-          <td><strong>U.E. FISCOM. REINA MATERNAL DE LA FRONTERA</strong><div class="inst-sub inst-address"><span class="inst-location-icon" data-lucide="map-pin"></span><span>Ubicaci&oacute;n: ZAPOTILLO &middot; Parroquia: Zapotillo &middot; Distrito: 11D09</span></div></td>
+          <td><strong>Unidad Educativa Fiscomisional Reina Maternal de la Frontera</strong><div class="inst-sub inst-address"><span class="inst-location-icon" data-lucide="map-pin"></span><span>Ubicaci&oacute;n: Zapotillo &middot; Parroquia/Sector: Zapotillo &middot; Distrito: 11D09 - Zapotillo</span></div></td>
           <td><strong>Zapotillo</strong><div class="inst-sub">Zapotillo</div></td>
           <td><span class="tag type-fiscomisional">Fiscomisional</span></td>
-          <td><div class="inst-contact" title="Tel. 2647506- 2647079 | Cel. 0997487103 | mayina_1974@hotmail.com">Tel. 2647506- 2647079<br>Cel. 0997487103<br>mayina_1974@hotmail.com</div></td>
-        </tr>      </tbody>
+          <td><div class="inst-contact" title="Directivo: Hna. Marlene Guerrero | Tel. 2647506- 2647079 | Cel. 0997487103 | mayina_1974@hotmail.com"><strong>Hna. Marlene Guerrero</strong><br>Tel. 2647506- 2647079<br>Cel. 0997487103<br>mayina_1974@hotmail.com</div></td>
+        </tr>
+      </tbody>
     </table>
 
 
@@ -3823,55 +3997,44 @@
             <div class="contact-icon" data-lucide="map-pinned"></div>
             <div>
               <div class="contact-label">Dirección</div>
-              <div class="contact-value">Loja, provincia de Loja, Ecuador.</div>
+              <div class="contact-value">Miguel Riofrío 14-66 y Sucre</div>
             </div>
           </div>
           <div class="contact-item">
             <div class="contact-icon" data-lucide="phone"></div>
             <div>
-              <div class="contact-label">Teléfonos</div>
-              <div class="contact-value">+593 (07) 000-0000</div>
+              <div class="contact-label">Teléfono</div>
+              <div class="contact-value"><a class="contact-link" href="tel:+59372575436">2575436</a></div>
             </div>
           </div>
           <div class="contact-item">
             <div class="contact-icon" data-lucide="mail"></div>
             <div>
               <div class="contact-label">Correo electrónico</div>
-              <div class="contact-value">fedec.loja@gmail.com</div>
+              <div class="contact-value"><a class="contact-link" href="mailto:fedecdeloloja@hotmail.es">fedecdeloloja@hotmail.es</a></div>
             </div>
           </div>
           <div class="contact-item">
-            <div class="contact-icon" data-lucide="clock"></div>
+            <div class="contact-icon" data-lucide="building-2"></div>
             <div>
-              <div class="contact-label">Horario de atención</div>
-              <div class="contact-value">Lunes a viernes: 08h00-13h00 / 15h00-17h00</div>
+              <div class="contact-label">Ciudad</div>
+              <div class="contact-value">Loja - Ecuador</div>
             </div>
           </div>
         </div>
       </div>
 
-      <form class="contact-card">
-        <h3>Envíanos un mensaje</h3>
-        <div class="form-grid">
-          <div class="form-field">
-            <label for="contacto-nombre">Nombre Completo</label>
-            <input id="contacto-nombre" type="text" placeholder="Ej. Juan Pérez">
-          </div>
-          <div class="form-field">
-            <label for="contacto-correo">Correo Electrónico</label>
-            <input id="contacto-correo" type="email" placeholder="juan@ejemplo.com">
-          </div>
+      <div class="contact-card map-card">
+        <div class="map-card-header">
+          <h3>Ubicación institucional</h3>
+          <p>FEDEC Loja atiende en el centro de la ciudad, en Miguel Riofrío 14-66 y Sucre.</p>
         </div>
-        <div class="form-field">
-          <label for="contacto-asunto">Asunto</label>
-          <input id="contacto-asunto" type="text" placeholder="Motivo de su contacto">
+        <iframe class="map-frame" title="Ubicación de FEDEC Loja en Google Maps" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://www.google.com/maps?q=Miguel%20Riofr%C3%ADo%2014-66%20y%20Sucre%2C%20Loja%2C%20Ecuador&output=embed"></iframe>
+        <div class="map-actions">
+          <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=Miguel%20Riofr%C3%ADo%2014-66%20y%20Sucre%2C%20Loja%2C%20Ecuador" target="_blank" rel="noopener noreferrer">Abrir en Google Maps</a>
+          <a class="map-link secondary" href="mailto:fedecdeloloja@hotmail.es">Escribir por correo</a>
         </div>
-        <div class="form-field">
-          <label for="contacto-mensaje">Mensaje</label>
-          <textarea id="contacto-mensaje" placeholder="Detalla tu requerimiento aquí..."></textarea>
-        </div>
-        <button class="form-submit" type="button">Enviar Formulario</button>
-      </form>
+      </div>
     </div>
   </div>
 </section>
@@ -3882,31 +4045,31 @@
     <div>
       <div class="footer-brand-name">FEDEC Loja</div>
       <div class="footer-brand-sub">Federación de Establecimientos de Educación Católica</div>
-      <p class="footer-desc">Organismo provincial que articula y representa a las instituciones educativas fiscomisionales y particulares católicas de la provincia de Loja ante el Ministerio de Educación y la sociedad civil.</p>
+      <p class="footer-desc">Miguel Riofrío 14-66 y Sucre, Loja - Ecuador.<br>Tel. 2575436 · fedecdeloloja@hotmail.es</p>
     </div>
     <div>
       <div class="footer-col-title">Secciones</div>
       <ul class="footer-links">
-        <li><a href="#">Quiénes somos</a></li>
-        <li><a href="#">Estructura</a></li>
-        <li><a href="#">Organismos federados</a></li>
-        <li><a href="#">Centro de documentos</a></li>
-        <li><a href="#">Noticias</a></li>
+        <li><a href="#quienes">Quiénes somos</a></li>
+        <li><a href="#estructura">Estructura</a></li>
+        <li><a href="#federados">Organismos federados</a></li>
+        <li><a href="#documentos">Centro de documentos</a></li>
+        <li><a href="#cultura">Noticias</a></li>
       </ul>
     </div>
     <div>
       <div class="footer-col-title">Alianzas</div>
       <ul class="footer-links">
-        <li><a href="#">CONFEDEC Nacional</a></li>
-        <li><a href="#">Ministerio de Educación</a></li>
-        <li><a href="#">Diócesis de Loja</a></li>
-        <li><a href="#">Universidad de Loja (UNL)</a></li>
-        <li><a href="#">UTPL</a></li>
+        <li><a href="https://www.confedec.net/" target="_blank" rel="noopener noreferrer">CONFEDEC Nacional</a></li>
+        <li><a href="https://educacion.gob.ec/" target="_blank" rel="noopener noreferrer">Ministerio de Educación</a></li>
+        <li><a href="https://diocesisdeloja.org/" target="_blank" rel="noopener noreferrer">Diócesis de Loja</a></li>
+        <li><a href="https://unl.edu.ec/" target="_blank" rel="noopener noreferrer">Universidad Nacional de Loja</a></li>
+        <li><a href="https://www.utpl.edu.ec/" target="_blank" rel="noopener noreferrer">UTPL</a></li>
       </ul>
     </div>
   </div>
   <div class="footer-bottom">
-    <span>© 2025 FEDEC Loja ” Provincia de Loja, Ecuador</span>
+    <span>© 2026 FEDEC Loja - Provincia de Loja, Ecuador</span>
     <div class="confedec-badge">Afiliados a <span>CONFEDEC</span> Nacional</div>
   </div>
 </footer>
@@ -4033,3 +4196,4 @@ function filterDocs(cat, btn) {
 </script>
 </body>
 </html>
+
